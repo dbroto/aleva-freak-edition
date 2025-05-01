@@ -1,0 +1,97 @@
+
+<html>
+<head>
+  <title>Kahoot: El Camino del Jedi</title>
+  <meta charset="utf-8">
+  <style>
+    body {
+      background-color: #111;
+      color: #0f0;
+      font-family: monospace;
+      text-align: center;
+      padding: 40px;
+    }
+    #pregunta {
+      font-size: 1.8em;
+      margin-bottom: 30px;
+    }
+    .respuesta {
+      display: block;
+      padding: 15px;
+      margin: 10px auto;
+      background-color: #222;
+      border: 2px solid #0f0;
+      color: #0f0;
+      font-size: 1.2em;
+      cursor: pointer;
+      width: 60%;
+    }
+    .respuesta:hover {
+      background-color: #333;
+    }
+    .correcta {
+      background-color: green !important;
+      color: #fff !important;
+    }
+    .incorrecta {
+      background-color: #882222 !important;
+      color: #fff !important;
+    }
+    #siguiente {
+      margin-top: 30px;
+      padding: 10px 20px;
+      font-size: 1.2em;
+      background-color: #0f0;
+      color: #000;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>🌌 El Camino del Jedi</h1>
+  <div id="pregunta"></div>
+  <div id="respuestas"></div>
+  <button id="siguiente" onclick="siguiente()">Siguiente Pregunta</button>
+
+  <script>
+    const preguntas = [{'pregunta': '¿Quién fue el maestro de Obi-Wan Kenobi?', 'respuestas': ['Mace Windu', 'Yoda', 'Qui-Gon Jinn', 'Anakin Skywalker'], 'correcta': 2}, {'pregunta': '¿En qué planeta nació Luke Skywalker?', 'respuestas': ['Tatooine', 'Naboo', 'Alderaan', 'Endor'], 'correcta': 0}, {'pregunta': '¿Cómo se llama la nave de Han Solo?', 'respuestas': ['X-Wing', 'Destructor Estelar', 'Halcón Milenario', 'Nave Jedi'], 'correcta': 2}, {'pregunta': '¿Quién es el padre de Luke Skywalker?', 'respuestas': ['Obi-Wan', 'Palpatine', 'Darth Vader', 'Mace Windu'], 'correcta': 2}, {'pregunta': '¿Qué color es el sable láser de Mace Windu?', 'respuestas': ['Verde', 'Rojo', 'Azul', 'Morado'], 'correcta': 3}, {'pregunta': '¿Quién entrenó a Anakin Skywalker?', 'respuestas': ['Yoda', 'Obi-Wan Kenobi', 'Qui-Gon Jinn', 'Luke Skywalker'], 'correcta': 1}, {'pregunta': '¿Qué especie es Yoda?', 'respuestas': ['Yoda es único', 'Wookie', 'Desconocida', 'Jawa'], 'correcta': 2}, {'pregunta': '¿Cuál es el nombre del planeta sede del Senado Galáctico?', 'respuestas': ['Tatooine', 'Mustafar', 'Coruscant', 'Dagobah'], 'correcta': 2}, {'pregunta': '¿Qué droide acompaña a C-3PO?', 'respuestas': ['BB-8', 'R5-D4', 'IG-88', 'R2-D2'], 'correcta': 3}, {'pregunta': "¿Quién dice: 'Yo soy tu padre'?", 'respuestas': ['Obi-Wan', 'Darth Vader', 'Palpatine', 'Boba Fett'], 'correcta': 1}];
+    let indice = 0;
+
+    function cargarPregunta() {
+      document.getElementById("pregunta").textContent = preguntas[indice].pregunta;
+      const contenedor = document.getElementById("respuestas");
+      contenedor.innerHTML = "";
+      preguntas[indice].respuestas.forEach((r, i) => {
+        const btn = document.createElement("button");
+        btn.textContent = r;
+        btn.className = "respuesta";
+        btn.onclick = () => responder(i, btn);
+        contenedor.appendChild(btn);
+      });
+    }
+
+    function responder(i, boton) {
+      const correcta = preguntas[indice].correcta;
+      if (boton.classList.contains("correcta") || boton.classList.contains("incorrecta")) return;
+      if (i === correcta) {
+        boton.classList.add("correcta");
+      } else {
+        boton.classList.add("incorrecta");
+      }
+    }
+
+    function siguiente() {
+      if (indice < preguntas.length - 1) {
+        indice++;
+        cargarPregunta();
+      } else {
+        document.getElementById("pregunta").textContent = "¡Has completado El Camino del Jedi!";
+        document.getElementById("respuestas").innerHTML = "";
+        document.getElementById("siguiente").style.display = "none";
+      }
+    }
+
+    cargarPregunta();
+  </script>
+</body>
+</html>
