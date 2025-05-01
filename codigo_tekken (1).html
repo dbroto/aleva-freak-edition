@@ -1,0 +1,70 @@
+
+<html>
+<head>
+  <title>Código Tekken 🎮</title>
+  <meta charset="utf-8">
+  <style>
+    body {
+      background-color: #111;
+      font-family: monospace;
+      color: #0f0;
+      text-align: center;
+      padding: 40px;
+    }
+    button {
+      padding: 15px 25px;
+      font-size: 1.2em;
+      margin: 10px;
+      background-color: #222;
+      color: #0f0;
+      border: 2px solid #0f0;
+      cursor: pointer;
+    }
+    .movimiento {
+      font-size: 2em;
+      margin: 10px 0;
+      color: #ffff00;
+    }
+    .texto {
+      font-size: 1.2em;
+      color: #adff2f;
+    }
+    #secuencia {
+      margin-top: 30px;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <h1>🎮 Código Tekken</h1>
+  <p>Haz que los equipos memoricen la secuencia de 5 movimientos. ¡Solo se mostrará durante 5 segundos!</p>
+  <button onclick="generar()">🎲 Generar nueva secuencia</button>
+  <button onclick="mostrar()">👁️ Repetir secuencia</button>
+  <div id="secuencia"></div>
+
+  <script>
+    let movimientos = [{'emoji': '👊', 'texto': 'Puñetazo'}, {'emoji': '🦵', 'texto': 'Patada'}, {'emoji': '🙇', 'texto': 'Agáchate'}, {'emoji': '🛡️', 'texto': 'Bloquea'}, {'emoji': '↘️', 'texto': 'Esquiva derecha'}, {'emoji': '↙️', 'texto': 'Esquiva izquierda'}, {'emoji': '🔄', 'texto': 'Gira'}, {'emoji': '😤', 'texto': 'Grito de poder'}, {'emoji': '⏪', 'texto': 'Paso atrás'}, {'emoji': '⏩', 'texto': 'Paso adelante'}, {'emoji': '🤜', 'texto': 'Gancho derecho'}, {'emoji': '🤛', 'texto': 'Gancho izquierdo'}, {'emoji': '👣', 'texto': 'Zancadilla'}, {'emoji': '🧍', 'texto': 'Quieto'}, {'emoji': '🚶', 'texto': 'Paso lento'}, {'emoji': '🧠', 'texto': 'Concentración'}, {'emoji': '🕺', 'texto': 'Pose de victoria'}, {'emoji': '🤸', 'texto': 'Voltereta'}, {'emoji': '🤕', 'texto': 'Cabezazo'}, {'emoji': '🤚', 'texto': 'Parar'}, {'emoji': '✊', 'texto': 'Puño cerrado'}, {'emoji': '🔊', 'texto': '¡Grita tu ataque!'}];
+    let actual = [];
+
+    function generar() {
+      actual = [];
+      for (let i = 0; i < 5; i++) {
+        actual.push(movimientos[Math.floor(Math.random() * movimientos.length)]);
+      }
+      mostrar();
+    }
+
+    function mostrar() {
+      let contenedor = document.getElementById('secuencia');
+      contenedor.innerHTML = "";
+      actual.forEach(m => {
+        contenedor.innerHTML += `<div class='movimiento'>${m.emoji} <span class='texto'>${m.texto}</span></div>`;
+      });
+      contenedor.style.display = 'block';
+      setTimeout(() => {
+        contenedor.style.display = 'none';
+      }, 5000);
+    }
+  </script>
+</body>
+</html>

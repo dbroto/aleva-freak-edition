@@ -1,0 +1,70 @@
+
+<html>
+<head>
+  <title>Código Just Dance 💃</title>
+  <meta charset="utf-8">
+  <style>
+    body {
+      background-color: #111;
+      font-family: monospace;
+      color: #0f0;
+      text-align: center;
+      padding: 40px;
+    }
+    button {
+      padding: 15px 25px;
+      font-size: 1.2em;
+      margin: 10px;
+      background-color: #222;
+      color: #0f0;
+      border: 2px solid #0f0;
+      cursor: pointer;
+    }
+    .paso {
+      font-size: 2em;
+      margin: 10px 0;
+      color: #ffff00;
+    }
+    .texto {
+      font-size: 1.2em;
+      color: #adff2f;
+    }
+    #secuencia {
+      margin-top: 30px;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <h1>💃 Código Just Dance</h1>
+  <p>Memoriza la secuencia de 5 pasos. ¡Solo estará visible durante 5 segundos!</p>
+  <button onclick="generar()">🎲 Nueva secuencia</button>
+  <button onclick="mostrar()">👁️ Repetir secuencia</button>
+  <div id="secuencia"></div>
+
+  <script>
+    let pasos = [{'emoji': '👉', 'texto': 'Mano derecha arriba'}, {'emoji': '👈', 'texto': 'Mano izquierda arriba'}, {'emoji': '🙌', 'texto': 'Ambas manos al cielo'}, {'emoji': '🕴️', 'texto': 'Salta'}, {'emoji': '🔄', 'texto': 'Da una vuelta'}, {'emoji': '➡️', 'texto': 'Paso a la derecha'}, {'emoji': '⬅️', 'texto': 'Paso a la izquierda'}, {'emoji': '🍑', 'texto': 'Mueve el culo'}, {'emoji': '🤯', 'texto': 'Mueve la cabeza'}, {'emoji': '🍑💥', 'texto': 'Twerk'}, {'emoji': '👏', 'texto': 'Aplauso'}, {'emoji': '🕳️', 'texto': 'Golpea el suelo'}, {'emoji': '👣', 'texto': 'Camina hacia delante'}, {'emoji': '🔙', 'texto': 'Camina hacia atrás'}, {'emoji': '🔃', 'texto': 'DobleGiro'}, {'emoji': '➕', 'texto': 'Brazos en cruz'}, {'emoji': '🤖', 'texto': 'Estilo robot'}, {'emoji': '🌀', 'texto': 'Salto con giro'}, {'emoji': '🦵', 'texto': 'Patada Bisbal'}, {'emoji': '🎭', 'texto': 'Pose final dramática'}];
+    let actual = [];
+
+    function generar() {
+      actual = [];
+      for (let i = 0; i < 5; i++) {
+        actual.push(pasos[Math.floor(Math.random() * pasos.length)]);
+      }
+      mostrar();
+    }
+
+    function mostrar() {
+      let contenedor = document.getElementById('secuencia');
+      contenedor.innerHTML = "";
+      actual.forEach(m => {
+        contenedor.innerHTML += `<div class='paso'>${m.emoji} <span class='texto'>${m.texto}</span></div>`;
+      });
+      contenedor.style.display = 'block';
+      setTimeout(() => {
+        contenedor.style.display = 'none';
+      }, 5000);
+    }
+  </script>
+</body>
+</html>
