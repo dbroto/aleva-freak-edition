@@ -41,29 +41,17 @@
   <script>
     let posturas = [{'nombre': '🦸\u200d♂️ El Superhéroe Atascado', 'descripcion': 'Haz una pose de vuelo con un brazo al frente... pero de rodillas en el suelo, como si hubieras fallado el despegue. Grita el nombre de tu superhéroe mientras mantienes la pose.'}, 
                     {'nombre': '🐉 Despertar del Dragón', 'descripcion': 'Túmbate boca abajo, sube los brazos como alas y mueve las piernas como si intentaras volar. Cada rugido del host, debes dar un coletazo. El más sincronizado, gana.'}, 
-                    {'nombre': '👰 Novia de Hielo', 'descripcion': 'Cruza los brazos, saca el labio inferior, mira con desprecio y quédate congelado como si tu pareja llegara tarde al altar. El primero en reír, pierde.'},
-                    {'nombre': '💩 La Cagada del Ogro', 'descripcion': 'Ponte en posición de sentadilla profunda, con cara de sufrimiento. Con cada 5 segundos, haz un sonido gutural. Gana quien aguante más sin levantarse.'}, 
+                    {'nombre': '👰 Novia de Hielo', 'descripcion': 'Cruza los brazos, saca el labio inferior, mira con desprecio a tu oponente y quédate congelado como si tu pareja llegara tarde al altar. El primero en reír, pierde.'},
+                    {'nombre': '💩 La Cagada del Ogro', 'descripcion': 'Ponte en posición de sentadilla profunda, con cara de sufrimiento. Cada 5 segundos, haz un sonido gutural. Gana quien aguante más sin levantarse.'}, 
                     {'nombre': '🎤 Balada Épica', 'descripcion': 'Haz postura de micrófono con un zapato, ponte de rodillas y canta cualquier palabra como si fuese una balada de amor trágico. El host decide quién fue más intenso.'},
-                    {'nombre': '🤼 Choque de Titanes', 'descripcion': 'De espaldas entre sí, bajad lentamente en squat hasta tocar el suelo con las manos. El primero que se caiga o se ría, pierde la batalla.'}, 
-                    {'nombre': '🐸 El Jedi Saltarín', 'descripcion': 'Salta como una rana tres veces, luego quédate congelado en el aire (o lo que puedas) como si esquivaras un sable láser. Mantén la cara seria todo el tiempo.'},
-                    {'nombre': '🦑 El Kraken Desatado', 'descripcion': 'Con las manos haciendo tentáculos, muévete lentamente hacia tu oponente mientras haces sonidos de burbujas. Si el rival no se asusta o ríe, punto para él.'}, 
-                    {'nombre': '👑 Rey del Trono', 'descripcion': 'Colócate en pose de rey en su trono... pero sin silla. Sentadilla en el aire, una pierna al frente y un gesto de desprecio absoluto. El primero en temblar, abdica.'}, 
+                    {'nombre': '🤼 Choque de Titanes', 'descripcion': 'De espaldas entre vosotros, bajad lentamente en squat hasta tocar el suelo con las manos. El primero que se caiga o se ría, pierde la batalla.'}, 
+                    {'nombre': '🐸 El Jedi Saltarín', 'descripcion': 'Salta como una rana tres veces. El que llegue más lejos gana.'},
+                    {'nombre': '🦑 El Kraken Desatado', 'descripcion': 'Con las manos haciendo tentáculos, muévete lentamente hacia tu oponente mientras haces sonidos de burbujas. Si el rival se ríe, punto para ti.'}, 
+                    {'nombre': '👑 Rey del Trono', 'descripcion': 'Colócate en pose de rey en su trono... pero sin silla. Sentadilla en el aire y un gesto de desprecio absoluto. El primero en temblar, abdica.'}, 
                     {'nombre': '🧘\u200d♂️ Entrenamiento Jedi', 'descripcion': 'Colócate en una sentadilla apoyado en la pared. Extiende los brazos hacia el cielo y cierra los ojos. Que la fuerza te acompañe.'},
                     {'nombre': '🧹 Vuelo de Escoba', 'descripcion': 'El más pequeño del equipo, debe llevar a caballito al más grande. Vosotros decidís la distancia. Cuidado no se rompa la escoba.'}, 
                     {'nombre': '🕶️ Misión Imposible', 'descripcion': 'Haz equilibrio con tu pierna derecha, la izquierda en el aire y las manos en forma de pistola. Enfréntate a tu rival. El primero en tocar el suelo, pierde.'}, 
-                    {'nombre': '🎭 Orco Enamorado', 'descripcion': 'Camina como pingüino y termina con un grito de guerra épico.'},
-                    {'nombre': '🎭 Orco Enamorado', 'descripcion': 'Haz un split (o tu mejor intento) mientras gritas el nombre de tu saga favorita.'}, 
-                    {'nombre': '🎭 Beso del Balrog', 'descripcion': 'Tírate al suelo, haz el muerto durante 5 segundos, y luego resucita con una risa malvada.'}, 
-                    {'nombre': '🎭 Orco Enamorado', 'descripcion': 'Haz como que estás llorando mientras imitas un baile de TikTok.'}, 
-                    {'nombre': '🎭 Supervillano Dramático', 'descripcion': 'Coloca los brazos como alas, corre 5 pasos y quédate congelado en el aire.'}, 
-                    {'nombre': '🎭 Sith Desesperado', 'descripcion': 'Haz la estatua en posición de sentadilla con las manos en forma de corazón.'}, 
-                    {'nombre': '🎭 Dementor Disfrazado', 'descripcion': 'Adopta una posición marcial mientras haces sonidos de videojuego retro.'}, 
-                    {'nombre': '🎭 Beso del Balrog', 'descripcion': 'Haz equilibrio sobre una pierna mientras saludas como reina de desfile.'}, 
-                    {'nombre': '🎭 Sith Desesperado', 'descripcion': 'Recita una frase de película con los dientes apretados y una ceja levantada.'}, 
-                    {'nombre': '🎭 Orco Enamorado', 'descripcion': 'Imita el sonido de un droid mientras giras sobre ti mismo tres veces y terminas en pose.'}, 
-                    {'nombre': '🎭 Sith Desesperado', 'descripcion': 'Haz como que estás llorando mientras imitas un baile de TikTok.'}, 
-                    {'nombre': '🎭 Alien Elegante', 'descripcion': 'Haz equilibrio sobre una pierna mientras saludas como reina de desfile.'}, 
-                    {'nombre': '🎭 Troll del After', 'descripcion': 'Haz la estatua en posición de sentadilla con las manos en forma de corazón.'}, {'nombre': '🎭 Dementor Disfrazado', 'descripcion': 'Imita el sonido de un droid mientras giras sobre ti mismo tres veces y terminas en pose.'}, {'nombre': '🎭 Novia Ninja', 'descripcion': 'Haz un split (o tu mejor intento) mientras gritas el nombre de tu saga favorita.'}, {'nombre': '🎭 Tortuga Jedi', 'descripcion': 'Camina como pingüino y termina con un grito de guerra épico.'}, {'nombre': '🎭 Novio Nervioso', 'descripcion': 'Coloca los brazos como alas, corre 5 pasos y quédate congelado en el aire.'}, {'nombre': '🎭 Vampiro que Baila', 'descripcion': 'Adopta una posición marcial mientras haces sonidos de videojuego retro.'}, {'nombre': '🎭 Fantasma Dramático', 'descripcion': 'Recita una frase de película con los dientes apretados y una ceja levantada.'}, {'nombre': '🎭 Troll del After', 'descripcion': 'Tírate al suelo, haz el muerto durante 5 segundos, y luego resucita con una risa malvada.'}];
+                  ];
     function siguiente() {
       let p = posturas[Math.floor(Math.random() * posturas.length)];
       document.getElementById("postura-nombre").innerText = p.nombre;
