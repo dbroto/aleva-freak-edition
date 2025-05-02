@@ -71,26 +71,564 @@
 
   <script>
     const preguntas = [
-      {
-        pregunta: '¿Cuál es el precio actual de una varita oficial de Hermione Granger en Ollivanders (réplica con caja)?',
-        precio: '39,95 €'
-      },
-      {
-        pregunta: '¿Cuánto cuesta un pack de 3 pares de calcetines con dibujos de Grogu (Baby Yoda)?',
-        precio: '14,99 €'
-      },
-      {
-        pregunta: '¿Qué precio tiene un Monopoly edición especial de El Señor de los Anillos (versión española)?',
-        precio: '39,99 €'
-      },
-      {
-        pregunta: '¿Cuánto pagarías por una lámpara de mesilla con forma de Poké Ball oficial con luz LED?',
-        precio: '24,90 €'
-      },
-      {
-        pregunta: '¿Cuál es el precio de una taza de cerámica de Deadpool que cambia de color con el calor?',
-        precio: '12,50 €'
-      }
+{
+  pregunta: '¿Cuánto cuesta una entrada de 1 día para adulto en Magic Kingdom (Disney Orlando) en 2025?',
+  precio: '138,50 €'
+},
+{
+  pregunta: '¿Por cuánto compró Disney la compañía Lucasfilm (creadora de Star Wars)?',
+  precio: '3.124.000.000 €'
+},
+{
+  pregunta: '¿Cuál fue el coste total de producción de la trilogía original de El Señor de los Anillos?',
+  precio: '281.000.000 $'
+},
+{
+  pregunta: '¿Por cuánto se subastó un peluche original de Chewbacca usado en rodaje?',
+  precio: '819,00 €'
+},
+{
+  pregunta: '¿Cuánto recaudó Titanic (1997) en taquilla en todo el mundo?',
+  precio: '2.264.812.968 $'
+},
+{
+  pregunta: '¿Cuánto cuesta actualmente un set LEGO de Hogwarts completo (6020 piezas)?',
+  precio: '499,99 €'
+},
+{
+  pregunta: '¿Cuánto cuesta la edición coleccionista del videojuego God of War: Ragnarok?',
+  precio: '229,99 €'
+},
+{
+  pregunta: '¿Cuánto se pagó por la carta holográfica de Charizard más cara vendida en subasta?',
+  precio: '420.000 $'
+},
+{
+  pregunta: '¿Cuánto cuesta una figura Hot Toys de Iron Man escala 1/6 con luz LED?',
+  precio: '399,00 €'
+},
+{
+  pregunta: '¿Cuánto vale un sable láser oficial Black Series de Darth Vader (Hasbro)?',
+  precio: '329,99 €'
+},
+{
+  pregunta: '¿Qué precio tiene la edición especial del Monopoly de Stranger Things con luces?',
+  precio: '49,99 €'
+},
+{
+  pregunta: '¿Cuánto cuesta una sudadera oficial de Marvel con diseño de Capitán América?',
+  precio: '64,95 €'
+},
+{
+  pregunta: '¿Cuánto costó crear la serie The Mandalorian (temporada 1 completa)?',
+  precio: '120.000.000 $'
+},
+{
+  pregunta: '¿Qué precio tiene la varita interactiva oficial de Voldemort en Universal Studios?',
+  precio: '55,00 $'
+},
+{
+  pregunta: '¿Cuánto vale una edición Blu-ray de coleccionista de El viaje de Chihiro en caja metálica?',
+  precio: '34,95 €'
+},
+{
+  pregunta: '¿Cuánto se pagó por el primer cómic de Superman Action Comics #1 en subasta?',
+  precio: '3.200.000 $'
+},
+{
+  pregunta: '¿Cuál es el precio de un disfraz oficial de Batman con armadura nivel cosplay?',
+  precio: '229,00 €'
+},
+{
+  pregunta: '¿Cuánto cuesta una réplica funcional del Delorean a escala real (de coleccionista)?',
+  precio: '88.000,00 $'
+},
+{
+  pregunta: '¿Qué precio tiene una alfombrilla RGB de Star Wars para PC tamaño XL?',
+  precio: '29,99 €'
+},
+{
+  pregunta: '¿Cuánto cuesta una suscripción anual a Disney+ en Europa?',
+  precio: '89,90 €'
+},
+{
+  pregunta: '¿Cuánto cuesta una taza oficial de Harry Potter con el Mapa del Merodeador?',
+  precio: '14,95 €'
+},
+{
+  pregunta: '¿Qué precio tiene una lámpara de escritorio con forma del símbolo de Batman?',
+  precio: '34,90 €'
+},
+{
+  pregunta: '¿Cuánto cuesta una camiseta de Stranger Things con el logo retro en vinilo?',
+  precio: '19,99 €'
+},
+{
+  pregunta: '¿Cuánto cuesta una mochila oficial de Hogwarts con escudo bordado?',
+  precio: '44,95 €'
+},
+{
+  pregunta: '¿Cuál es el precio de un felpudo de “Bienvenidos a la Comarca”?',
+  precio: '24,99 €'
+},
+{
+  pregunta: '¿Cuánto cuesta un abridor de botellas con forma de Mjölnir (martillo de Thor)?',
+  precio: '16,50 €'
+},
+{
+  pregunta: '¿Cuánto cuesta una alfombra de baño con el logo de Umbrella Corporation (Resident Evil)?',
+  precio: '17,99 €'
+},
+{
+  pregunta: '¿Qué precio tiene un cuaderno de Death Note oficial con pluma de caligrafía?',
+  precio: '12,95 €'
+},
+{
+  pregunta: '¿Cuánto cuesta un reloj de pulsera de Pikachu edición retro Game Boy?',
+  precio: '39,90 €'
+},
+{
+  pregunta: '¿Cuánto vale una bata de casa de Star Wars con capucha de Jedi?',
+  precio: '49,99 €'
+},
+{
+  pregunta: '¿Cuál es el precio de un póster metálico de Jurassic Park edición limitada?',
+  precio: '29,95 €'
+},
+{
+  pregunta: '¿Cuánto cuesta una figura POP de Eleven (Stranger Things) con waffles?',
+  precio: '16,95 €'
+},
+{
+  pregunta: '¿Qué precio tiene un termo con forma de Poké Ball con aislamiento térmico?',
+  precio: '22,90 €'
+},
+{
+  pregunta: '¿Cuánto cuesta un soporte para mandos con forma de Groot?',
+  precio: '29,99 €'
+},
+{
+  pregunta: '¿Cuánto cuesta un set de posavasos de Los Simpson con frases míticas de Homer?',
+  precio: '13,50 €'
+},
+{
+  pregunta: '¿Cuál es el precio de una lámpara 3D con forma del logo de PlayStation?',
+  precio: '27,99 €'
+},
+{
+  pregunta: '¿Cuánto cuesta un llavero metálico del Anillo Único con inscripción élfica?',
+  precio: '8,99 €'
+},
+{
+  pregunta: '¿Cuánto cuesta un peluche de Totoro de 30 cm de alta calidad?',
+  precio: '32,95 €'
+},
+{
+  pregunta: '¿Cuál es el precio de una sudadera con el logo de Slytherin bordado?',
+  precio: '54,90 €'
+},
+{
+  pregunta: '¿Cuánto cuesta una caja de regalo de productos frikis sorpresa (tipo Loot Crate)?',
+  precio: '39,95 €'
+},
+{
+  pregunta: '¿Cuánto se pagó por la Nintendo PlayStation, el prototipo único de consola?',
+  precio: '300.000 €'
+},
+{
+  pregunta: '¿Por cuánto se vendió el disfraz original de Chewbacca de la trilogía clásica?',
+  precio: '475.000 €'
+},
+{
+  pregunta: '¿Cuál fue el precio de subasta del primer iPhone sellado en caja?',
+  precio: '55.000 €'
+},
+{
+  pregunta: '¿Cuánto pagaron por una copia sellada de Super Mario Bros para NES?',
+  precio: '1.300.000 €'
+},
+{
+  pregunta: '¿Por cuánto se subastó el hoverboard usado por Marty McFly en Regreso al Futuro 2?',
+  precio: '68.000 €'
+},
+{
+  pregunta: '¿Qué precio alcanzó el vestido blanco original de Marilyn Monroe?',
+  precio: '4.300.000 €'
+},
+{
+  pregunta: '¿Cuánto costó fabricar la espada Andúril usada en El Señor de los Anillos?',
+  precio: '8.000 €'
+},
+{
+  pregunta: '¿Por cuánto se vendió el primer número de The Walking Dead firmado por Robert Kirkman?',
+  precio: '2.400 €'
+},
+{
+  pregunta: '¿Cuánto vale una suscripción anual al club oficial de fans de Star Wars en 1980?',
+  precio: '7,50 €'
+},
+{
+  pregunta: '¿Cuánto cuesta un ordenador Commodore 64 funcional hoy día?',
+  precio: '180,00 €'
+},
+{
+  pregunta: '¿Cuánto pagaron por el sombrero original de Indiana Jones usado por Harrison Ford?',
+  precio: '520.000 €'
+},
+{
+  pregunta: '¿Por cuánto se vendió la peluca original de Leia en la trilogía clásica?',
+  precio: '9.000 €'
+},
+{
+  pregunta: '¿Cuál fue el precio de la guitarra que usó Kurt Cobain en MTV Unplugged?',
+  precio: '5.000.000 €'
+},
+{
+  pregunta: '¿Cuánto costó fabricar el traje de Iron Man Mark III original para la película?',
+  precio: '325.000 €'
+},
+{
+  pregunta: '¿Cuánto se pagó por el DeLorean original usado en las tres películas?',
+  precio: '225.000 €'
+},
+{
+  pregunta: '¿Cuánto vale un Funko Pop original de Alex DeLarge (Naranja Mecánica) con error de fábrica?',
+  precio: '13.000 €'
+},
+{
+  pregunta: '¿Por cuánto se vendió la primera edición de Harry Potter y la piedra filosofal firmada?',
+  precio: '85.000 €'
+},
+{
+  pregunta: '¿Qué precio alcanzó el sable láser de Luke Skywalker usado en El Retorno del Jedi?',
+  precio: '185.000 €'
+},
+{
+  pregunta: '¿Cuánto se pagó por el disfraz completo de Darth Vader de una convención de 1977?',
+  precio: '8.500 €'
+},
+{
+  pregunta: '¿Cuánto se vendió el anillo de compromiso de Bella en la saga Crepúsculo (versión promo)?',
+  precio: '13.200 €'
+},
+{
+  pregunta: '¿Por cuánto se vendió la colección completa de Pokémon (cartas 1ª edición, perfectas)?',
+  precio: '5.600.000 €'
+},
+{
+  pregunta: '¿Qué precio alcanzó un anillo de oro con la inscripción de El Anillo Único hecho por joyero oficial?',
+  precio: '82.000 €'
+},
+{
+  pregunta: '¿Cuánto cuesta una estatua a tamaño real de Batman con armadura y capa de tela auténtica?',
+  precio: '12.000 €'
+},
+{
+  pregunta: '¿Cuál fue el precio de una consola Atari 2600 bañada en oro de 24 quilates?',
+  precio: '33.000 €'
+},
+{
+  pregunta: '¿Cuánto se pagó por una réplica exacta del trono de hierro de Juego de Tronos en mármol blanco?',
+  precio: '175.000 €'
+},
+{
+  pregunta: '¿Cuánto cuesta una edición limitada de Monopoly hecha con tablero de oro y piezas de diamante?',
+  precio: '1.800.000 €'
+},
+{
+  pregunta: '¿Por cuánto se vendió el primer dibujo de Mickey Mouse firmado por Walt Disney?',
+  precio: '590.000 €'
+},
+{
+  pregunta: '¿Cuánto cuesta una réplica funcional del casco de Iron Man con sensores y servo motores?',
+  precio: '4.500 €'
+},
+{
+  pregunta: '¿Cuánto se pagó por la túnica Jedi original de Obi-Wan Kenobi (Alec Guinness)?',
+  precio: '92.000 €'
+},
+{
+  pregunta: '¿Qué precio alcanzó la primera edición en cómic de Spider-Man (Amazing Fantasy #15)?',
+  precio: '3.000.000 €'
+},
+{
+  pregunta: '¿Cuánto cuesta una bicicleta con temática de Star Wars diseñada por una marca de lujo?',
+  precio: '15.700 €'
+},
+{
+  pregunta: '¿Cuánto se pagó por el escudo original de Capitán América usado por Chris Evans?',
+  precio: '240.000 €'
+},
+{
+  pregunta: '¿Cuál es el precio estimado de una réplica exacta del Batmóvil (modelo 1989) completamente funcional?',
+  precio: '1.200.000 €'
+},
+{
+  pregunta: '¿Cuánto cuesta una figura de acción de Star Wars (Boba Fett) de prueba con cohete lanzable?',
+  precio: '142.000 €'
+},
+{
+  pregunta: '¿Cuánto pagaron por el cartel original de la película Metropolis (1927)?',
+  precio: '950.000 €'
+},
+{
+  pregunta: '¿Qué precio alcanzó el vestuario completo de Superman usado por Christopher Reeve?',
+  precio: '280.000 €'
+},
+{
+  pregunta: '¿Por cuánto se vendió una réplica oficial del escudo de Hylian de The Legend of Zelda, chapado en plata?',
+  precio: '2.700 €'
+},
+{
+  pregunta: '¿Cuánto cuesta un ajedrez de lujo de Marvel hecho en oro blanco y zafiros?',
+  precio: '120.000 €'
+},
+{
+  pregunta: '¿Cuál es el precio de una edición de lujo del libro El Hobbit encuadernada en piel de dragón (única)?',
+  precio: '60.000 €'
+},
+{
+  pregunta: '¿Cuánto cuesta un reloj de edición limitada de Star Wars con mecanismo suizo y diamantes?',
+  precio: '38.000 €'
+},
+{
+  pregunta: '¿Cuánto cuesta un retrete dorado de lujo funcional fabricado en oro macizo?',
+  precio: '5.000.000 €'
+},
+{
+  pregunta: '¿Qué precio tiene una caja de aire puro de los Alpes suizos embotellado?',
+  precio: '180,00 €'
+},
+{
+  pregunta: '¿Cuánto cuesta un paquete de cereales edición limitada de Pikachu de 2001 sin abrir?',
+  precio: '120,00 €'
+},
+{
+  pregunta: '¿Cuánto pagó alguien por un sándwich mordido por Justin Timberlake subastado en eBay?',
+  precio: '1.000,00 €'
+},
+{
+  pregunta: '¿Cuánto cuesta un disfraz de unicornio inflable con luces LED y música integrada?',
+  precio: '59,99 €'
+},
+{
+  pregunta: '¿Cuánto se vendió una tostadora que “imprime” la cara de Darth Vader en el pan?',
+  precio: '39,90 €'
+},
+{
+  pregunta: '¿Cuál es el precio de una figura de acción de Nicolas Cage con cara intercambiable?',
+  precio: '49,99 €'
+},
+{
+  pregunta: '¿Cuánto cuesta una pizza congelada con forma de Poké Ball (edición fan-made)?',
+  precio: '17,95 €'
+},
+{
+  pregunta: '¿Qué precio tiene un papel higiénico con cómics impresos de Deadpool?',
+  precio: '12,00 €'
+},
+{
+  pregunta: '¿Cuánto cuesta un calendario de adviento con miniaturas de monstruos clásicos de Universal?',
+  precio: '45,00 €'
+},
+{
+  pregunta: '¿Cuánto se pagó por un Dorito que parecía el sombrero de un personaje de Among Us?',
+  precio: '13.000,00 €'
+},
+{
+  pregunta: '¿Qué precio tiene un teclado para gamers con teclas que huelen a pizza?',
+  precio: '79,99 €'
+},
+{
+  pregunta: '¿Cuánto cuesta un colgante con forma de Baby Yoda hecho de gelatina comestible?',
+  precio: '6,50 €'
+},
+{
+  pregunta: '¿Cuánto se vendió una camiseta que dice “He sobrevivido al último capítulo de Game of Thrones”?',
+  precio: '21,00 €'
+},
+{
+  pregunta: '¿Cuánto vale una figura de acción de Shrek hecha a mano con ojos móviles y pelo real?',
+  precio: '89,00 €'
+},
+{
+  pregunta: '¿Cuánto cuesta un cojín antiestrés con la cara de Nicolas Cage por los dos lados?',
+  precio: '22,95 €'
+},
+{
+  pregunta: '¿Qué precio tiene una alfombrilla de baño con la forma de Gollum diciendo “mi tesoro”?',
+  precio: '27,90 €'
+},
+{
+  pregunta: '¿Cuánto cuesta una escultura de salchicha de Star Wars con forma de AT-AT?',
+  precio: '110,00 €'
+},
+{
+  pregunta: '¿Cuánto pagaron por un frasco con el “aire” del concierto de Taylor Swift?',
+  precio: '95,00 €'
+},
+{
+  pregunta: '¿Qué precio tiene una tostadora de unicornio que lanza confeti al tostar el pan?',
+  precio: '69,00 €'
+},
+{
+  pregunta: '¿Cuánto se vendió un Dorito que parecía el sombrero de un personaje de Among Us?',
+  precio: '13.000,00 €'
+},
+{
+  pregunta: '¿Qué precio alcanzó un nugget de pollo con forma de personaje de videojuego?',
+  precio: '87.000,00 €'
+},
+{
+  pregunta: '¿Cuánto pagaron por un copo de maíz que se parecía a E.T. en eBay?',
+  precio: '570,00 €'
+},
+{
+  pregunta: '¿Cuánto cuesta una cuna para gallinas hecha a medida con sábanas de algodón?',
+  precio: '175,00 €'
+},
+{
+  pregunta: '¿Cuánto se pagó por un sandwich de queso con la imagen de la Virgen María?',
+  precio: '23.000,00 €'
+},
+{
+  pregunta: '¿Cuánto se vendió una lata de aire “de Islandia” recolectado en el campo?',
+  precio: '45,00 €'
+},
+{
+  pregunta: '¿Qué precio tiene un bloque de hielo transparente traído del Ártico?',
+  precio: '320,00 €'
+},
+{
+  pregunta: '¿Cuánto cuesta una escoba “mágica” sin función real más allá del diseño vintage?',
+  precio: '89,00 €'
+},
+{
+  pregunta: '¿Cuánto pagaron por un tarro con lágrimas de influencers (parodia real)?',
+  precio: '19,99 €'
+},
+{
+  pregunta: '¿Qué precio tiene una tostadora inteligente que tuesta selfies en el pan?',
+  precio: '74,90 €'
+},
+{
+  pregunta: '¿Cuánto cuesta una piedra para compañía con certificado y caja de regalo?',
+  precio: '16,95 €'
+},
+{
+  pregunta: '¿Qué precio alcanzó un mechón de pelo de Elvis Presley en subasta?',
+  precio: '14.000,00 €'
+},
+{
+  pregunta: '¿Cuánto cuesta una vela con olor a libro nuevo?',
+  precio: '29,99 €'
+},
+{
+  pregunta: '¿Cuánto pagaron por una botella con agua bendita de la pila del Vaticano (supuestamente)?',
+  precio: '112,00 €'
+},
+{
+  pregunta: '¿Qué precio tiene una lata con sonido de aplausos grabado en vivo?',
+  precio: '22,50 €'
+},
+{
+  pregunta: '¿Cuánto se pagó por un bolígrafo usado por Barack Obama para firmar una ley?',
+  precio: '46.000,00 €'
+},
+{
+  pregunta: '¿Qué precio alcanzó una tostadora firmada por Lady Gaga en una subasta benéfica?',
+  precio: '3.000,00 €'
+},
+{
+  pregunta: '¿Cuánto cuesta una escultura realista de un dedo gigante hecha de silicona?',
+  precio: '670,00 €'
+},
+{
+  pregunta: '¿Cuánto se vendió una zapatilla lanzada por Bad Bunny en un concierto?',
+  precio: '3.900,00 €'
+},
+{
+  pregunta: '¿Cuánto pagaron por un pedazo de pastel de la boda real de Carlos y Diana en 1981?',
+  precio: '1.850,00 €'
+},
+{
+  pregunta: '¿Qué precio alcanzó una camiseta sudada por Mick Jagger en un concierto?',
+  precio: '2.100,00 €'
+},
+{
+  pregunta: '¿Cuánto se vendió una tarjeta de Navidad firmada por Hitler?',
+  precio: '3.200,00 €'
+},
+{
+  pregunta: '¿Cuánto cuesta una lata de sopa Campbell firmada por Andy Warhol?',
+  precio: '17.000,00 €'
+},
+{
+  pregunta: '¿Cuánto se pagó por un chicle mascado por Britney Spears?',
+  precio: '11.500,00 €'
+},
+{
+  pregunta: '¿Qué precio tiene una almohada con la cara de Nicolas Cage que cambia con la luz?',
+  precio: '24,99 €'
+},
+{
+  pregunta: '¿Cuánto cuesta una tostadora que imprime el logo de Bitcoin en el pan?',
+  precio: '79,00 €'
+},
+{
+  pregunta: '¿Cuánto pagaron por una escultura de plátano pegado con cinta a una pared?',
+  precio: '108.000,00 €'
+},
+{
+  pregunta: '¿Qué precio tiene una bañera portátil con ruedas para exteriores?',
+  precio: '489,00 €'
+},
+{
+  pregunta: '¿Cuánto cuesta una pizza con hojuelas de oro servida en Nueva York?',
+  precio: '1.800,00 €'
+},
+{
+  pregunta: '¿Cuánto se pagó por una piedra que se parecía al personaje Pikachu?',
+  precio: '720,00 €'
+},
+{
+  pregunta: '¿Cuánto vale un sofá con forma de zapato de tacón rojo de 2 metros?',
+  precio: '1.050,00 €'
+},
+{
+  pregunta: '¿Qué precio alcanzó un paraguas roto firmado por John Lennon?',
+  precio: '13.000,00 €'
+},
+{
+  pregunta: '¿Cuánto cuesta un microondas con pantalla LED que reproduce memes?',
+  precio: '159,00 €'
+},
+{
+  pregunta: '¿Cuánto se vendió una bolsa de aire supuestamente capturada en un concierto de BTS?',
+  precio: '75,00 €'
+},
+{
+  pregunta: '¿Cuánto pagaron por una piedra con forma de nugget de McDonald’s en forma de coche?',
+  precio: '1.950,00 €'
+},
+{
+  pregunta: '¿Cuánto cuesta un espejo con bordes que reproducen sonidos de naturaleza al mirarse?',
+  precio: '89,99 €'
+},
+{
+  pregunta: '¿Qué precio tiene una pluma de avestruz incrustada en metacrilato decorativo?',
+  precio: '119,00 €'
+},
+{
+  pregunta: '¿Cuánto se pagó por un mechón de pelo de Napoleón Bonaparte?',
+  precio: '12.500,00 €'
+},
+{
+  pregunta: '¿Cuánto cuesta una escultura de un dedo corazón flotante hecha con imanes?',
+  precio: '315,00 €'
+}
+
+      
     ];
 
     let currentIndex = 0;
