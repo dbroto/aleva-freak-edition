@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>🎤 Karao... ¿Qué?</title>
+  <title>🎤 Karao... ¿Qué? 🎤</title>
   <style>
     body {
       background-color: #111;
@@ -37,11 +37,11 @@
   </style>
 </head>
 <body>
-  <h1>🎤 Karao... ¿Qué?</h1>
+  <h1>🎤 Karao... ¿Qué? 🎤</h1>
   <div id="fraseParcial">Pulsa "Siguiente canción" para empezar</div>
   <div>
     <button onclick="siguienteFrase()">🎵 Siguiente canción</button>
-    <button onclick="pararFrase()">⏸️ Parar y ocultar</button>
+    <button id="botonPausa" onclick="togglePausa()">⏸️ Parar y ocultar</button>
     <button onclick="mostrarCompleta()">🎯 Mostrar completa</button>
   </div>
   <div id="info"></div>
@@ -49,16 +49,18 @@
   <script>
     const frases = [
       {
-        texto: "Me falta el aliento, me sobran los miedos, me muero por dentro.",
-        cancion: "Por la Raja de Tu Falda",
-        artista: "Estopa",
-        año: 1999
+        texto: "Fijate un objetivo distinto, 
+                que soy como un vino tinto, 
+                que si me tomas en frío engaño, 
+                y con los años me hago más listo, cariño",
+        cancion: "Vino Tinto",
+        artista: "Estopa"
       },
       {
         texto: "Cuando tú vas, yo vengo de allí, cuando yo voy, tú todavía estás aquí.",
         cancion: "Cuando Tú Vas",
-        artista: "Chenoa",
-        año: 2001
+        artista: "Estopa"
+      
       }
     ];
 
@@ -66,28 +68,32 @@
     let palabras = [];
     let mostradas = new Set();
     let intervalo;
+    let enPausa = false;
 
     function siguienteFrase() {
       clearInterval(intervalo);
-      const nueva = Math.floor(Math.random() * frases.length);
-      indiceActual = nueva;
+      enPausa = false;
+      document.getElementById('botonPausa').textContent = "⏸️ Parar y ocultar";
+      indiceActual = Math.floor(Math.random() * frases.length);
       palabras = frases[indiceActual].texto.split(' ');
       mostradas = new Set();
       mostrarFrase();
       document.getElementById('info').textContent = '';
 
-      intervalo = setInterval(() => {
-        if (mostradas.size >= palabras.length) {
-          clearInterval(intervalo);
-          return;
-        }
-        let i;
-        do {
-          i = Math.floor(Math.random() * palabras.length);
-        } while (mostradas.has(i));
-        mostradas.add(i);
-        mostrarFrase();
-      }, 500);
+      intervalo = setInterval(revelarPalabra, 1000);
+    }
+
+    function revelarPalabra() {
+      if (mostradas.size >= palabras.length) {
+        clearInterval(intervalo);
+        return;
+      }
+      let i;
+      do {
+        i = Math.floor(Math.random() * palabras.length);
+      } while (mostradas.has(i));
+      mostradas.add(i);
+      mostrarFrase();
     }
 
     function mostrarFrase() {
@@ -100,17 +106,26 @@
     function mostrarCompleta() {
       if (indiceActual === -1) return;
       clearInterval(intervalo);
+      enPausa = false;
+      document.getElementById('botonPausa').textContent = "⏸️ Parar y ocultar";
       document.getElementById('fraseParcial').textContent = frases[indiceActual].texto;
       const f = frases[indiceActual];
-      document.getElementById('info').textContent = `🎶 "${f.cancion}" - ${f.artista} (${f.año})`;
+      document.getElementById('info').textContent = `🎶 "${f.cancion}" - ${f.artista}`;
     }
 
-    function pararFrase() {
-      clearInterval(intervalo);
-      if (palabras.length > 0) {
-        const oculta = palabras.map(() => "_____").join(' ');
-        document.getElementById('fraseParcial').textContent = oculta;
-        document.getElementById('info').textContent = '';
+    function togglePausa() {
+      if (indiceActual === -1) return;
+
+      if (!enPausa) {
+        clearInterval(intervalo);
+        document.getElementById('fraseParcial').textContent = palabras.map(() => "_____").join(' ');
+        document.getElementById('botonPausa').textContent = "▶️ Reanudar";
+        enPausa = true;
+      } else {
+        document.getElementById('botonPausa').textContent = "⏸️ Parar y ocultar";
+        mostrarFrase();
+        intervalo = setInterval(revelarPalabra, 1000);
+        enPausa = false;
       }
     }
   </script>
