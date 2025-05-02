@@ -165,6 +165,7 @@ let frases = [
   'Araña glam',
   'Orco con tutú'
   ]
+function siguiente()   {    
     document.getElementById('trab').innerText = frases[Math.floor(Math.random()*frases.length)];
     stopTimer(); document.getElementById('timer').innerText = "00:00.0";
 }
