@@ -1,0 +1,144 @@
+<html>
+<head>
+  <title>👨🏻‍🎨 Draw of Duty - Aleva Warfare 👨🏻‍🎨</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      background-color: #111;
+      font-family: monospace;
+      text-align: center;
+      padding: 40px;
+    }
+    button {
+      padding: 15px 30px;
+      font-size: 1.4em;
+      margin-bottom: 20px;
+      background-color: #333;
+      color: #0f0;
+      border: 2px solid #0f0;
+      cursor: pointer;
+    }
+    h2 {
+      font-size: 2em;
+      color: #ffff00;
+      margin-top: 20px;
+    }
+   
+  </style>
+</head>
+<body>
+  <h1 style="color:#0ff;">👨🏻‍🎨 Draw of Duty - Aleva Warfare 👨🏻‍🎨</h1>
+  <button onclick="siguiente()">🎲 Nueva Palabra</button>
+  <h2 id="dib"></h2>
+  <script>
+    let dibujo = [
+  'Gollum de despedida de soltero',
+  'Darth Vader lanzando el ramo',
+  'Frodo olvidó los anillos',
+  'Thanos como cura en una boda',
+  'Elsa se casa con Jack Skellington',
+  'El novio es un T-Rex',
+  'Yoda vestido de dama de honor',
+  'La novia lleva capa de Batman',
+  'Deadpool tirando arroz',
+  'Hulk llorando en la boda',
+  'Harry Potter lanza el ramo con la varita',
+  'Spider-Man con liga de novia',
+  'Mario Bros persigue la tarta',
+  'La novia dice "yo no" y aparece Voldemort',
+  'Sauron oficiante de boda',
+  'Chewbacca como dama de honor',
+  'El novio llega montado en un chocobo',
+  'La novia vuela en Nimbus 2000',
+  'Gandalf impide el beso: "¡No puedes pasar!"',
+  'Stormtroopers como padrinos',
+  'Shrek y Fiona renovando votos',
+  'Dr. Strange hace un portal a Las Vegas',
+  'Thanos chasquea y se acaba el banquete',
+  'C-3PO organiza la ceremonia',
+  'Darth Maul corta la tarta con el sable',
+  'Dobby es el DJ',
+  'Sonic corre con las alianzas',
+  'La novia entra con la música de Skyrim',
+  'Kratos llora en el discurso',
+  'Un orco vestido de novia',
+  'Iron Man se emborracha en el brindis',
+  'Groot lanza pétalos',
+  'Doreaemon y Yoda se casan',
+  'El novio es el Mandaloriano',
+  'Baby Yoda atrapa el ramo con la Fuerza',
+  'Jabba el Hutt bailando en la pista',
+  'Link y Zelda olvidan los votos',
+  'Pikachu vestido de padrino',
+  'Venom se come la tarta',
+  'Bowser secuestra al oficiante',
+  'Ewoks haciendo la conga',
+  'El novio llega en un AT-AT',
+  'Batman pierde el anillo en la Baticueva',
+  'Wolverine plancha el traje con las garras',
+  'Ash y Misty en una boda Pokémon',
+  'La tarta tiene forma de Estrella de la Muerte',
+  'Neo esquiva el arroz a cámara lenta',
+  'La novia sube al altar con un mech Gundam',
+  'Rick y Morty ofician la boda',
+  'Buzz Lightyear lanza los pétalos',
+  'Baymax canta la marcha nupcial',
+  'El Doctor Who interrumpe la ceremonia',
+  'Los Gremlins organizan la despedida',
+  'Luna Lovegood lanza conjuros en la recepción',
+  'El novio tiene un sable láser y la novia una escoba',
+  'R2D2 lleva los anillos',
+  'Godzilla como maestro de ceremonias',
+  'La novia se transforma en Sailor Moon',
+  'Un dementor ataca el cóctel',
+  'Loki finge ser el oficiante',
+  'Una elfa canta el "Ave María"',
+  'La novia lanza el ramo... ¡y explota!',
+  'Magneto y Mystique bailan el vals',
+  'Tyrion da el discurso del padrino',
+  'La novia vuela con un DeLorean',
+  'Jon Nieve se olvida del anillo',
+  'Master Chief vestido de esmoquin',
+  'La novia se cae al intentar hacer un kamehameha',
+  'Los Power Rangers en la mesa de niños',
+  'Rocket Raccoon lanza fuegos artificiales',
+  'El Joker hace de payaso en la animación infantil',
+  'Luna de miel en Mordor',
+  'La novia en vestido de Sailor Moon y el novio como Darth Maul',
+  'Batman y el Joker se casan',
+  'Ash lanza una Pokéball con los anillos',
+  'Wario interrumpe el brindis',
+  'La tarta es una réplica del Trono de Hierro',
+  'Los invitados tienen varitas',
+  'La novia tiene cola de sirena',
+  'Pumba y Timón cantan en la ceremonia',
+  'Sherlock Holmes investiga un anillo perdido',
+  'El novio va vestido de Luigi y la novia de Peach',
+  'El sombrerero loco sirve los canapés',
+  'Freddy Krueger entrega el ramo',
+  'Los invitados son todos clones de Obi-Wan',
+  'Bayonetta en la mesa presidencial',
+  'Thor pierde el martillo entre los regalos',
+  'La boda es en el castillo de Bowser',
+  'Crash Bandicoot lanza confeti',
+  'Los 7 enanitos son los camareros',
+  'La novia huye en una Nimbus 2000',
+  'Thanos regala guantes como recuerdo',
+  'Kirby se come los canapés',
+  'Sonic lanza los fuegos artificiales',
+  'Yoshi lleva los anillos montado',
+  'Mario y Luigi como camareros',
+  'El novio se viste de Pikachu',
+  'Godric Gryffindor bendice la unión',
+  'El DeLorean se lleva a los novios',
+  'Bowser se ofende por no ser invitado',
+  'La novia llega en el Halcón Milenario',
+  'Ragnarok como canción de entrada'
+]
+;
+    function siguiente() {
+       document.getElementById('dib').innerText = dibujo[Math.floor(Math.random()*dibujo.length)];
+    }
+  </script>
+</body>
+</html>
