@@ -1,5 +1,5 @@
 const peliculas = [
-[
+
   { titulo: "Thriller - Michael Jackson", emojis: ["🧟", "🌕", "💃", "🧛", "🎶"] },
   { titulo: "Let It Go - Idina Menzel (Frozen)", emojis: ["❄️", "👗", "🏔️", "💨", "🎤"] },
   { titulo: "Smells Like Teen Spirit - Nirvana", emojis: ["🧼", "👃", "🎸", "🎤", "😎"] },
@@ -69,7 +69,7 @@ const peliculas = [
   { titulo: "My Heart Will Go On - Celine Dion", emojis: ["🚢", "💔", "🌊", "🎻", "🌌"] },
   { titulo: "Eye of the Tiger - Survivor", emojis: ["🐅", "👁️", "🥊", "🏃‍♂️", "💪"] },
   { titulo: "Like a Virgin - Madonna", emojis: ["👰", "💘", "😳", "🎤", "💄"] }
-]
+
   
   
 ];
