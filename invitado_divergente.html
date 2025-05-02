@@ -1,0 +1,172 @@
+  <!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>👰🏻‍♂️ El invitado divergente 🤖</title>
+  <style>
+    body {
+      background-color: #111;
+      color: #eee;
+      font-family: 'Courier New', monospace;
+      text-align: center;
+      padding: 30px;
+    }
+    h1 {
+      color: #ffcc00;
+    }
+    #escena {
+      font-size: 1.5em;
+      margin: 30px 0;
+      min-height: 4em;
+    }
+    button {
+      font-size: 1em;
+      padding: 10px 20px;
+      margin: 10px;
+      background-color: #222;
+      color: #ffcc00;
+      border: 2px solid #ffcc00;
+      cursor: pointer;
+    }
+    #temporizador {
+      font-size: 2em;
+      color: #44ff44;
+      margin: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>👰🏻‍♂️ El invitado divergente 🤖</h1>
+  <div id="escena">👰🏻‍♂️ Pulsa para una nueva escena de boda</div>
+  <button onclick="nuevaEscena()">🎲 Siguiente escena</button>
+  <button onclick="iniciarTemporizador()">⏱️ Empezar 45s</button>
+  <div id="temporizador">45</div>
+
+  <script>
+    const escenas = [
+       "El novio intenta bailar breakdance... y se cae de espaldas",
+  "Una pareja intenta hacerse una selfie... y no cabe en el encuadre",
+  "El pastel tiene una vela que no se apaga",
+  "Alguien se pone la chaqueta al revés y no se da cuenta",
+  "Un invitado intenta sacar fotos... pero el flash no para de sonar",
+  "Alguien lanza arroz a los novios... ¡y se le va el paquete entero!",
+  "Dos personas se saludan... y hacen un saludo muy largo e incómodo",
+  "Una novia muy hambrienta que devora la tarta antes del corte oficial",
+  "El padrino se le cae el anillo justo antes de entregarlo",
+  "La pareja intenta hacer un paso de vals... y se enredan",
+  "Un invitado que intenta flirtear torpemente con la prima lejana",
+  "El novio se da cuenta de que olvidó los votos y los inventa sobre la marcha",
+  "Un niño pequeño interrumpe la ceremonia con un berrinche",
+  "Alguien baila tan fuerte que se le salen los zapatos",
+  "Una novia que llega tarde y entra corriendo a la iglesia",
+  "El coche nupcial se avería y hay que empujarlo entre todos",
+  "Alguien intenta beber de la copa equivocada... y lo disimula",
+  "La abuela intenta usar el móvil... ¡y hace una videollamada sin querer!",
+  "Un invitado se pone la servilleta como si fuera una capa de superhéroe",
+  "Una persona llora tanto que se le corre todo el maquillaje",
+    "El novio intenta ponerse el pantalón y se cae",
+  "La novia se mira al espejo y se desmaya de emoción",
+  "Dos personas brindan... y chocan las copas demasiado fuerte",
+  "El camarero derrama la bandeja en plena boda",
+  "Una pareja baila muy pegados... y se pisan",
+  "El cura se duerme en mitad de la ceremonia",
+  "La novia lanza el ramo... ¡y golpea a alguien sin querer!",
+  "Una abuela emocionada que no para de llorar",
+  "El novio se emociona y se limpia los mocos con la corbata",
+  "El DJ que no encuentra la canción adecuada",
+  "El niño de los anillos se distrae y se va por otro camino",
+  "Una pareja intenta hacer un TikTok romántico... y se les cae el móvil",
+  "Alguien abre una botella de champán... ¡y le da al techo!",
+  "El padre del novio dando un discurso eterno",
+  "Una persona con tacones se resbala en la pista de baile",
+  "La pareja se va en moto... ¡y uno se cae antes de arrancar!",
+  "El fotógrafo da órdenes ridículas para posar",
+  "Una persona se confunde y besa a la suegra",
+  "El pastel de boda se cae justo antes de cortarlo",
+  "El perro de los novios se lleva el ramo corriendo",
+    "El padrino tratando de atarse la corbata con ayuda de Google",
+  "La novia haciendo un hechizo para que no llueva el día de la boda",
+  "Un zombi romántico intentando dar el ramo",
+  "El novio bailando como si estuviera en Just Dance versión ABBA",
+  "Un invitado recreando el grito de Chewbacca durante los brindis",
+  "La pareja entrando al banquete como si fuera una pasarela de moda",
+  "La suegra intentando controlar con la mirada al DJ",
+  "El novio emocionado abriendo el regalo y descubriendo que es una tostadora",
+  "Una pelea de espadas entre dos invitados por el último trozo de tarta",
+  "Un Minion intentando dar el discurso de boda",
+  "Alguien intentando sacar una foto épica pero se le cae el móvil",
+  "El anillo cayendo al suelo y todos buscándolo como en El Señor de los Anillos",
+  "Una pelea silenciosa por el ventilador en la pista de baile",
+  "El primo friki que viene disfrazado de Goku al banquete",
+  "Un alien confundido que se cuela en la boda",
+  "La pareja haciéndose un selfie como si fuera portada de cómic",
+  "Una novia ninja lanzando pétalos con shurikens",
+  "El novio haciendo la entrada a lo John Wick (pero sin violencia)",
+  "Un Stormtrooper bailando reguetón sin quitarse el casco",
+  "Una versión dramática de Romeo y Julieta... con pastel de boda incluido",
+    "Una pelea épica por el último canapé",
+  "El novio escapando porque no encuentra los votos",
+  "La novia lanzando hechizos como Hermione para evitar el drama familiar",
+  "Un orco colándose en la ceremonia gritando '¡Mi tesoro!'",
+  "La pareja ensayando el primer baile... y pisándose todo el tiempo",
+  "El amigo friki haciendo cosplay de Legolas en la boda",
+  "La madrina cantando ‘Let it go’ mientras lanza pétalos",
+  "Un Ewok bailando la conga con los invitados",
+  "La tarta de boda cayendo lentamente y todos gritando",
+  "El novio intentando usar la Fuerza para abrir una botella",
+  "La novia entrando al banquete como Daenerys con dragones imaginarios",
+  "Un invitado haciendo breakdance con traje de Batman",
+  "El cura haciendo una referencia a Star Wars en los votos",
+  "Alguien buscando desesperado el baño durante el banquete",
+  "El DJ imitando a Freddy Mercury mientras pincha música",
+  "La pareja entrando en la boda como si fuera un ring de lucha libre",
+  "Un Jedi confundiendo el sable láser con el micro del karaoke",
+  "El niño de los anillos tropezando como si llevara un anillo maldito",
+  "El novio lanzando un kamehameha de amor",
+  "Alguien intentando hacer una entrada épica... y cayendo en la piscina",
+    "El novio intentando quitarse el liguero con los dientes",
+  "La novia huyendo porque ha visto a su ex en la boda",
+  "Alguien intentando esconder el anillo porque lo ha perdido",
+  "El padrino haciendo un brindis… demasiado largo y borracho",
+  "La suegra opinando sobre TODO en la boda",
+  "Alguien lanzando el ramo… y dándole a la abuela en la cara",
+  "El DJ poniendo reguetón en medio del vals",
+  "Un Stormtrooper bailando con la novia",
+  "La pareja recreando el beso de Spiderman al revés",
+  "Gollum encontrando el anillo en el pastel de boda",
+  "Alguien usando la espada láser como cuchillo de tarta",
+  "Un invitado intentando ligar con todos los solteros",
+  "La novia transformándose en Hulk al ver llegar tarde al novio",
+  "Alguien borracho imitando a Darth Vader en el discurso",
+  "El novio intentando esconder los calzoncillos de Pikachu",
+  "Una pelea de baile entre los elfos y los Jedi",
+  "Alguien intentando pasar desapercibido... disfrazado de dinosaurio",
+  "El fotógrafo haciendo posturas imposibles para sacar la mejor foto",
+  "La novia lanzando una Pokébola para atrapar al novio",
+  "El novio intentando ponerse la capa de Doctor Strange"
+
+    ];
+
+    function nuevaEscena() {
+      const escena = escenas[Math.floor(Math.random() * escenas.length)];
+      document.getElementById('escena').textContent = escena;
+    }
+
+    let tiempo = 45;
+    let intervalo;
+
+    function iniciarTemporizador() {
+      clearInterval(intervalo);
+      tiempo = 45;
+      document.getElementById('temporizador').textContent = tiempo;
+      intervalo = setInterval(() => {
+        tiempo--;
+        document.getElementById('temporizador').textContent = tiempo;
+        if (tiempo === 0) {
+          clearInterval(intervalo);
+        }
+      }, 1000);
+    }
+  </script>
+</body>
+</html>
