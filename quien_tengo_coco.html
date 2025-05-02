@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>🥥 ¿Quién tengo en el coco? 🥥</title>
+  <style>
+    body {
+      background-color: #111;
+      color: #eee;
+      font-family: 'Courier New', monospace;
+      text-align: center;
+      padding: 30px;
+    }
+    h1 {
+      color: #ffcc00;
+    }
+    #palabra {
+      font-size: 2em;
+      margin: 20px 0;
+      min-height: 2em;
+    }
+    #botones button {
+      font-size: 1em;
+      margin: 10px;
+      padding: 10px 20px;
+      background-color: #222;
+      border: 2px solid #ffcc00;
+      color: #ffcc00;
+      cursor: pointer;
+    }
+    #temporizador, #puntos {
+      font-size: 1.5em;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>🥥 ¿Quién tengo en el coco? 🥥</h1>
+  <div id="palabra">Presiona "Comenzar" para jugar</div>
+
+  <div id="botones">
+    <button onclick="iniciarJuego()">▶️ Comenzar</button>
+    <button onclick="acierto()">✅ Acierto</button>
+    <button onclick="pasar()">⏭️ Pasar</button>
+  </div>
+
+  <div id="temporizador">⏱️ Tiempo: 45</div>
+  <div id="puntos">Puntos: 0</div>
+
+  <script>
+    const palabras = [
+"Darth Vader || Star Wars",
+  "Frodo Bolsón || El Señor de los Anillos",
+  "Hermione Granger || Harry Potter",
+  "Iron Man || Marvel",
+  "Gollum || El Señor de los Anillos",
+  "Jack Sparrow || Piratas del Caribe",
+  "Elsa || Frozen",
+  "Batman || DC Comics",
+  "Yoda || Star Wars",
+  "Homer Simpson || Los Simpson",
+  "Simba || El Rey León",
+  "Shrek || Shrek",
+  "Buzz Lightyear || Toy Story",
+  "Indiana Jones || En busca del arca perdida",
+  "Luna Lovegood || Harry Potter",
+  "Thanos || Marvel",
+  "Marty McFly || Regreso al Futuro",
+  "Dobby || Harry Potter",
+  "Spock || Star Trek",
+  "Merlín || La espada en la piedra",
+   "Walter White || Breaking Bad",
+  "Daenerys Targaryen || Juego de Tronos",
+  "Rick Grimes || The Walking Dead",
+  "Wednesday Addams || La familia Addams",
+  "Loki || Marvel",
+  "Peter Parker || Spider-Man",
+  "Katniss Everdeen || Los Juegos del Hambre",
+  "Neo || Matrix",
+  "Wanda Maximoff || Marvel",
+  "Gandalf || El Señor de los Anillos",
+  "Harley Quinn || DC Comics",
+  "The Mandalorian || The Mandalorian",
+  "Eleven || Stranger Things",
+  "Barney Stinson || How I Met Your Mother",
+  "Sheldon Cooper || The Big Bang Theory",
+  "Gru || Mi Villano Favorito",
+  "Megamente || Megamente",
+  "Jack Skellington || Pesadilla antes de Navidad",
+  "Deadpool || Marvel",
+  "Pikachu || Pokémon",
+  "Ash Ketchum || Pokémon",
+  "Mario || Super Mario Bros",
+  "Luigi || Super Mario Bros",
+  "Donkey Kong || Donkey Kong",
+  "Princess Peach || Super Mario Bros",
+  "Lara Croft || Tomb Raider",
+  "Kratos || God of War",
+  "Joel || The Last of Us",
+  "Ellie || The Last of Us",
+  "Link || The Legend of Zelda",
+  "Zelda || The Legend of Zelda",
+  "Sonic || Sonic the Hedgehog",
+  "Baymax || Big Hero 6",
+  "Buzz Lightyear || Toy Story",
+  "Woody || Toy Story",
+  "Elsa || Frozen",
+  "Anna || Frozen",
+  "Olaf || Frozen",
+  "Ariel || La Sirenita",
+  "Sebastián || La Sirenita",
+  "Simba || El Rey León",
+  "Timon y Pumba || El Rey León",
+  "Scar || El Rey León",
+  "Mufasa || El Rey León",
+  "Rapunzel || Enredados",
+  "Flynn Rider || Enredados",
+  "Pascal || Enredados",
+  "Maléfica || La Bella Durmiente",
+  "Aurora || La Bella Durmiente",
+  "Bella || La Bella y la Bestia",
+  "Bestia || La Bella y la Bestia",
+  "Aladdín || Aladdín",
+  "Genio || Aladdín",
+  "Jafar || Aladdín",
+  "Mulan || Mulan",
+  "Shan Yu || Mulan",
+  "Pocahontas || Pocahontas",
+  "John Smith || Pocahontas",
+  "Nemo || Buscando a Nemo",
+  "Dory || Buscando a Nemo",
+  "Mike Wazowski || Monstruos S.A.",
+  "Sulley || Monstruos S.A.",
+  "Boo || Monstruos S.A.",
+  "WALL·E || WALL·E",
+  "EVE || WALL·E",
+  "Remy || Ratatouille",
+  "Linguini || Ratatouille",
+  "Colette || Ratatouille",
+  "Lightning McQueen || Cars",
+  "Mater || Cars",
+  "Carl Fredricksen || Up",
+  "Russell || Up",
+  "Dug || Up",
+  "Merida || Brave",
+  "Hiccup || Cómo entrenar a tu dragón",
+  "Chimuelo || Cómo entrenar a tu dragón",
+  "Fiona || Shrek",
+  "Burro || Shrek",
+  "Lord Farquaad || Shrek",
+  "Megamente || Megamente",
+  "Gru || Mi villano favorito",
+  "Agnes || Mi villano favorito",
+  "Minions || Mi villano favorito",
+  "Ralph || Rompe Ralph",
+  "Vanellope || Rompe Ralph",
+  "Judy Hopps || Zootrópolis",
+  "Nick Wilde || Zootrópolis",
+  "Miguel || Coco",
+  "Héctor || Coco",
+  "Ernesto de la Cruz || Coco",
+  "Iron Man || Marvel",
+  "Capitán América || Marvel",
+  "Spider-Man || Marvel",
+  "Thor || Marvel",
+  "Hulk || Marvel",
+  "Doctor Strange || Marvel",
+  "Black Widow || Marvel",
+  "Loki || Marvel",
+  "Thanos || Marvel",
+  "Wanda Maximoff || Marvel",
+  "Vision || Marvel",
+  "Deadpool || Marvel",
+  "Wolverine || X-Men",
+  "Magneto || X-Men",
+  "Profesor X || X-Men",
+  "Batman || DC",
+  "Superman || DC",
+  "Wonder Woman || DC",
+  "Flash || DC",
+  "Aquaman || DC",
+  "Harley Quinn || DC",
+  "Joker || DC",
+  "Lex Luthor || DC",
+  "Green Lantern || DC",
+  "Catwoman || DC",
+  "Black Panther || Marvel",
+  "Ant-Man || Marvel",
+  "Shazam || DC",
+  "Rorschach || Watchmen",
+  "Doctor Manhattan || Watchmen",
+  "Geralt de Rivia || The Witcher",
+  "Ciri || The Witcher",
+  "Yennefer || The Witcher",
+  "Vecna || Stranger Things",
+  "Eleven || Stranger Things",
+  "Walter White || Breaking Bad",
+  "Jesse Pinkman || Breaking Bad",
+  "Saul Goodman || Better Call Saul",
+  "Jon Snow || Game of Thrones",
+  "Daenerys Targaryen || Game of Thrones",
+  "Arya Stark || Game of Thrones",
+  "Cersei Lannister || Game of Thrones",
+  "Tyrion Lannister || Game of Thrones",
+  "Joel || The Last of Us",
+  "Ellie || The Last of Us",
+  "Kratos || God of War",
+  "Atreus || God of War",
+  "Lara Croft || Tomb Raider",
+  "Nathan Drake || Uncharted",
+  "Link || The Legend of Zelda",
+  "Zelda || The Legend of Zelda",
+  "Ganondorf || The Legend of Zelda",
+    "Goku || Dragon Ball",
+  "Vegeta || Dragon Ball",
+  "Gohan || Dragon Ball",
+  "Piccolo || Dragon Ball",
+  "Naruto Uzumaki || Naruto",
+  "Sasuke Uchiha || Naruto",
+  "Sakura Haruno || Naruto",
+  "Kakashi Hatake || Naruto",
+  "Itachi Uchiha || Naruto",
+  "Luffy || One Piece",
+  "Zoro || One Piece",
+  "Nami || One Piece",
+  "Sanji || One Piece",
+  "Chopper || One Piece",
+  "Light Yagami || Death Note",
+  "L || Death Note",
+  "Mikasa Ackerman || Attack on Titan",
+  "Eren Jaeger || Attack on Titan",
+  "Levi Ackerman || Attack on Titan",
+  "Tanjiro Kamado || Demon Slayer",
+  "Nezuko Kamado || Demon Slayer",
+  "Inosuke Hashibira || Demon Slayer",
+  "Zenitsu Agatsuma || Demon Slayer",
+  "Sailor Moon || Sailor Moon",
+   "Pikachu || Pokémon",
+  "Charizard || Pokémon",
+  "Bulbasaur || Pokémon",
+  "Squirtle || Pokémon",
+  "Jigglypuff || Pokémon",
+  "Meowth || Pokémon",
+  "Snorlax || Pokémon",
+  "Gengar || Pokémon",
+  "Psyduck || Pokémon",
+  "Eevee || Pokémon",
+  "Mewtwo || Pokémon",
+  "Mew || Pokémon",
+  "Lucario || Pokémon",
+  "Gardevoir || Pokémon",
+  "Machamp || Pokémon",
+  "Onix || Pokémon",
+  "Lapras || Pokémon",
+  "Dragonite || Pokémon",
+  "Ditto || Pokémon",
+  "Vaporeon || Pokémon",
+  "Jolteon || Pokémon",
+  "Flareon || Pokémon",
+  "Togepi || Pokémon",
+  "Blastoise || Pokémon",
+  "Venusaur || Pokémon",
+  "Arcanine || Pokémon",
+  "Scyther || Pokémon",
+  "Gyarados || Pokémon",
+  "Alakazam || Pokémon",
+  "Magikarp || Pokémon",
+  "Harry Potter || Harry Potter",
+  "Hermione Granger || Harry Potter",
+  "Ron Weasley || Harry Potter",
+  "Albus Dumbledore || Harry Potter",
+  "Lord Voldemort || Harry Potter",
+  "Severus Snape || Harry Potter",
+  "Draco Malfoy || Harry Potter",
+  "Sirius Black || Harry Potter",
+  "Luna Lovegood || Harry Potter",
+  "Neville Longbottom || Harry Potter",
+  "Minerva McGonagall || Harry Potter",
+  "Rubeus Hagrid || Harry Potter",
+  "Bellatrix Lestrange || Harry Potter",
+  "Dolores Umbridge || Harry Potter",
+  "Fred Weasley || Harry Potter",
+  "George Weasley || Harry Potter",
+  "Ginny Weasley || Harry Potter",
+  "Remus Lupin || Harry Potter",
+  "Nymphadora Tonks || Harry Potter",
+  "Lucius Malfoy || Harry Potter",
+  "Peter Pettigrew || Harry Potter",
+  "Cho Chang || Harry Potter",
+  "Cedric Diggory || Harry Potter",
+  "Fleur Delacour || Harry Potter",
+  "Viktor Krum || Harry Potter",
+  "Alastor Moody || Harry Potter",
+  "Gilderoy Lockhart || Harry Potter",
+  "Dobby || Harry Potter",
+  "Kreacher || Harry Potter",
+  "Grawp || Harry Potter",
+  "Frodo Bolsón || El Señor de los Anillos",
+  "Sam Gamyi || El Señor de los Anillos",
+  "Gandalf || El Señor de los Anillos",
+  "Aragorn || El Señor de los Anillos",
+  "Legolas || El Señor de los Anillos",
+  "Gimli || El Señor de los Anillos",
+  "Boromir || El Señor de los Anillos",
+  "Galadriel || El Señor de los Anillos",
+  "Elrond || El Señor de los Anillos",
+  "Saruman || El Señor de los Anillos",
+  "Gollum || El Señor de los Anillos",
+  "Sauron || El Señor de los Anillos",
+  "Bilbo Bolsón || El Señor de los Anillos",
+  "Éowyn || El Señor de los Anillos",
+  "Faramir || El Señor de los Anillos",
+  "Théoden || El Señor de los Anillos",
+  "Denethor || El Señor de los Anillos",
+  "Arwen || El Señor de los Anillos",
+  "Éomer || El Señor de los Anillos",
+  "Gríma Wormtongue || El Señor de los Anillos",
+  "Merry || El Señor de los Anillos",
+  "Pippin || El Señor de los Anillos",
+  "Rey Brujo de Angmar || El Señor de los Anillos",
+  "Bárbol || El Señor de los Anillos",
+  "Balrog || El Señor de los Anillos",
+  "Isildur || El Señor de los Anillos"
+
+
+  
+
+      
+    ];
+
+    let palabraActual = "";
+    let puntos = 0;
+    let temporizador;
+    let tiempoRestante = 45;
+
+    function iniciarJuego() {
+      puntos = 0;
+      tiempoRestante = 45;
+      document.getElementById("puntos").textContent = "Puntos: 0";
+      nuevaPalabra();
+      actualizarTemporizador();
+      temporizador = setInterval(() => {
+        tiempoRestante--;
+        actualizarTemporizador();
+        if (tiempoRestante <= 0) {
+          clearInterval(temporizador);
+          document.getElementById("palabra").textContent = "¡Fin del tiempo!";
+        }
+      }, 1000);
+    }
+
+    function actualizarTemporizador() {
+      document.getElementById("temporizador").textContent = `⏱️ Tiempo: ${tiempoRestante}`;
+    }
+
+    function nuevaPalabra() {
+      const index = Math.floor(Math.random() * palabras.length);
+      palabraActual = palabras[index];
+      document.getElementById("palabra").textContent = palabraActual;
+    }
+
+    function acierto() {
+      puntos++;
+      document.getElementById("puntos").textContent = `Puntos: ${puntos}`;
+      nuevaPalabra();
+    }
+
+    function pasar() {
+      nuevaPalabra();
+    }
+  </script>
+</body>
+</html>
