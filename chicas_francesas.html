@@ -1,0 +1,154 @@
+<html>
+<head>
+  <title>🇫🇷 Tócame como a tus chicas francesas 🍷</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      background-color: #111;
+      font-family: monospace;
+      text-align: center;
+      padding: 40px;
+    }
+    button {
+      padding: 15px 30px;
+      font-size: 1.4em;
+      margin-bottom: 20px;
+      background-color: #333;
+      color: #0f0;
+      border: 2px solid #0f0;
+      cursor: pointer;
+    }
+    #postura-nombre {
+      font-size: 2em;
+      color: #ffff00;
+      margin-top: 20px;
+    }
+    #postura-desc {
+      font-size: 1.4em;
+      color: #adff2f;
+      margin-top: 10px;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  </style>
+</head>
+<body>
+  <h1 style="color:#0ff;">🤸‍♂️ 🇫🇷 Tócame como a tus chicas francesas 🍷</h1>
+  <button onclick="siguiente()">🎲 Nueva Palabra</button>
+  <div id="postura-nombre"></div>
+  <div id="postura-desc"></div>
+  <script>
+    let posturas = [
+  'Sol',
+  'Luna',
+  'Casa',
+  'Árbol',
+  'Flor',
+  'Corazón',
+  'Coche',
+  'Avión',
+  'Zapato',
+  'Camiseta',
+  'Pelota',
+  'Gafas',
+  'Pez',
+  'Taza',
+  'Manzana',
+  'Libro',
+  'Llave',
+  'Reloj',
+  'Pan',
+  'Silla',
+  'Mesa',
+  'Sombrero',
+  'Nariz',
+  'Boca',
+  'Oreja',
+  'Dedo',
+  'Camión',
+  'Estrella',
+  'Nube',
+  'Gato',
+  'Perro',
+  'Ratón',
+  'Montaña',
+  'Caracol',
+  'Escoba',
+  'Lápiz',
+  'Pincel',
+  'Teléfono',
+  'Diente',
+  'Botella',
+  'Papel',
+  'Tijeras',
+  'Cama',
+  'Cubo',
+  'Bicicleta',
+  'Vaso',
+  'Helado',
+  'Toalla',
+  'Ojo',
+  'Cepillo',
+  'Pijama',
+  'Bolsa',
+  'Calcetín',
+  'Pato',
+  'Pelo',
+  'Cola',
+  'Dado',
+  'Beso',
+  'Sombrilla',
+  'Tenedor',
+  'Cuchara',
+  'Cuchillo',
+  'Cuerda',
+  'Huevo',
+  'Guitarra',
+  'Escalera',
+  'Anillo',
+  'Corona',
+  'Piedra',
+  'Plátano',
+  'Fresa',
+  'Pastel',
+  'Regalo',
+  'Globo',
+  'Caramelo',
+  'Queso',
+  'Hamburguesa',
+  'Pizza',
+  'Sándwich',
+  'Tren',
+  'Barco',
+  'Moto',
+  'Tobogán',
+  'Piscina',
+  'Cepillo de dientes',
+  'Papel higiénico',
+  'Jabón',
+  'Llave inglesa',
+  'Escoba mágica',
+  'Pelota de playa',
+  'Taza de café',
+  'Sopa',
+  'Rana',
+  'Zanahoria',
+  'Hielo',
+  'Peluca',
+  'Peluche',
+  'Ducha',
+  'Sirena',
+  'Fantasma',
+  'Reloj de arena',
+  'Moneda'
+]
+;
+    function siguiente() {
+      let p = posturas[Math.floor(Math.random() * posturas.length)];
+      document.getElementById("postura-nombre").innerText = p.nombre;
+      document.getElementById("postura-desc").innerText = p.descripcion;
+    }
+  </script>
+</body>
+</html>
