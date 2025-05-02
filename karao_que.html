@@ -41,7 +41,7 @@
   <div id="fraseParcial">Pulsa "Siguiente canción" para empezar</div>
   <div>
     <button onclick="siguienteFrase()">🎵 Siguiente canción</button>
-    <button onclick="mostrarMas()">🕵️ Mostrar más</button>
+    <button onclick="pararFrase()">⏸️ Parar y ocultar</button>
     <button onclick="mostrarCompleta()">🎯 Mostrar completa</button>
   </div>
   <div id="info"></div>
@@ -65,26 +65,29 @@
     let indiceActual = -1;
     let palabras = [];
     let mostradas = new Set();
+    let intervalo;
 
     function siguienteFrase() {
+      clearInterval(intervalo);
       const nueva = Math.floor(Math.random() * frases.length);
       indiceActual = nueva;
       palabras = frases[indiceActual].texto.split(' ');
       mostradas = new Set();
       mostrarFrase();
       document.getElementById('info').textContent = '';
-    }
 
-    function mostrarMas() {
-      if (indiceActual === -1) return;
-      while (mostradas.size < palabras.length) {
-        const i = Math.floor(Math.random() * palabras.length);
-        if (!mostradas.has(i)) {
-          mostradas.add(i);
-          break;
+      intervalo = setInterval(() => {
+        if (mostradas.size >= palabras.length) {
+          clearInterval(intervalo);
+          return;
         }
-      }
-      mostrarFrase();
+        let i;
+        do {
+          i = Math.floor(Math.random() * palabras.length);
+        } while (mostradas.has(i));
+        mostradas.add(i);
+        mostrarFrase();
+      }, 500);
     }
 
     function mostrarFrase() {
@@ -96,9 +99,19 @@
 
     function mostrarCompleta() {
       if (indiceActual === -1) return;
+      clearInterval(intervalo);
       document.getElementById('fraseParcial').textContent = frases[indiceActual].texto;
       const f = frases[indiceActual];
       document.getElementById('info').textContent = `🎶 "${f.cancion}" - ${f.artista} (${f.año})`;
+    }
+
+    function pararFrase() {
+      clearInterval(intervalo);
+      if (palabras.length > 0) {
+        const oculta = palabras.map(() => "_____").join(' ');
+        document.getElementById('fraseParcial').textContent = oculta;
+        document.getElementById('info').textContent = '';
+      }
     }
   </script>
 </body>
