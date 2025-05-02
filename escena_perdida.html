@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>🎬 En busca de la escena perdida 🎬</title>
+  <style>
+    body {
+      background-color: #111;
+      color: #eee;
+      font-family: 'Courier New', monospace;
+      text-align: center;
+      padding: 30px;
+    }
+    h1 {
+      color: #ffcc00;
+    }
+    .pelicula {
+      font-size: 1.8em;
+      font-weight: bold;
+      margin: 20px 0 10px 0;
+    }
+    .descripcion {
+      font-size: 1.2em;
+      margin-bottom: 30px;
+    }
+    button {
+      font-size: 1em;
+      padding: 10px 20px;
+      margin: 5px;
+      background-color: #222;
+      color: #ffcc00;
+      border: 2px solid #ffcc00;
+      cursor: pointer;
+    }
+    #timer {
+      font-size: 2em;
+      margin-top: 20px;
+      color: #00ff00;
+    }
+  </style>
+</head>
+<body>
+  <h1>🎬 En busca de la escena perdida 🎬</h1>
+  <div class="pelicula" id="pelicula">Película</div>
+  <div class="descripcion" id="descripcion">Descripción de la escena</div>
+
+  <button onclick="siguienteEscena()">🎲 Siguiente escena</button>
+  <button onclick="iniciarTemporizador()">⏱️ Empezar 45s</button>
+  <div id="timer">45</div>
+
+  <script>
+    const escenas = [
+      {
+        pelicula: "Titanic (1997)",
+        descripcion: "Jack sujeta a Rose en la proa del barco con los brazos extendidos mientras grita que vuela."
+      },
+      {
+        pelicula: "El Rey León (1994)",
+        descripcion: "Rafiki levanta a Simba recién nacido sobre la Roca del Rey mientras todos los animales lo celebran."
+      },
+      {
+        pelicula: "Gladiator (2000)",
+        descripcion: "Máximo grita: “¿No os habéis entretenido?” tras derrotar a sus enemigos en la arena del Coliseo."
+      },
+      {
+        pelicula: "Harry Potter y la Piedra Filosofal (2001)",
+        descripcion: "Harry recibe su carta de Hogwarts y la multitud de cartas sale por la chimenea."
+      },
+      {
+        pelicula: "Avengers: Endgame (2019)",
+        descripcion: "Capitán América empuña el Mjölnir por primera vez para pelear contra Thanos."
+      },
+      {
+        pelicula: "Star Wars: El Imperio Contraataca (1980)",
+        descripcion: "Darth Vader le revela a Luke que él es su padre: 'Yo soy tu padre'."
+      },
+      {
+        pelicula: "Forrest Gump (1994)",
+        descripcion: "Forrest corre sin detenerse por todo Estados Unidos mientras una multitud lo sigue."
+      },
+      {
+        pelicula: "Spider-Man (2002)",
+        descripcion: "Peter Parker practica lanzar telarañas desde su muñeca por primera vez."
+      },
+      {
+        pelicula: "Matrix (1999)",
+        descripcion: "Neo esquiva las balas inclinándose hacia atrás en cámara lenta."
+      },
+      {
+        pelicula: "El Señor de los Anillos: La Comunidad del Anillo (2001)",
+        descripcion: "Frodo ofrece el anillo a Galadriel y ella se transforma en una figura brillante y aterradora."
+      }
+    ];
+
+    function siguienteEscena() {
+      const aleatoria = escenas[Math.floor(Math.random() * escenas.length)];
+      document.getElementById("pelicula").textContent = aleatoria.pelicula;
+      document.getElementById("descripcion").textContent = aleatoria.descripcion;
+      resetTemporizador();
+    }
+
+    let tiempoRestante = 45;
+    let intervalo;
+
+    function iniciarTemporizador() {
+      clearInterval(intervalo);
+      tiempoRestante = 45;
+      document.getElementById("timer").textContent = tiempoRestante;
+      intervalo = setInterval(() => {
+        tiempoRestante--;
+        document.getElementById("timer").textContent = tiempoRestante;
+        if (tiempoRestante <= 0) {
+          clearInterval(intervalo);
+        }
+      }, 1000);
+    }
+
+    function resetTemporizador() {
+      clearInterval(intervalo);
+      document.getElementById("timer").textContent = "45";
+    }
+  </script>
+</body>
+</html>
