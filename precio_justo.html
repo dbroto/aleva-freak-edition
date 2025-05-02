@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>El Precio Justo - Aleva Freak Edition</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #121212;
+      color: #f1f1f1;
+      text-align: center;
+      padding: 2rem;
+    }
+    .card {
+      background-color: #1e1e1e;
+      border-radius: 1rem;
+      padding: 2rem;
+      max-width: 600px;
+      margin: 0 auto;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+    }
+    .question {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+    .price {
+      font-size: 2rem;
+      font-weight: bold;
+      margin: 1rem 0;
+      display: none;
+    }
+    button {
+      background-color: #ff4081;
+      color: white;
+      border: none;
+      padding: 1rem 2rem;
+      margin: 0.5rem;
+      border-radius: 1rem;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+    #timer {
+      font-size: 2.5rem;
+      margin: 1rem 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="question" id="question">Pregunta aquí</div>
+    <div id="timer">10</div>
+    <div class="price" id="price">Precio justo: 0,00 €</div>
+    <button onclick="startTimer()">Iniciar cuenta atrás</button>
+    <button onclick="showPrice()">Mostrar precio justo</button>
+    <button onclick="nextQuestion()">Siguiente</button>
+  </div>
+
+  <script>
+    const preguntas = [
+      {
+        pregunta: '¿Cuál es el precio actual de una varita oficial de Hermione Granger en Ollivanders (réplica con caja)?',
+        precio: '39,95 €'
+      },
+      {
+        pregunta: '¿Cuánto cuesta un pack de 3 pares de calcetines con dibujos de Grogu (Baby Yoda)?',
+        precio: '14,99 €'
+      },
+      {
+        pregunta: '¿Qué precio tiene un Monopoly edición especial de El Señor de los Anillos (versión española)?',
+        precio: '39,99 €'
+      },
+      {
+        pregunta: '¿Cuánto pagarías por una lámpara de mesilla con forma de Poké Ball oficial con luz LED?',
+        precio: '24,90 €'
+      },
+      {
+        pregunta: '¿Cuál es el precio de una taza de cerámica de Deadpool que cambia de color con el calor?',
+        precio: '12,50 €'
+      }
+    ];
+
+    let currentIndex = 0;
+    let countdown;
+    const questionEl = document.getElementById('question');
+    const priceEl = document.getElementById('price');
+    const timerEl = document.getElementById('timer');
+
+    function updateQuestion() {
+      questionEl.textContent = preguntas[currentIndex].pregunta;
+      priceEl.style.display = 'none';
+      priceEl.textContent = 'Precio justo: ' + preguntas[currentIndex].precio;
+      timerEl.textContent = '10';
+    }
+
+    function startTimer() {
+      let time = 10;
+      timerEl.textContent = time;
+      clearInterval(countdown);
+      countdown = setInterval(() => {
+        time--;
+        timerEl.textContent = time;
+        if (time <= 0) {
+          clearInterval(countdown);
+        }
+      }, 1000);
+    }
+
+    function showPrice() {
+      priceEl.style.display = 'block';
+    }
+
+    function nextQuestion() {
+      currentIndex = (currentIndex + 1) % preguntas.length;
+      updateQuestion();
+    }
+
+    // Inicializar con la primera pregunta
+    updateQuestion();
+  </script>
+</body>
+</html>
