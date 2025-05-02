@@ -1,4 +1,4 @@
-  <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
@@ -14,36 +14,48 @@
     h1 {
       color: #ffcc00;
     }
-    #escena {
-      font-size: 1.5em;
-      margin: 30px 0;
-      min-height: 4em;
+    #palabra {
+      font-size: 2em;
+      margin: 20px;
+    }
+    #puntos {
+      font-size: 1.2em;
+      margin-top: 10px;
+    }
+    #temporizador {
+      font-size: 2em;
+      color: #ff4444;
+      margin: 10px 0;
     }
     button {
-      font-size: 1em;
-      padding: 10px 20px;
+      font-size: 1.2em;
       margin: 10px;
+      padding: 10px 20px;
       background-color: #222;
       color: #ffcc00;
       border: 2px solid #ffcc00;
       cursor: pointer;
     }
-    #temporizador {
-      font-size: 2em;
-      color: #44ff44;
-      margin: 20px;
+    button:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
     }
   </style>
 </head>
 <body>
   <h1>🧀 Ksecena 🧀</h1>
-  <div id="escena"> Pulsa para un nuevo delicioso plato... ¡Qué aproveche!</div>
-  <button onclick="nuevaEscena()">🎲 Siguiente plato</button>
-  <button onclick="iniciarTemporizador()">⏱️ Empezar 45s</button>
-  <div id="temporizador">45</div>
+ <div id="palabra">Pulsa "Comenzar" para empezar</div>
+  <div id="temporizador">60</div>
+  <div id="puntos">✅ Aciertos: 0</div>
+  <div>
+    <button onclick="acierto()" id="btnAcierto" disabled>✅ Acierto</button>
+    <button onclick="pasar()" id="btnPasar" disabled>❌ Pasar (-5s)</button>
+    <button onclick="empezarJuego()" id="btnStart">▶️ Comenzar</button>
+  </div>
+
 
   <script>
-    const escenas = [
+    const palabras = [
  "Pizza",
   "Spaghetti",
   "Hamburguesa",
@@ -263,27 +275,61 @@
   "Panqueques con dulce de leche",
   "Burrito",
   "Tarta de Santiago"
+
     ];
 
-    function nuevaEscena() {
-      const escena = escenas[Math.floor(Math.random() * escenas.length)];
-      document.getElementById('escena').textContent = escena;
+   let palabraActual = "";
+    let aciertos = 0;
+    let tiempo = 60;
+    let temporizador;
+    
+    function nuevaPalabra() {
+      const index = Math.floor(Math.random() * palabras.length);
+      palabraActual = palabras[index];
+      document.getElementById("palabra").textContent = palabraActual;
     }
 
-    let tiempo = 45;
-    let intervalo;
+    function actualizarTemporizador() {
+      document.getElementById("temporizador").textContent = tiempo;
+      if (tiempo <= 0) {
+        clearInterval(temporizador);
+        document.getElementById("palabra").textContent = "⏱️ ¡Se acabó el tiempo!";
+        document.getElementById("btnAcierto").disabled = true;
+        document.getElementById("btnPasar").disabled = true;
+        document.getElementById("btnStart").textContent = "🔁 Jugar de nuevo";
+        document.getElementById("btnStart").disabled = false;
+      }
+    }
 
-    function iniciarTemporizador() {
-      clearInterval(intervalo);
-      tiempo = 45;
-      document.getElementById('temporizador').textContent = tiempo;
-      intervalo = setInterval(() => {
+    function empezarJuego() {
+      tiempo = 60;
+      aciertos = 0;
+      document.getElementById("puntos").textContent = "✅ Aciertos: 0";
+      document.getElementById("btnAcierto").disabled = false;
+      document.getElementById("btnPasar").disabled = false;
+      document.getElementById("btnStart").disabled = true;
+      nuevaPalabra();
+      actualizarTemporizador();
+      temporizador = setInterval(() => {
         tiempo--;
-        document.getElementById('temporizador').textContent = tiempo;
-        if (tiempo === 0) {
-          clearInterval(intervalo);
-        }
+        actualizarTemporizador();
       }, 1000);
+    }
+
+    function acierto() {
+      aciertos++;
+      document.getElementById("puntos").textContent = "✅ Aciertos: " + aciertos;
+      nuevaPalabra();
+    }
+
+    function pasar() {
+      if (tiempo > 5) {
+        tiempo -= 5;
+      } else {
+        tiempo = 0;
+      }
+      actualizarTemporizador();
+      nuevaPalabra();
     }
   </script>
 </body>
