@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -45,31 +44,45 @@
   <div id="buttons">
     <button onclick="siguientePelicula()">🎲 Siguiente película</button>
     <button onclick="mostrarSolucion()">🎯 Mostrar película</button>
-    <button onclick="detenerEmojis()">⏹️ Detener</button>
+    <button onclick="detenerOReanudar()">⏯️ Pausar / Reanudar</button>
   </div>
   <div id="solucion"></div>
   <script src="emoji-data-se-llevo.js"></script>
   <script>
     let indiceActual = -1;
     let intervalo;
+    let pausado = false;
+    let index = 0;
+
     function siguientePelicula() {
       clearInterval(intervalo);
       document.getElementById('emojiDisplay').textContent = '';
       document.getElementById('solucion').textContent = '';
       indiceActual = Math.floor(Math.random() * peliculas.length);
-      let emojis = peliculas[indiceActual].emojis;
-      let index = 0;
+      index = 0;
+      pausado = false;
+      mostrarEmojis();
+    }
+
+    function mostrarEmojis() {
+      const emojis = peliculas[indiceActual].emojis;
       intervalo = setInterval(() => {
-        if (index < emojis.length) {
+        if (!pausado && index < emojis.length) {
           document.getElementById('emojiDisplay').textContent += emojis[index] + ' ';
           index++;
-        } else {
+        } else if (index >= emojis.length) {
           clearInterval(intervalo);
         }
       }, 2000);
     }
-    function detenerEmojis() {
-      clearInterval(intervalo);
+
+    function detenerOReanudar() {
+      pausado = !pausado;
+      if (!pausado) {
+        mostrarEmojis(); // Reanuda desde donde lo dejó
+      } else {
+        clearInterval(intervalo); // Pausa
+      }
     }
 
     function mostrarSolucion() {
