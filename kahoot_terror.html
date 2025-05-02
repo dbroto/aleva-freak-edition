@@ -1,0 +1,104 @@
+
+<html>
+<head>
+  <title>Kahoot: ⚰️ La noche de los sustos 🎃</title>
+  <meta charset="utf-8">
+  <style>
+    body {
+      background-color: #111;
+      color: #0f0;
+      font-family: monospace;
+      text-align: center;
+      padding: 40px;
+    }
+    #pregunta {
+      font-size: 1.8em;
+      margin-bottom: 30px;
+    }
+    .respuesta {
+      display: block;
+      padding: 15px;
+      margin: 10px auto;
+      background-color: #222;
+      border: 2px solid #0f0;
+      color: #0f0;
+      font-size: 1.2em;
+      cursor: pointer;
+      width: 60%;
+    }
+    .respuesta:hover {
+      background-color: #333;
+    }
+    .correcta {
+      background-color: green !important;
+      color: #fff !important;
+    }
+    .incorrecta {
+      background-color: #882222 !important;
+      color: #fff !important;
+    }
+    #siguiente {
+      margin-top: 30px;
+      padding: 10px 20px;
+      font-size: 1.2em;
+      background-color: #0f0;
+      color: #000;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>⚰️ La noche de los sustos 🎃</h1>
+  <div id="pregunta"></div>
+  <div id="respuestas"></div>
+  <button id="siguiente" onclick="siguiente()">Siguiente Pregunta</button>
+
+  <script>
+    const preguntas = [
+ {
+    "pregunta": "¿soy una pregunta?",
+    "respuestas": ["1", "2", "3", "4"],
+    "correcta": 1
+  },
+      
+    ];
+    let indice = 0;
+
+    function cargarPregunta() {
+      document.getElementById("pregunta").textContent = preguntas[indice].pregunta;
+      const contenedor = document.getElementById("respuestas");
+      contenedor.innerHTML = "";
+      preguntas[indice].respuestas.forEach((r, i) => {
+        const btn = document.createElement("button");
+        btn.textContent = r;
+        btn.className = "respuesta";
+        btn.onclick = () => responder(i, btn);
+        contenedor.appendChild(btn);
+      });
+    }
+
+    function responder(i, boton) {
+      const correcta = preguntas[indice].correcta;
+      if (boton.classList.contains("correcta") || boton.classList.contains("incorrecta")) return;
+      if (i === correcta) {
+        boton.classList.add("correcta");
+      } else {
+        boton.classList.add("incorrecta");
+      }
+    }
+
+    function siguiente() {
+      if (indice < preguntas.length - 1) {
+        indice++;
+        cargarPregunta();
+      } else {
+        document.getElementById("pregunta").textContent = "¡Has completado El Camino del Jedi!";
+        document.getElementById("respuestas").innerHTML = "";
+        document.getElementById("siguiente").style.display = "none";
+      }
+    }
+
+    cargarPregunta();
+  </script>
+</body>
+</html>
