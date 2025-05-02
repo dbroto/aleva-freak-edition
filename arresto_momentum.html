@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+  <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
@@ -14,271 +14,67 @@
     h1 {
       color: #ffcc00;
     }
-    .pelicula {
-      font-size: 1.8em;
-      font-weight: bold;
-      margin: 20px 0 10px 0;
-    }
-    .descripcion {
-      font-size: 1.2em;
-      margin-bottom: 30px;
+    #escena {
+      font-size: 1.5em;
+      margin: 30px 0;
+      min-height: 4em;
     }
     button {
       font-size: 1em;
       padding: 10px 20px;
-      margin: 5px;
+      margin: 10px;
       background-color: #222;
       color: #ffcc00;
       border: 2px solid #ffcc00;
       cursor: pointer;
     }
-    #timer {
+    #temporizador {
       font-size: 2em;
-      margin-top: 20px;
-      color: #00ff00;
+      color: #44ff44;
+      margin: 20px;
     }
   </style>
 </head>
 <body>
   <h1>🐢 Arresto Momentum 🐢</h1>
-  <div class="pelicula" id="pelicula">Película</div>
-  <div class="descripcion" id="descripcion">Descripción de la escena</div>
-
-  <button onclick="siguienteEscena()">🎲 Siguiente escena</button>
+  <div id="escena">🎬 Pulsa para una nueva escena a cámara lenta</div>
+  <button onclick="nuevaEscena()">🎲 Siguiente escena</button>
   <button onclick="iniciarTemporizador()">⏱️ Empezar 45s</button>
-  <div id="timer">45</div>
+  <div id="temporizador">45</div>
 
   <script>
     const escenas = [
-      { pelicula: "Jurassic Park (1993)", descripcion: "El vaso de agua vibra mientras el T-Rex se acerca en medio de la tormenta." },
-  { pelicula: "El Resplandor (1980)", descripcion: "Jack asoma la cabeza por la puerta rota gritando: “¡Aquí está Johnny!”" },
-
-  { pelicula: "El Silencio de los Corderos (1991)", descripcion: "Hannibal Lecter observa tras el cristal con su mítica frase del hígado." },
-  { pelicula: "Piratas del Caribe: La Maldición de la Perla Negra (2003)", descripcion: "Jack Sparrow entra al puerto justo cuando su barco termina de hundirse." },
-  { pelicula: "El Lobo de Wall Street (2013)", descripcion: "Jordan Belfort golpea su pecho y canta antes de dar un discurso salvaje." },
-  { pelicula: "King Kong (1933)", descripcion: "King Kong trepa al Empire State Building y pelea con los aviones." },
-  { pelicula: "La Bella y la Bestia (1991)", descripcion: "Bella y Bestia bailan en el salón bajo un enorme candelabro." },
-  { pelicula: "Los Goonies (1985)", descripcion: "Los niños descubren el barco pirata escondido en una cueva secreta." },
-  { pelicula: "Kill Bill Vol. 1 (2003)", descripcion: "La Novia se enfrenta a los Crazy 88 en una batalla sangrienta." },
-  { pelicula: "Frozen (2013)", descripcion: "Elsa canta '¡Libre soy!' mientras construye su palacio de hielo." },
-  { pelicula: "Dirty Dancing (1987)", descripcion: "Johnny levanta a Baby en el aire durante el baile final." },
-  { pelicula: "Toy Story (1995)", descripcion: "Buzz cae diciendo: '¡No vuelo, caigo con estilo!'" },
-  { pelicula: "Guardianes de la Galaxia (2014)", descripcion: "Star-Lord baila con su walkman en una ruina antigua." },
-  { pelicula: "The Breakfast Club (1985)", descripcion: "Bender levanta el puño caminando por el campo de fútbol." },
-  { pelicula: "Los Cazafantasmas (1984)", descripcion: "Los cuatro disparan sus rayos a Gozer en el tejado." },
-  { pelicula: "Aladdin (1992)", descripcion: "Aladdín y Jasmine vuelan sobre la alfombra cantando 'Un mundo ideal'." },
-  { pelicula: "Ratatouille (2007)", descripcion: "Remy controla a Linguini tirando de su pelo como un titiritero." },
-  { pelicula: "300 (2006)", descripcion: "Leónidas grita '¡Esto es Esparta!' y patea al emisario al pozo." },
-  { pelicula: "Shrek 2 (2004)", descripcion: "El Gato con Botas pone cara tierna con los ojos gigantes." },
-  { pelicula: "Interstellar (2014)", descripcion: "Cooper llora al ver los vídeos de sus hijos desde el espacio." },
-  { pelicula: "Spider-Man 2 (2004)", descripcion: "Peter detiene un tren con telarañas y cae agotado." },
-  { pelicula: "V de Vendetta (2005)", descripcion: "V pronuncia su monólogo lleno de palabras con 'V' frente al espejo." },
-   { pelicula: "Titanic (1997)", descripcion: "Jack y Rose se abrazan en la proa del barco con los brazos extendidos." },
-  { pelicula: "Avengers: Endgame (2019)", descripcion: "Capitán América levanta el martillo de Thor y grita: '¡Vengadores, reuníos!'" },
-  { pelicula: "Harry Potter y la Piedra Filosofal (2001)", descripcion: "Harry recibe su carta de Hogwarts mientras las lechuzas invaden la casa." },
-  { pelicula: "Gladiator (2000)", descripcion: "Máximo grita: '¿No os entretiene?' frente al público del coliseo." },
-  { pelicula: "Forrest Gump (1994)", descripcion: "Forrest corre a lo largo del país sin detenerse durante meses." },
-  { pelicula: "Star Wars – Una Nueva Esperanza (1977)", descripcion: "Luke observa el atardecer binario en Tatooine." },
-  { pelicula: "La Momia (1999)", descripcion: "Imhotep lanza una tormenta de arena con su cara en ella." },
-  { pelicula: "Charlie y la Fábrica de Chocolate (2005)", descripcion: "Willy Wonka canta con los Oompa Loompas mientras castigan a los niños mimados." },
-  { pelicula: "Braveheart (1995)", descripcion: "William Wallace grita '¡Libertaaaad!' antes de ser ejecutado." },
-  { pelicula: "El Diario de Noa (2004)", descripcion: "Noah y Allie se besan bajo la lluvia después de discutir en el muelle." },
-  { pelicula: "La Historia Interminable (1984)", descripcion: "Atreyu cabalga a Falkor volando entre las nubes." },
-  { pelicula: "It (2017)", descripcion: "Pennywise sonríe desde una alcantarilla diciendo: 'Flotarás también...'" },
-  { pelicula: "Spider-Man (2002)", descripcion: "Mary Jane besa a Peter al revés bajo la lluvia." },
-  { pelicula: "Cómo entrenar a tu dragón (2010)", descripcion: "Hipo toca a Chimuelo por primera vez en el claro del bosque." },
-  { pelicula: "Casino Royale (2006)", descripcion: "James Bond emerge del mar con el torso mojado en cámara lenta." },
-  { pelicula: "El Gran Showman (2017)", descripcion: "P.T. Barnum canta y baila 'This Is Me' junto a los inadaptados." },
-  { pelicula: "Bohemian Rhapsody (2018)", descripcion: "Queen interpreta el Live Aid en Wembley con Freddie liderando el show." },
-  { pelicula: "Los Increíbles (2004)", descripcion: "Toda la familia Parr se prepara para enfrentarse juntos a los villanos." },
-  { pelicula: "Kung Fu Panda (2008)", descripcion: "Po derrota a Tai Lung con su legendaria técnica del Dedo Wuxi." },
-  { pelicula: "Doctor Strange (2016)", descripcion: "Stephen manipula el tiempo con el Ojo de Agamotto en Hong Kong." },
-  { pelicula: "Cisne Negro (2010)", descripcion: "Nina se transforma en el Cisne Negro sobre el escenario." },
-  { pelicula: "Guardianes de la Galaxia Vol. 2 (2017)", descripcion: "Yondu salva a Peter mientras grita: '¡Ese fue mi chico!'" },
-  { pelicula: "Joker (2019)", descripcion: "Arthur baila en las escaleras con su traje rojo mientras suena música retro." },
-  { pelicula: "El Hobbit – Un viaje inesperado (2012)", descripcion: "Bilbo corre gritando: '¡Voy tarde a una aventura!'" },
-  { pelicula: "Lilo & Stitch (2002)", descripcion: "Lilo enseña a Stitch qué significa 'ohana' y familia." },
-  { pelicula: "El Padrino (1972)", descripcion: "Don Vito Corleone acaricia un gato mientras escucha una petición el día de la boda de su hija." },
-  { pelicula: "El Rey León (1994)", descripcion: "Rafiki levanta a Simba recién nacido en lo alto de la Roca del Rey." },
-  { pelicula: "Blade Runner (1982)", descripcion: "Roy Batty dice: 'He visto cosas que vosotros no creeríais...' bajo la lluvia." },
-  { pelicula: "Amélie (2001)", descripcion: "Amélie se disfraza y deja pistas misteriosas a su enamorado." },
-  { pelicula: "Los Vengadores (2012)", descripcion: "La cámara gira mientras todos los Vengadores se colocan en círculo listos para la batalla." },
-  { pelicula: "El Origen (Inception) (2010)", descripcion: "La ciudad se pliega sobre sí misma mientras caminan por París." },
-  { pelicula: "La Princesa Prometida (1987)", descripcion: "Inigo Montoya dice: 'Hola. Me llamo Íñigo Montoya. Tú mataste a mi padre. Prepárate a morir.'" },
-  { pelicula: "Big Fish (2003)", descripcion: "Edward Bloom atraviesa el campo de narcisos para declararse a Sandra." },
-  { pelicula: "The Social Network (2010)", descripcion: "Mark Zuckerberg crea Facebook mientras suena 'In the Hall of the Mountain King'." },
-  { pelicula: "Gravity (2013)", descripcion: "La Dra. Ryan Stone gira sin control en el espacio con el visor empañado." },
-  { pelicula: "Tiempos Modernos (1936)", descripcion: "Chaplin es arrastrado por una máquina mientras aprieta tuercas sin parar." },
-  { pelicula: "Los Cazafantasmas (1984)", descripcion: "El equipo combate al Hombre de Malvavisco gigante en las calles de Nueva York." },
-  { pelicula: "The Shining (1980)", descripcion: "Las gemelas están paradas al fondo del pasillo invitando a jugar." },
-  { pelicula: "WALL·E (2008)", descripcion: "WALL·E flota por el espacio con un extintor mientras baila con EVA." },
-  { pelicula: "Taxi Driver (1976)", descripcion: "Travis se mira al espejo y dice: 'You talkin’ to me?'" },
-  { pelicula: "Whiplash (2014)", descripcion: "Andrew golpea la batería con furia mientras Fletcher lo observa intensamente." },
-  { pelicula: "Los Miserables (2012)", descripcion: "Los revolucionarios cantan 'Do You Hear the People Sing?' levantando la bandera." },
-  { pelicula: "The Grand Budapest Hotel (2014)", descripcion: "M. Gustave corre por los pasillos perseguido por policías y una pintura robada." },
-  { pelicula: "Donnie Darko (2001)", descripcion: "Frank el conejo habla con Donnie en medio de la carretera." },
-  { pelicula: "Slumdog Millionaire (2008)", descripcion: "Jamal se lanza a una letrina para conseguir el autógrafo de su ídolo." },
-  { pelicula: "El Diario de Bridget Jones (2001)", descripcion: "Bridget corre bajo la nieve en ropa interior para detener a su amor." },
-  { pelicula: "La llegada (Arrival) (2016)", descripcion: "Louise se comunica por primera vez con los heptápodos usando símbolos circulares." },
-  { pelicula: "Mamma Mia! (2008)", descripcion: "Donna y sus amigas cantan 'Dancing Queen' mientras saltan en la cama." },
-  { pelicula: "Tesis (1996)", descripcion: "Ángela descubre una cinta misteriosa en la facultad de Comunicación Audiovisual." },
-  { pelicula: "En busca del arca perdida (1981)", descripcion: "Indiana Jones cambia una reliquia por una bolsa de arena... y activa la trampa." },
-  { pelicula: "Frozen (2013)", descripcion: "Elsa canta '¡Libre soy!' y crea su castillo de hielo con un gesto dramático." },
-  { pelicula: "Stranger Things (2016)", descripcion: "Eleven extiende la mano con sangre en la nariz para mover algo con la mente." },
-  { pelicula: "La Bella y la Bestia (1991)", descripcion: "Bella y Bestia bailan en el gran salón bajo la lámpara mientras suena la música." },
-  { pelicula: "El Rey León (1994)", descripcion: "Mufasa le explica a Simba el ciclo de la vida mientras observan el horizonte." },
-  { pelicula: "Toy Story (1995)", descripcion: "Buzz Lightyear extiende las alas y dice: '¡Hasta el infinito y más allá!'" },
-  { pelicula: "Friends (1994)", descripcion: "Ross grita '¡Pivot!' mientras intenta subir el sofá por las escaleras." },
-  { pelicula: "Encanto (2021)", descripcion: "Bruno aparece repentinamente en medio de la cena familiar y todos se detienen." },
-  { pelicula: "The Mandalorian (2019)", descripcion: "Grogu (Baby Yoda) extiende la mano para usar la Fuerza mientras flota en su cápsula." },
-  { pelicula: "Moana (2016)", descripcion: "Moana abre el océano con las manos mientras devuelve el corazón de Te Fiti." },
-  { pelicula: "Shrek (2001)", descripcion: "Burro salta diciendo '¡Elige a mí! ¡Elige a mí!' mientras levanta la mano." },
-  { pelicula: "High School Musical (2006)", descripcion: "Todo el grupo baila y canta 'We’re All in This Together' al final." },
-  { pelicula: "Rapunzel – Enredados (2010)", descripcion: "Rapunzel usa su sartén para defenderse por primera vez, sorprendida." },
-  { pelicula: "The Office (2005)", descripcion: "Michael grita '¡Nooooooo!' al enterarse de una mala noticia." },
-  { pelicula: "Coco (2017)", descripcion: "Miguel toca la guitarra en el mundo de los muertos mientras todos le miran asombrados." },
-  { pelicula: "Peppa Pig", descripcion: "Peppa se cae de la risa al ver a papá cerdito haciendo ejercicio." },
-  { pelicula: "Pocahontas (1995)", descripcion: "Pocahontas canta con los colores del viento mientras extiende los brazos al bosque." },
-  { pelicula: "Rick y Morty (2013)", descripcion: "Rick eructa mientras grita '¡Wubba lubba dub dub!' y apunta con el portal gun." },
-  { pelicula: "Brave (2012)", descripcion: "Merida lanza una flecha perfecta dividiendo otra en un torneo de arquería." },
-  { pelicula: "Monstruos S.A. (2001)", descripcion: "Sully asusta sin querer a Boo y luego la abraza con ternura." },
-  { pelicula: "Up (2009)", descripcion: "Carl y Ellie viven su historia de amor en un montaje sin palabras." },
-  { pelicula: "Luca (2021)", descripcion: "Luca y Alberto saltan al agua y se transforman en monstruos marinos." },
-  { pelicula: "The Simpsons (1989)", descripcion: "Homer se ahoga con una rosquilla y grita '¡D’oh!'" },
-  { pelicula: "Inside Out (2015)", descripcion: "Alegría y Tristeza se abrazan entendiendo que ambas emociones son necesarias." },
-  { pelicula: "Cars (2006)", descripcion: "Rayo McQueen cruza la meta sacando la lengua en lugar de las ruedas." },
-  { pelicula: "Tiana y el Sapo (2009)", descripcion: "Tiana y Naveen se convierten en sapos y se besan bajo la luna." },
-  { pelicula: "Aladdin (1992)", descripcion: "El Genio aparece en una nube azul gigante saludando exageradamente." },
-  { pelicula: "La Sirenita (1989)", descripcion: "Ariel sube sobre la roca mientras la ola la cubre por detrás cantando." },
-  { pelicula: "Gravity Falls (2012)", descripcion: "Mabel lanza brillantina al aire mientras sonríe como loca." },
-  { pelicula: "Piratas del Caribe – La Maldición de la Perla Negra (2003)", descripcion: "Jack Sparrow llega en un bote que se hunde justo al atracar." },
-  { pelicula: "Ratatouille (2007)", descripcion: "Remy dirige al chef tirándole del pelo como si fuera una marioneta." },
-  { pelicula: "Los Increíbles (2004)", descripcion: "Dash corre tan rápido por el agua que salpica a todo el mundo." },
-  { pelicula: "How I Met Your Mother (2005)", descripcion: "Barney dice 'Legend... wait for it... dary!' mientras señala con entusiasmo." },
-  { pelicula: "Kung Fu Panda (2008)", descripcion: "Po imita movimientos de kung fu con torpeza antes de sorprender a todos." },
-  { pelicula: "Teen Titans Go! (2013)", descripcion: "Raven flota en el aire cruzada de brazos, con aura mágica." },
-  { pelicula: "The Big Bang Theory (2007)", descripcion: "Sheldon llama a la puerta diciendo '¡Penny! ¡Penny! ¡Penny!'" },
-  { pelicula: "WALL·E (2008)", descripcion: "WALL·E ofrece una plantita a EVA con ojos brillantes de ternura." },
-  { pelicula: "The Flash (serie, 2014)", descripcion: "Flash se prepara agachado y luego corre con velocidad exagerada." },
-  { pelicula: "Maléfica (2014)", descripcion: "Maléfica lanza una maldición extendiendo los brazos con dramatismo." },
-  { pelicula: "Luca (2021)", descripcion: "Alberto grita '¡Silencio Bruno!' mientras se lanza a la aventura." },
-  { pelicula: "Frozen 2 (2019)", descripcion: "Elsa corre sobre el mar congelando el agua con cada paso." },
-  { pelicula: "Peacemaker (2022)", descripcion: "Peacemaker hace su coreografía de intro sin cambiar de cara." },
-  { pelicula: "Los Croods (2013)", descripcion: "Toda la familia grita mientras corre huyendo de una estampida prehistórica." },
-  { pelicula: "Trolls (2016)", descripcion: "Poppy canta con los brazos abiertos mientras suelta purpurina del pelo." },
-  { pelicula: "Barbie (2023)", descripcion: "Barbie baja volando por su casa de muñecas sin usar escaleras." },
-  { pelicula: "Los Cazafantasmas (1984)", descripcion: "El equipo apunta con sus mochilas de protones gritando emocionados." },
-  { pelicula: "Hotel Transylvania (2012)", descripcion: "Drácula vuela convertido en murciélago para evitar que vean a Mavis." },
-  { pelicula: "El Libro de la Vida (2014)", descripcion: "Manolo canta a la chica con una guitarra y una rosa." },
-  { pelicula: "Wish – El Poder de los Deseos (2023)", descripcion: "Asha pide un deseo mirando al cielo con las manos abiertas." },
-  { pelicula: "Scooby-Doo", descripcion: "Shaggy y Scooby se esconden dentro de una maceta temblando de miedo." },
-  { pelicula: "Spider-Man: Un nuevo universo (2018)", descripcion: "Miles Morales salta del edificio en caída libre al ritmo de la música." },
-  { pelicula: "Encanto (2021)", descripcion: "Mirabel señala desesperadamente una grieta mientras la casa tiembla." },
-  { pelicula: "The Mandalorian (2019)", descripcion: "Grogu extiende su mano usando la Fuerza mientras se concentra mucho." },
-  { pelicula: "La Bella y la Bestia (1991)", descripcion: "Bella gira con su vestido amarillo mientras baila con la Bestia." },
-  { pelicula: "Shrek 2 (2004)", descripcion: "El Gato con Botas pone cara tierna antes de sacar su espada dramáticamente." },
-  { pelicula: "Doctor Strange (2016)", descripcion: "Strange mueve sus manos dibujando círculos de magia en el aire." },
-  { pelicula: "Coco (2017)", descripcion: "Miguel toca la guitarra y es transportado al mundo de los muertos." },
-  { pelicula: "Iron Man (2008)", descripcion: "Tony Stark extiende la palma y lanza un rayo con su traje." },
-  { pelicula: "E.T. (1982)", descripcion: "E.T. extiende su dedo iluminado para tocar el de Elliot." },
-  { pelicula: "Los Simpson (1989)", descripcion: "Homer grita '¡D’oh!' y se lleva las manos a la cabeza." },
-  { pelicula: "El Rey León (1994)", descripcion: "Rafiki levanta a Simba en la roca del rey." },
-  { pelicula: "Stranger Things (2016)", descripcion: "Eleven cierra los ojos y sangra por la nariz al usar sus poderes." },
-  { pelicula: "Up (2009)", descripcion: "Carl y Russell flotan con la casa sostenida por globos." },
-  { pelicula: "Mi Villano Favorito (2010)", descripcion: "Los minions hacen un caos total bailando o golpeándose entre ellos." },
-  { pelicula: "El Hobbit – Un viaje inesperado (2012)", descripcion: "Bilbo escapa de Gollum escondiendo el anillo en el bolsillo." },
-  { pelicula: "Zootrópolis (2016)", descripcion: "Flash el perezoso responde lentamente a una broma mientras todos se desesperan." },
-  { pelicula: "Toy Story 2 (1999)", descripcion: "Woody mira su brazo descosido con horror mientras Jessie salta feliz." },
-  { pelicula: "Cars (2006)", descripcion: "Rayo McQueen acelera y lanza su '¡Ka-chow!' mirando a cámara." },
-  { pelicula: "Tiana y el Sapo (2009)", descripcion: "Tiana mira al príncipe convertido en sapo con incredulidad antes de besarlo." },
-  { pelicula: "Big Hero 6 (2014)", descripcion: "Baymax se infla lentamente saludando con su voz suave." },
-  { pelicula: "Los Minions (2015)", descripcion: "Un minion canta Banana con una guitarra al estilo romántico." },
-  { pelicula: "Rapunzel – Enredados (2010)", descripcion: "Rapunzel usa su sartén como espada contra Flynn." },
-  { pelicula: "Lilo & Stitch (2002)", descripcion: "Stitch destruye cosas con cuatro brazos mientras ríe malévolamente." },
-  { pelicula: "Scooby-Doo (2002)", descripcion: "Scooby se disfraza para pasar desapercibido mientras tiembla de miedo." },
-  { pelicula: "The Office (2005)", descripcion: "Michael Scott grita 'No God, please no!' desesperadamente." },
-  { pelicula: "Black Panther (2018)", descripcion: "T'Challa cruza los brazos en el pecho saludando con 'Wakanda Forever'." },
-  { pelicula: "Psicosis (1960)", descripcion: "Una figura apuñala tras una cortina de ducha mientras suena una música aguda." },
-  { pelicula: "Forrest Gump (1994)", descripcion: "Forrest sentado en un banco con una caja de bombones en las manos." },
-  { pelicula: "Titanic (1997)", descripcion: "Jack y Rose extienden los brazos en la proa del barco con el viento en la cara." },
-  { pelicula: "Rocky (1976)", descripcion: "Rocky sube corriendo las escaleras del museo con los brazos en alto." },
-  { pelicula: "Grease (1978)", descripcion: "Danny y Sandy bailan con chaquetas negras en la feria de fin de curso." },
-  { pelicula: "Indiana Jones – En busca del arca perdida (1981)", descripcion: "Indiana huye corriendo de una roca gigante que lo persigue." },
-  { pelicula: "Dirty Dancing (1987)", descripcion: "Johnny levanta a Baby en el aire en la coreografía final." },
-  { pelicula: "Ghost (1990)", descripcion: "Molly y Sam modelan arcilla juntos mientras suena 'Unchained Melody'." },
-  { pelicula: "El Resplandor (1980)", descripcion: "Jack asoma la cara por la puerta destrozada gritando '¡Aquí está Johnny!'." },
-  { pelicula: "Jurassic Park (1993)", descripcion: "Un T-Rex ruge mientras aparece reflejado en el retrovisor del coche." },
-  { pelicula: "Cantando bajo la lluvia (1952)", descripcion: "Gene Kelly canta y baila bajo la lluvia con un paraguas." },
-  { pelicula: "Matrix (1999)", descripcion: "Neo esquiva balas en cámara lenta inclinándose hacia atrás." },
-  { pelicula: "La naranja mecánica (1971)", descripcion: "Alex canta 'Singing in the Rain' mientras ataca en cámara lenta." },
-  { pelicula: "Pulp Fiction (1994)", descripcion: "Mia y Vincent bailan twist en el Jack Rabbit Slim’s." },
-  { pelicula: "Los Cazafantasmas (1984)", descripcion: "Los cuatro cruzan rayos de energía mientras gritan que no deben hacerlo." },
-  { pelicula: "Amélie (2001)", descripcion: "Amélie se tapa la cara con una sonrisa mientras observa desde una esquina." },
-  { pelicula: "La Milla Verde (1999)", descripcion: "John Coffey sana a alguien con solo tocarlo, llorando suavemente." },
-  { pelicula: "V de Vendetta (2005)", descripcion: "V realiza un gesto teatral con la capa tras detonar una explosión." },
-  { pelicula: "Kill Bill Vol. 1 (2003)", descripcion: "La Novia se enfrenta con katana a los Crazy 88 en una sala japonesa." },
-  { pelicula: "Taxi Driver (1976)", descripcion: "Travis frente al espejo dice: 'You talkin’ to me?' con un dedo apuntando." },
-  { pelicula: "Los Intocables (1987)", descripcion: "Escena del carrito de bebé descendiendo por las escaleras durante el tiroteo." },
-  { pelicula: "Gladiator (2000)", descripcion: "Máximo grita: '¿No os parece suficiente espectáculo?' al público en la arena." },
-  { pelicula: "El club de la lucha (1999)", descripcion: "Tyler Durden da el primer golpe en la pelea clandestina." },
-  { pelicula: "Top Gun (1986)", descripcion: "Maverick y Goose cantan 'Great Balls of Fire' en el piano del bar." },
-  { pelicula: "Reservoir Dogs (1992)", descripcion: "Mr. Blonde baila mientras interroga con música de fondo setentera." },
-  { pelicula: "El Exorcista (1973)", descripcion: "Regan gira la cabeza completamente mientras está en la cama poseída." },
-{ pelicula: "Drácula de Bram Stoker (1992)", descripcion: "Drácula aparece con una capa roja y una expresión hipnotizadora." },
-{ pelicula: "La Profecía (1976)", descripcion: "Damien observa fijamente mientras todo a su alrededor se torna oscuro y tenebroso." },
-{ pelicula: "El Sexto Sentido (1999)", descripcion: "Cole susurra: 'En ocasiones veo muertos' en un susurro escalofriante." },
-{ pelicula: "La Bruja (2015)", descripcion: "Thomasin habla con una cabra negra en medio del bosque con tensión creciente." },
-{ pelicula: "It (2017)", descripcion: "Pennywise asoma desde una alcantarilla con un globo rojo." },
-{ pelicula: "Annabelle (2014)", descripcion: "La muñeca Annabelle aparece sentada inmóvil, pero perturbadora." },
-{ pelicula: "Expediente Warren (2013)", descripcion: "Una familia se abraza aterrada mientras una figura aparece detrás." },
-{ pelicula: "Hereditary (2018)", descripcion: "Peter grita aterrado tras un sonido seco en medio del silencio." },
-{ pelicula: "Viernes 13 (1980)", descripcion: "Jason aparece lentamente desde el lago con su machete levantado." },
-{ pelicula: "Halloween (1978)", descripcion: "Michael Myers se aproxima lentamente con cuchillo en mano." },
-{ pelicula: "Nosferatu (1922)", descripcion: "La silueta de Nosferatu sube lentamente por una escalera." },
-{ pelicula: "Carrie (1976)", descripcion: "Carrie de pie cubierta de sangre durante el baile de graduación." },
-{ pelicula: "El Proyecto de la Bruja de Blair (1999)", descripcion: "Una cámara temblorosa muestra a alguien llorando contra una pared." },
-{ pelicula: "Misery (1990)", descripcion: "Annie Wilkes sostiene un mazo mientras se aproxima lentamente." },
-{ pelicula: "La La Land (2016)", descripcion: "Mia y Sebastian bailan entre farolas al atardecer." },
-{ pelicula: "Cisne Negro (2010)", descripcion: "Nina gira dramáticamente mientras se transforma en el cisne." },
-{ pelicula: "La Lista de Schindler (1993)", descripcion: "Una niña con abrigo rojo camina entre una multitud en blanco y negro." },
-{ pelicula: "El Gran Dictador (1940)", descripcion: "Chaplin juega con un globo terráqueo al ritmo de música clásica." },
-{ pelicula: "Cinema Paradiso (1988)", descripcion: "Totò de niño observa fascinado la proyección de una película." },
-{ pelicula: "Cantando bajo la lluvia (1952)", descripcion: "Gene Kelly da vueltas con el paraguas bajo la lluvia (clásico musical)." },
-{ pelicula: "El Bueno, el Feo y el Malo (1966)", descripcion: "Tres personajes se miran tensos antes de un duelo al sol." },
-{ pelicula: "Casablanca (1942)", descripcion: "Rick y Ilsa se despiden en el aeropuerto entre niebla y emoción." },
-{ pelicula: "Requiem por un sueño (2000)", descripcion: "Las pupilas se dilatan y todo se acelera al ritmo de la música." },
-{ pelicula: "Trainspotting (1996)", descripcion: "Renton se hunde en el suelo alfombrado tras consumir heroína." }
-
-
-    
+      "¡Estás esquivando un láser como Neo en Matrix!",
+      "Corre hacia tu amor en el aeropuerto... pero tropezando en cámara lenta.",
+      "Explota un confeti en tu boda y lo celebras con una voltereta épica.",
+      "Lanzas una tarta de boda como si fuera una granada mágica.",
+      "Te han dado una bofetada dramática. Muy, muy dramática.",
+      "Saltas al agua en slow motion como si estuvieras en Baywatch.",
+      "Te conviertes en Hulk... ¡pero primero te quitas los zapatos lentamente!",
+      "Estás en una pelea de bar... con churros como armas.",
+      "Sacas el anillo del bolsillo... y se te cae al suelo con horror.",
+      "Estás en una batalla Jedi... pero con cucharas en cámara lenta."
     ];
 
-    function siguienteEscena() {
-      const aleatoria = escenas[Math.floor(Math.random() * escenas.length)];
-      document.getElementById("pelicula").textContent = aleatoria.pelicula;
-      document.getElementById("descripcion").textContent = aleatoria.descripcion;
-      resetTemporizador();
+    function nuevaEscena() {
+      const escena = escenas[Math.floor(Math.random() * escenas.length)];
+      document.getElementById('escena').textContent = escena;
     }
 
-    let tiempoRestante = 45;
+    let tiempo = 45;
     let intervalo;
 
     function iniciarTemporizador() {
       clearInterval(intervalo);
-      tiempoRestante = 45;
-      document.getElementById("timer").textContent = tiempoRestante;
+      tiempo = 45;
+      document.getElementById('temporizador').textContent = tiempo;
       intervalo = setInterval(() => {
-        tiempoRestante--;
-        document.getElementById("timer").textContent = tiempoRestante;
-        if (tiempoRestante <= 0) {
+        tiempo--;
+        document.getElementById('temporizador').textContent = tiempo;
+        if (tiempo === 0) {
           clearInterval(intervalo);
         }
       }, 1000);
-    }
-
-    function resetTemporizador() {
-      clearInterval(intervalo);
-      document.getElementById("timer").textContent = "45";
     }
   </script>
 </body>
