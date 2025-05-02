@@ -1,0 +1,184 @@
+<html><head><title>Código Rojo</title>
+ <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      background-color: #111;
+      font-family: monospace;
+      text-align: center;
+      padding: 40px;
+    }
+    button {
+      padding: 15px 30px;
+      font-size: 1.4em;
+      margin-bottom: 20px;
+      background-color: #333;
+      color: #0f0;
+      border: 2px solid #0f0;
+      cursor: pointer;
+    }
+
+    body {
+      background-color: #111;
+      color: #0f0;
+      font-family: monospace;
+      padding: 40px;
+      line-height: 1.6;
+    }
+    h1 {
+      color: #adff2f;
+      font-size: 2.5em;
+    }
+    h2 {
+      color: #ff0;
+      margin-top: 30px;
+    }
+    h4 {
+      font-weight: normal;
+      color: #ccc;
+    }
+    ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    li {
+      margin: 5px 0;
+    }
+    a {
+      color: #0ff;
+      text-decoration: none;
+      font-size: 1.1em;
+    }
+    a:hover {
+      color: #fff700;
+    }
+ 
+  </style>
+<h1>🖍️ Código Rojo</h1>
+<button onclick='siguiente()'>🎲 Siguiente Palabra</button>
+<button onclick='startTimer()'>⏱️ Iniciar Cronómetro</button>
+<button onclick='stopTimer()'>🛑 Detener</button>
+<h2 id='timer'>00:00.0</h2>
+<p id='trab'></p>
+<script>
+let frases = [
+  'Lightsaber',
+  'Anillo',
+  'Tarta nupcial',
+  'Chewbacca',
+  'Ramo de flores',
+  'Dragón',
+  'Mandaloriano',
+  'Pizza',
+  'Mazinger Z',
+  'Sombrero de copa',
+  'Araña gigante',
+  'Alfombra voladora',
+  'Pokéball',
+  'Estatua de la libertad',
+  'Churro',
+  'Hulk enfadado',
+  'Ovni',
+  'Mario Bros',
+  'Calabaza',
+  'Unicornio',
+  'Arcoíris',
+  'Gollum',
+  'Casa encantada',
+  'Mamut',
+  'Gamepad',
+  'R2D2',
+  'Anillo de compromiso',
+  'Helado',
+  'Momia',
+  'Capa de invisibilidad',
+  'Darth Vader',
+  'Esqueleto bailando',
+  'Pato con gorra',
+  'Dado de 20 caras',
+  'Voldemort',
+  'Trono de hierro',
+  'Yoda en moto',
+  'Luna llena',
+  'Pikachu',
+  'Montaña rusa',
+  'Chocobo',
+  'Torre Eiffel',
+  'Camaleón',
+  'Sombrero de bruja',
+  'Murciélago',
+  'Grifo (animal mitológico)',
+  'Robot limpiando',
+  'Beso de película',
+  'Disfraz de unicornio',
+  'Batman tomando café',
+  'Hada madrina',
+  'Zombie bailando',
+  'Lanzallamas',
+  'Espada mágica',
+  'Lámpara mágica',
+  'Sirena en la bañera',
+  'Pantuflas con cara',
+  'Fantasma sonriente',
+  'Taza de Poción',
+  'Espantapájaros',
+  'Alien triste',
+  'Coche volador',
+  'Planeta con anillos',
+  'Sombrero selecto',
+  'Cañón de confeti',
+  'Nube con rayos',
+  'Gato con gafas',
+  'Tren fantasma',
+  'Libro encantado',
+  'Cupcake con cara',
+  'Pingüino con bufanda',
+  'Espejo mágico',
+  'Mapa del tesoro',
+  'Sirena con peine',
+  'Monstruo simpático',
+  'Camión de helados',
+  'Calamar espacial',
+  'Baúl del caos',
+  'Troll enamorado',
+  'Bruja cocinando',
+  'Gato ninja',
+  'Pez globo',
+  'Duende navideño',
+  'Cráneo sonriente',
+  'Poción del amor',
+  'Robot triste',
+  'Perrito caliente',
+  'Piraña gigante',
+  'Carroza mágica',
+  'Cubo de Rubik',
+  'Beso de ogro',
+  'Tiburón bailarín',
+  'Frankenstein haciendo yoga',
+  'Huevo saltarín',
+  'Dado parlante',
+  'Sombrilla encantada',
+  'Peluche poseído',
+  'Helicóptero de Lego',
+  'Cabra del apocalipsis',
+  'Narval de peluche',
+  'Silla con capa',
+  'Araña glam',
+  'Orco con tutú'
+  ]
+    document.getElementById('trab').innerText = frases[Math.floor(Math.random()*frases.length)];
+    stopTimer(); document.getElementById('timer').innerText = "00:00.0";
+}
+let startTime, timerInterval;
+function startTimer() {
+    startTime = Date.now();
+    timerInterval = setInterval(function() {
+        let elapsed = Date.now() - startTime;
+        let minutes = Math.floor(elapsed / 60000);
+        let seconds = ((elapsed % 60000) / 1000).toFixed(1);
+        document.getElementById('timer').innerText = (minutes < 10 ? "0" : "") + minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
+    }, 100);
+}
+function stopTimer() {
+    clearInterval(timerInterval);
+}
+</script></body></html>
