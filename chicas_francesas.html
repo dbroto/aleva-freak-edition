@@ -18,28 +18,20 @@
       border: 2px solid #0f0;
       cursor: pointer;
     }
-    #postura-nombre {
+    #dibujo {
       font-size: 2em;
       color: #ffff00;
       margin-top: 20px;
     }
-    #postura-desc {
-      font-size: 1.4em;
-      color: #adff2f;
-      margin-top: 10px;
-      max-width: 700px;
-      margin-left: auto;
-      margin-right: auto;
-    }
+   
   </style>
 </head>
 <body>
   <h1 style="color:#0ff;">🤸‍♂️ 🇫🇷 Tócame como a tus chicas francesas 🍷</h1>
   <button onclick="siguiente()">🎲 Nueva Palabra</button>
-  <div id="postura-nombre"></div>
-  <div id="postura-desc"></div>
+  <div id="dibujo"></div>
   <script>
-    let posturas = [
+    let dibujo = [
   'Sol',
   'Luna',
   'Casa',
@@ -145,9 +137,8 @@
 ]
 ;
     function siguiente() {
-      let p = posturas[Math.floor(Math.random() * posturas.length)];
-      document.getElementById("postura-nombre").innerText = p.nombre;
-      document.getElementById("postura-desc").innerText = p.descripcion;
+      let p = dibujo[Math.floor(Math.random() * dibujo.length)];
+      document.getElementById("dibujo").innerText = p.nombre;      
     }
   </script>
 </body>
