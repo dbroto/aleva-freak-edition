@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>🔇 Música para sordos 🔇</title>
+  <style>
+    body {
+      background-color: #111;
+      color: #eee;
+      font-family: 'Courier New', monospace;
+      text-align: center;
+      padding: 30px;
+    }
+    h1 {
+      color: #ffcc00;
+    }
+    #emojiDisplay {
+      font-size: 3em;
+      margin: 20px;
+      min-height: 2em;
+    }
+    #buttons {
+      margin-top: 20px;
+    }
+    button {
+      font-size: 1em;
+      padding: 10px 20px;
+      margin: 5px;
+      background-color: #222;
+      color: #ffcc00;
+      border: 2px solid #ffcc00;
+      cursor: pointer;
+    }
+    #solucion {
+      margin-top: 20px;
+      font-size: 1.5em;
+      color: #44ff44;
+    }
+  </style>
+</head>
+<body>
+  <h1>🔇 Música para sordos 🔇</h1>
+  <div id="emojiDisplay">🎞️</div>
+  <div id="buttons">
+    <button onclick="siguientePelicula()">🎲 Siguiente canción</button>
+    <button onclick="mostrarSolucion()">🎯 Mostrar canción</button>
+    <button onclick="detenerOReanudar()">⏯️ Pausar / Reanudar</button>
+  </div>
+  <div id="solucion"></div>
+  <script src="emoji-musica-sordo .js"></script>
+  <script>
+    let indiceActual = -1;
+    let intervalo;
+    let pausado = false;
+    let index = 0;
+
+    function siguientePelicula() {
+      clearInterval(intervalo);
+      document.getElementById('emojiDisplay').textContent = '';
+      document.getElementById('solucion').textContent = '';
+      indiceActual = Math.floor(Math.random() * peliculas.length);
+      index = 0;
+      pausado = false;
+      mostrarEmojis();
+    }
+
+    function mostrarEmojis() {
+      const emojis = peliculas[indiceActual].emojis;
+      intervalo = setInterval(() => {
+        if (!pausado && index < emojis.length) {
+          document.getElementById('emojiDisplay').textContent += emojis[index] + ' ';
+          index++;
+        } else if (index >= emojis.length) {
+          clearInterval(intervalo);
+        }
+      }, 1000);
+    }
+
+    function detenerOReanudar() {
+      pausado = !pausado;
+      if (!pausado) {
+        mostrarEmojis(); // Reanuda desde donde lo dejó
+      } else {
+        clearInterval(intervalo); // Pausa
+      }
+    }
+
+    function mostrarSolucion() {
+      if (indiceActual >= 0) {
+        document.getElementById('solucion').textContent = '🎬 ' + peliculas[indiceActual].titulo;
+      }
+    }
+  </script>
+</body>
+</html>
