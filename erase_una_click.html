@@ -1,0 +1,269 @@
+<html>
+<head>
+  <title>📸 Érase una... ¡Click! 📸</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      background-color: #111;
+      font-family: monospace;
+      text-align: center;
+      padding: 40px;
+    }
+    button {
+      padding: 15px 30px;
+      font-size: 1.4em;
+      margin-bottom: 20px;
+      background-color: #333;
+      color: #0f0;
+      border: 2px solid #0f0;
+      cursor: pointer;
+    }
+    #postura-nombre {
+      font-size: 2em;
+      color: #ffff00;
+      margin-top: 20px;
+    }
+    #postura-desc {
+      font-size: 1.4em;
+      color: #adff2f;
+      margin-top: 10px;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+        h1 {
+      color: #adff2f;
+      font-size: 2.5em;
+    }
+    h2 {
+      color: #ff0;
+      margin-top: 30px;
+    }
+    h4 {
+      font-weight: normal;
+      color: #ccc;
+    }
+    ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    li {
+      margin: 5px 0;
+    }
+    a {
+      color: #0ff;
+      text-decoration: none;
+      font-size: 1.1em;
+    }
+    a:hover {
+      color: #fff700;
+    }
+    p {
+      font-size: 1.4em;
+      color: #adff2f;
+      margin-top: 10px;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+ 
+  </style>
+</head>
+<body>
+  <h1 style="color:#0ff;">📸 Érase una... ¡Click! 📸</h1>
+  <button onclick="siguiente()">🎲 Nueva Prueba</button>
+  <button onclick='startTimer()'>⏱️ Iniciar Cronómetro</button>
+  <button onclick='stopTimer()'>🛑 Detener</button>
+  <h2 id='timer'>00:00.0</h2>
+  <div id="postura-nombre"></div>
+  <div id="postura-desc"></div>
+  <script>
+    let posturas = [[
+  {
+    'nombre': '💍 Anillo único... en el dedo equivocado',
+    'descripcion': 'Todos mirando al dedo gordo, grande, mastodonte del... pie 🦶 con emoción absoluta.'
+  },
+  {
+    'nombre': '🧔🏻‍♂️ Luke, yo soy tu... suegro',
+    'descripcion': 'Recread una pedida de mano épica con sables láser y tensión familiar galáctica.'
+  },
+  {
+    'nombre': '🚢 Titanic... pero en una bañera',
+    'descripcion': 'Cread la escena del barco usando una silla, una toalla o lo que haya por casa. ¡Jack, no cabes!'
+  },
+  {
+    'nombre': '💋 El beso maldito de Voldemort y Bella',
+    'descripcion': 'Narices ausentes, miradas vacías, y un beso que nadie pidió. Magia negra en el aire.'
+  },
+  {
+    'nombre': '🔥 Just Married... versión Mad Max',
+    'descripcion': 'Gafas de sol, actitud postapocalíptica, y un ramo hecho de chatarra. Testigos armados opcionales.'
+  },
+  {
+    'nombre': '👀 Gollum entrega los anillos',
+    'descripcion': 'Uno se arrastra por el suelo gritando “¡Mi tesoro!” mientras los demás le miran horrorizados.'
+  },
+  {
+    'nombre': '🕸️ Spiderman y Mary Jane... versión low cost',
+    'descripcion': 'Un beso boca abajo que no tiene ningún sentido anatómico ni romántico. Ideal para traumatizar.'
+  },
+  {
+    'nombre': '🦖 Jurassic Love Park',
+    'descripcion': 'Alguien disfrazado de dinosaurio persigue al otro con un ramo entre los dientes. Cuidado con el rugido.'
+  },
+  {
+    'nombre': '🌌 Beso de boda en la Estrella de la Muerte',
+    'descripcion': 'Cascos de stormtrooper, amor intergaláctico y confeti láser. Pura fuerza.'
+  },
+  {
+    'nombre': '👹 Bella y Bestia... pero es Shrek',
+    'descripcion': 'Un cuento clásico, pero con orejas verdes, un pantano y mucha incomodidad.'
+  },
+{
+    'nombre': '🤵 El Padrino bendice la boda',
+    'descripcion': 'Todos serios como en una foto oficial... excepto uno que susurra “haré que no rechaces este matrimonio”.'
+  },
+  {
+    'nombre': '⚔️ Avengers: Civil Wedding',
+    'descripcion': 'Dos equipos, arroz en mano, listos para lanzarse al caos matrimonial más épico del MCU.'
+  },
+  {
+    'nombre': '💃 Primer baile estilo Just Dance',
+    'descripcion': 'Danza improvisada con poses torpes. Nadie está sincronizado, todos creen que ganan.'
+  },
+  {
+    'nombre': '👽 Alien conoce a tu madre',
+    'descripcion': 'Un abrazo entre un xenomorfo casamentero y la suegra. Más tenso que gracioso.'
+  },
+  {
+    'nombre': '🔥 Frodo lanza el ramo al Monte del Zapato',
+    'descripcion': 'Un zapato marca el destino. El ramo vuela. El drama es real.'
+  },
+  {
+    'nombre': '⚡ Amor a lo Pokémon',
+    'descripcion': '“Te elijo a ti” con pokébola, cara intensa y pose de combate de entrenador loco.'
+  },
+  {
+    'nombre': '🎧 Star-Lord y Gamora bailando en la boda',
+    'descripcion': 'Música imaginaria, coreografía sin ritmo, y una expresión seria como si fueran finalistas del Got Talent.'
+  },
+  {
+    'nombre': '🥵 Despedida de soltero en Mordor',
+    'descripcion': 'Camisas abiertas, anillos brillando, y sudor épico camino al volcán. Éxtasis y fuego.'
+  },
+  {
+    'nombre': '🌙 Sailor Moon se casa con Batman',
+    'descripcion': 'Fusión entre amor lunar y justicia nocturna. El cosplay es ridículo. El amor es real.'
+  },
+  {
+    'nombre': '🧙‍♂️ La boda en Hogwarts sin varitas',
+    'descripcion': 'Todos apuntan cucharas, tenedores o lápices como si fueran poderosos magos. Expecto Patronum... o algo.'
+  },
+      {
+    'nombre': '🛸 E.T. quiere ser testigo',
+    'descripcion': 'Uno de los novios levanta el ramo. Otro señala con el dedo. Todos gritan: “¡E.T. matrimoniooooo!”'
+  },
+  {
+    'nombre': '🧟‍♂️ Walking Wed',
+    'descripcion': 'Novios zombis caminando hacia el altar. Invitados aterrados. ¡Hasta que la muerte los reanime!'
+  },
+  {
+    'nombre': '🪄 Harry Potter y el hechizo del Sí Quiero',
+    'descripcion': 'Todos con bufandas de Hogwarts, varitas en alto y cara de haberse confundido de boda.'
+  },
+  {
+    'nombre': '👾 Pac-Man se casa con el fantasma rosa',
+    'descripcion': 'Un círculo amarillo persigue a una sábana rosa. El amor es... confuso.'
+  },
+  {
+    'nombre': '🍿 Amor en el Multiverso del Matrimonio',
+    'descripcion': 'Spiderman, Darth Vader, y Elsa de Frozen posan como testigos. Todo es canon. Todo es boda.'
+  },
+  {
+    'nombre': '🦸 Wonder Woman se casa con Deadpool',
+    'descripcion': 'Ella en pose heroica. Él tumbado con flores y armas. Romance imposible, foto perfecta.'
+  },
+  {
+    'nombre': '🎮 Mario besa a Peach... ¡pero aparece Bowser!',
+    'descripcion': 'Triángulo amoroso. Un salto, una flor de fuego y muchos celos.'
+  },
+  {
+    'nombre': '🥷 Ninja de boda improvisada',
+    'descripcion': 'Saltos absurdos, poses dramáticas y un ramo que desaparece como por arte de ninjutsu.'
+  },
+  {
+    'nombre': '🚀 El casamiento intergaláctico de Buzz y Leia',
+    'descripcion': 'El espacio no es frontera para el amor. Un casco, una trenza, y un grito: ¡hasta el infinito y el altar!'
+  },
+  {
+    'nombre': '🪦 El fantasma de las bodas pasadas',
+    'descripcion': 'Uno disfrazado de espectro se lamenta, mientras otro pareja se casa feliz... ¿o no?'
+  },
+      {
+    'nombre': '🐉 Juego de Tronos... pero de sillas de camping',
+    'descripcion': 'El Rey y la Reina se sientan en sillas plegables. Los súbditos brindan con latas de cerveza.'
+  },
+  {
+    'nombre': '🍕 El matrimonio pizza',
+    'descripcion': 'Todos se arrodillan ante una pizza. Alguien propone con un anillo en una aceituna.'
+  },
+  {
+    'nombre': '👽 Matrimonio paranormal',
+    'descripcion': 'Uno con sábana, otro con gafas de sol tipo Men in Black. El cura lleva papel de aluminio.'
+  },
+  {
+    'nombre': '💃 High School Wedding',
+    'descripcion': 'Bailes sincronizados como si fueran protagonistas de Disney Channel. Nivel de vergüenza: 100%.'
+  },
+  {
+    'nombre': '👑 Boda Disney... en versión villanos',
+    'descripcion': 'Hades oficia la ceremonia. Úrsula lanza el arroz. Scar grita “¡Vivan los novios!”'
+  },
+  {
+    'nombre': '⚰️ Hasta que la muerte... literal',
+    'descripcion': 'Uno en pose romántica. El otro sale de una caja tipo ataúd con cara de “¡Sí acepto!”'
+  },
+  {
+    'nombre': '🧟‍♀️ El ramo zombi',
+    'descripcion': 'El ramo se lanza. Todos huyen. El zombi se lo queda y se lo come.'
+  },
+  {
+    'nombre': '🌋 Boda en el Monte del Destino',
+    'descripcion': 'Dos novios al borde de una escalera o colina. Uno lanza el anillo. El otro grita: “¡Noooooo!”'
+  },
+  {
+    'nombre': '🦇 El matrimonio oscuro de Gotham',
+    'descripcion': 'Batman lanza el arroz con cara seria. Catwoman roba el ramo y huye.'
+  },
+  {
+    'nombre': '🎤 El musical del “Sí Quiero”',
+    'descripcion': 'Todos posan con micrófonos imaginarios. Novios cantando, padrinos haciendo beatbox.'
+  }
+
+
+
+
+      
+    ];
+    function siguiente() {
+      let p = posturas[Math.floor(Math.random() * posturas.length)];
+      document.getElementById("postura-nombre").innerText = p.nombre;
+      document.getElementById("postura-desc").innerText = p.descripcion;
+      stopTimer(); document.getElementById('timer').innerText = "00:00.0";
+    }
+    let startTime, timerInterval;
+function startTimer() {
+    startTime = Date.now();
+    timerInterval = setInterval(function() {
+        let elapsed = Date.now() - startTime;
+        let minutes = Math.floor(elapsed / 60000);
+        let seconds = ((elapsed % 60000) / 1000).toFixed(1);
+        document.getElementById('timer').innerText = (minutes < 10 ? "0" : "") + minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
+    }, 100);
+}
+function stopTimer() {
+    clearInterval(timerInterval);
+}
+  </script>
+</body>
+</html>
