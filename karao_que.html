@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>🎤 Karao... ¿Qué? 🎤</title>
+  <style>
+    body {
+      background-color: #111;
+      color: #eee;
+      font-family: 'Courier New', monospace;
+      text-align: center;
+      padding: 30px;
+    }
+    h1 {
+      color: #ffcc00;
+    }
+    #frase {
+      font-size: 2em;
+      margin: 30px 0;
+      min-height: 2em;
+    }
+    button {
+      font-size: 1.2em;
+      padding: 10px 20px;
+      margin: 10px;
+      background-color: #222;
+      color: #ffcc00;
+      border: 2px solid #ffcc00;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>🎤 Karao... ¿Qué? 🎤</h1>
+  <div id="frase">🎶</div>
+  <button onclick="nuevaFrase()">🎲 Nueva frase</button>
+  <button onclick="detenerMostrar()">⏹️ Detener</button>
+  <button onclick="mostrarCompleta()">🎯 Mostrar completa</button>
+
+  <script>
+    const frases = [
+      "Hakuna Matata, vive y deja vivir.",
+      "Libre soy, libre soy, no puedo ocultarlo más.",
+      "Yo quiero ser el rey león.",
+      "Let it be, let it be, let it be, yeah, let it be.",
+      "I will survive, oh, as long as I know how to love I know I'll stay alive.",
+      "Mamma mia, here I go again, my my, how can I resist you?",
+      "Sweet Caroline, bah bah bah!",
+      "Bohemian Rhapsody, is this the real life?",
+      "Don't stop believin', hold on to that feelin'",
+      "Y la culpa no era mía, ni dónde estaba ni cómo vestía."
+    ];
+
+    let fraseCompleta = "";
+    let index = 0;
+    let intervalo;
+
+    function nuevaFrase() {
+      clearInterval(intervalo);
+      index = 0;
+      fraseCompleta = frases[Math.floor(Math.random() * frases.length)];
+      document.getElementById("frase").textContent = "";
+      intervalo = setInterval(() => {
+        if (index < fraseCompleta.length) {
+          document.getElementById("frase").textContent += fraseCompleta[index];
+          index++;
+        } else {
+          clearInterval(intervalo);
+        }
+      }, 150); // velocidad de letra
+    }
+
+    function detenerMostrar() {
+      clearInterval(intervalo);
+    }
+
+    function mostrarCompleta() {
+      clearInterval(intervalo);
+      document.getElementById("frase").textContent = fraseCompleta;
+    }
+  </script>
+</body>
+</html>
