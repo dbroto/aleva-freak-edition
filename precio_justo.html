@@ -638,17 +638,34 @@
 
       
     ];
-
-    let currentIndex = 0;
+ let questionPool = [...preguntas];
+    let currentQuestion;
     let countdown;
+
     const questionEl = document.getElementById('question');
     const priceEl = document.getElementById('price');
     const timerEl = document.getElementById('timer');
 
+    function shuffle(array) {
+      for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+      }
+      return array;
+    }
+
+    function getNextQuestion() {
+      if (questionPool.length === 0) {
+        questionPool = shuffle([...preguntas]);
+      }
+      return questionPool.pop();
+    }
+
     function updateQuestion() {
-      questionEl.textContent = preguntas[currentIndex].pregunta;
+      currentQuestion = getNextQuestion();
+      questionEl.textContent = currentQuestion.pregunta;
       priceEl.style.display = 'none';
-      priceEl.textContent = '💰 Precio justo: ' + preguntas[currentIndex].precio;
+      priceEl.textContent = '💰 Precio justo: ' + currentQuestion.precio;
       timerEl.textContent = '10';
     }
 
@@ -672,11 +689,11 @@
     }
 
     function nextQuestion() {
-      currentIndex = (currentIndex + 1) % preguntas.length;
       updateQuestion();
     }
 
-    // Inicializar con la primera pregunta
+    // Inicializar con una pregunta aleatoria
+    questionPool = shuffle([...preguntas]);
     updateQuestion();
   </script>
 </body>
