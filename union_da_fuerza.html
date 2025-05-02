@@ -1,0 +1,232 @@
+  <!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>👫 La unión da la fuerza 👫</title>
+  <style>
+    body {
+      background-color: #111;
+      color: #eee;
+      font-family: 'Courier New', monospace;
+      text-align: center;
+      padding: 30px;
+    }
+    h1 {
+      color: #ffcc00;
+    }
+    #escena {
+      font-size: 1.5em;
+      margin: 30px 0;
+      min-height: 4em;
+    }
+    button {
+      font-size: 1em;
+      padding: 10px 20px;
+      margin: 10px;
+      background-color: #222;
+      color: #ffcc00;
+      border: 2px solid #ffcc00;
+      cursor: pointer;
+    }
+    #temporizador {
+      font-size: 2em;
+      color: #44ff44;
+      margin: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>👫 La unión da la fuerza 👫</h1>
+  <div id="escena"> Pulsa para una nueva escena... ¡que se desate el caos!</div>
+  <button onclick="nuevaEscena()">🎲 Siguiente escena</button>
+  <button onclick="iniciarTemporizador()">⏱️ Empezar 60s</button>
+  <div id="temporizador">45</div>
+
+  <script>
+    const escenas = [
+"Una banda de mariachis toca una serenata apasionada a la novia",
+  "Un equipo de superhéroes llega tarde a la boda y aterriza con estilo",
+  "Una familia discute acaloradamente sobre qué mesa les toca en el banquete",
+  "Un grupo intenta montar una carpa para la boda... ¡en medio de una tormenta!",
+  "Unas personas entran a una iglesia equivocada y fingen que son invitados",
+  "Un comando rebelde de Star Wars libera a los novios del Imperio",
+  "Una familia baila una coreografía descoordinada en la pista",
+  "Un grupo de hobbits trata de esconder el anillo de bodas del ojo de Sauron",
+  "Un equipo de televisión cubre una boda real... ¡pero todo sale mal!",
+  "Un grupo representa el videoclip de Thriller, pero con invitados de boda",
+  "Unos gladiadores luchan por lanzar el ramo... ¡al estilo romano!",
+  "Un equipo de cocina prepara el banquete... y se les incendia algo",
+  "Un grupo hace yoga para calmar a la novia... pero todos se enredan",
+  "Un grupo simula un atasco de tráfico camino a la boda, tocando bocina y discutiendo",
+  "Unos elfos intentan envolver un regalo mágico sin romperlo",
+  "Unos stormtroopers organizan el seating plan... con caótica precisión imperial",
+  "Un grupo de magos de Hogwarts lanza hechizos para encontrar al padrino perdido",
+  "Una familia hace una foto grupal y todos se mueven al estilo cámara lenta",
+  "Un grupo intenta cazar el bouquet con estrategia militar",
+  "Unos aventureros cruzan un puente invisible (tipo Monty Python) para llegar al altar",
+  "Unos invitados intentan sentarse sin saber que hay sillas musicales",
+  "Un grupo improvisa una orquesta con copas, cubiertos y botellas en la boda",
+  "Una familia discute quién lleva los anillos mientras todos los pierden",
+  "Unos jedis hacen una pelea épica... ¡por el último canapé!",
+  "Un grupo hace una conga interminable que se descontrola",
+  "Unos invitados se creen que es boda temática y llegan disfrazados de Star Trek",
+  "Unos zombies interrumpen la boda buscando cerebros gourmet del banquete",
+  "Un equipo intenta hacer una torre humana para alcanzar el ramo",
+  "Unos chefs preparan una tarta de bodas... pero se les cae cada capa",
+  "Unos paparazzi espían a los novios y se esconden detrás de plantas",
+  "Unos alumnos ensayan una coreografía sorpresa... y todos olvidan los pasos",
+  "Un grupo actúa como si fueran personajes Disney saludando a los niños",
+  "Unos elfos domésticos decoran la boda con globos encantados que flotan solos",
+  "Unos exploradores llegan perdidos al altar, creyendo que es una ruina azteca",
+  "Unos astronautas celebran la boda en gravedad cero (flotando y chocando)",
+  "Unos jugadores de Quidditch lanzan el ramo como si fuera la snitch",
+  "Unos personajes de anime se confiesan su amor con gestos exagerados",
+  "Un grupo imita una escena de musical de Broadway... sin saber cantar",
+  "Unos niños juegan a ser novios y padres mientras arruinan el ritual",
+  "Un equipo intenta hacer una entrada épica con humo... pero se pierden en él",
+  "Unos Stormtroopers caminan al altar al ritmo de la marcha nupcial, pero todos se equivocan de dirección",
+  "Unos novios frikis hacen un ritual con varitas mágicas y el hechizo sale mal",
+  "Un grupo ensaya un flashmob de boda... con pasos de Just Dance mal sincronizados",
+  "Unos exploradores del amor abren un mapa y no encuentran el altar",
+  "Un grupo de hobbits intenta lanzar los anillos al volcán... que es el pastel de bodas",
+  "Unos superhéroes protegen los anillos como si fueran piedras del infinito",
+  "Unos DJs humanos y alienígenas intentan pinchar la canción perfecta para el primer baile",
+  "Un equipo de jugadores de rol representa una escena romántica… con dados gigantes",
+  "Unos chefs de MasterChef presentan su plato… pero es una tarta destrozada",
+  "Unos androides intentan bailar... y se bloquean con movimientos robóticos",
+  "Unos elfos intentan bendecir la boda… pero solo hablan en élfico y nadie los entiende",
+  "Unos luchadores de lucha libre hacen su entrada triunfal a la boda con golpes en cámara lenta",
+  "Un grupo improvisa una boda medieval... ¡pero alguien lanza una gallina!",
+  "Unos clones de los novios intentan suplantarlos y se pelean para decidir quién se casa",
+  "Unos fans representan la escena de '¡Yo me opongo!' interrumpiendo la boda",
+  "Unos frikis recrean el consejo de Elrond para decidir el menú del banquete",
+  "Unos niños Jedi construyen sables láser con pajitas... y terminan peleando por el postre",
+  "Un grupo intenta levantar a la novia en una silla... y se cae la decoración",
+  "Unos magos compiten por hacer el brindis más épico… pero todos lanzan hechizos distintos",
+  "Unos personajes de anime reaccionan con dramatismo cuando descubren que no hay karaoke",
+   "Un equipo de Power Rangers hace su transformación… pero se les cae todo",
+  "Un grupo intenta montar una conga nupcial, pero cada uno va a un ritmo distinto",
+  "Unos pingüinos intentan desfilar en una boda en la Antártida",
+  "Una banda de mariachis toca para la novia… pero todos imitan instrumentos equivocados",
+  "Un grupo recrea una escena de Titanic en una piscina inflable",
+  "Una pareja se casa bajo el mar y todos los invitados nadan como sirenas y peces",
+  "Unos soldados de Star Wars desfilan… y uno se desmaya del calor",
+  "Un grupo intenta lanzar confeti y todos terminan con confeti en la boca",
+  "Un grupo representa la escena del parto… ¡pero es de un huevo Kinder!",
+  "Unos gladiadores celebran una boda romana y terminan en pelea con almohadas",
+  "Un equipo de astronautas flota en gravedad cero mientras lanzan el ramo",
+  "Unos personajes Disney preparan la boda de Ariel y se ahogan en su propia coreografía",
+  "Unos ogros del pantano preparan una ceremonia especial… con eructos incluidos",
+  "Un grupo hace un desfile de moda con ropa improvisada de cortinas y papel higiénico",
+  "Unos vikingos beben hidromiel y bendicen el matrimonio con cuernos y gritos",
+  "Unos cazadores de Pokémon intentan capturar al cura pensando que es legendario",
+  "Unos zombies intentan celebrar una boda… pero no paran de comerse los regalos",
+  "Un grupo representa una película de Bollywood… con mucho drama y vueltas absurdas",
+  "Unos chefs de boda lanzan ingredientes al aire como si fueran ninjas de cocina",
+  "Un grupo intenta hacerse la foto perfecta de boda… pero siempre uno estornuda",
+  "Novios y padrinos escapando del baile nupcial como si fueran superhéroes",
+  "Toda la familia discutiendo si cortar la tarta con sable láser o con espada mágica",
+  "Grupo de Jedi intentando colocar bien el velo de la novia con la Fuerza",
+  "Una batalla entre el equipo Marvel y los suegros por elegir la música del vals",
+  "Una invasión zombie... ¡durante la entrega de anillos!",
+  "El grupo de amigos recreando una escena de El Señor de los Anillos al lanzar el ramo",
+  "Una familia intentando montar una boda medieval con armaduras incluidas",
+  "Un flashmob sorpresa en la boda con coreografía al estilo Bollywood",
+  "Un simulacro de combate Pokémon entre la novia y la suegra",
+  "El equipo entero bailando como en Thriller en plena pista de boda",
+  "Una despedida de solteros atrapados en una nave espacial infestada de aliens",
+  "Una cena de boda donde todos se transforman en personajes de Disney",
+  "La novia, la dama de honor y dos hobbits escapando del catering",
+  "Un concurso de karaoke nupcial con personajes de Star Wars, Marvel y Frozen",
+  "Un brindis friki con varitas mágicas que termina en caos",
+  "Una batalla épica por el último canapé de la bandeja del camarero",
+  "El equipo intentando lanzar el ramo... pero el ramo vuela como un dron",
+  "El novio y los padrinos haciendo la entrada como si fueran Los Vengadores",
+  "Una ceremonia oficiada por Gandalf y saboteada por Gollum",
+  "Los invitados confundiendo una boda real con un capítulo de Juego de Tronos",
+   "Los camareros corriendo tras un invitado que ha robado una bandeja entera de canapés",
+  "Los novios y sus padres peleándose por qué canción poner de apertura",
+  "Los invitados bailando con el abuelo que no oye la música pero lo da todo",
+  "Un grupo tratando de inflar 100 globos con la boca justo antes de que lleguen los novios",
+  "La familia intentando colocar una pancarta sorpresa… ¡pero la cuelgan al revés!",
+  "El grupo de amigas de la novia haciendo un brindis… que termina en guerra de cava",
+  "La novia con amigas intentando ir al baño con el vestido puesto",
+  "Los novios intentando cortar la tarta, pero nadie encuentra el cuchillo… ni la tarta",
+  "Un grupo intentando sacar la foto perfecta… mientras todos parpadean a la vez",
+  "Los padrinos intentando esconder al novio que tiene miedo escénico",
+  "Una coreografía de entrada tan descoordinada que parece una invasión de patos",
+  "Todos buscando al niño que debía llevar los anillos… y aparece dormido",
+  "Los invitados bailando la conga… y tirando la mesa de regalos sin querer",
+  "El fotógrafo intentando hacer la foto de grupo… y todos se pelean por el centro",
+  "El DJ pone la canción equivocada… y el grupo la canta igual con emoción",
+  "La abuela confundiendo la cámara con un teléfono y gritando '¿Hola?'",
+  "El grupo de solteros peleando a cámara lenta por atrapar el ramo",
+  "Intento de lanzamiento de fuegos artificiales que resulta ser confeti mojado",
+  "Una entrada triunfal con confeti… que termina cegando a todo el grupo",
+  "Todos saludando con entusiasmo… al fotógrafo equivocado",
+   "El grupo intentando montar una mesa IKEA justo antes del banquete",
+  "Los testigos practicando el brindis… y olvidando quién se casaba",
+  "El grupo intentando sorprender a los novios con una canción… pero todos desafinan",
+  "Los invitados haciendo fila para el baño… y uno se cuela con sigilo",
+  "Todos buscando desesperados el regalo de los novios que alguien perdió",
+  "Un grupo intenta lanzar pétalos a los novios, pero todos se los tiran entre sí",
+  "Los niños de la boda montan una revuelta con pistolas de agua en mitad del banquete",
+  "La banda se pone a tocar… pero nadie sabe cuál es la canción elegida",
+  "Todos se preparan para la foto… y uno aparece con una copa en la cabeza",
+  "El grupo bailando La Macarena… cada uno con una versión distinta",
+  "Una tía abuela intenta hacer crowd surfing y todos corren a sujetarla",
+  "El grupo de amigos intentando sacar al novio de una silla tras un brindis largo",
+  "Los invitados haciendo trencito… y chocan con la mesa de la tarta",
+  "El cura se equivoca de discurso… y el grupo improvisa la ceremonia",
+  "Los camareros hacen malabares con copas… mientras los invitados animan sin ayudar",
+  "Un grupo intenta rescatar el ramo que ha quedado enganchado en la lámpara",
+  "Todos se esconden para hacer una sorpresa… pero el grupo estornuda a la vez",
+  "Ensayo de entrada al altar… y todos entran a ritmo distinto como un desfile caótico",
+  "Se abre el photocall y todos intentan usar los mismos accesorios a la vez",
+  "Un brindis de grupo en el que todos brindan... ¡por diferentes personas!",
+  "Intentando posar todos para una foto saltando... y nadie salta a la vez",
+  "Recreando el vals de los novios… pero con pasos de reguetón",
+  "Un grupo improvisando una coreografía sorpresa… sin haberla ensayado nunca",
+  "Intentando encender bengalas... y todos fallan menos uno",
+  "El grupo lanzando arroz al aire... y uno se lo traga",
+  "Recreando el momento en que alguien pisa el vestido de la novia",
+  "Todos imitando al tío borracho bailando solo en la pista",
+  "Simulando una conga... que acaba en choque múltiple",
+  "Intentando hacer una torre humana para ver a los novios... y derrumbe",
+  "Todos buscando desesperados un anillo que cayó al suelo",
+  "Recreando el brindis... y todos terminan empapados de cava",
+  "El grupo intentando seguir una conga... pero uno va en sentido contrario",
+  "Preparando una lluvia de confeti... y se lo tiran antes de tiempo",
+  "Recreando el lanzamiento del ramo... y todos se tiran al suelo por él",
+  "Jugando a las sillas en plena boda... con caídas incluidas",
+  "Todos intentando ayudar al DJ... ¡y lo desconectan todo!",
+  "Imitando a los novios en la primera noche de bodas... con almohadas",
+  "Haciendo el paseíllo triunfal de entrada... como si fuera un desfile militar",
+  "Simulando todos que se emocionan con el discurso… y lloran exageradamente",
+  "Todos bailando una canción lenta… pero con pasos de zumba"
+
+    ];
+
+    function nuevaEscena() {
+      const escena = escenas[Math.floor(Math.random() * escenas.length)];
+      document.getElementById('escena').textContent = escena;
+    }
+
+    let tiempo = 60;
+    let intervalo;
+
+    function iniciarTemporizador() {
+      clearInterval(intervalo);
+      tiempo = 60;
+      document.getElementById('temporizador').textContent = tiempo;
+      intervalo = setInterval(() => {
+        tiempo--;
+        document.getElementById('temporizador').textContent = tiempo;
+        if (tiempo === 0) {
+          clearInterval(intervalo);
+        }
+      }, 1000);
+    }
+  </script>
+</body>
+</html>
