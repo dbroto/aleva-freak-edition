@@ -54,7 +54,861 @@
   <button id="siguiente" onclick="siguiente()">Siguiente Pregunta</button>
 
   <script>
-    const preguntas = [{'pregunta': '¿Quién fue el maestro de Obi-Wan Kenobi?', 'respuestas': ['Mace Windu', 'Yoda', 'Qui-Gon Jinn', 'Anakin Skywalker'], 'correcta': 2}, {'pregunta': '¿En qué planeta nació Luke Skywalker?', 'respuestas': ['Tatooine', 'Naboo', 'Alderaan', 'Endor'], 'correcta': 0}, {'pregunta': '¿Cómo se llama la nave de Han Solo?', 'respuestas': ['X-Wing', 'Destructor Estelar', 'Halcón Milenario', 'Nave Jedi'], 'correcta': 2}, {'pregunta': '¿Quién es el padre de Luke Skywalker?', 'respuestas': ['Obi-Wan', 'Palpatine', 'Darth Vader', 'Mace Windu'], 'correcta': 2}, {'pregunta': '¿Qué color es el sable láser de Mace Windu?', 'respuestas': ['Verde', 'Rojo', 'Azul', 'Morado'], 'correcta': 3}, {'pregunta': '¿Quién entrenó a Anakin Skywalker?', 'respuestas': ['Yoda', 'Obi-Wan Kenobi', 'Qui-Gon Jinn', 'Luke Skywalker'], 'correcta': 1}, {'pregunta': '¿Qué especie es Yoda?', 'respuestas': ['Yoda es único', 'Wookie', 'Desconocida', 'Jawa'], 'correcta': 2}, {'pregunta': '¿Cuál es el nombre del planeta sede del Senado Galáctico?', 'respuestas': ['Tatooine', 'Mustafar', 'Coruscant', 'Dagobah'], 'correcta': 2}, {'pregunta': '¿Qué droide acompaña a C-3PO?', 'respuestas': ['BB-8', 'R5-D4', 'IG-88', 'R2-D2'], 'correcta': 3}, {'pregunta': "¿Quién dice: 'Yo soy tu padre'?", 'respuestas': ['Obi-Wan', 'Darth Vader', 'Palpatine', 'Boba Fett'], 'correcta': 1}];
+    const preguntas = [
+ {
+    "pregunta": "¿Quién fue el maestro Jedi de Qui-Gon Jinn?",
+    "respuestas": ["Yoda", "Dooku", "Mace Windu", "Obi-Wan Kenobi"],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué especie es Chewbacca?",
+    "respuestas": ["Ewok", "Wookiee", "Rodiano", "Trandoshano"],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué planeta fue destruido por la Estrella de la Muerte?",
+    "respuestas": ["Tatooine", "Alderaan", "Endor", "Hoth"],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Cuál es el nombre del sable láser con triple hoja que usa Kylo Ren?",
+    "respuestas": ["Sable cruzado", "Sable del caos", "Sable de guardia", "Sable ancestral"],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Cómo se llama el droide astromecánico azul y blanco más famoso?",
+    "respuestas": ["C-3PO", "BB-8", "R2-D2", "K-2SO"],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Quién es el padre biológico de Luke Skywalker?",
+    "respuestas": ["Obi-Wan Kenobi", "Yoda", "Anakin Skywalker", "Mace Windu"],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Cómo se llama el planeta natal de los Wookiees?",
+    "respuestas": ["Kashyyyk", "Dagobah", "Tatooine", "Endor"],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Quién mató al Conde Dooku?",
+    "respuestas": ["Yoda", "Obi-Wan", "Anakin", "Mace Windu"],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué actor interpretó a Han Solo en la trilogía original?",
+    "respuestas": ["Mark Hamill", "Harrison Ford", "Ewan McGregor", "Alec Guinness"],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Cuál es el nombre del mandaloriano protagonista de la serie 'The Mandalorian'?",
+    "respuestas": ["Din Djarin", "Boba Fett", "Jango Fett", "Cad Bane"],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué tipo de criatura es Jabba el Hutt?",
+    "respuestas": ["Rodiano", "Hutt", "Gungan", "Twi'lek"],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿En qué episodio aparece por primera vez el General Grievous?",
+    "respuestas": ["Episodio II", "Episodio III", "Episodio IV", "Episodio I"],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué planeta helado aparece en 'El Imperio Contraataca'?",
+    "respuestas": ["Hoth", "Endor", "Naboo", "Jakku"],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Cómo se llama el sable láser de doble hoja rojo usado por Darth Maul?",
+    "respuestas": ["Sable gemelo", "Sable dual", "Sable doble", "Sable de energía"],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Quién es el líder supremo de la Primera Orden?",
+    "respuestas": ["Snoke", "Kylo Ren", "Palpatine", "Tarkin"],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué personaje dice la frase: 'He sentido una perturbación en la Fuerza'?",
+    "respuestas": ["Yoda", "Obi-Wan Kenobi", "Darth Vader", "Luke Skywalker"],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué episodio de Star Wars fue el primero en estrenarse en cines?",
+    "respuestas": ["Episodio I", "Episodio IV", "Episodio V", "Episodio VI"],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué mineral raro se usa para construir sables láser?",
+    "respuestas": ["Vibranio", "Duracero", "Cristal kyber", "Beskar"],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Quién dirigió el Episodio V: El Imperio Contraataca?",
+    "respuestas": ["George Lucas", "Irvin Kershner", "J.J. Abrams", "Rian Johnson"],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Cómo se llama el planeta donde se esconde Luke en 'Los últimos Jedi'?",
+    "respuestas": ["Ahch-To", "Dagobah", "Yavin", "Endor"],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué personaje fue entrenado en secreto como Jedi por Leia?",
+    "respuestas": ["Finn", "Ben Solo", "Rey", "Grogu"],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Quién fue la madre de Leia y Luke?",
+    "respuestas": ["Padmé Amidala", "Breha Organa", "Shmi Skywalker", "Ahsoka Tano"],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué criatura gigante habita el foso de Jabba el Hutt?",
+    "respuestas": ["Rancor", "Bantha", "Dewback", "Tauntaun"],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Cuál es el nombre real de Baby Yoda?",
+    "respuestas": ["Yaddel", "Grogu", "Greez", "Nono"],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué planeta sirve como capital de la República Galáctica?",
+    "respuestas": ["Coruscant", "Alderaan", "Kamino", "Mustafar"],
+    "correcta": 0
+  },
+   {
+    "pregunta": "¿Qué planeta es conocido por sus llanuras desérticas y dos soles?",
+    "respuestas": ["Tatooine", "Naboo", "Jakku", "Geonosis"],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué droide acompaña a Poe Dameron en la nueva trilogía?",
+    "respuestas": ["R2-D2", "BB-8", "C-3PO", "K-2SO"],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué especie es Yoda?",
+    "respuestas": ["Desconocida", "Twi'lek", "Rodiano", "Mon Calamari"],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué actor interpretó a Obi-Wan Kenobi en las precuelas?",
+    "respuestas": ["Alec Guinness", "Hayden Christensen", "Ewan McGregor", "Liam Neeson"],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿En qué planeta nace Anakin Skywalker?",
+    "respuestas": ["Tatooine", "Naboo", "Coruscant", "Kamino"],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Quién fundó la Primera Orden?",
+    "respuestas": ["Snoke", "Palpatine", "Hux", "Leia"],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué personaje fue creado por George Lucas como 'el elegido'?",
+    "respuestas": ["Luke Skywalker", "Anakin Skywalker", "Obi-Wan Kenobi", "Rey"],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué actor interpretó al emperador Palpatine?",
+    "respuestas": ["Christopher Lee", "Ian McDiarmid", "Andy Serkis", "Domhnall Gleeson"],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué nave usan los Jedi principalmente en las Guerras Clon?",
+    "respuestas": ["X-Wing", "Interceptor Jedi", "Halcón Milenario", "A-Wing"],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Cuál es el nombre del planeta acuático donde vive Jar Jar Binks?",
+    "respuestas": ["Kamino", "Mon Cala", "Naboo", "Felucia"],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué miembro del Consejo Jedi sobrevive a la Orden 66?",
+    "respuestas": ["Ki-Adi-Mundi", "Yoda", "Plo Koon", "Kit Fisto"],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué estructura destruye Luke al final del Episodio IV?",
+    "respuestas": ["La Estrella de la Muerte", "El Destructor Estelar", "La base Starkiller", "El Palacio de Jabba"],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué maestro Sith entrenó a Darth Sidious?",
+    "respuestas": ["Darth Maul", "Darth Plagueis", "Darth Bane", "Snoke"],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Quién adoptó a Leia después del nacimiento?",
+    "respuestas": ["Owen Lars", "Bail Organa", "Mace Windu", "Padmé"],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué color de sable láser usa Mace Windu?",
+    "respuestas": ["Rojo", "Verde", "Azul", "Púrpura"],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Qué actor interpretó a Anakin Skywalker en 'El ataque de los clones'?",
+    "respuestas": ["Jake Lloyd", "Hayden Christensen", "Ewan McGregor", "Mark Hamill"],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué planeta sirve como centro de clonación en el Episodio II?",
+    "respuestas": ["Geonosis", "Kamino", "Mustafar", "Scarif"],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Cómo se llama el grupo que lidera Cassian Andor?",
+    "respuestas": ["La Resistencia", "El Imperio", "La Alianza Rebelde", "El BSI"],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué personaje dice 'Yo soy tu padre'?",
+    "respuestas": ["Palpatine", "Yoda", "Darth Vader", "Obi-Wan Kenobi"],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿En qué planeta se encuentra el Templo Jedi original?",
+    "respuestas": ["Ahch-To", "Jedha", "Ilum", "Exegol"],
+    "correcta": 0
+  },
+    {
+    "pregunta": "¿Cómo se llama el planeta donde se encuentran los Ewoks?",
+    "respuestas": ["Endor", "Dagobah", "Jakku", "Kessel"],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué sith aparece en 'La amenaza fantasma' como aprendiz de Darth Sidious?",
+    "respuestas": ["Darth Maul", "Darth Tyranus", "Darth Bane", "Darth Plagueis"],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Quién compuso la banda sonora original de Star Wars?",
+    "respuestas": ["Hans Zimmer", "Howard Shore", "John Williams", "Danny Elfman"],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Cómo se llama el clon que desobedeció la Orden 66?",
+    "respuestas": ["Fives", "Echo", "Rex", "Wolffe"],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué personaje es conocido por gritar '¡Noooo!' en el Episodio III?",
+    "respuestas": ["Obi-Wan", "Anakin", "Palpatine", "Padmé"],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué tipo de nave es el Halcón Milenario?",
+    "respuestas": ["Caza Estelar", "Nave de carga ligera YT-1300", "Destructor ligero", "Nave diplomática"],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué personaje fue interpretado por Andy Serkis?",
+    "respuestas": ["Snoke", "Jabba", "Darth Maul", "Dexter Jettster"],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué nombre usan los soldados de asalto en la trilogía original?",
+    "respuestas": ["Troopers", "Stormtroopers", "Clonetroopers", "Droidtroopers"],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué personaje aparece en todas las películas principales de la saga Skywalker?",
+    "respuestas": ["Luke", "Leia", "R2-D2", "Han Solo"],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Cómo se llama el líder separatista que dirige la Federación de Comercio?",
+    "respuestas": ["Nute Gunray", "Wat Tambor", "Count Dooku", "Poggle el Menor"],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Cuál es el verdadero nombre del Emperador?",
+    "respuestas": ["Sheev Palpatine", "Darth Sidious", "Cos Palpatine", "Vaderus Palpatine"],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué ciudad flotante aparece en 'El Imperio Contraataca'?",
+    "respuestas": ["Ciudad Gas", "Cloud City", "Skyhold", "Beskar Town"],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Quién es el cazarrecompensas que captura a Han Solo?",
+    "respuestas": ["Bossk", "Cad Bane", "Boba Fett", "IG-88"],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué planeta fue usado para clonar al ejército de la República?",
+    "respuestas": ["Kamino", "Felucia", "Geonosis", "Rishi"],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué Jedi utiliza un sable de luz curvo?",
+    "respuestas": ["Aayla Secura", "Shaak Ti", "Count Dooku", "Luminara Unduli"],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué especie es Ahsoka Tano?",
+    "respuestas": ["Twi'lek", "Togruta", "Zabrak", "Chiss"],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué personaje vive exiliado en Dagobah?",
+    "respuestas": ["Yoda", "Obi-Wan", "Luke", "Qui-Gon Jinn"],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Cuál es el rango militar de Leia Organa en la Resistencia?",
+    "respuestas": ["General", "Capitana", "Comandante", "Almirante"],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué droide dorado es experto en traducción?",
+    "respuestas": ["BB-8", "C-3PO", "R5-D4", "IG-11"],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Cuál es el nombre del planeta natal de Padmé Amidala?",
+    "respuestas": ["Naboo", "Corellia", "Alderaan", "Coruscant"],
+    "correcta": 0
+  },
+{
+    "pregunta": "¿Quién pronuncia la frase 'Es una trampa' en El Retorno del Jedi?",
+    "respuestas": ["Luke Skywalker", "Han Solo", "Almirante Ackbar", "Leia Organa"],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué tipo de criatura es un Bantha?",
+    "respuestas": ["Lagarto gigante", "Camello peludo", "Bestia de carga", "Depredador del desierto"],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué mineral raro se encuentra en Lothal y es codiciado por el Imperio?",
+    "respuestas": ["Beskar", "Kyber", "Oroxium", "Cristal Holocrón"],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué Jedi es conocido por llevar una coleta padawan larga?",
+    "respuestas": ["Obi-Wan Kenobi", "Mace Windu", "Anakin Skywalker", "Plo Koon"],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Cómo se llama el grupo de soldados élite de la Primera Orden liderados por Phasma?",
+    "respuestas": ["Shadow Corps", "Ejército Carmesí", "Storm Elite", "Legión de élite"],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Cuál es el nombre del sable oscuro ancestral del clan Mandalore?",
+    "respuestas": ["Darksaber", "Blackblade", "Sable Maldito", "Sable Nocturno"],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué planeta de lava es escenario del duelo final entre Obi-Wan y Anakin?",
+    "respuestas": ["Mustafar", "Felucia", "Utapau", "Geonosis"],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Quién interpreta a Rey en la trilogía de secuelas?",
+    "respuestas": ["Felicity Jones", "Daisy Ridley", "Emma Watson", "Natalie Portman"],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Cuál es el apodo del Escuadrón liderado por Poe Dameron?",
+    "respuestas": ["Blue Squadron", "Black Squadron", "Red Squadron", "Shadow Squadron"],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué personaje se sacrifica al estrellar su nave contra un Destructor Estelar en 'Rogue One'?",
+    "respuestas": ["Bodhi Rook", "K-2SO", "Admiral Raddus", "Hera Syndulla"],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Cuál es la capital del Imperio Galáctico?",
+    "respuestas": ["Alderaan", "Coruscant", "Taris", "Jedha"],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué nave tiene forma circular con una cabina lateral?",
+    "respuestas": ["X-Wing", "TIE Fighter", "Halcón Milenario", "Nave Jedi"],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué orden dio Palpatine para exterminar a los Jedi?",
+    "respuestas": ["Orden 99", "Orden 66", "Protocolo 7", "Directiva Final"],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Quién es el líder de la Alianza Rebelde durante la trilogía original?",
+    "respuestas": ["Leia Organa", "Mon Mothma", "Ackbar", "Cassian Andor"],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué arma usa un Tusken Raider?",
+    "respuestas": ["Sable láser", "Gaffi stick", "Bláster pesado", "Vibroespada"],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué Jedi se convierte en Lord Sith en las precuelas?",
+    "respuestas": ["Obi-Wan", "Yoda", "Anakin", "Qui-Gon"],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué planeta es destruido por la Base Starkiller?",
+    "respuestas": ["Alderaan", "Hosnian Prime", "Endor", "Scarif"],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Cuál es el nombre del aprendiz de Ahsoka Tano en la serie 'Rebels'?",
+    "respuestas": ["Ezra Bridger", "Kanan Jarrus", "Sabine Wren", "Hera Syndulla"],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué criatura aparece dentro del compactador de basura en la Estrella de la Muerte?",
+    "respuestas": ["Rancor", "Dianoga", "Wampa", "Rathtar"],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Quién traiciona a Han Solo en Bespin?",
+    "respuestas": ["Boba Fett", "Leia", "Lando Calrissian", "Chewbacca"],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué personaje usa una armadura mandaloriana plateada en The Mandalorian?",
+    "respuestas": ["Boba Fett", "Din Djarin", "Sabine Wren", "Bo-Katan"],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué actor interpretó a Kylo Ren?",
+    "respuestas": ["Oscar Isaac", "Adam Driver", "Domhnall Gleeson", "Andy Serkis"],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Cuál es el nombre del planeta helado donde se esconde la Rebelión en Episodio V?",
+    "respuestas": ["Hoth", "Ilum", "Kessel", "Dagobah"],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué droide es conocido por su sarcasmo en Rogue One?",
+    "respuestas": ["C-3PO", "R2-D2", "BB-8", "K-2SO"],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Qué personaje dirige el sindicato del crimen Crimson Dawn?",
+    "respuestas": ["Darth Maul", "Jabba el Hutt", "Dryden Vos", "Thrawn"],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué famosa nave aparece por primera vez en el Episodio IV escapando de un Destructor Estelar?",
+    "respuestas": ["Tantive IV", "Halcón Milenario", "Slave I", "Nave Jedi"],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué planeta minero aparece en la película 'Solo'?",
+    "respuestas": ["Kessel", "Corellia", "Mustafar", "Savareen"],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Quién entrenó a Luke Skywalker en Dagobah?",
+    "respuestas": ["Yoda", "Ben Kenobi", "Leia", "Qui-Gon Jinn"],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué tipo de combustible es vital para los viajes hiperespaciales?",
+    "respuestas": ["Kyber", "Coaxium", "Beskar", "Lava de Mustafar"],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué princesa de Naboo fue también reina y senadora?",
+    "respuestas": ["Leia Organa", "Padmé Amidala", "Shaak Ti", "Sabé"],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué criatura ataca a Luke en la cueva de hielo en Hoth?",
+    "respuestas": ["Rancor", "Tauntaun", "Wampa", "Dianoga"],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué miembro del Alto Mando Rebelde es de la especie Mon Calamari?",
+    "respuestas": ["Ackbar", "Mon Mothma", "Cassian", "Tarkin"],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué personaje es un ex-padawan que sobrevive a la Orden 66 y protagoniza Jedi: Fallen Order?",
+    "respuestas": ["Cal Kestis", "Kanan Jarrus", "Ezra Bridger", "Baylan Skoll"],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué planeta es el centro del tráfico de especia y esclavitud?",
+    "respuestas": ["Tatooine", "Kessel", "Corellia", "Nal Hutta"],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué criatura gigante vive en el interior de un asteroide?",
+    "respuestas": ["Sarlacc", "Exogorth", "Dianoga", "Bantha"],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué personaje pilota un TIE silenciado y de alas dobladas?",
+    "respuestas": ["Kylo Ren", "Thrawn", "Darth Maul", "Darth Vader"],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué inquisidora aparece en Obi-Wan Kenobi?",
+    "respuestas": ["Reva", "Barriss Offee", "Trilla Suduri", "Seventh Sister"],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué personaje acompaña a Cassian en su misión en Scarif?",
+    "respuestas": ["Jyn Erso", "Mon Mothma", "Hera Syndulla", "Sabine Wren"],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué grupo de cazadores lidera Cad Bane?",
+    "respuestas": ["Los Hijos del Sol", "La Sombra Carmesí", "Los Cinco Mortales", "Independiente"],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Qué miembro de la familia Skywalker aparece en 'The Mandalorian'?",
+    "respuestas": ["Leia", "Anakin", "Luke", "Ben Solo"],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Quién fue el líder del Escuadrón Rogue antes de Luke Skywalker?",
+    "respuestas": ["Wedge Antilles", "Biggs Darklighter", "Dak Ralter", "Jek Porkins"],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué criatura cría Boba Fett en su palacio en la serie 'El Libro de Boba Fett'?",
+    "respuestas": ["Wampa", "Sarlacc", "Rancor", "Bantha"],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué Jedi muere a manos de Palpatine en su despacho en el Episodio III?",
+    "respuestas": ["Kit Fisto", "Agen Kolar", "Mace Windu", "Todos los anteriores"],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿En qué planeta está escondido Grogu cuando Luke va a entrenarlo?",
+    "respuestas": ["Dagobah", "Ahch-To", "Templo Jedi", "No se especifica"],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Qué actor interpretó a Jango Fett?",
+    "respuestas": ["Temuera Morrison", "Daniel Logan", "Pedro Pascal", "Jeremy Bulloch"],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Cuál es el nombre del gremio de cazarrecompensas que aparece en The Mandalorian?",
+    "respuestas": ["El Gremio", "Círculo de la Sombra", "Clan Fett", "La Hermandad de la Caza"],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué planeta contiene el Templo Jedi en la trilogía de precuelas?",
+    "respuestas": ["Alderaan", "Coruscant", "Naboo", "Kamino"],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué personaje es llamado el Gran Almirante?",
+    "respuestas": ["Tarkin", "Krennic", "Thrawn", "Piett"],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué tipo de sable usa Kylo Ren?",
+    "respuestas": ["Sable azul estándar", "Sable láser doble", "Sable de cruz inestable", "Darksaber"],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué droide construyó Anakin Skywalker?",
+    "respuestas": ["R2-D2", "C-3PO", "IG-11", "K-2SO"],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Quién derrota a Darth Maul definitivamente?",
+    "respuestas": ["Anakin Skywalker", "Ahsoka Tano", "Obi-Wan Kenobi", "Ezra Bridger"],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué planeta desértico aparece en múltiples trilogías?",
+    "respuestas": ["Jakku", "Tatooine", "Jedha", "Geonosis"],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Quién dirige la resistencia contra la Primera Orden?",
+    "respuestas": ["Leia Organa", "Poe Dameron", "Finn", "Luke Skywalker"],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué Jedi tenía un sable láser morado?",
+    "respuestas": ["Mace Windu", "Yoda", "Ki-Adi-Mundi", "Aayla Secura"],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué personaje es conocido por su risa en El Ascenso de Skywalker?",
+    "respuestas": ["Snoke", "Kylo Ren", "Palpatine", "Hux"],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Cuál es el planeta natal de Chewbacca?",
+    "respuestas": ["Endor", "Kashyyyk", "Dagobah", "Dantooine"],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué Sith utilizaba dos sables láser rojos en combate?",
+    "respuestas": ["Darth Maul", "Dooku", "Savage Opress", "Asajj Ventress"],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Qué piloto rebelde sobrevive a todas las batallas principales?",
+    "respuestas": ["Luke Skywalker", "Wedge Antilles", "Biggs Darklighter", "Jek Porkins"],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué planeta fue destruido por la Estrella de la Muerte en 'Una Nueva Esperanza'?",
+    "respuestas": ["Endor", "Alderaan", "Naboo", "Scarif"],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Quién era el líder espiritual de los Jedi antes de la caída de la República?",
+    "respuestas": ["Mace Windu", "Yoda", "Ki-Adi-Mundi", "Qui-Gon Jinn"],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué droide acompaña a Poe Dameron?",
+    "respuestas": ["BB-8", "R2-D2", "K-2SO", "D-O"],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿En qué planeta se encuentra el castillo de Maz Kanata?",
+    "respuestas": ["Takodana", "Jakku", "Ahch-To", "Endor"],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué personaje dice la famosa frase 'Yo soy tu padre'?",
+    "respuestas": ["Luke Skywalker", "Obi-Wan Kenobi", "Darth Vader", "Yoda"],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué actor interpreta a Cassian Andor?",
+    "respuestas": ["Diego Luna", "Oscar Isaac", "Pedro Pascal", "Ben Mendelsohn"],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué especie es Grogu?",
+    "respuestas": ["Twi'lek", "Yoda", "Desconocida", "Ewok"],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué personaje colecciona sables láser de Jedi caídos en Jedi: Fallen Order?",
+    "respuestas": ["El Inquisidor", "El Segundo Hermano", "El Noveno Hermano", "El Imperio"],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué criatura gigante se encuentra en el Pozo del Sarlacc?",
+    "respuestas": ["Rancor", "Sarlacc", "Wampa", "Bantha"],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué droide contiene los planos de la Estrella de la Muerte en Rogue One?",
+    "respuestas": ["C-3PO", "K-2SO", "R2-D2", "BB-8"],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué planeta es el hogar de los Wookiees?",
+    "respuestas": ["Endor", "Kashyyyk", "Tatooine", "Alderaan"],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Quién es el líder del Escuadrón Phoenix en Star Wars: Rebels?",
+    "respuestas": ["Kanan Jarrus", "Hera Syndulla", "Ezra Bridger", "Sabine Wren"],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué actor interpreta a Snoke mediante captura de movimiento?",
+    "respuestas": ["Andy Serkis", "Ian McDiarmid", "Domhnall Gleeson", "Richard E. Grant"],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué planeta aparece en el final de 'The Rise of Skywalker' como hogar de Rey?",
+    "respuestas": ["Jakku", "Ahch-To", "Tatooine", "Naboo"],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué personaje aparece brevemente al final de 'Han Solo' revelando que sigue vivo?",
+    "respuestas": ["Boba Fett", "Darth Maul", "Thrawn", "Greedo"],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué planeta alberga la base Starkiller?",
+    "respuestas": ["Jakku", "Ilum", "Crait", "Yavin IV"],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué personaje empuña un látigo láser en The High Republic?",
+    "respuestas": ["Vernestra Rwoh", "Stellan Gios", "Loden Greatstorm", "Avar Kriss"],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué Jedi aparece como espíritu al final de 'El Ascenso de Skywalker'?",
+    "respuestas": ["Luke", "Obi-Wan", "Anakin", "Todos los anteriores"],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Qué planeta es el centro de la cultura Mandaloriana?",
+    "respuestas": ["Mandalore", "Tatooine", "Corellia", "Dantooine"],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Quién construyó C-3PO?",
+    "respuestas": ["Obi-Wan", "Anakin Skywalker", "Luke", "Padmé"],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué planeta desértico aparece en las secuelas como hogar de Rey?",
+    "respuestas": ["Tatooine", "Jakku", "Jedha", "Dantooine"],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué planeta es destruido por la Estrella de la Muerte en Rogue One?",
+    "respuestas": ["Scarif", "Jedha", "Alderaan", "Geonosis"],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué raza es el Maestro Jedi Plo Koon?",
+    "respuestas": ["Kel Dor", "Rodiano", "Zabrak", "Togruta"],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué personaje se comunica con Qui-Gon Jinn como espíritu en Obi-Wan Kenobi?",
+    "respuestas": ["Yoda", "Luke", "Obi-Wan", "Anakin"],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué personaje dirige la Operación Cinder?",
+    "respuestas": ["Palpatine", "Gideon", "Rax", "Thrawn"],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Cómo se llama la especie de Jabba el Hutt?",
+    "respuestas": ["Hutt", "Twi'lek", "Rodiano", "Gran"],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué aprendiz Sith aparece en 'Ahsoka'?",
+    "respuestas": ["Baylan Skoll", "Marrok", "Barriss Offee", "Reva"],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué planeta sirve de hogar para los clanes Tusken?",
+    "respuestas": ["Tatooine", "Jakku", "Geonosis", "Endor"],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué personaje empuña el Darksaber después de Moff Gideon?",
+    "respuestas": ["Din Djarin", "Bo-Katan", "Sabine Wren", "Luke Skywalker"],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué planeta es el origen de los clones?",
+    "respuestas": ["Kamino", "Geonosis", "Coruscant", "Naboo"],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Quién es el antagonista principal de 'Rebels' en su última temporada?",
+    "respuestas": ["Vader", "Thrawn", "Maul", "Palpatine"],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué raza es la líder rebelde Mon Mothma?",
+    "respuestas": ["Humana", "Chiss", "Twi'lek", "Zeltron"],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué personaje se infiltra en la Estrella de la Muerte con ropa de soldado imperial?",
+    "respuestas": ["Luke", "Leia", "Han Solo", "Todos"],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Qué personaje aparece joven gracias a CGI en The Mandalorian?",
+    "respuestas": ["Leia", "Luke", "Han", "Lando"],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué nave rebelde es pilotada por Hera en 'Rebels'?",
+    "respuestas": ["Ghost", "Phantom", "X-Wing", "Y-Wing"],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué personaje tiene visión del futuro en el Templo Jedi de Lothal?",
+    "respuestas": ["Ezra", "Kanan", "Sabine", "Ahsoka"],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué personaje interpreta Ewan McGregor?",
+    "respuestas": ["Anakin", "Obi-Wan Kenobi", "Qui-Gon Jinn", "Count Dooku"],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué general rebelde lidera la batalla de Hoth?",
+    "respuestas": ["Ackbar", "Dodonna", "Rieekan", "Solo"],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué Jedi sobrevive a la Orden 66 y aparece en 'Fallen Order'?",
+    "respuestas": ["Kanan", "Cal Kestis", "Yoda", "Shaak Ti"],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué planeta es invadido por los droides en 'La Amenaza Fantasma'?",
+    "respuestas": ["Naboo", "Geonosis", "Kamino", "Mustafar"],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué criatura marina aparece en Naboo durante la carrera submarina?",
+    "respuestas": ["Opee Sea Killer", "Sando Aqua Monster", "Colo Claw Fish", "Todas"],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Quién pronuncia la frase 'Hazlo' de forma icónica?",
+    "respuestas": ["Anakin", "Yoda", "Palpatine", "Obi-Wan"],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué miembro del consejo Jedi lleva un sombrero alto?",
+    "respuestas": ["Kit Fisto", "Ki-Adi-Mundi", "Shaak Ti", "Aayla Secura"],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué planeta helado aparece en 'Jedi: Fallen Order'?",
+    "respuestas": ["Hoth", "Ilum", "Bogano", "Kashyyyk"],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué personaje es responsable de borrar la memoria de C-3PO?",
+    "respuestas": ["Leia", "Rey", "R2-D2", "Babu Frik"],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Qué criminal controla la ciudad minera en The Mandalorian Temporada 2?",
+    "respuestas": ["Moff Gideon", "Gor Koresh", "Morgan Elsbeth", "El Magistrado"],
+    "correcta": 3
+  },
+  
+  
+
+
+
+
+
+      
+    ];
     let indice = 0;
 
     function cargarPregunta() {
