@@ -9,7 +9,7 @@
     body {
       font-family: 'Press Start 2P', cursive;
       background-color: #000000;
-      color: #ffcc00;
+      color: #ffffff;
       text-align: center;
       padding: 2rem;
     }
@@ -25,32 +25,37 @@
     .question {
       font-size: 1rem;
       margin-bottom: 2rem;
+      color: #00ffcc;
+      text-shadow: 1px 1px 0 #000;
     }
     .price {
-      font-size: 1.2rem;
+      font-size: 1rem;
       font-weight: bold;
       margin: 2rem 0;
       display: none;
+      color: #00ff00;
+      text-shadow: 1px 1px 0 #000;
     }
     button {
-      background-color: #ff0080;
-      color: #ffffff;
-      border: 2px solid #ffffff;
+      background-color: #000;
+      color: #ffcc00;
+      border: 2px solid #ffcc00;
       padding: 1rem 2rem;
       margin: 1rem;
-      border-radius: 4px;
-      font-size: 0.8rem;
+      font-family: 'Press Start 2P', cursive;
+      font-size: 0.7rem;
       cursor: pointer;
-      box-shadow: 0 0 10px #ff0080;
+      box-shadow: 0 0 10px #ffcc00;
+      text-transform: uppercase;
     }
     button:hover {
-      background-color: #ff66a3;
+      background-color: #222;
     }
     #timer {
-      font-size: 2.5rem;
+      font-size: 2rem;
       color: #00ffff;
       margin: 2rem 0;
-      text-shadow: 0 0 10px #00ffff;
+      text-shadow: 1px 1px 0 #000;
     }
   </style>
 </head>
@@ -59,8 +64,8 @@
     <div class="question" id="question">Pregunta aquí</div>
     <div id="timer">10</div>
     <div class="price" id="price">Precio justo: 0,00 €</div>
-    <button onclick="startTimer()">🎮 Iniciar cuenta atrás</button>
-    <button onclick="showPrice()">💰 Mostrar precio justo</button>
+    <button onclick="startTimer()">🎮 Iniciar</button>
+    <button onclick="showPrice()">💰 Mostrar</button>
     <button onclick="nextQuestion()">➡️ Siguiente</button>
   </div>
 
