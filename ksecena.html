@@ -1,0 +1,290 @@
+  <!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>🧀 Ksecena 🧀</title>
+  <style>
+    body {
+      background-color: #111;
+      color: #eee;
+      font-family: 'Courier New', monospace;
+      text-align: center;
+      padding: 30px;
+    }
+    h1 {
+      color: #ffcc00;
+    }
+    #escena {
+      font-size: 1.5em;
+      margin: 30px 0;
+      min-height: 4em;
+    }
+    button {
+      font-size: 1em;
+      padding: 10px 20px;
+      margin: 10px;
+      background-color: #222;
+      color: #ffcc00;
+      border: 2px solid #ffcc00;
+      cursor: pointer;
+    }
+    #temporizador {
+      font-size: 2em;
+      color: #44ff44;
+      margin: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>🧀 Ksecena 🧀</h1>
+  <div id="escena"> Pulsa para un nuevo delicioso plato... ¡Qué aproveche!</div>
+  <button onclick="nuevaEscena()">🎲 Siguiente plato</button>
+  <button onclick="iniciarTemporizador()">⏱️ Empezar 45s</button>
+  <div id="temporizador">45</div>
+
+  <script>
+    const escenas = [
+ "Pizza",
+  "Spaghetti",
+  "Hamburguesa",
+  "Hot Dog",
+  "Sushi",
+  "Tortilla de patatas",
+  "Paella",
+  "Croquetas",
+  "Tacos",
+  "Ceviche",
+  "Pollo frito",
+  "Helado",
+  "Ensalada",
+  "Gazpacho",
+  "Sandwich",
+  "Donuts",
+  "Empanada",
+  "Pescado a la plancha",
+  "Nuggets de pollo",
+  "Quesadilla",
+  "Pan con tomate",
+  "Arroz con leche",
+  "Canelones",
+  "Milanesa",
+  "Salchichas con puré",
+  "Tarta de cumpleaños",
+  "Patatas fritas",
+
+  "Fajitas",
+  "Sopa de pollo",
+  "Lasaña",
+  
+  "Crepes",
+  "Albóndigas",
+  "Pulpo a la gallega",
+  "Huevos fritos con chorizo",
+  "Mousse de chocolate",
+  "Cuscús",
+  "Tarta Sacher",
+  "Maki de salmón",
+  "Risotto",
+  "Gofres",
+  "Costillas a la barbacoa",
+  "Pimientos rellenos",
+  "Brownie",
+  "Macarrones con tomate",
+  "Huevos rotos con jamón",
+  "Panqueques",
+
+  "Sándwich mixto",
+ 
+  "Arroz a la cubana",
+  
+  "Merluza rebozada",
+  "Brochetas de carne",
+  "Carne guisada",
+  "Torrijas",
+  "Papas arrugadas con mojo",
+  "Fideuá",
+  "Frittata",
+  "Alitas de pollo",
+  "Cocido madrileño",
+  "Zanahorias glaseadas",
+  "Puré de patata",
+  "Sopa miso",
+  "Cordero al horno",
+  "Salmón a la plancha",
+  "Empanadillas",
+  
+  "Tarta tres leches",
+  "Yakisoba",
+  "Churros salados",
+  "Fabada asturiana",
+  "Nachos con queso",
+  "Galletas de chocolate",
+  "Ensaladilla rusa",
+  "Morcilla con arroz",
+  "Revuelto de setas",
+  "Lentejas estofadas",
+  "Flan de huevo",
+  "Chuletón",
+  "Verduras al vapor",
+  "Tallarines",
+  "Batido de fresa",
+  "Quiche lorraine",
+  "Bacalao con tomate",
+  "Moqueca",
+  "Pan de ajo",
+  "Patacones",
+  "Berenjenas rellenas",
+  "Croquetas de jamón",
+  "Empanada gallega",
+  "Ramen",
+  "Guiso de ternera",
+  "Arepas",
+  "Tacos al pastor",
+  "Polenta con queso",
+  "Shawarma",
+  "Falafel",
+  "Crepes dulces",
+  "Pa amb tomàquet",
+  "Boquerones en vinagre",
+  "Quesadillas",
+  "Tallarines con pesto",
+  "Tarta de queso",
+  "Gazpacho andaluz",
+  "Pollo al limón",
+  "Costillas BBQ",
+  "Lasaña de espinacas",
+  "Puré de calabaza",
+  "Sopa de ajo",
+  "Ceviche de pescado",
+  "Hamburguesa doble",
+  "Pizza margarita",
+  "Risotto de setas",
+  "Hummus con pan pita",
+  "Tarta Sacher",
+  "Empanadas argentinas",
+  "Rabo de toro",
+  "Pastel de carne",
+  "Pulpo a la gallega",
+  "Ensalada griega",
+  "Tiramisú",
+  "Tempura de verduras",
+  "Gambas al ajillo",
+  "Ñoquis con salsa",
+  "Churros con chocolate",
+  "Tarta de zanahoria",
+  "Pan tumaca con jamón",
+  "Fajitas de pollo",
+  "Rollitos de primavera",
+  "Salmón ahumado con tostas",
+  "Pollo tikka masala",
+  "Burritos mexicanos",
+  "Tarta de frutas",
+  "Arroz chaufa",
+  "Kebab mixto",
+  "Rosti suizo",
+  "Tamales",
+  "Migas extremeñas",
+  "Albóndigas en salsa",
+  "Ensaladilla rusa",
+  "Callos a la madrileña",
+  "Bacalao al pil-pil",
+  "Vichyssoise",
+  "Canelones de carne",
+  "Pollo al curry",
+  "Chili con carne",
+  "Enchiladas",
+  "Goulash",
+  "Köttbullar (albóndigas suecas)",
+  "Arroz caldoso",
+  "Tarta tatin",
+  "Fondue de queso",
+  "Pisto manchego",
+  "Cachopo",
+  "Chuletón a la brasa",
+  "Panqueques",
+  "Sopa minestrone",
+  "Tortellini con salsa",
+  "Tarta de manzana",
+  "Zarzuela de mariscos",
+  "Berenjenas rellenas",
+  "Tostadas francesas",
+  "Macarrones con queso",
+  "Huevos benedictinos",
+  "Poke bowl",
+  "Curry de garbanzos",
+  "Salmorejo",
+  "Cocido madrileño",
+  "Bacalao a la vizcaína",
+  "Fideuá",
+  "Calamares a la romana",
+  "Polenta con queso",
+  "Empanadas argentinas",
+  "Sopa de cebolla",
+  "Sancocho",
+  "Croquetas de jamón",
+  "Pa amb tomàquet",
+  "Kebab",
+  "Yakisoba",
+  "Okonomiyaki",
+  "Arepas",
+  "Falafel",
+  "Ratatouille",
+  "Feijoada",
+  "Pabellón criollo",
+  "Tallarines al pesto",
+  "Pollo a la mostaza",
+  "Causa limeña",
+  "Pan de ajo",
+  "Cuscús con verduras",
+  "Sopaipillas",
+  "Caldo gallego",
+  "Empanadillas de atún",
+  "Tarta de queso",
+  "Gambas al ajillo",
+  "Noodles con gambas",
+  "Tortilla de calabacín",
+  "Migas",
+  "Pastel de carne",
+  "Brochetas de pollo",
+  "Solomillo al roquefort",
+  "Ñoquis con tomate",
+  "Puré de patata",
+  "Tomate relleno",
+  "Hamburguesa vegetal",
+  "Verduras a la plancha",
+  "Tarta selva negra",
+  "Rollitos de primavera",
+  "Langostinos en tempura",
+  "Galletas de jengibre",
+  "Pizza calzone",
+  "Crema catalana",
+  "Arroz chaufa",
+  "Tarta Sacher",
+  "Panqueques con dulce de leche",
+  "Burrito",
+  "Tarta de Santiago"
+    ];
+
+    function nuevaEscena() {
+      const escena = escenas[Math.floor(Math.random() * escenas.length)];
+      document.getElementById('escena').textContent = escena;
+    }
+
+    let tiempo = 45;
+    let intervalo;
+
+    function iniciarTemporizador() {
+      clearInterval(intervalo);
+      tiempo = 45;
+      document.getElementById('temporizador').textContent = tiempo;
+      intervalo = setInterval(() => {
+        tiempo--;
+        document.getElementById('temporizador').textContent = tiempo;
+        if (tiempo === 0) {
+          clearInterval(intervalo);
+        }
+      }, 1000);
+    }
+  </script>
+</body>
+</html>
