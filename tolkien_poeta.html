@@ -1,0 +1,201 @@
+<html>
+<head>
+  <title>📖 El Tolkien que hay en mí 🌹</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      background-color: #111;
+      font-family: monospace;
+      text-align: center;
+      padding: 40px;
+    }
+    button {
+      padding: 15px 30px;
+      font-size: 1.4em;
+      margin-bottom: 20px;
+      background-color: #333;
+      color: #0f0;
+      border: 2px solid #0f0;
+      cursor: pointer;
+    }
+    body {
+      background-color: #111;
+      color: #0f0;
+      font-family: monospace;
+      padding: 40px;
+      line-height: 1.6;
+    }
+    h1 {
+      color: #adff2f;
+      font-size: 2.5em;
+    }
+    h2 {
+      color: #ff0;
+      margin-top: 30px;
+    }
+    h4 {
+      font-weight: normal;
+      color: #ccc;
+    }
+    ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    li {
+      margin: 5px 0;
+    }
+    a {
+      color: #0ff;
+      text-decoration: none;
+      font-size: 1.1em;
+    }
+    a:hover {
+      color: #fff700;
+    }
+    p {
+      font-size: 1.4em;
+      color: #adff2f;
+      margin-top: 10px;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+ 
+   
+  </style>
+</head>
+<body>
+  <h1 style="color:#0ff;">📖 El Tolkien que hay en mí 🌹</h1>
+<button onclick='siguiente()'>🎲 Siguiente Inspiración</button>
+<button onclick='startTimer()'>⏱️ Iniciar Cronómetro</button>
+<button onclick='stopTimer()'>🛑 Detener</button>
+<h2 id='timer'>00:00.0</h2>
+<p id='trab'></p>
+<script>
+    let dibujo = [
+ 'El anillo de compromiso',
+  'Un hobbit en la luna de miel',
+  'El ramo explosivo',
+  'La boda de Darth Vader',
+  'El vals de los orcos',
+  'Boda en Hogwarts',
+  'Chewbacca en tanga',
+  'Pociones de amor',
+  'El poder del sí quiero',
+  'Yoda y Cupido',
+  'Gollum organizando la boda',
+  'Mandaloriano enamorado',
+  'Pastel de bodas mutante',
+  'Romance entre magos',
+  'Un beso elfico',
+  'La novia es un troll',
+  'El DJ es Pikachu',
+  'Dragones en la recepción',
+  'Fuegos artificiales en Mordor',
+  'Batman llorando de emoción',
+  'Boda en el espacio',
+  'La fuerza del amor',
+  'Un hechizo nupcial',
+  'El traje invisible del novio',
+  'La varita del destino',
+  'Sables láser entrelazados',
+  'La elfa fugitiva',
+  'Caballos de unicornios',
+  'La épica de la suegra',
+  'Poema desde la galaxia',
+  'Grito de guerra en la boda',
+  'El beso de Bowser',
+  'Luigi buscando pareja',
+  'Tarta con dragón',
+  'Final boss: el matrimonio',
+  'Anillo de fuego',
+  'Pastel en forma de Halcón Milenario',
+  'Fiona y Shrek en Las Vegas',
+  'Kamehameha de amor',
+  'Thor olvidó el anillo',
+  'Tinder para elfos',
+  'Banquete élfico',
+  'El vals de las brujas',
+  'Novia Jedi',
+  'Luna de miel en Asgard',
+  'Game Over con amor',
+  'Tarta pixelada',
+  'Siri como cura',
+  'El hechizo del compromiso',
+  'Romance con escudo',
+  'Respira... es el amor',
+  'La boda más épica jamás contada',
+  'Ceremonia de magos',
+  'Nivel desbloqueado: esposo',
+  'El manual del aventurero enamorado',
+  'Romance entre casas rivales',
+  'Citas en la Torre Oscura',
+  'El dragón fue el padrino',
+  'Discursos desde el Trono de Hierro',
+  'Anillo de poder y de pareja',
+  'Hechizos en rima',
+  'Un elfo borracho en la boda',
+  'Tarta embrujada',
+  'Gandalf bendice la unión',
+  'Romántico como un duelo láser',
+  'Te elijo a ti',
+  'Boda en la taberna',
+  'Romance de medianoche mágica',
+  'El destino en una Pokéball',
+  'Voto friki',
+  'Marte es para los enamorados',
+  'El código de los Jedi enamorados',
+  'Princesa zombie',
+  'Casamiento interdimensional',
+  'Juego de bodas',
+  'Avatar del amor',
+  'El hechizo del sí',
+  'Brindis con hidromiel',
+  'El conjuro del compromiso eterno',
+  'Sauron llora en la boda',
+  'Los Vengadores apadrinan',
+  'Ogro sentimental',
+  'Mario pierde a Peach',
+  'El beso del destino',
+  'Romance entre galaxias',
+  'Tarta mágica',
+  'Casarse en un calabozo',
+  'La crónica del amor eterno',
+  'Monstruo adorable',
+  'El fin del juego... o el comienzo',
+  'Love.exe',
+  'Beso bajo meteoritos',
+  'El hobbit romántico',
+  'El encantamiento de las flores',
+  'Nupcias en 8 bits',
+  'El pixel del amor',
+  'Respawn con amor',
+  'Hechizo nivel 20',
+  'Duelo de poemas',
+  'Runas de amor eterno',
+  'La boda de los magos errantes',
+  'Un grito de amor épico',
+  'La novia llegó en dragón',
+  'Amor en la Tierra Media'
+]
+;
+   function siguiente() {
+    document.getElementById('trab').innerText = frases[Math.floor(Math.random()*frases.length)];
+    stopTimer(); document.getElementById('timer').innerText = "00:00.0";
+}
+let startTime, timerInterval;
+function startTimer() {
+    startTime = Date.now();
+    timerInterval = setInterval(function() {
+        let elapsed = Date.now() - startTime;
+        let minutes = Math.floor(elapsed / 60000);
+        let seconds = ((elapsed % 60000) / 1000).toFixed(1);
+        document.getElementById('timer').innerText = (minutes < 10 ? "0" : "") + minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
+    }, 100);
+}
+function stopTimer() {
+    clearInterval(timerInterval);
+}
+  </script>
+</body>
+</html>
