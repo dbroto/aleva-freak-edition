@@ -18,7 +18,7 @@
       border: 2px solid #0f0;
       cursor: pointer;
     }
-    #dibujo {
+    #p {
       font-size: 2em;
       color: #ffff00;
       margin-top: 20px;
@@ -29,7 +29,7 @@
 <body>
   <h1 style="color:#0ff;">🤸‍♂️ 🇫🇷 Tócame como a tus chicas francesas 🍷</h1>
   <button onclick="siguiente()">🎲 Nueva Palabra</button>
-  <div id="dibujo"></div>
+  <p id="dib"></div>
   <script>
     let dibujo = [
   'Sol',
@@ -137,7 +137,7 @@
 ]
 ;
     function siguiente() {
-       document.getElementById('dibujo').innerText = frases[Math.floor(Math.random()*frases.length)];
+       document.getElementById('dib').innerText = dibujo[Math.floor(Math.random()*dibujo.length)];
     }
   </script>
 </body>
