@@ -45,7 +45,7 @@
 <body>
   <h1>🥥 ¿Quién tengo en el coco? 🥥</h1>
  <div id="palabra">Pulsa "Comenzar" para empezar</div>
-  <div id="temporizador">45</div>
+  <div id="temporizador">60</div>
   <div id="puntos">✅ Aciertos: 0</div>
   <div>
     <button onclick="acierto()" id="btnAcierto" disabled>✅ Acierto</button>
@@ -333,7 +333,7 @@
 
    let palabraActual = "";
     let aciertos = 0;
-    let tiempo = 45;
+    let tiempo = 60;
     let temporizador;
     
     function nuevaPalabra() {
@@ -355,7 +355,7 @@
     }
 
     function empezarJuego() {
-      tiempo = 45;
+      tiempo = 60;
       aciertos = 0;
       document.getElementById("puntos").textContent = "✅ Aciertos: 0";
       document.getElementById("btnAcierto").disabled = false;
