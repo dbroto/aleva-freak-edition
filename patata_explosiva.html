@@ -10,10 +10,11 @@
       font-family: monospace;
       text-align: center;
       padding: 2rem;
+      transition: background-color 0.3s;
     }
     #patata {
       font-size: 6rem;
-      transition: transform 0.3s;
+      transition: transform 0.2s ease-in-out;
       display: inline-block;
     }
     #mensaje {
@@ -31,7 +32,10 @@
       margin-right: auto;
     }
     .temblor {
-      animation: shake 0.5s infinite;
+      animation: shake 0.3s infinite;
+    }
+    .temblor.intenso {
+      animation: shake 0.1s infinite;
     }
     @keyframes shake {
       0% { transform: translate(0px, 0px) scale(2.5); }
@@ -61,8 +65,9 @@
     function iniciar() {
       mensaje.textContent = '';
       patata.innerHTML = '🥔';
-      patata.classList.remove('temblor');
+      patata.className = '';
       patata.style.transform = 'scale(1)';
+      document.body.style.backgroundColor = '#000';
       boton.style.display = 'none';
 
       let escala = 1;
@@ -71,7 +76,6 @@
       let tiempo = tiempoTotal;
 
       tension.currentTime = 0;
-      tension.playbackRate = 1;
       tension.play();
 
       const intervalo = setInterval(() => {
@@ -82,16 +86,17 @@
           mensaje.textContent = '💣 ¡PUUUM!';
           boton.style.display = 'block';
           tension.pause();
-          tension.playbackRate = 1;
           explosion.play();
+          document.body.style.backgroundColor = '#600';
         } else {
           escala += 0.05;
           patata.style.transform = 'scale(' + escala + ')';
           if (tiempo <= temblorInicio) {
-            patata.classList.add('temblor');
+            patata.className = 'temblor';
           }
-          if (tension.playbackRate < 2.5) {
-            tension.playbackRate += 0.05;
+          if (tiempo <= 5) {
+            patata.className = 'temblor intenso';
+            document.body.style.backgroundColor = tiempo % 2 === 0 ? '#000' : '#220000';
           }
         }
       }, 1000);
