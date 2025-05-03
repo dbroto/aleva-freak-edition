@@ -1,0 +1,1253 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>🥔 La Patata Caliente 🥔</title>
+  <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'VT323', monospace;
+      background-color: #000;
+      color: #ffffff;
+      text-align: center;
+      padding: 2rem;
+    }
+    h1 {
+      font-family: 'VT323', monospace;
+      background-color: #111;
+      color:  #ffcc00;
+      text-align: center;
+      padding: 2rem;
+    }
+    .card {
+      background-color: #111;
+      border: 4px solid #ffcc00;
+      border-radius: 8px;
+      padding: 2rem;
+      max-width: 800px;
+      margin: auto;
+      box-shadow: 0 0 20px #ffcc00;
+    }
+    .pregunta {
+      font-size: 2rem;
+      color: #00ffcc;
+      margin-bottom: 1.5rem;
+    }
+    .respuesta {
+      font-size: 1.5rem;
+      color: #00ff00;
+      margin-bottom: 2rem;
+    }
+    button {
+      background-color: #000;
+      color: #ffcc00;
+      border: 2px solid #ffcc00;
+      padding: 1rem 2rem;
+      font-family: 'VT323', monospace;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>🥔 La Patata Caliente 🥔</h1>
+    <div class="pregunta" id="pregunta"></div>
+    <div class="respuesta" id="respuesta"></div>
+    <button onclick="siguiente()">➡️ Siguiente</button>
+  </div>
+
+  <script>
+    const preguntas = [
+      {
+        pregunta: '¿En qué año se estrenó la primera película de Star Wars (Episodio IV)?',
+        respuesta: '1977'
+      },
+      {
+        pregunta: '¿Cuántos Pokémon había originalmente en la primera generación?',
+        respuesta: '151'
+      },
+      {
+        pregunta: '¿Cuántos anillos de poder se forjaron según la introducción de El Señor de los Anillos?',
+        respuesta: '20'
+      },
+      {
+        pregunta: '¿Cuánto recaudó Titanic en taquilla mundial aproximadamente (en millones)?',
+        respuesta: '2.200'
+      },
+      {
+        pregunta: '¿Por cuántos millones de dólares compró Disney Lucasfilm?',
+        respuesta: '4.050'
+      },
+      {
+  pregunta: '¿Cuántos días tarda la Tierra en dar una vuelta completa al Sol?',
+  respuesta: '365'
+},
+{
+  pregunta: '¿Cuántas películas componen el Universo Cinematográfico de Marvel hasta Endgame (2019)?',
+  respuesta: '22'
+},
+{
+  pregunta: '¿En qué año se fundó la empresa Nintendo?',
+  respuesta: '1889'
+},
+{
+  pregunta: '¿Cuánto mide en metros la Torre Eiffel?',
+  respuesta: '330'
+},
+{
+  pregunta: '¿Cuántos libros componen la saga principal de Harry Potter?',
+  respuesta: '7'
+},
+{
+  pregunta: '¿En qué año se estrenó la primera película de Toy Story?',
+  respuesta: '1995'
+},
+{
+  pregunta: '¿Cuánto pagaron por un frasco con el “aire” del concierto de Taylor Swift?',
+  respuesta: '95'
+},
+{
+  pregunta: '¿Cuánto costó producir la trilogía completa de El Señor de los Anillos?',
+  respuesta: '281.000.000'
+},
+{
+  pregunta: '¿Cuántos idiomas oficiales se hablan en Suiza?',
+  respuesta: '4'
+},
+{
+  pregunta: '¿Cuántos Oscars ganó Titanic en 1998?',
+  respuesta: '11'
+},
+{
+  pregunta: '¿En qué año se estrenó la primera película de Marvel del UCM (Iron Man)?',
+  respuesta: '2008'
+},
+{
+  pregunta: '¿Cuántos dientes tiene un ser humano adulto normalmente?',
+  respuesta: '32'
+},
+{
+  pregunta: '¿Cuántos episodios tiene la serie Breaking Bad?',
+  respuesta: '62'
+},
+{
+  pregunta: '¿Cuántos litros tiene una piscina olímpica?',
+  respuesta: '2.500.000'
+},
+{
+  pregunta: '¿Cuántos kilómetros mide el perímetro de la Tierra aproximadamente?',
+  respuesta: '40.075'
+},
+{
+  pregunta: '¿En qué año se publicó el primer libro de Harry Potter?',
+  respuesta: '1997'
+},
+{
+  pregunta: '¿Cuántos Oscars ha ganado Walt Disney en total?',
+  respuesta: '22'
+},
+{
+  pregunta: '¿Cuántas patas tiene un ciempiés?',
+  respuesta: '100'
+},
+{
+  pregunta: '¿Cuántos días tiene un año bisiesto?',
+  respuesta: '366'
+},
+{
+  pregunta: '¿Cuántas lunas tiene Júpiter (descubiertas hasta ahora)?',
+  respuesta: '95'
+},
+{
+  pregunta: '¿Cuántos años duró la Segunda Guerra Mundial?',
+  respuesta: '6'
+},
+{
+  pregunta: '¿Cuántos idiomas oficiales tiene la ONU?',
+  respuesta: '6'
+},
+{
+  pregunta: '¿Cuántas películas componen la saga Fast & Furious (hasta 2023)?',
+  respuesta: '10'
+},
+{
+  pregunta: '¿Cuántos corazones tiene un pulpo?',
+  respuesta: '3'
+},
+{
+  pregunta: '¿Cuánto mide una jirafa adulta promedio en metros?',
+  respuesta: '5'
+},
+{
+  pregunta: '¿Cuántos huesos tiene el cuerpo humano?',
+  respuesta: '206'
+},
+{
+  pregunta: '¿Cuántos kilómetros hay en un maratón?',
+  respuesta: '42'
+},
+{
+  pregunta: '¿Cuántos litros de sangre tiene un humano adulto promedio?',
+  respuesta: '5'
+},
+{
+  pregunta: '¿Cuántos segundos tiene una hora?',
+  respuesta: '3600'
+},
+{
+  pregunta: '¿Cuántos jugadores hay en un equipo de fútbol en el campo?',
+  respuesta: '11'
+},
+{
+  pregunta: '¿En qué año nació Albert Einstein?',
+  respuesta: '1879'
+},
+{
+  pregunta: '¿En qué año cayó el Imperio Romano de Occidente?',
+  respuesta: '476'
+},
+{
+  pregunta: '¿Cuántos kilómetros hay entre la Tierra y la Luna aproximadamente?',
+  respuesta: '384.400'
+},
+{
+  pregunta: '¿Cuántos días tiene febrero en un año normal?',
+  respuesta: '28'
+},
+{
+  pregunta: '¿Cuántas teclas tiene un piano estándar?',
+  respuesta: '88'
+},
+{
+  pregunta: '¿Cuántos elementos tiene la tabla periódica actualmente?',
+  respuesta: '118'
+},
+{
+  pregunta: '¿Cuántos dientes tiene un tiburón blanco en promedio?',
+  respuesta: '300'
+},
+{
+  pregunta: '¿En qué año se publicó “El Quijote” (primera parte)?',
+  respuesta: '1605'
+},
+{
+  pregunta: '¿Cuántas especies de ranas hay en el mundo (aproximadamente)?',
+  respuesta: '7000'
+},
+{
+  pregunta: '¿Cuántas calorías tiene una pizza mediana entera?',
+  respuesta: '2000'
+},
+{
+  pregunta: '¿En qué año se fundó Google?',
+  respuesta: '1998'
+},
+{
+  pregunta: '¿Cuánto tiempo (en días) duró el viaje del Titanic antes de hundirse?',
+  respuesta: '4'
+},
+{
+  pregunta: '¿Cuántas temporadas tiene Los Simpson (hasta 2024)?',
+  respuesta: '35'
+},
+{
+  pregunta: '¿Cuántos minutos tiene una semana?',
+  respuesta: '10080'
+},
+{
+  pregunta: '¿Cuántos segundos puede estar una persona promedio sin respirar (sin entrenar)?',
+  respuesta: '60'
+},
+{
+  pregunta: '¿Cuántos ojos tiene una araña promedio?',
+  respuesta: '8'
+},
+{
+  pregunta: '¿Cuántos centímetros mide un T-Rex adulto?',
+  respuesta: '1200'
+},
+{
+  pregunta: '¿Cuántos corazones tiene Doctor Who (el personaje)?',
+  respuesta: '2'
+},
+{
+  pregunta: '¿Cuántos capítulos tiene Dragon Ball Z?',
+  respuesta: '291'
+},
+{
+  pregunta: '¿Cuánto costó construir la Estrella de la Muerte en una parodia oficial de Star Wars (en dólares)?',
+  respuesta: '852.000.000.000.000'
+},
+{
+  pregunta: '¿Cuántas películas dirigió Alfred Hitchcock?',
+  respuesta: '53'
+},
+{
+  pregunta: '¿Cuántos años tenía Yoda cuando murió?',
+  respuesta: '900'
+},
+{
+  pregunta: '¿Cuántos kilómetros recorre la luz en un segundo?',
+  respuesta: '300.000'
+},
+{
+  pregunta: '¿Cuántos litros de leche necesita una vaca para hacer 1kg de queso?',
+  respuesta: '10'
+},
+{
+  pregunta: '¿Cuántos volcanes activos hay en el mundo aproximadamente?',
+  respuesta: '1350'
+},
+{
+  pregunta: '¿Cuántos ladrillos tiene el Empire State Building?',
+  respuesta: '10.000.000'
+},
+{
+  pregunta: '¿Cuántas calorías se queman besando durante 1 minuto?',
+  respuesta: '6'
+},
+{
+  pregunta: '¿Cuántos pasos da una persona promedio en un día?',
+  respuesta: '7000'
+},
+{
+  pregunta: '¿Cuántos años pasan entre cada aparición de Pennywise en IT (según la historia)?',
+  respuesta: '27'
+},
+{
+  pregunta: '¿Cuántos metros mide el Everest?',
+  respuesta: '8849'
+},
+
+{
+  pregunta: '¿Cuántas veces ha ganado España Eurovisión?',
+  respuesta: '2'
+},
+{
+  pregunta: '¿Cuántos episodios tiene Friends?',
+  respuesta: '236'
+},
+{
+  pregunta: '¿Cuántas vértebras tiene la columna vertebral humana?',
+  respuesta: '33'
+},
+{
+  pregunta: '¿Cuántos dientes puede tener un tiburón a lo largo de su vida?',
+  respuesta: '30000'
+},
+{
+  pregunta: '¿Cuántas patas tiene un milpiés (de media)?',
+  respuesta: '750'
+},
+{
+  pregunta: '¿Cuántas especies de aves existen aproximadamente?',
+  respuesta: '11000'
+},
+{
+  pregunta: '¿Cuántas personas caben en el Camp Nou?',
+  respuesta: '99354'
+},
+{
+  pregunta: '¿Cuántas películas de James Bond existen (oficiales)?',
+  respuesta: '25'
+},
+{
+  pregunta: '¿Cuántos euros costó el videojuego más caro de la historia (Star Citizen)?',
+  respuesta: '500000000'
+},
+{
+  pregunta: '¿Cuántos metros mide un campo de fútbol profesional?',
+  respuesta: '105'
+},
+{
+  pregunta: '¿Cuántos capítulos tiene la Biblia?',
+  respuesta: '1189'
+},
+{
+  pregunta: '¿Cuántos jugadores hay en un equipo de rugby?',
+  respuesta: '15'
+},
+{
+  pregunta: '¿Cuántos segundos tarda la luz del Sol en llegar a la Tierra?',
+  respuesta: '500'
+},
+{
+  pregunta: '¿Cuántos años tenía Gandalf cuando cayó con el Balrog (según Tolkien)?',
+  respuesta: '2019'
+},
+{
+  pregunta: '¿Cuántos premios Grammy ha ganado Beyoncé (hasta 2024)?',
+  respuesta: '32'
+},
+{
+  pregunta: '¿Cuántos litros caben en un barril de cerveza estándar?',
+  respuesta: '50'
+},
+{
+  pregunta: '¿Cuántas películas dirigió Stanley Kubrick?',
+  respuesta: '13'
+},
+{
+  pregunta: '¿Cuántos años han pasado desde la invención de la imprenta (aproximadamente)?',
+  respuesta: '584'
+},
+{
+  pregunta: '¿Cuántos kilómetros de carreteras hay en Estados Unidos?',
+  respuesta: '6830000'
+},
+{
+  pregunta: '¿Cuántas calorías tiene una hamburguesa Big Mac?',
+  respuesta: '508'
+},
+{
+  pregunta: '¿Cuántos metros mide una ballena azul adulta?',
+  respuesta: '30'
+},
+{
+  pregunta: '¿Cuántos dedos tiene una rana?',
+  respuesta: '8'
+},
+{
+  pregunta: '¿Cuántos artículos tiene la Declaración Universal de los Derechos Humanos?',
+  respuesta: '30'
+},
+{
+  pregunta: '¿Cuántos años duró el Imperio Romano?',
+  respuesta: '503'
+},
+{
+  pregunta: '¿Cuántos litros de aire respiramos por día (en reposo)?',
+  respuesta: '11000'
+},
+{
+  pregunta: '¿Cuántas copias vendió Minecraft (hasta 2023)?',
+  respuesta: '300000000'
+},
+{
+  pregunta: '¿Cuántos minutos dura la película El Señor de los Anillos: El Retorno del Rey (versión extendida)?',
+  respuesta: '263'
+},
+{
+  pregunta: '¿Cuántos escalones tiene la Torre Eiffel?',
+  respuesta: '1665'
+},
+{
+  pregunta: '¿Cuántos años vivió Leonardo DiCaprio en Titanic (como Jack)?',
+  respuesta: '20'
+},
+{
+  pregunta: '¿Cuántas palabras tiene el idioma español aproximadamente?',
+  respuesta: '93000'
+},
+{
+  pregunta: '¿Cuántas veces late un corazón humano al día (en promedio)?',
+  respuesta: '100000'
+},
+{
+  pregunta: '¿Cuántos decibelios puede alcanzar un trueno fuerte?',
+  respuesta: '120'
+},
+{
+  pregunta: '¿Cuántos grados tiene el ángulo interno de un hexágono?',
+  respuesta: '120'
+},
+{
+  pregunta: '¿Cuántos minutos puede sobrevivir un móvil en el congelador?',
+  respuesta: '1'
+},
+{
+  pregunta: '¿Cuántos huevos pone una gallina al año (de media)?',
+  respuesta: '300'
+},
+{
+  pregunta: '¿Cuántos jugadores tiene un equipo de Quidditch?',
+  respuesta: '7'
+},
+{
+  pregunta: '¿Cuántos satélites artificiales hay en órbita actualmente (2024)?',
+  respuesta: '8700'
+},
+{
+  pregunta: '¿Cuántos grados centígrados tiene el núcleo del Sol?',
+  respuesta: '15000000'
+},
+{
+  pregunta: '¿Cuántos videojuegos ha lanzado Nintendo en toda su historia?',
+  respuesta: '750'
+},
+{
+  pregunta: '¿Cuántas letras tiene el abecedario tailandés?',
+  respuesta: '44'
+},
+{
+  pregunta: '¿Cuántos idiomas habla C-3PO en Star Wars?',
+  respuesta: '6000000'
+},
+{
+  pregunta: '¿Cuántos metros tiene una milla terrestre?',
+  respuesta: '1609'
+},
+{
+  pregunta: '¿Cuántos litros caben en un cubo de Rubik hueco si lo rellenaras de agua?',
+  respuesta: '0.6'
+},
+{
+  pregunta: '¿Cuántos años duró la construcción de la Sagrada Familia (hasta 2025)?',
+  respuesta: '143'
+},
+{
+  pregunta: '¿Cuántas películas forman el Universo Harry Potter incluyendo Animales Fantásticos?',
+  respuesta: '11'
+},
+{
+  pregunta: '¿Cuántos pelos tiene un ser humano promedio en la cabeza?',
+  respuesta: '100000'
+},
+{
+  pregunta: '¿Cuántas lenguas indígenas se hablan en América Latina?',
+  respuesta: '420'
+},
+{
+  pregunta: '¿Cuántos kilómetros hay de Madrid a Nueva York en línea recta?',
+  respuesta: '5760'
+},
+{
+  pregunta: '¿Cuántos días tarda Marte en completar una vuelta al Sol?',
+  respuesta: '687'
+},
+{
+  pregunta: '¿Cuántos segundos puede durar una mirada incómoda?',
+  respuesta: '3'
+},
+{
+  pregunta: '¿Cuántas constelaciones oficiales hay reconocidas por la astronomía?',
+  respuesta: '88'
+},
+{
+  pregunta: '¿Cuántos años tenía Frodo al comienzo de La Comunidad del Anillo (en el libro)?',
+  respuesta: '50'
+},
+{
+  pregunta: '¿Cuántos centímetros mide una katana tradicional?',
+  respuesta: '70'
+},
+{
+  pregunta: '¿Cuántos litros de agua usa una ducha de 5 minutos?',
+  respuesta: '60'
+},
+{
+  pregunta: '¿Cuántos dedos tiene un gato (en total, incluyendo patas traseras)?',
+  respuesta: '18'
+},
+{
+  pregunta: '¿Cuántos habitantes tiene Islandia aproximadamente?',
+  respuesta: '375000'
+},
+{
+  pregunta: '¿Cuántas versiones de Monopoly existen oficialmente?',
+  respuesta: '300'
+},
+{
+  pregunta: '¿Cuántas calorías se queman bailando zumba por una hora?',
+  respuesta: '600'
+},
+{
+  pregunta: '¿Cuántos ladrillos se usaron para construir el Muro de Berlín?',
+  respuesta: '2600000'
+},
+{
+  pregunta: '¿Cuántos premios Nobel de la Paz ha ganado la Cruz Roja?',
+  respuesta: '3'
+},
+{
+  pregunta: '¿Cuántos jugadores forman un equipo de balonmano?',
+  respuesta: '7'
+},
+{
+  pregunta: '¿Cuántos minutos puede hervir un huevo para estar duro?',
+  respuesta: '10'
+},
+{
+  pregunta: '¿Cuántos satélites lanzó Starlink hasta 2024?',
+  respuesta: '5400'
+},
+{
+  pregunta: '¿Cuántos dientes tenía el dinosaurio Triceratops?',
+  respuesta: '800'
+},
+{
+  pregunta: '¿Cuántas patas tiene una araña cangrejo?',
+  respuesta: '10'
+},
+{
+  pregunta: '¿Cuántas piezas tiene un puzle Guinness de récord mundial?',
+  respuesta: '551232'
+},
+{
+  pregunta: '¿Cuántos pasos dan los novios durante una ceremonia tradicional india?',
+  respuesta: '7'
+},
+{
+  pregunta: '¿Cuántos puntos hay en una carta de dragón en el Mahjong?',
+  respuesta: '0'
+},
+{
+  pregunta: '¿Cuántos segundos tarda Usain Bolt en correr 100 metros?',
+  respuesta: '9.58'
+},
+{
+  pregunta: '¿Cuántas neuronas tiene un cerebro humano adulto?',
+  respuesta: '86000000000'
+},
+{
+  pregunta: '¿Cuántos litros de saliva produce una persona al día?',
+  respuesta: '1.5'
+},
+{
+  pregunta: '¿Cuántas veces se casa Ross en Friends?',
+  respuesta: '3'
+},
+{
+  pregunta: '¿Cuántos metros mide una pista olímpica de atletismo (una vuelta)?',
+  respuesta: '400'
+},
+{
+  pregunta: '¿Cuántos días puede sobrevivir un camello sin beber agua?',
+  respuesta: '15'
+},
+{
+  pregunta: '¿Cuántos capítulos tiene la serie Dark?',
+  respuesta: '26'
+},
+{
+  pregunta: '¿Cuántos litros de cerveza se beben en Alemania al año (aproximadamente)?',
+  respuesta: '7500000000'
+},
+{
+  pregunta: '¿Cuántas películas protagonizó Bruce Lee?',
+  respuesta: '5'
+},
+{
+  pregunta: '¿Cuántos años puede vivir una tortuga gigante?',
+  respuesta: '150'
+},
+{
+  pregunta: '¿Cuántos pares de costillas tenemos los humanos?',
+  respuesta: '12'
+},
+{
+  pregunta: '¿Cuántas cámaras tiene un corazón de pez?',
+  respuesta: '2'
+},
+{
+  pregunta: '¿Cuántos metros de altura tiene la Estatua de la Libertad?',
+  respuesta: '93'
+},
+{
+  pregunta: '¿Cuántas cartas tiene una baraja española?',
+  respuesta: '40'
+},
+{
+  pregunta: '¿Cuántos colores tiene el arcoíris?',
+  respuesta: '7'
+},
+{
+  pregunta: '¿Cuántos tentáculos tiene un calamar gigante?',
+  respuesta: '10'
+},
+{
+  pregunta: '¿Cuántos años tenía el actor que interpretó a Gandalf en El Señor de los Anillos?',
+  respuesta: '61'
+},
+{
+  pregunta: '¿Cuántas estaciones hay en el metro de París?',
+  respuesta: '303'
+},
+{
+  pregunta: '¿Cuántas vértebras tiene una jirafa?',
+  respuesta: '7'
+},
+{
+  pregunta: '¿Cuántas palabras hay en “Don Quijote de la Mancha”?',
+  respuesta: '381104'
+},
+{
+  pregunta: '¿Cuántos kilos pesa una roca lunar promedio traída por la NASA?',
+  respuesta: '0.2'
+},
+{
+  pregunta: '¿Cuántas personas caben en el estadio Maracaná (Brasil)?',
+  respuesta: '78838'
+},
+{
+  pregunta: '¿Cuántas Horrocruxes creó Voldemort en total?',
+  respuesta: '7'
+},
+{
+  pregunta: '¿Cuántos juegos oficiales hay en la saga principal de Zelda?',
+  respuesta: '19'
+},
+{
+  pregunta: '¿En qué año se estrenó la primera película de El Señor de los Anillos?',
+  respuesta: '2001'
+},
+{
+  pregunta: '¿Cuántos créditos cuesta un sable de luz en Galaxy’s Edge (Disney World)?',
+  respuesta: '219'
+},
+{
+  pregunta: '¿Cuántas casas hay en Hogwarts?',
+  respuesta: '4'
+},
+{
+  pregunta: '¿Cuántas películas componen la saga de Los Vengadores (Avengers)?',
+  respuesta: '4'
+},
+{
+  pregunta: '¿Cuántos Pokémons hay actualmente (hasta novena generación)?',
+  respuesta: '1010'
+},
+{
+  pregunta: '¿Cuántos anillos de poder se forjaron en total?',
+  respuesta: '20'
+},
+{
+  pregunta: '¿Cuántas películas de Spider-Man protagonizó Tobey Maguire?',
+  respuesta: '3'
+},
+{
+  pregunta: '¿Cuántos videojuegos principales tiene la saga Final Fantasy?',
+  respuesta: '16'
+},
+{
+  pregunta: '¿Cuántas personas integran la Comunidad del Anillo?',
+  respuesta: '9'
+},
+{
+  pregunta: '¿Cuántos hechizos se usan con frecuencia en los libros de Harry Potter?',
+  respuesta: '80'
+},
+{
+  pregunta: '¿Cuántos segundos mide exactamente el grito de Wilhelm (efecto de sonido clásico)?',
+  respuesta: '2'
+},
+{
+  pregunta: '¿Cuántos años estuvo congelado el Capitán América?',
+  respuesta: '70'
+},
+{
+  pregunta: '¿Cuántos años tiene Groot (versión adulta)?',
+  respuesta: '50'
+},
+{
+  pregunta: '¿Cuántos droides acompañan a Anakin en el Episodio I durante la carrera de vainas?',
+  respuesta: '2'
+},
+{
+  pregunta: '¿Cuántas películas de Pixar hay hasta 2024?',
+  respuesta: '27'
+},
+{
+  pregunta: '¿Cuántas temporadas tiene Naruto (sumando Naruto y Shippuden)?',
+  respuesta: '26'
+},
+{
+  pregunta: '¿Cuántos minutos dura El Retorno del Rey (versión extendida)?',
+  respuesta: '263'
+},
+{
+  pregunta: '¿Cuántas llaves espada distintas hay en Kingdom Hearts III?',
+  respuesta: '29'
+},
+{
+  pregunta: '¿Cuántas gemas del infinito existen en el UCM?',
+  respuesta: '6'
+},
+{
+  pregunta: '¿Cuántos días dura el Torneo de los Tres Magos en Harry Potter?',
+  respuesta: '224'
+},
+{
+  pregunta: '¿Cuántas fases tiene el duelo final entre Obi-Wan y Anakin en Mustafar?',
+  respuesta: '5'
+},
+{
+  pregunta: '¿Cuántos personajes jugables hay en Super Smash Bros. Ultimate?',
+  respuesta: '89'
+},
+{
+  pregunta: '¿Cuántas veces muere Kenny en la serie South Park (solo en temporadas clásicas)?',
+  respuesta: '98'
+},
+{
+  pregunta: '¿Cuántos hechizos conoce Gandalf según las obras originales?',
+  respuesta: '19'
+},
+{
+  pregunta: '¿Cuántos niveles tiene el castillo de Bowser en Super Mario 64?',
+  respuesta: '15'
+},
+{
+  pregunta: '¿Cuántos capítulos tiene la serie WandaVision?',
+  respuesta: '9'
+},
+{
+  pregunta: '¿Cuántos años tiene el Maestro Roshi en Dragon Ball original?',
+  respuesta: '300'
+},
+{
+  pregunta: '¿Cuántos Jedi sobrevivieron a la Orden 66 (canónicamente)?',
+  respuesta: '9'
+},
+{
+  pregunta: '¿Cuántos libros forman la saga principal de Canción de Hielo y Fuego (hasta ahora)?',
+  respuesta: '5'
+},
+{
+  pregunta: '¿Cuántos clones distintos hay en el Escuadrón Clon 99 (The Bad Batch)?',
+  respuesta: '5'
+},
+{
+  pregunta: '¿Cuántos minutos dura el vuelo de la escoba Nimbus 2000 en el primer partido de Harry?',
+  respuesta: '12'
+},
+{
+  pregunta: '¿Cuántas películas conforman la saga Jurassic Park y Jurassic World?',
+  respuesta: '6'
+},
+{
+  pregunta: '¿Cuántos episodios tiene The Mandalorian (hasta la tercera temporada)?',
+  respuesta: '24'
+},
+{
+  pregunta: '¿Cuántos dragones principales hay en Cómo entrenar a tu dragón?',
+  respuesta: '7'
+},
+{
+  pregunta: '¿Cuántos años estuvo dormido Link en Breath of the Wild?',
+  respuesta: '100'
+},
+{
+  pregunta: '¿Cuántos millones recaudó Avengers: Endgame en su estreno mundial?',
+  respuesta: '1200000000'
+},
+{
+  pregunta: '¿Cuántos segundos dura la transformación de Goku en Super Saiyan por primera vez?',
+  respuesta: '90'
+},
+{
+  pregunta: '¿Cuántos mundos hay en Kingdom Hearts 2 (sin contar el Mundo Inexistente)?',
+  respuesta: '13'
+},
+{
+  pregunta: '¿Cuántos puntos tiene el escudo de Capitán América clásico?',
+  respuesta: '1'
+},
+{
+  pregunta: '¿Cuántos hechizos tiene el libro “Advanced Potion-Making”?',
+  respuesta: '12'
+},
+{
+  pregunta: '¿Cuántos hijos tiene Darth Vader?',
+  respuesta: '2'
+},
+{
+  pregunta: '¿Cuántos premios ha ganado El Señor de los Anillos: El Retorno del Rey?',
+  respuesta: '11'
+},
+{
+  pregunta: '¿Cuántos años tiene Dumbledore cuando muere?',
+  respuesta: '115'
+},
+{
+  pregunta: '¿Cuántos objetos mágicos posee Doctor Strange en el Sanctum Sanctorum (según el inventario oficial)?',
+  respuesta: '54'
+},
+{
+  pregunta: '¿Cuántos hechizos “imperdonables” existen en el mundo mágico?',
+  respuesta: '3'
+},
+{
+  pregunta: '¿Cuántos pasos dio Frodo desde la Comarca hasta el Monte del Destino?',
+  respuesta: '1300000'
+},
+{
+  pregunta: '¿Cuántos puntos vale una Snitch Dorada en un partido de Quidditch?',
+  respuesta: '150'
+},
+{
+  pregunta: '¿Cuántos Horrocruxes creó Voldemort realmente?',
+  respuesta: '7'
+},
+{
+  pregunta: '¿Cuántos pisos tiene Hogwarts (según J.K. Rowling)?',
+  respuesta: '7'
+},
+{
+  pregunta: '¿Cuántos hermanos tiene Ron Weasley?',
+  respuesta: '5'
+},
+{
+  pregunta: '¿Cuántos ingredientes contiene la poción multijugos?',
+  respuesta: '7'
+},
+{
+  pregunta: '¿Cuántos años tenía Harry Potter cuando recibió su carta de Hogwarts?',
+  respuesta: '11'
+},
+{
+  pregunta: '¿Cuántos dragones compiten en la primera prueba del Torneo de los Tres Magos?',
+  respuesta: '4'
+},
+{
+  pregunta: '¿Cuántas casas hay en Hogwarts?',
+  respuesta: '4'
+},
+{
+  pregunta: '¿Cuántos estudiantes aproximadamente asisten a Hogwarts en total?',
+  respuesta: '1000'
+},
+{
+  pregunta: '¿Cuántas escaleras móviles hay en Hogwarts?',
+  respuesta: '142'
+},
+{
+  pregunta: '¿Cuántas Unforgivable Curses existen?',
+  respuesta: '3'
+},
+{
+  pregunta: '¿Cuántos minutos dura una película promedio de la saga Harry Potter?',
+  respuesta: '150'
+},
+{
+  pregunta: '¿Cuántos hechizos son nombrados oficialmente en los libros?',
+  respuesta: '80'
+},
+{
+  pregunta: '¿Cuántas pociones se mencionan por nombre en la saga?',
+  respuesta: '24'
+},
+{
+  pregunta: '¿Cuántos hijos tienen Harry y Ginny?',
+  respuesta: '3'
+},
+{
+  pregunta: '¿Cuántos galeones cuesta una varita en Ollivanders?',
+  respuesta: '7'
+},
+{
+  pregunta: '¿Cuántos puntos pierde Gryffindor cuando Harry, Hermione, Neville y Malfoy son castigados en el bosque prohibido?',
+  respuesta: '150'
+},
+{
+  pregunta: '¿Cuántas cabezas tiene Fluffy, el perro guardián de la piedra filosofal?',
+  respuesta: '3'
+},
+{
+  pregunta: '¿Cuántos profesores de Defensa Contra las Artes Oscuras tuvo Harry en 7 años?',
+  respuesta: '6'
+},
+{
+  pregunta: '¿Cuántas veces visita Harry el despacho de Dumbledore en los libros?',
+  respuesta: '9'
+},
+{
+  pregunta: '¿Cuántas veces cambia de forma la clase de Transformaciones en la saga?',
+  respuesta: '0'
+},
+{
+  pregunta: '¿Cuántos goles mete Ginny Weasley en su primer partido como cazadora en Gryffindor?',
+  respuesta: '3'
+},
+{
+  pregunta: '¿Cuántos puntos da un gol en Quidditch (no Snitch)?',
+  respuesta: '10'
+},
+{
+  pregunta: '¿Cuántas páginas tiene el primer libro en su edición original en inglés?',
+  respuesta: '223'
+},
+{
+  pregunta: '¿Cuántos años tenía Albus Dumbledore cuando murió?',
+  respuesta: '115'
+},
+{
+  pregunta: '¿Cuántos capítulos tiene “Las Reliquias de la Muerte”?',
+  respuesta: '36'
+},
+{
+  pregunta: '¿Cuántos centauros se mencionan por nombre en los libros?',
+  respuesta: '5'
+},
+{
+  pregunta: '¿Cuántos segundos duró el duelo entre Harry y Quirrell en la piedra filosofal?',
+  respuesta: '60'
+},
+{
+  pregunta: '¿Cuántas ranas de chocolate coleccionó Ron en su primer año?',
+  respuesta: '7'
+},
+{
+  pregunta: '¿Cuántas personas caben en el Gran Comedor de Hogwarts?',
+  respuesta: '1000'
+},
+{
+  pregunta: '¿Cuántas entradas secretas al castillo de Hogwarts conoce el Mapa del Merodeador?',
+  respuesta: '7'
+},
+{
+  pregunta: '¿Cuántas veces fue campeona mundial Irlanda en Quidditch (hasta 1994)?',
+  respuesta: '1'
+},
+{
+  pregunta: '¿Cuántos pasillos hay entre la torre de Astronomía y la Sala Común de Gryffindor?',
+  respuesta: '9'
+},
+{
+  pregunta: '¿Cuántas veces aparecen los Dementores en las películas?',
+  respuesta: '12'
+},
+{
+  pregunta: '¿Cuántas veces aparece el Sauce Boxeador en pantalla (películas)?',
+  respuesta: '3'
+},
+{
+  pregunta: '¿Cuántos años estudian los alumnos en Hogwarts?',
+  respuesta: '7'
+},
+{
+  pregunta: '¿Cuántos libros se encuentran en la Sección Prohibida de la biblioteca?',
+  respuesta: '100'
+},
+{
+  pregunta: '¿Cuántos fantasmas aparecen con nombre propio en la saga?',
+  respuesta: '6'
+},
+{
+  pregunta: '¿Cuántos miembros tiene la Orden del Fénix (original + nueva generación)?',
+  respuesta: '22'
+},
+{
+  pregunta: '¿Cuántas salas tiene el Ministerio de Magia según se describe en los libros?',
+  respuesta: '10'
+},
+{
+  pregunta: '¿Cuántas criaturas mágicas aparecen en “Animales Fantásticos y dónde encontrarlos”?',
+  respuesta: '85'
+},
+{
+  pregunta: '¿Cuántas posiciones hay en un equipo de Quidditch?',
+  respuesta: '4'
+},
+{
+  pregunta: '¿Cuántos caramelos Bertie Bott distintos existen (sabores)?',
+  respuesta: '100'
+},
+{
+  pregunta: '¿Cuántos hermanos tiene Sirius Black?',
+  respuesta: '1'
+},
+{
+  pregunta: '¿Cuántas veces fue director Dumbledore antes de morir?',
+  respuesta: '1'
+},
+{
+  pregunta: '¿Cuántos días está Harry en Privet Drive al inicio de “La Orden del Fénix”?',
+  respuesta: '14'
+},
+{
+  pregunta: '¿Cuántos libros de texto tienen que comprar los alumnos de primer año?',
+  respuesta: '7'
+},
+{
+  pregunta: '¿Cuántos dragones aparecen en las películas de Harry Potter?',
+  respuesta: '5'
+},
+{
+  pregunta: '¿Cuántos años tenía Anakin en La Amenaza Fantasma?',
+  respuesta: '9'
+},
+{
+  pregunta: '¿Cuántos idiomas conoce C-3PO?',
+  respuesta: '6000000'
+},
+{
+  pregunta: '¿Cuántos clones integraron el Gran Ejército de la República?',
+  respuesta: '1200000'
+},
+{
+  pregunta: '¿Cuántos Jedi hay en el Alto Consejo Jedi durante la trilogía de precuelas?',
+  respuesta: '12'
+},
+{
+  pregunta: '¿Cuántas películas de Star Wars dirigió George Lucas?',
+  respuesta: '4'
+},
+{
+  pregunta: '¿Cuántos minutos dura el duelo final entre Obi-Wan y Anakin?',
+  respuesta: '14'
+},
+{
+  pregunta: '¿Cuántas alas tiene un X-Wing?',
+  respuesta: '4'
+},
+{
+  pregunta: '¿Cuántos años hay entre los Episodios III y IV?',
+  respuesta: '19'
+},
+{
+  pregunta: '¿Cuántos habitantes tiene el planeta Coruscant (aprox)?',
+  respuesta: '1000000000000'
+},
+{
+  pregunta: '¿Cuántos litros de leche produce un bantha promedio al día?',
+  respuesta: '12'
+},
+{
+  pregunta: '¿Cuántos planetas aparecen en pantalla en Episodio II?',
+  respuesta: '8'
+},
+{
+  pregunta: '¿Cuántos capítulos tiene The Mandalorian (hasta la temporada 3)?',
+  respuesta: '24'
+},
+{
+  pregunta: '¿Cuántos años estuvo Grogu en entrenamiento antes de conocer a Din Djarin?',
+  respuesta: '50'
+},
+{
+  pregunta: '¿Cuántos dedos tiene Baby Yoda?',
+  respuesta: '3'
+},
+{
+  pregunta: '¿Cuántos soldados caben en un destructor estelar clase Imperial?',
+  respuesta: '37000'
+},
+{
+  pregunta: '¿Cuántas naves se usan en la batalla de Endor (Episodio VI)?',
+  respuesta: '600'
+},
+{
+  pregunta: '¿Cuántas horas duró la filmación del duelo final en Episodio III?',
+  respuesta: '60'
+},
+{
+  pregunta: '¿Cuántos Jedi sobreviven a la Orden 66 (canon oficial)?',
+  respuesta: '9'
+},
+{
+  pregunta: '¿Cuántos créditos vale un sable de luz en el mercado negro?',
+  respuesta: '10000'
+},
+{
+  pregunta: '¿Cuántos planetas visitan los personajes en Rogue One?',
+  respuesta: '7'
+},
+{
+  pregunta: '¿Cuántos sables de luz ha usado Luke Skywalker en toda la saga?',
+  respuesta: '3'
+},
+{
+  pregunta: '¿Cuántos años vivió Palpatine según el canon?',
+  respuesta: '88'
+},
+{
+  pregunta: '¿Cuántos clones aparecen con nombre en las series animadas?',
+  respuesta: '25'
+},
+{
+  pregunta: '¿Cuántos años hay entre El Retorno del Jedi y El Despertar de la Fuerza?',
+  respuesta: '30'
+},
+{
+  pregunta: '¿Cuántas veces cambia de nombre Anakin Skywalker (canon)?',
+  respuesta: '2'
+},
+{
+  pregunta: '¿Cuántas torretas defensivas tiene la Estrella de la Muerte?',
+  respuesta: '70000'
+},
+{
+  pregunta: '¿Cuántos metros mide un AT-AT?',
+  respuesta: '22'
+},
+{
+  pregunta: '¿Cuántos días duró el rodaje de El Imperio Contraataca?',
+  respuesta: '180'
+},
+{
+  pregunta: '¿Cuántos planetas han sido base rebelde en el canon?',
+  respuesta: '6'
+},
+{
+  pregunta: '¿Cuántos tipos de stormtroopers hay reconocidos oficialmente?',
+  respuesta: '18'
+},
+{
+  pregunta: '¿Cuántas especies alienígenas distintas aparecen en Mos Eisley?',
+  respuesta: '19'
+},
+{
+  pregunta: '¿Cuántos hijos tiene Han Solo en el canon expandido original (Leyendas)?',
+  respuesta: '3'
+},
+{
+  pregunta: '¿Cuántas versiones de R2-D2 existen como figura de acción?',
+  respuesta: '170'
+},
+{
+  pregunta: '¿Cuántos midiclorianos por célula tenía Anakin Skywalker?',
+  respuesta: '27000'
+},
+{
+  pregunta: '¿Cuántas líneas de diálogo tiene Darth Vader en toda la trilogía original?',
+  respuesta: '277'
+},
+{
+  pregunta: '¿Cuántos droides aparecen solo en Episodio I?',
+  respuesta: '22'
+},
+{
+  pregunta: '¿Cuántas torres tiene el Templo Jedi en Coruscant?',
+  respuesta: '5'
+},
+{
+  pregunta: '¿Cuántos años duró la Antigua República según el canon de Leyendas?',
+  respuesta: '25000'
+},
+{
+  pregunta: '¿Cuántas veces ha sido destruida la Estrella de la Muerte?',
+  respuesta: '2'
+},
+{
+  pregunta: '¿Cuántas líneas de código tiene el droide C-3PO según leyendas?',
+  respuesta: '4300000'
+},
+{
+  pregunta: '¿Cuántas patas tiene un caminante AT-TE?',
+  respuesta: '6'
+},
+{
+  pregunta: '¿Cuántos créditos cuesta entrar a ver carreras de vainas en Tatooine?',
+  respuesta: '15'
+}
+
+      
+    ];
+
+    let indice = 0;
+    function mostrarPregunta() {
+      const p = preguntas[indice];
+      document.getElementById('pregunta').textContent = p.pregunta;
+      document.getElementById('respuesta').textContent = 'Respuesta: ' + p.respuesta;
+    }
+    function siguiente() {
+      indice = (indice + 1) % preguntas.length;
+      mostrarPregunta();
+    }
+    mostrarPregunta();
+  </script>
+</body>
+</html>
