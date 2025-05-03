@@ -71,6 +71,7 @@
       let tiempo = tiempoTotal;
 
       tension.currentTime = 0;
+      tension.playbackRate = 1;
       tension.play();
 
       const intervalo = setInterval(() => {
@@ -81,12 +82,16 @@
           mensaje.textContent = '💣 ¡PUUUM!';
           boton.style.display = 'block';
           tension.pause();
+          tension.playbackRate = 1;
           explosion.play();
         } else {
           escala += 0.05;
           patata.style.transform = 'scale(' + escala + ')';
           if (tiempo <= temblorInicio) {
             patata.classList.add('temblor');
+          }
+          if (tension.playbackRate < 2.5) {
+            tension.playbackRate += 0.05;
           }
         }
       }, 1000);
