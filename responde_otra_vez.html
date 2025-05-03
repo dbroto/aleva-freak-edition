@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>📺 1, 2, 3... Responde Otra Vez 📺</title>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'VT323', monospace;
+      background-color: #000;
+      color: #fff;
+      text-align: center;
+      padding: 2rem;
+    }
+     h1 {
+      font-family: 'VT323', monospace;
+      background-color: #111;
+      color:  #ffcc00;
+      text-align: center;
+      padding: 2rem;
+    }
+    .card {
+      background-color: #111;
+      border: 4px solid #ffcc00;
+      border-radius: 8px;
+      padding: 2rem;
+      max-width: 800px;
+      margin: 0 auto;
+      box-shadow: 0 0 20px #ffcc00;
+    }
+    .tema {
+      font-size: 2rem;
+      color: #00ffcc;
+      margin-bottom: 2rem;
+    }
+    #timer {
+      font-size: 3rem;
+      color: #00ffff;
+      margin: 2rem 0;
+      text-shadow: 1px 1px 0 #000;
+    }
+    button {
+      background-color: #000;
+      color: #ffcc00;
+      border: 2px solid #ffcc00;
+      padding: 1rem 2rem;
+      margin: 1rem;
+      font-family: 'Press Start 2P', cursive;
+      font-size: 0.8rem;
+      cursor: pointer;
+      box-shadow: 0 0 10px #ffcc00;
+      text-transform: uppercase;
+    }
+    button:hover {
+      background-color: #222;
+    }
+  </style>
+</head>
+<body>
+  <h1>📺 1, 2, 3... Responde Otra Vez 📺</h1>
+  <div class="card">
+    <div class="tema" id="tema">Tema aleatorio</div>
+    <div id="timer">10</div>
+    <button onclick="startTimer()">▶ Iniciar</button>
+    <button onclick="pauseTimer()">⏸ Pausa</button>
+    <button onclick="resetTimer()">🔁 Reiniciar</button>
+    <button onclick="nextTema()">➡️ Siguiente tema</button>
+  </div>
+
+  <script>
+    const temas = [
+       'Películas de Disney',
+  'Hechizos de Harry Potter',
+  'Personajes de Marvel',
+  'Planetas del universo Star Wars',
+  'Pokémon de la primera generación',
+  'Canciones de La Oreja de Van Gogh',
+  'Canciones de Estopa',
+  'Películas de terror clásicas',
+  'Dioses del Olimpo griego',
+  'Villanos de películas Disney',
+  'Personajes que mueren en Harry Potter',
+  'Canciones típicas en bodas',
+  'Canciones de Shakira',
+  'Comidas que aparecen en películas',
+  'Personajes de Los Simpson',
+  'Series de los 2000',
+  'Personajes de Toy Story',
+  'Personajes de Stranger Things',
+  'Planetas del sistema solar (y sus lunas)',
+  'Versiones de Mario en videojuegos',
+  'Nombres de videojuegos de PlayStation',
+  'Personajes de Shrek',
+  'Canciones de reggaetón conocidas',
+  'Razas del universo Star Trek',
+  'Clases de Hogwarts',
+  'Mascotas de personajes famosos',
+  'Actores de Marvel',
+  'Cosas que puedes tirar durante una boda',
+  'Cosas que puedes perder en una fiesta',
+  'Cosas que hay en una maleta de luna de miel',
+  'Nombres de casas de Game of Thrones',
+  'Villanos del universo DC',
+  'Versiones de Link en los juegos de Zelda',
+  'Frases típicas de películas románticas',
+  'Personajes de Frozen',
+  'Cosas que aparecen en películas de Pixar',
+  'Canciones de películas de Disney',
+  'Actores que han hecho de Spider-Man',
+  'Cosas que hay en un parque temático',
+  'Cosas que puedes hacer en una despedida de solteros',
+  'Personajes de videojuegos de lucha (tipo Tekken, Smash Bros, etc)',
+  'Objetos mágicos del universo Harry Potter',
+  'Personajes de El Señor de los Anillos',
+  'Cosas que hay en una boda',
+  'Tipos de disfraces en Halloween',
+  'Nombres de canciones de Disney que empiezan con vocal',
+  'Juegos de mesa famosos',
+  'Películas que han ganado un Oscar',
+   'Películas ganadoras del Oscar a mejor película',
+  'Nombres de princesas Disney',
+  'Canciones de Queen',
+  'Capitales de países europeos',
+  'Frutas',
+  'Verduras',
+  'Países de América del Sur',
+  'Animales marinos',
+  'Superhéroes de Marvel',
+  'Superhéroes de DC',
+  'Películas de Pixar',
+  'Coches de marcas conocidas',
+  'Tipos de quesos',
+  'Actores ganadores del Oscar',
+  'Cadenas de comida rápida',
+  'Marcas de ropa',
+  'Marcas de móviles',
+  'Ciudades españolas',
+  'Pintores famosos',
+  'Lenguas oficiales del mundo',
+  'Juegos de mesa populares',
+  'Ríos de Europa',
+  'Montañas del mundo',
+  'Deportes olímpicos',
+  'Instrumentos musicales',
+  'Tipos de baile',
+  'Profesiones',
+  'Lenguajes de programación',
+  'Series de Netflix',
+  'Marcas de chocolate',
+  'Marcas de cereales',
+  'Cadenas de hoteles',
+  'Videojuegos de Nintendo',
+  'Tipos de pastas italianas',
+  'Series españolas',
+  'Nombres de planetas y lunas del sistema solar',
+  'Apellidos de futbolistas famosos',
+  'Pokémon de la primera generación',
+  'Canciones de Rosalía',
+  'Equipos de fútbol europeos',
+  'Platos típicos italianos',
+  'Instrumentos de percusión',
+  'Nombres de bebidas alcohólicas',
+  'Aves',
+  'Monedas del mundo',
+  'Aplicaciones de móvil populares',
+  'Festivales de música internacionales',
+  'Autores de literatura clásica',
+  'Películas protagonizadas por Tom Hanks',
+  'Tipos de flores',
+   'Animales de granja',
+  'Marcas de coches',
+  'Ciudades de Estados Unidos',
+  'Ingredientes de una pizza',
+  'Nombres comunes femeninos en español',
+  'Nombres comunes masculinos en español',
+  'Películas de Harry Potter',
+  'Hechizos de Harry Potter',
+  'Profesiones sanitarias',
+  'Colores',
+  'App de redes sociales',
+  'Youtubers famosos',
+  'Platos típicos mexicanos',
+  'Apellidos comunes en España',
+  'Nombres de series de dibujos animados',
+  'Películas de superhéroes',
+  'Razas de perro',
+  'Razas de gato',
+  'Tipos de danza',
+  'Personajes de Los Simpson',
+  'Series de animación para adultos',
+  'Capitanes de equipos de fútbol',
+  'Estaciones del metro de Madrid',
+  'Frutas tropicales',
+  'Cantantes españoles',
+  'Películas de animación nominadas al Oscar',
+  'Instrumentos de cuerda',
+  'Idiomas que se hablan en África',
+  'Marcas de cosméticos',
+  'Villanos de Disney',
+  'Empresas tecnológicas',
+  'Cosas que hay en una oficina',
+  'Comidas que se comen frías',
+  'Aperitivos de bolsa',
+  'Postres tradicionales españoles',
+  'Marcas de electrodomésticos',
+  'Accesorios de vestir',
+  'Tipos de calzado',
+  'Medios de transporte',
+  'Cosas que puedes hacer en la playa',
+  'Países que han ganado un Mundial',
+  'Tipos de pan',
+  'Cosas que hay en un aeropuerto',
+  'Nombres de cantantes de reggaetón',
+  'Monumentos famosos del mundo',
+  'Museos importantes de Europa'
+    ];
+
+    let timer;
+    let timeLeft = 10;
+
+    const temaEl = document.getElementById('tema');
+    const timerEl = document.getElementById('timer');
+
+    function getRandomTema() {
+      const randomIndex = Math.floor(Math.random() * temas.length);
+      return temas[randomIndex];
+    }
+
+    function nextTema() {
+      temaEl.textContent = getRandomTema();
+      resetTimer();
+    }
+
+   function updateTimerDisplay() {
+      if (timeLeft <= 0) {
+        timerEl.textContent = '⏳ ¡Tiempo agotado!';
+      } else {
+        timerEl.textContent = timeLeft;
+      }
+    }
+
+    function startTimer() {
+      clearInterval(timer);
+      timer = setInterval(() => {
+        timeLeft--;
+        updateTimerDisplay();
+        if (timeLeft <= 0) {
+          clearInterval(timer);
+        }
+      }, 1000);
+    }
+
+    function pauseTimer() {
+      clearInterval(timer);
+    }
+
+    function resetTimer() {
+      clearInterval(timer);
+      timeLeft = 10;
+      updateTimerDisplay();
+      startTimer();
+    }
+
+    // Inicializar con un tema
+    nextTema();
+  </script>
+</body>
+</html>
