@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>🥔 La Patata Caliente 🥔</title>
+  <style>
+    body { background: #000; color: #fff; font-family: monospace; text-align: center; padding: 2rem; }
+    #patata { font-size: 6rem; transition: transform 0.3s; display: inline-block; }
+    #mensaje { font-size: 3rem; color: #ffcc00; text-shadow: 2px 2px #000; position: absolute; width: 100%; top: 40%; }
+    #boton { margin-top: 2rem; display: block; }
+    .temblor {
+      animation: shake 0.5s infinite;
+    }
+    @keyframes shake {
+      0% { transform: translate(0px, 0px) scale(2.5); }
+      25% { transform: translate(2px, -2px) scale(2.5); }
+      50% { transform: translate(-2px, 2px) scale(2.5); }
+      75% { transform: translate(2px, 2px) scale(2.5); }
+      100% { transform: translate(-2px, -2px) scale(2.5); }
+    }
+  </style>
+</head>
+<body>
+  <h1>🥔 La Patata Caliente 🥔</h1>
+  <div id="patata">🥔</div>
+  <div id="mensaje"></div>
+  <button id="boton" onclick="iniciar()">▶ Iniciar</button>
+
+  <script>
+    const patata = document.getElementById('patata');
+    const mensaje = document.getElementById('mensaje');
+    const boton = document.getElementById('boton');
+
+    function iniciar() {
+      mensaje.textContent = '';
+      patata.innerHTML = '🥔';
+      patata.classList.remove('temblor');
+      patata.style.transform = 'scale(1)';
+      boton.style.display = 'none';
+
+      let escala = 1;
+      let tiempoTotal = Math.floor(Math.random() * 31) + 30;
+      let temblorInicio = tiempoTotal - (Math.floor(Math.random() * 6) + 5);
+      let tiempo = tiempoTotal;
+
+      const intervalo = setInterval(() => {
+        tiempo--;
+        if (tiempo <= 0) {
+          clearInterval(intervalo);
+          patata.innerHTML = '💥';
+          mensaje.textContent = '💣 ¡PUUUM!';
+          boton.style.display = 'inline-block';
+        } else {
+          escala += 0.05;
+          patata.style.transform = 'scale(' + escala + ')';
+
+          if (tiempo <= temblorInicio) {
+            patata.classList.add('temblor');
+          }
+        }
+      }, 1000);
+    }
+  </script>
+</body>
+</html>
