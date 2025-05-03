@@ -3,11 +3,33 @@
 <head>
   <meta charset="UTF-8" />
   <title>🥔 La Patata Caliente 🥔</title>
-  <style>
-    body { background: #000; color: #fff; font-family: monospace; text-align: center; padding: 2rem; }
-    #patata { font-size: 6rem; transition: transform 0.3s; display: inline-block; }
-    #mensaje { font-size: 3rem; color: #ffcc00; text-shadow: 2px 2px #000; position: absolute; width: 100%; top: 40%; }
-    #boton { margin-top: 2rem; display: block; }
+<style>
+    body {
+      background: #000;
+      color: #fff;
+      font-family: monospace;
+      text-align: center;
+      padding: 2rem;
+    }
+    #patata {
+      font-size: 6rem;
+      transition: transform 0.3s;
+      display: inline-block;
+    }
+    #mensaje {
+      font-size: 3rem;
+      color: #ffcc00;
+      text-shadow: 2px 2px #000;
+      position: absolute;
+      width: 100%;
+      top: 40%;
+    }
+    #boton {
+      margin-top: 2rem;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
     .temblor {
       animation: shake 0.5s infinite;
     }
@@ -26,10 +48,15 @@
   <div id="mensaje"></div>
   <button id="boton" onclick="iniciar()">▶ Iniciar</button>
 
+  <audio id="tension" src="tension.mp3" loop></audio>
+  <audio id="explosion" src="explosion.mp3"></audio>
+
   <script>
     const patata = document.getElementById('patata');
     const mensaje = document.getElementById('mensaje');
     const boton = document.getElementById('boton');
+    const tension = document.getElementById('tension');
+    const explosion = document.getElementById('explosion');
 
     function iniciar() {
       mensaje.textContent = '';
@@ -43,17 +70,21 @@
       let temblorInicio = tiempoTotal - (Math.floor(Math.random() * 6) + 5);
       let tiempo = tiempoTotal;
 
+      tension.currentTime = 0;
+      tension.play();
+
       const intervalo = setInterval(() => {
         tiempo--;
         if (tiempo <= 0) {
           clearInterval(intervalo);
           patata.innerHTML = '💥';
           mensaje.textContent = '💣 ¡PUUUM!';
-          boton.style.display = 'inline-block';
+          boton.style.display = 'block';
+          tension.pause();
+          explosion.play();
         } else {
           escala += 0.05;
           patata.style.transform = 'scale(' + escala + ')';
-
           if (tiempo <= temblorInicio) {
             patata.classList.add('temblor');
           }
