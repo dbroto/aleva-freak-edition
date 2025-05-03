@@ -1236,18 +1236,38 @@
 
       
     ];
-
+    let barajadas = [];
     let indice = 0;
+   function shuffle(array) {
+      for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+      }
+      return array;
+    }
+
+    function iniciar() {
+      barajadas = shuffle([...preguntas]);
+      indice = 0;
+      mostrarPregunta();
+    }
+
     function mostrarPregunta() {
-      const p = preguntas[indice];
+      const p = barajadas[indice];
       document.getElementById('pregunta').textContent = p.pregunta;
       document.getElementById('respuesta').textContent = 'Respuesta: ' + p.respuesta;
     }
+
     function siguiente() {
-      indice = (indice + 1) % preguntas.length;
+      indice++;
+      if (indice >= barajadas.length) {
+        indice = 0;
+        barajadas = shuffle([...preguntas]);
+      }
       mostrarPregunta();
     }
-    mostrarPregunta();
+
+    iniciar();
   </script>
 </body>
 </html>
