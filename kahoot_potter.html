@@ -75,23 +75,2390 @@
   <button id="siguiente" onclick="siguiente()">Siguiente Pregunta</button>
 
   <script>
-    const preguntas = [
-      {
-        "pregunta": "¿Cuál es el nombre del mago que guía a la Comunidad?",
-        "respuestas": ["Saruman", "Radagast", "Gandalf", "Sauron"],
-        "correcta": 2
-      },
-      {
-        "pregunta": "¿Qué objeto debe destruir Frodo?",
-        "respuestas": ["El bastón de Gandalf", "El Anillo Único", "La espada de Aragorn", "El Palantir"],
-        "correcta": 1
-      },
-      {
-        "pregunta": "¿Cómo se llama el padre de Legolas?",
-        "respuestas": ["Elrond", "Thranduil", "Celeborn", "Glorfindel"],
-        "correcta": 1
-      }
-    ];
+    const preguntas = 
+      [
+  {
+    "pregunta": "¿Cómo se llama el hechizo que Harry Potter usa para defenderse de los dementores?",
+    "respuestas": [
+      "Expecto Patronum",
+      "Expelliarmus",
+      "Lumos",
+      "Wingardium Leviosa"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿En qué casa de Hogwarts estaba Harry Potter?",
+    "respuestas": [
+      "Hufflepuff",
+      "Ravenclaw",
+      "Slytherin",
+      "Gryffindor"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Cuál es el nombre del búho de Harry Potter?",
+    "respuestas": [
+      "Hedwig",
+      "Errol",
+      "Pigwidgeon",
+      "Scabbers"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Quién es el director de Hogwarts en la primera película?",
+    "respuestas": [
+      "Albus Dumbledore",
+      "Severus Snape",
+      "Minerva McGonagall",
+      "Gilderoy Lockhart"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué deporte practican los estudiantes en el aire sobre escobas?",
+    "respuestas": [
+      "Quidditch",
+      "Fútbol",
+      "Póker",
+      "Ajedrez"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué personaje traiciona a los padres de Harry Potter, lo que lleva a su muerte?",
+    "respuestas": [
+      "Severus Snape",
+      "Peter Pettigrew",
+      "Lucius Malfoy",
+      "Sirius Black"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Cómo se llama la varita mágica que Harry Potter utiliza?",
+    "respuestas": [
+      "Varita de la muerte",
+      "Varita de Saúco",
+      "Varita de Olivander",
+      "Varita de Fénix"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Qué significa la palabra 'Muggle' en el mundo de Harry Potter?",
+    "respuestas": [
+      "Magos",
+      "Muggles",
+      "No mágicos",
+      "Brujas"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Quién es el mejor amigo de Harry Potter?",
+    "respuestas": [
+      "Neville Longbottom",
+      "Ron Weasley",
+      "Hermione Granger",
+      "Draco Malfoy"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué ingrediente se necesita para hacer una poción de invisibilidad?",
+    "respuestas": [
+      "Pluma de fénix",
+      "Escama de dragón",
+      "Pelo de unicornio",
+      "Raíz de mandrágora"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿En qué libro de la saga Harry Potter aparece el Torneo de los Tres Magos?",
+    "respuestas": [
+      "Harry Potter y la cámara secreta",
+      "Harry Potter y el prisionero de Azkaban",
+      "Harry Potter y el cáliz de fuego",
+      "Harry Potter y la piedra filosofal"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Quién es el maestro de pociones en la serie de libros y películas de Harry Potter?",
+    "respuestas": [
+      "Severus Snape",
+      "Gilderoy Lockhart",
+      "Remus Lupin",
+      "Mad-Eye Moody"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué objeto tiene la capacidad de devolver a las personas al pasado?",
+    "respuestas": [
+      "La piedra filosofal",
+      "El giratiempo",
+      "La capa de invisibilidad",
+      "El caldero mágico"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Cuál es el nombre de la mascota de Hermione Granger?",
+    "respuestas": [
+      "Scabbers",
+      "Hedwig",
+      "Crookshanks",
+      "Fang"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué criatura mitológica está a cargo de la prisión de Azkaban?",
+    "respuestas": [
+      "Dementores",
+      "Trolls",
+      "Dragones",
+      "Basiliscos"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué personaje es el jefe de la Casa de Slytherin?",
+    "respuestas": [
+      "Horace Slughorn",
+      "Severus Snape",
+      "Lucius Malfoy",
+      "Tom Riddle"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Cuál es el nombre del primer libro de la saga de Harry Potter?",
+    "respuestas": [
+      "Harry Potter y el cáliz de fuego",
+      "Harry Potter y la piedra filosofal",
+      "Harry Potter y la cámara secreta",
+      "Harry Potter y el prisionero de Azkaban"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué personaje fue elegido como el 'noble' en el torneo de los Tres Magos?",
+    "respuestas": [
+      "Cedric Diggory",
+      "Victor Krum",
+      "Harry Potter",
+      "Fleur Delacour"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Cuál es el nombre de la escuela rival de Hogwarts en el Torneo de los Tres Magos?",
+    "respuestas": [
+      "Beauxbatons",
+      "Ilvermorny",
+      "Durmstrang",
+      "Salem"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Quién fue el primero en dar a Harry Potter su varita mágica?",
+    "respuestas": [
+      "Albus Dumbledore",
+      "Olivander",
+      "Gilderoy Lockhart",
+      "Hermione Granger"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué materia enseña Remus Lupin en Hogwarts?",
+    "respuestas": [
+      "Defensa contra las artes oscuras",
+      "Herbología",
+      "Pociones",
+      "Astronomía"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué personaje de Harry Potter se convierte en el director de Hogwarts después de la muerte de Dumbledore?",
+    "respuestas": [
+      "Minerva McGonagall",
+      "Severus Snape",
+      "Horace Slughorn",
+      "Filius Flitwick"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Cómo se llama el hermano mayor de Ron Weasley?",
+    "respuestas": [
+      "Fred",
+      "Percy",
+      "Charlie",
+      "George"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué criatura mitológica se encuentra en la Cámara Secreta?",
+    "respuestas": [
+      "Basilisco",
+      "Dragón",
+      "Troll",
+      "Hippogriff"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué hechizo utiliza Harry Potter para defenderse de los dementores en su tercer año?",
+    "respuestas": [
+      "Expecto Patronum",
+      "Avada Kedavra",
+      "Expelliarmus",
+      "Lumos"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Cuál es el nombre de la madre de Harry Potter?",
+    "respuestas": [
+      "Lily Potter",
+      "Molly Weasley",
+      "Hermione Granger",
+      "Bellatrix Lestrange"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Quién fue el primero en poseer la varita de Saúco?",
+    "respuestas": [
+      "Lord Voldemort",
+      "Antioch Peverell",
+      "Salazar Slytherin",
+      "Albus Dumbledore"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Quién fue el líder de la Orden del Fénix durante la primera guerra mágica?",
+    "respuestas": [
+      "Sirius Black",
+      "Albus Dumbledore",
+      "James Potter",
+      "Minerva McGonagall"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué animal aparece en el escudo de la casa de Gryffindor?",
+    "respuestas": [
+      "León",
+      "Águila",
+      "Serpiente",
+      "Tejón"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿En qué año escolar ocurre el Torneo de los Tres Magos?",
+    "respuestas": [
+      "Cuarto año",
+      "Tercer año",
+      "Quinto año",
+      "Sexto año"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Quién era la jefa de la Casa de Gryffindor en los primeros años de Harry?",
+    "respuestas": [
+      "Minerva McGonagall",
+      "Sirius Black",
+      "Gilderoy Lockhart",
+      "Remus Lupin"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Cómo se llama el mapa mágico que muestra todos los lugares y personas de Hogwarts?",
+    "respuestas": [
+      "El Mapa del Merodeador",
+      "El Giratiempo",
+      "El Cáliz de Fuego",
+      "El Viento del Norte"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Cómo se llama el hechizo para levantar objetos en el aire?",
+    "respuestas": [
+      "Wingardium Leviosa",
+      "Lumos Maxima",
+      "Alohomora",
+      "Expecto Patronum"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué personaje crea el hechizo que mata a Cedric Diggory en el Torneo de los Tres Magos?",
+    "respuestas": [
+      "Peter Pettigrew",
+      "Lord Voldemort",
+      "Bellatrix Lestrange",
+      "Lucius Malfoy"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Quién era el mejor amigo de James Potter durante su tiempo en Hogwarts?",
+    "respuestas": [
+      "Sirius Black",
+      "Remus Lupin",
+      "Severus Snape",
+      "Peter Pettigrew"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿En qué película de Harry Potter aparece el personaje de Dolores Umbridge?",
+    "respuestas": [
+      "Harry Potter y la Orden del Fénix",
+      "Harry Potter y la Cámara Secreta",
+      "Harry Potter y el Cáliz de Fuego",
+      "Harry Potter y el Prisionero de Azkaban"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Cómo se llama el profesor de Adivinación en Hogwarts?",
+    "respuestas": [
+      "Sybil Trelawney",
+      "Gilderoy Lockhart",
+      "Remus Lupin",
+      "Horace Slughorn"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué objeto mágico está conectado con la inmortalidad y lo busca Lord Voldemort?",
+    "respuestas": [
+      "El giratiempo",
+      "La piedra filosofal",
+      "El caldero de la inmortalidad",
+      "El Mapa del Merodeador"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Quién fue el mago que mató a los padres de Harry Potter?",
+    "respuestas": [
+      "Severus Snape",
+      "Lord Voldemort",
+      "Bellatrix Lestrange",
+      "Peter Pettigrew"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Cuál es el verdadero nombre de Lord Voldemort?",
+    "respuestas": [
+      "Tom Riddle",
+      "Salazar Slytherin",
+      "Lucius Malfoy",
+      "Albus Dumbledore"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Cómo se llama el lugar donde Harry, Ron y Hermione luchan contra un dragón en el Torneo de los Tres Magos?",
+    "respuestas": [
+      "El Campo de los Dragones",
+      "La Cámara del Dragón",
+      "El Bosque Prohibido",
+      "El Estadio"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Quién es el fundador de la casa Slytherin?",
+    "respuestas": [
+      "Salazar Slytherin",
+      "Godric Gryffindor",
+      "Rowena Ravenclaw",
+      "Helga Hufflepuff"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué objeto utiliza Hermione para asistir a las clases que se solapan?",
+    "respuestas": [
+      "El giratiempo",
+      "El reloj de arena",
+      "La capa de invisibilidad",
+      "El mapa del merodeador"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué hechizo es utilizado para hacer levitar un objeto?",
+    "respuestas": [
+      "Wingardium Leviosa",
+      "Expelliarmus",
+      "Lumos",
+      "Avada Kedavra"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué profesor de Hogwarts fue poseído por un Horrocrux de Voldemort?",
+    "respuestas": [
+      "Severus Snape",
+      "Harry Potter",
+      "Gilderoy Lockhart",
+      "Quirrell"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Quién es el jefe de la Casa de Gryffindor?",
+    "respuestas": [
+      "Albus Dumbledore",
+      "Minerva McGonagall",
+      "Severus Snape",
+      "Filius Flitwick"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Cómo se llama el hermano mayor de Harry Potter?",
+    "respuestas": [
+      "James Potter",
+      "Lily Potter",
+      "Sirius Black",
+      "Harry Potter no tiene hermanos mayores"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿En qué película se introduce el personaje de Dolores Umbridge?",
+    "respuestas": [
+      "Harry Potter y la Orden del Fénix",
+      "Harry Potter y la Cámara Secreta",
+      "Harry Potter y el Prisionero de Azkaban",
+      "Harry Potter y el Cáliz de Fuego"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Cuál de estos hechizos pertenece a las artes oscuras?",
+    "respuestas": [
+      "Avada Kedavra",
+      "Lumos",
+      "Expecto Patronum",
+      "Expelliarmus"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Cómo se llama el elfo doméstico que sirve a los Malfoy?",
+    "respuestas": [
+      "Kreacher",
+      "Winky",
+      "Dobby",
+      "Mippy"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué significa la palabra 'Muggle' en el universo de Harry Potter?",
+    "respuestas": [
+      "Mago",
+      "Persona no mágica",
+      "Bestia mágica",
+      "Hechizo"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué objeto es necesario para acceder a la Cámara Secreta?",
+    "respuestas": [
+      "La varita de saúco",
+      "La llave de Gryffindor",
+      "La serpiente de Slytherin",
+      "El diario de Tom Riddle"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Qué hechizo se utiliza para bloquear maleficios?",
+    "respuestas": [
+      "Protego",
+      "Expelliarmus",
+      "Riddikulus",
+      "Avada Kedavra"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué criatura mágica acompaña a Harry Potter desde su primer año en Hogwarts?",
+    "respuestas": [
+      "Fawkes",
+      "Hedwig",
+      "Buckbeak",
+      "Hagrid"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿En qué libro de Harry Potter se hace referencia a los Horrocruxes por primera vez?",
+    "respuestas": [
+      "Harry Potter y la Cámara Secreta",
+      "Harry Potter y las Reliquias de la Muerte",
+      "Harry Potter y el Prisionero de Azkaban",
+      "Harry Potter y el Cáliz de Fuego"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué personaje es conocido como el 'príncipe mestizo'?",
+    "respuestas": [
+      "Tom Riddle",
+      "Harry Potter",
+      "Severus Snape",
+      "Draco Malfoy"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué magia oscura se usa para matar en el universo de Harry Potter?",
+    "respuestas": [
+      "Avada Kedavra",
+      "Cruciatus",
+      "Imperius",
+      "Morsmordre"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué persona mata a Sirius Black en el quinto libro?",
+    "respuestas": [
+      "Bellatrix Lestrange",
+      "Peter Pettigrew",
+      "Lucius Malfoy",
+      "Dolores Umbridge"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Cuál es la primera asignatura que Harry tiene en su primer año en Hogwarts?",
+    "respuestas": [
+      "Encantamientos",
+      "Pociones",
+      "Defensa Contra las Artes Oscuras",
+      "Astronomía"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Cómo se llama la escuela a la que asisten los estudiantes de magia en el universo de Harry Potter?",
+    "respuestas": [
+      "Hogwarts",
+      "Durmstrang",
+      "Beauxbatons",
+      "Ilvermorny"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué hechizo se utiliza para iluminar la punta de la varita?",
+    "respuestas": [
+      "Lumos",
+      "Nox",
+      "Expecto Patronum",
+      "Alohomora"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Quién fue el director de Hogwarts antes de Dumbledore?",
+    "respuestas": [
+      "Phineas Nigellus Black",
+      "Armando Dippet",
+      "Horace Slughorn",
+      "Gellert Grindelwald"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Cuál es el nombre de la tienda de varitas mágicas en el Callejón Diagon?",
+    "respuestas": [
+      "Olivanders",
+      "Flourish and Blotts",
+      "Weasleys' Wizard Wheezes",
+      "Eeylops Owl Emporium"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Quién es el Guardián de la Llave y el Grial en el primer torneo de los Tres Magos?",
+    "respuestas": [
+      "Madame Maxime",
+      "Victor Krum",
+      "Cedric Diggory",
+      "Rubeus Hagrid"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Quién le da a Harry el Mapa del Merodeador?",
+    "respuestas": [
+      "Sirius Black",
+      "Remus Lupin",
+      "Fred y George Weasley",
+      "Dumbledore"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué es un Horrocrux en el universo de Harry Potter?",
+    "respuestas": [
+      "Un objeto encantado que contiene una parte del alma de un mago",
+      "Un tipo de criatura mágica",
+      "Una poción que da inmortalidad",
+      "Un hechizo prohibido"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Quién fue el primer mago en abrir la Cámara Secreta?",
+    "respuestas": [
+      "Salazar Slytherin",
+      "Tom Riddle",
+      "Harry Potter",
+      "Lord Voldemort"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué criatura mitológica vive en el Bosque Prohibido y es conocida por su canto mortal?",
+    "respuestas": [
+      "Basilisco",
+      "Centauros",
+      "Acromántula",
+      "Sirenas"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿En qué parte del cuerpo tiene Harry una cicatriz que lo marca como el 'niño que vivió'?",
+    "respuestas": [
+      "Frente",
+      "Mano",
+      "Brazo",
+      "Pierna"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué tipo de animal es el Patronus de Harry Potter?",
+    "respuestas": [
+      "Un alce",
+      "Un perro",
+      "Un ciervo",
+      "Un lobo"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Cómo se llama el tío de Harry Potter que lo cuida durante su infancia?",
+    "respuestas": [
+      "Vernon Dursley",
+      "Percy Weasley",
+      "Arthur Weasley",
+      "Remus Lupin"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué profesor de Hogwarts es también un animago y se transforma en un gato?",
+    "respuestas": [
+      "Severus Snape",
+      "Minerva McGonagall",
+      "Filius Flitwick",
+      "Sirius Black"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué hechizo se usa para expulsar a un espectro o espíritu maligno?",
+    "respuestas": [
+      "Expecto Patronum",
+      "Expelliarmus",
+      "Avada Kedavra",
+      "Accio"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué nombre recibe la varita más poderosa del mundo en el universo de Harry Potter?",
+    "respuestas": [
+      "La varita de saúco",
+      "La varita de Fénix",
+      "La varita de Ollivanders",
+      "La varita mágica"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿En qué película de Harry Potter aparece por primera vez el personaje de Luna Lovegood?",
+    "respuestas": [
+      "Harry Potter y la Orden del Fénix",
+      "Harry Potter y el Cáliz de Fuego",
+      "Harry Potter y el Prisionero de Azkaban",
+      "Harry Potter y las Reliquias de la Muerte"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Quién es el Ministro de Magia durante la mayoría de los eventos de Harry Potter?",
+    "respuestas": [
+      "Cornelius Fudge",
+      "Rufus Scrimgeour",
+      "Kingsley Shacklebolt",
+      "Pius Thicknesse"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué mago es responsable de la creación de los Horrocruxes?",
+    "respuestas": [
+      "Salazar Slytherin",
+      "Tom Riddle",
+      "Gellert Grindelwald",
+      "Lucius Malfoy"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿En qué zona del castillo de Hogwarts se encuentra el acceso a la Cámara Secreta?",
+    "respuestas": [
+      "En el baño de Myrtle la Llorona",
+      "En la torre de Astronomía",
+      "En la sala de los trofeos",
+      "En la sala común de Gryffindor"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué profesor fue uno de los más importantes en la lucha contra las artes oscuras durante la Primera Guerra Mágica?",
+    "respuestas": [
+      "Albus Dumbledore",
+      "Remus Lupin",
+      "Severus Snape",
+      "Sirius Black"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué tipo de criatura es el basilisco que habita en la Cámara Secreta?",
+    "respuestas": [
+      "Dragón",
+      "Serpiente gigante",
+      "Lobo mágico",
+      "Espectro"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Quién fue el primer alumno en morir en el Torneo de los Tres Magos?",
+    "respuestas": [
+      "Cedric Diggory",
+      "Viktor Krum",
+      "Harry Potter",
+      "Robert Mould"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Quién era el director de la escuela de magia Durmstrang?",
+    "respuestas": [
+      "Igor Karkaroff",
+      "Viktor Krum",
+      "Severus Snape",
+      "Filius Flitwick"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué hechizo usa Harry Potter para convocar a su Patronus?",
+    "respuestas": [
+      "Expecto Patronum",
+      "Avada Kedavra",
+      "Expelliarmus",
+      "Crucio"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué planta es utilizada para tratar las heridas y es muy valiosa en el universo mágico?",
+    "respuestas": [
+      "Mandrágora",
+      "Acebo",
+      "Violeta lunar",
+      "Veneno de acromántula"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué característica especial tiene el hechizo de invisibilidad de Harry Potter?",
+    "respuestas": [
+      "Solo funciona de noche",
+      "Es un hechizo muy complejo",
+      "Es eterno",
+      "Es heredado"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Cómo se llama el profesor de Defensa Contra las Artes Oscuras en 'Harry Potter y el Prisionero de Azkaban'?",
+    "respuestas": [
+      "Remus Lupin",
+      "Severus Snape",
+      "Gilderoy Lockhart",
+      "Dolores Umbridge"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué hechizo se utiliza para desarmar a un oponente?",
+    "respuestas": [
+      "Expelliarmus",
+      "Alohomora",
+      "Incendio",
+      "Stupefy"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué significa la palabra 'Muggle' en el universo de Harry Potter?",
+    "respuestas": [
+      "Persona no mágica",
+      "Ser mágico",
+      "Criatura mítica",
+      "Hechizo prohibido"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué famoso mago es conocido por haber creado las Reliquias de la Muerte?",
+    "respuestas": [
+      "Ignotus Peverell",
+      "Salazar Slytherin",
+      "Gellert Grindelwald",
+      "Tom Riddle"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Cómo se llama el hermano de Ron Weasley?",
+    "respuestas": [
+      "Percy",
+      "Fred",
+      "George",
+      "Charlie"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Cómo se llama el elfo doméstico que ayuda a Harry Potter?",
+    "respuestas": [
+      "Dobby",
+      "Kreacher",
+      "Winky",
+      "Hokey"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Quién se convierte en el Ministro de Magia después de la caída de Voldemort?",
+    "respuestas": [
+      "Kingsley Shacklebolt",
+      "Rufus Scrimgeour",
+      "Percy Weasley",
+      "Cornelius Fudge"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué personaje le da el giratiempo a Hermione Granger para que pueda asistir a todas sus clases?",
+    "respuestas": [
+      "Albus Dumbledore",
+      "Severus Snape",
+      "Minerva McGonagall",
+      "Sirius Black"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué familia está muy relacionada con la casa de Gryffindor y aparece en 'Las Reliquias de la Muerte'?",
+    "respuestas": [
+      "Los Weasley",
+      "Los Malfoy",
+      "Los Black",
+      "Los Longbottom"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué instrumento mágico permite a los magos viajar en el tiempo?",
+    "respuestas": [
+      "El giratiempo",
+      "La varita de saúco",
+      "La capa de invisibilidad",
+      "El espejo de Oesed"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Quién se convierte en el siguiente director de Hogwarts tras la muerte de Dumbledore?",
+    "respuestas": [
+      "Minerva McGonagall",
+      "Severus Snape",
+      "Horace Slughorn",
+      "Filius Flitwick"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Cómo se llama el dragón que compite en el Torneo de los Tres Magos contra Harry?",
+    "respuestas": [
+      "El dragón húngaro",
+      "El dragón sueco",
+      "El dragón irlandés",
+      "El dragón escocés"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué poción es usada para revivir a los muertos?",
+    "respuestas": [
+      "Poción multijugos",
+      "Poción de la vida eterna",
+      "Poción de la resurrección",
+      "Poción matalobos"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Cómo se llama la varita que utiliza Harry Potter?",
+    "respuestas": [
+      "La varita de saúco",
+      "La varita de fénix",
+      "La varita de roble",
+      "La varita de sauce"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué animal es el patronus de Harry Potter?",
+    "respuestas": [
+      "Ciervo",
+      "Lobo",
+      "Alce",
+      "Águila"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿En qué libro de la saga de Harry Potter se enfrenta por primera vez a Lord Voldemort?",
+    "respuestas": [
+      "Harry Potter y la piedra filosofal",
+      "Harry Potter y la cámara secreta",
+      "Harry Potter y el prisionero de Azkaban",
+      "Harry Potter y el cáliz de fuego"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Quién es el principal villano en 'Harry Potter y la cámara secreta'?",
+    "respuestas": [
+      "Tom Riddle",
+      "Bellatrix Lestrange",
+      "Lord Voldemort",
+      "Lucius Malfoy"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué criatura vive en la Cámara Secreta y amenaza a los estudiantes de Hogwarts?",
+    "respuestas": [
+      "Basilisco",
+      "Troll",
+      "Acromántula",
+      "Grindylow"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Cómo se llama el profesor de pociones de Hogwarts que también es el director de Slytherin?",
+    "respuestas": [
+      "Severus Snape",
+      "Horace Slughorn",
+      "Filius Flitwick",
+      "Remus Lupin"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué criatura es conocida por hacer aparecer la muerte a quien mira su rostro?",
+    "respuestas": [
+      "Dementor",
+      "Basilisco",
+      "Loup-garou",
+      "Acromántula"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Cuál es el nombre del hermano mayor de Ron Weasley?",
+    "respuestas": [
+      "Bill Weasley",
+      "Fred Weasley",
+      "Percy Weasley",
+      "Charlie Weasley"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué tipo de varita utiliza Hermione Granger?",
+    "respuestas": [
+      "Varita de vid",
+      "Varita de acebo",
+      "Varita de sauce",
+      "Varita de roble"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Cómo se llama el juego en el que los estudiantes de Gryffindor y Slytherin se enfrentan a menudo en Hogwarts?",
+    "respuestas": [
+      "Quidditch",
+      "Ajedrez mágico",
+      "Exploración de laberintos",
+      "Bocce mágico"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué personaje se convierte en animago en 'Harry Potter y la orden del fénix'?",
+    "respuestas": [
+      "Sirius Black",
+      "James Potter",
+      "Peter Pettigrew",
+      "Remus Lupin"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué significa la palabra 'Muggle'?",
+    "respuestas": [
+      "Persona no mágica",
+      "Hechizo maldito",
+      "Criatura mágica",
+      "Vampiro"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Quién le da a Harry Potter el mapa del merodeador?",
+    "respuestas": [
+      "Fred y George Weasley",
+      "Albus Dumbledore",
+      "Severus Snape",
+      "Sirius Black"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué personaje se convierte en el líder de la resistencia contra Voldemort tras la muerte de Dumbledore?",
+    "respuestas": [
+      "Hermione Granger",
+      "Ginny Weasley",
+      "Neville Longbottom",
+      "Harry Potter"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Cuál es el nombre del padre de Draco Malfoy?",
+    "respuestas": [
+      "Lucius Malfoy",
+      "Sirius Black",
+      "Gilderoy Lockhart",
+      "Severus Snape"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué animal es la mascota de Ron Weasley?",
+    "respuestas": [
+      "Hedwig",
+      "Scabbers",
+      "Crookshanks",
+      "Fang"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Cuál es el nombre de la profesora de Adivinación en Hogwarts?",
+    "respuestas": [
+      "Sybill Trelawney",
+      "Minerva McGonagall",
+      "Dolores Umbridge",
+      "Pomona Sprout"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿En qué libro de la saga se introduce la historia de las Reliquias de la Muerte?",
+    "respuestas": [
+      "Harry Potter y las reliquias de la muerte",
+      "Harry Potter y el prisionero de Azkaban",
+      "Harry Potter y la cámara secreta",
+      "Harry Potter y el cáliz de fuego"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Cómo se llama la hermana de Bellatrix Lestrange?",
+    "respuestas": [
+      "Andromeda Tonks",
+      "Narcisa Malfoy",
+      "Fleur Delacour",
+      "Minerva McGonagall"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué hechizo utiliza Harry para invocar a su Patronus en 'Harry Potter y el prisionero de Azkaban'?",
+    "respuestas": [
+      "Expecto Patronum",
+      "Lumos",
+      "Accio",
+      "Avada Kedavra"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué banco mágico es custodiado por duendes?",
+    "respuestas": [
+      "Hogwarts Express",
+      "Gringotts",
+      "Ollivanders",
+      "Flourish and Blotts"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué objeto le permite a Hermione asistir a varias clases al mismo tiempo?",
+    "respuestas": [
+      "Espejo de Oesed",
+      "Varita de saúco",
+      "Giratiempos",
+      "Mapa del Merodeador"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Cuál es el Patronus de Hermione Granger?",
+    "respuestas": [
+      "Liebre",
+      "Nutria",
+      "Cierva",
+      "Gato"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Con qué animal habla Harry debido a su habilidad como pársel?",
+    "respuestas": [
+      "Águila",
+      "Gato",
+      "Serpiente",
+      "Sapo"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Cómo se llama el perro de tres cabezas que cuida la piedra filosofal?",
+    "respuestas": [
+      "Canuto",
+      "Fluffy",
+      "Fang",
+      "Scabbers"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué posición juega Harry en su equipo de Quidditch?",
+    "respuestas": [
+      "Cazador",
+      "Golpeador",
+      "Buscador",
+      "Guardián"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Quién enseña pociones en la mayoría de libros?",
+    "respuestas": [
+      "Gilderoy Lockhart",
+      "Remus Lupin",
+      "Severus Snape",
+      "Filius Flitwick"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué criatura puede ver Harry después de presenciar una muerte?",
+    "respuestas": [
+      "Thestral",
+      "Hipogrifo",
+      "Dementor",
+      "Fénix"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Quién fue el autor de 'Animales fantásticos y dónde encontrarlos'?",
+    "respuestas": [
+      "Albus Dumbledore",
+      "Gellert Grindelwald",
+      "Newt Scamander",
+      "Bathilda Bagshot"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Cuál de los siguientes NO es un Horrocrux?",
+    "respuestas": [
+      "La copa de Hufflepuff",
+      "El anillo de los Gaunt",
+      "El sombrero seleccionador",
+      "El diario de Tom Riddle"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Quién fue el guardián de las llaves y terrenos de Hogwarts?",
+    "respuestas": [
+      "Dobby",
+      "Argus Filch",
+      "Rubeus Hagrid",
+      "Minerva McGonagall"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué mago tenebroso precedió a Voldemort como el más temido?",
+    "respuestas": [
+      "Sirius Black",
+      "Gellert Grindelwald",
+      "Horace Slughorn",
+      "Ignotus Peverell"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿En qué casa fue seleccionado Cedric Diggory?",
+    "respuestas": [
+      "Slytherin",
+      "Ravenclaw",
+      "Hufflepuff",
+      "Gryffindor"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué hechizo se utiliza para repeler a los Dementores?",
+    "respuestas": [
+      "Expelliarmus",
+      "Expecto Patronum",
+      "Avada Kedavra",
+      "Accio"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Cuál de estos profesores fue un animago no registrado?",
+    "respuestas": [
+      "Minerva McGonagall",
+      "Sirius Black",
+      "Remus Lupin",
+      "Alastor Moody"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué hay dentro de la varita de Harry?",
+    "respuestas": [
+      "Pluma de fénix",
+      "Escama de dragón",
+      "Pelo de unicornio",
+      "Fibra de testral"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Quién traicionó a los padres de Harry Potter ante Voldemort?",
+    "respuestas": [
+      "Remus Lupin",
+      "Peter Pettigrew",
+      "Sirius Black",
+      "Severus Snape"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Cómo se llama la tienda donde Harry compra su varita?",
+    "respuestas": [
+      "Madam Malkin’s",
+      "Weasleys' Wizard Wheezes",
+      "Flourish and Blotts",
+      "Ollivanders"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Qué animal representa a la casa Ravenclaw?",
+    "respuestas": [
+      "Cuervo",
+      "León",
+      "Serpiente",
+      "Tejón"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué personaje muere en la Batalla de Hogwarts y deja huérfano a su hijo Teddy?",
+    "respuestas": [
+      "Kingsley Shacklebolt",
+      "Remus Lupin",
+      "Dean Thomas",
+      "Oliver Wood"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué criatura protege la entrada a la Sala Común de Gryffindor?",
+    "respuestas": [
+      "Retrato de la Dama Gorda",
+      "Espejo de Oesed",
+      "Dobby",
+      "Sir Cadogan"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Quién enseña Defensa Contra las Artes Oscuras en el segundo año de Harry?",
+    "respuestas": [
+      "Severus Snape",
+      "Remus Lupin",
+      "Gilderoy Lockhart",
+      "Quirinus Quirrell"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Cuál es el nombre completo de Albus Dumbledore?",
+    "respuestas": [
+      "Albus Percival Wulfric Brian Dumbledore",
+      "Albus Severus James Dumbledore",
+      "Albus Cornelius Aberforth Dumbledore",
+      "Albus Gellert Brian Dumbledore"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué hechizo utiliza Ron para defenderse del troll en el baño?",
+    "respuestas": [
+      "Expelliarmus",
+      "Alohomora",
+      "Wingardium Leviosa",
+      "Lumos"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Cuál es el número de la cámara de Gringotts donde se guarda la piedra filosofal?",
+    "respuestas": [
+      "713",
+      "394",
+      "237",
+      "666"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué sucede cuando dos varitas hermanas se enfrentan?",
+    "respuestas": [
+      "Se rompen",
+      "Se repelen",
+      "Conectan sus núcleos",
+      "No funcionan"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué animal representa a la casa Slytherin?",
+    "respuestas": [
+      "León",
+      "Águila",
+      "Serpiente",
+      "Tejón"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué asignatura enseña el profesor Binns?",
+    "respuestas": [
+      "Astronomía",
+      "Historia de la Magia",
+      "Adivinación",
+      "Transformaciones"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué objeto se usa para destruir el diario de Tom Riddle?",
+    "respuestas": [
+      "Varita de Dumbledore",
+      "Colmillo de basilisco",
+      "Espada de Gryffindor",
+      "Piedra filosofal"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué tipo de criatura es Buckbeak?",
+    "respuestas": [
+      "Thestral",
+      "Hipogrifo",
+      "Centauro",
+      "Dragón"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Cómo se llama el espejo que muestra los deseos más profundos del corazón?",
+    "respuestas": [
+      "Espejo de la Verdad",
+      "Espejo de los Recuerdos",
+      "Espejo de Oesed",
+      "Espejo de Gellert"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Cuál es el nombre de la hermana de Albus Dumbledore?",
+    "respuestas": [
+      "Ariana",
+      "Andrómeda",
+      "Agatha",
+      "Amelia"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué personaje toma la forma de un gato al transformarse?",
+    "respuestas": [
+      "Sybill Trelawney",
+      "Bellatrix Lestrange",
+      "Minerva McGonagall",
+      "Nymphadora Tonks"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué poción permite cambiar de apariencia física?",
+    "respuestas": [
+      "Felix Felicis",
+      "Multijugos",
+      "Veritaserum",
+      "Amortentia"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Dónde se localiza la casa de los Black?",
+    "respuestas": [
+      "Callejón Knockturn",
+      "Godric’s Hollow",
+      "Privet Drive",
+      "Grimmauld Place, número 12"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Cómo se llama el elfo doméstico que sirve a la familia Black?",
+    "respuestas": [
+      "Dobby",
+      "Winky",
+      "Kreacher",
+      "Mok"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué Horrocrux destruye Neville Longbottom?",
+    "respuestas": [
+      "Anillo de los Gaunt",
+      "Diadema de Ravenclaw",
+      "Nagini",
+      "Diario de Riddle"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué mago creó las Reliquias de la Muerte según la leyenda?",
+    "respuestas": [
+      "Gellert Grindelwald",
+      "Xenophilius Lovegood",
+      "Los tres hermanos Peverell",
+      "Albus Dumbledore"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Cuál era la contraseña para entrar en la Sala Común de Gryffindor en el tercer año?",
+    "respuestas": [
+      "Caput Draconis",
+      "Fortuna Major",
+      "Dulce de melaza",
+      "Sir Cadogan"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Qué animal es el Patronus de Luna Lovegood?",
+    "respuestas": [
+      "Gato",
+      "Liebre",
+      "Cierva",
+      "Caballo"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Quién le entrega a Harry su primera carta de Hogwarts?",
+    "respuestas": [
+      "Hagrid",
+      "McGonagall",
+      "Dumbledore",
+      "Vernon Dursley"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Cómo se llama el banco mágico en el Callejón Diagon?",
+    "respuestas": [
+      "Gringotts",
+      "Ollivanders",
+      "Honeydukes",
+      "Weasleys’ Wizard Wheezes"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué tipo de animal es Scabbers, la mascota de Ron?",
+    "respuestas": [
+      "Búho",
+      "Rana",
+      "Rata",
+      "Gato"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Cuál es el nombre de la planta que atrapa a los estudiantes en la Piedra Filosofal?",
+    "respuestas": [
+      "Hiedra mágica",
+      "Mandrágora",
+      "Lazo del Diablo",
+      "Raíz de Aconito"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Cómo se llama el autobús nocturno del mundo mágico?",
+    "respuestas": [
+      "Autobús del Trueno",
+      "Knight Bus",
+      "Expreso de Hogwarts",
+      "Autobús Fénix"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué hechizo produce una luz en la punta de la varita?",
+    "respuestas": [
+      "Lumos",
+      "Nox",
+      "Alohomora",
+      "Obscurus"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué objeto mágico permite viajar en el tiempo?",
+    "respuestas": [
+      "Varita de Sauco",
+      "Giratiempos",
+      "Espejo de Oesed",
+      "Horrocrux"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Quién fue el director de Hogwarts antes de Dumbledore?",
+    "respuestas": [
+      "Phineas Nigellus",
+      "Armando Dippet",
+      "Elphias Doge",
+      "Dexter Fortescue"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Cuál es el Patronus de Harry?",
+    "respuestas": [
+      "Ciervo",
+      "Perro",
+      "Liebre",
+      "Fénix"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué criatura mitológica está encerrada en la Cámara de los Secretos?",
+    "respuestas": [
+      "Troll",
+      "Basilisco",
+      "Dementor",
+      "Acromántula"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Cómo se llama el periodista sensacionalista del *El Profeta*?",
+    "respuestas": [
+      "Rita Skeeter",
+      "Bathilda Bagshot",
+      "Mafalda Hopkirk",
+      "Irma Pince"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué parte del alma de Voldemort se encuentra en Nagini?",
+    "respuestas": [
+      "Un recuerdo",
+      "Un encantamiento",
+      "Un Horrocrux",
+      "Un pacto de sangre"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué hace el hechizo *Obliviate*?",
+    "respuestas": [
+      "Elimina recuerdos",
+      "Paraliza",
+      "Cambia de forma",
+      "Lanza fuego"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué mago tenebroso fue vencido por Dumbledore antes de Voldemort?",
+    "respuestas": [
+      "Grindelwald",
+      "Snape",
+      "Lucius Malfoy",
+      "Rodolphus Lestrange"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Cuál de estos no es un ingrediente habitual de pociones?",
+    "respuestas": [
+      "Escarabajos machacados",
+      "Pluma de fénix",
+      "Raíz de valeriana",
+      "Ojo de tritón"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué estudiante de Durmstrang compite en el Torneo de los Tres Magos?",
+    "respuestas": [
+      "Viktor Krum",
+      "Igor Karkaroff",
+      "Fleur Delacour",
+      "Cedric Diggory"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué criatura enseña Hagrid en su primera clase como profesor?",
+    "respuestas": [
+      "Hipogrifo",
+      "Testral",
+      "Unicornio",
+      "Acromántula"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Quién dirige el Ministerio de Magia en la última película?",
+    "respuestas": [
+      "Rufus Scrimgeour",
+      "Cornelius Fudge",
+      "Pius Thicknesse",
+      "Kingsley Shacklebolt"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Cómo se llama el lugar donde Harry compra su varita?",
+    "respuestas": [
+      "Gringotts",
+      "Flourish & Blotts",
+      "Ollivanders",
+      "Madam Malkin's"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué animal representa a la casa Hufflepuff?",
+    "respuestas": [
+      "Tejón",
+      "Águila",
+      "Serpiente",
+      "Gato"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué animal mitológico aparece en el escudo de Gryffindor?",
+    "respuestas": [
+      "Dragón",
+      "Fénix",
+      "León",
+      "Hipogrifo"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿En qué casa fue seleccionada Luna Lovegood?",
+    "respuestas": [
+      "Gryffindor",
+      "Ravenclaw",
+      "Slytherin",
+      "Hufflepuff"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué número lleva el andén desde el que parte el Expreso de Hogwarts?",
+    "respuestas": [
+      "9¾",
+      "10½",
+      "8¾",
+      "7⅓"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Quién enseña Defensa Contra las Artes Oscuras en el segundo curso de Harry?",
+    "respuestas": [
+      "Remus Lupin",
+      "Gilderoy Lockhart",
+      "Quirinus Quirrell",
+      "Severus Snape"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué jugador de Quidditch se convierte en novio de Ginny antes de Harry?",
+    "respuestas": [
+      "Cedric Diggory",
+      "Seamus Finnigan",
+      "Dean Thomas",
+      "Oliver Wood"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué personaje muere a manos de Bellatrix Lestrange durante la Batalla de Hogwarts?",
+    "respuestas": [
+      "Remus Lupin",
+      "Tonks",
+      "Fred Weasley",
+      "Sirius Black"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Cómo se llama el objeto que Dumbledore deja a Ron en su testamento?",
+    "respuestas": [
+      "Snitch dorada",
+      "Giratiempos",
+      "Desiluminador",
+      "Espada de Gryffindor"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué criatura se oculta en el lago de Hogwarts y es parte de la segunda prueba del Torneo de los Tres Magos?",
+    "respuestas": [
+      "Kraken",
+      "Sirenas",
+      "Basilisco",
+      "Dragones acuáticos"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué personaje de la saga tiene una cicatriz en forma de rayo?",
+    "respuestas": [
+      "Draco Malfoy",
+      "Neville Longbottom",
+      "Harry Potter",
+      "Tom Riddle"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué mago es famoso por su habilidad para transformarse en gato?",
+    "respuestas": [
+      "Sirius Black",
+      "Minerva McGonagall",
+      "Remus Lupin",
+      "Peter Pettigrew"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué poción transforma a quien la bebe en otra persona durante unas horas?",
+    "respuestas": [
+      "Elixir de Vida",
+      "Poción Multijugos",
+      "Amortentia",
+      "Felix Felicis"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Cuál es el nombre real de Lord Voldemort?",
+    "respuestas": [
+      "Tom Riddle",
+      "Salazar Slytherin",
+      "Regulus Black",
+      "Gellert Grindelwald"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Quién es la madre de Draco Malfoy?",
+    "respuestas": [
+      "Bellatrix Lestrange",
+      "Narcissa Malfoy",
+      "Andrómeda Tonks",
+      "Molly Weasley"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué hechizo se usa para desarmar a un oponente?",
+    "respuestas": [
+      "Expelliarmus",
+      "Petrificus Totalus",
+      "Stupefy",
+      "Alohomora"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Quién se convierte en el nuevo director de Hogwarts tras la caída de Voldemort?",
+    "respuestas": [
+      "Kingsley Shacklebolt",
+      "Minerva McGonagall",
+      "Horace Slughorn",
+      "Aberforth Dumbledore"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Cuál de estos objetos no es un Horrocrux?",
+    "respuestas": [
+      "El guardapelo de Slytherin",
+      "La copa de Hufflepuff",
+      "La varita de Saúco",
+      "El anillo de los Gaunt"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué mago ayuda a Harry durante el torneo desde dentro del colegio?",
+    "respuestas": [
+      "Alastor Moody",
+      "Bartemius Crouch Jr.",
+      "Igor Karkaroff",
+      "Snape"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué criatura mágica puede ver sólo quien ha presenciado la muerte?",
+    "respuestas": [
+      "Boggart",
+      "Testral",
+      "Dementor",
+      "Hipogrifo"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Dónde se encuentra la entrada a la Sala de los Menesteres?",
+    "respuestas": [
+      "Junto al despacho de Dumbledore",
+      "En el tercer piso",
+      "Frente al tapiz de Barnabas el Chiflado",
+      "Detrás del retrato de la Señora Gorda"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué mago era el dueño original de la Varita de Saúco según la leyenda?",
+    "respuestas": [
+      "Cadmus Peverell",
+      "Ignotus Peverell",
+      "Antioch Peverell",
+      "Merlín"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué profesor enseña Pociones en el primer año de Harry en Hogwarts?",
+    "respuestas": [
+      "Filius Flitwick",
+      "Pomona Sprout",
+      "Quirinus Quirrell",
+      "Severus Snape"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Qué casa se caracteriza por su lealtad y trabajo duro?",
+    "respuestas": [
+      "Slytherin",
+      "Gryffindor",
+      "Ravenclaw",
+      "Hufflepuff"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Qué criatura cuida Rubeus Hagrid como mascota y luego libera en el bosque?",
+    "respuestas": [
+      "Un centauro",
+      "Un trol",
+      "Un fénix",
+      "Un hipogrifo"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Cuál es el segundo nombre de Tom Riddle?",
+    "respuestas": [
+      "James",
+      "Albus",
+      "Lucius",
+      "Marvolo"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Quién fue el director de Hogwarts antes que Dumbledore?",
+    "respuestas": [
+      "Armando Dippet",
+      "Phineas Nigellus",
+      "Elphias Doge",
+      "Everard"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Cómo se llama la tienda de bromas de Fred y George Weasley?",
+    "respuestas": [
+      "Bromas y Risas",
+      "La Nariz Ruidosa",
+      "Travesuras Variadas",
+      "Sortilegios Weasley"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Qué hechizo utiliza Harry para invocar su escoba en el Torneo de los Tres Magos?",
+    "respuestas": [
+      "Accio Broom",
+      "Volare",
+      "Wingardium Leviosa",
+      "Accio"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Qué personaje dice la frase 'Después de todo este tiempo?' y recibe como respuesta 'Siempre'?",
+    "respuestas": [
+      "Dumbledore",
+      "Harry",
+      "Lily",
+      "Severus Snape"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Qué objeto mágico revela la ubicación de todas las personas en Hogwarts?",
+    "respuestas": [
+      "Espejo de Oesed",
+      "Giratiempos",
+      "Pluma de Aceptación",
+      "Mapa del Merodeador"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Cuál es el verdadero nombre de la gata de Hermione?",
+    "respuestas": [
+      "Niebla",
+      "Pelusa",
+      "Garras",
+      "Crookshanks"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Qué animal representa la casa de Ravenclaw?",
+    "respuestas": [
+      "Cuervo",
+      "Halcón",
+      "Lechuza",
+      "Águila"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Cómo se llama la madre de Draco Malfoy?",
+    "respuestas": [
+      "Bellatrix",
+      "Andrómeda",
+      "Lavinia",
+      "Narcissa"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Qué ingrediente es imprescindible en la poción multijugos?",
+    "respuestas": [
+      "Raíz de valeriana",
+      "Mandrágora",
+      "Sangre de unicornio",
+      "Parte del cuerpo de la persona"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Cuál es el nombre del elfo doméstico que trabaja para los Malfoy?",
+    "respuestas": [
+      "Kreacher",
+      "Winky",
+      "Milo",
+      "Dobby"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Qué poción otorga suerte temporal?",
+    "respuestas": [
+      "Veritaserum",
+      "Amortentia",
+      "Elixir de vida",
+      "Felix Felicis"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Cuál es el hechizo que conjura el Patronus?",
+    "respuestas": [
+      "Lumos Maxima",
+      "Obliviate",
+      "Expecto",
+      "Expecto Patronum"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Qué criatura mágica aparece durante la prueba del lago en el Torneo de los Tres Magos?",
+    "respuestas": [
+      "Dragón de agua",
+      "Grindylow",
+      "Kappa",
+      "Sirena"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Quién fundó la casa de Slytherin?",
+    "respuestas": [
+      "Godric Gryffindor",
+      "Helga Hufflepuff",
+      "Rowena Ravenclaw",
+      "Salazar Slytherin"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Qué animal puede transformarse Rita Skeeter en secreto?",
+    "respuestas": [
+      "Gato",
+      "Búho",
+      "Murciélago",
+      "Escarabajo"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Cómo se llama el banco de los magos en el mundo de Harry Potter?",
+    "respuestas": [
+      "Fortugold",
+      "Goldstein's",
+      "Wiztrust",
+      "Gringotts"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Qué tipo de criatura es Dobby?",
+    "respuestas": [
+      "Elfo doméstico",
+      "Duende",
+      "Trasgo",
+      "Boggart"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué animal representa a la casa Ravenclaw?",
+    "respuestas": [
+      "Cuervo",
+      "Águila",
+      "Lechuza",
+      "Fénix"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué hechizo se usa para desarmar a un oponente?",
+    "respuestas": [
+      "Lumos",
+      "Petrificus Totalus",
+      "Expelliarmus",
+      "Stupefy"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué profesor enseña Pociones en el primer año de Harry?",
+    "respuestas": [
+      "Snape",
+      "Flitwick",
+      "McGonagall",
+      "Sprout"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Quién es el guardabosques de Hogwarts?",
+    "respuestas": [
+      "Dumbledore",
+      "Hagrid",
+      "Firenze",
+      "Moody"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Cómo se llama el banco mágico en el Callejón Diagon?",
+    "respuestas": [
+      "Gringotts",
+      "GalleonBank",
+      "DragonVault",
+      "Magibanco"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué objeto convierte el giratiempo en un viaje al pasado?",
+    "respuestas": [
+      "Collar mágico",
+      "Reloj de arena",
+      "Varita ancestral",
+      "Medallón de Salazar"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué poción obliga a decir la verdad?",
+    "respuestas": [
+      "Felix Felicis",
+      "Veritaserum",
+      "Amortentia",
+      "Elixir de larga vida"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Cómo se llama el hipogrifo que salva a Sirius Black?",
+    "respuestas": [
+      "Buckbeak",
+      "Fang",
+      "Norberto",
+      "Crookshanks"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Quién dirige la Orden del Fénix?",
+    "respuestas": [
+      "Kingsley Shacklebolt",
+      "Remus Lupin",
+      "Albus Dumbledore",
+      "Arthur Weasley"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué criatura pueden ver solo quienes han visto la muerte?",
+    "respuestas": [
+      "Thestrals",
+      "Inferi",
+      "Basiliscos",
+      "Hippogriffs"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Cuál es el nombre verdadero de Lord Voldemort?",
+    "respuestas": [
+      "Salazar Slytherin",
+      "Tom Riddle",
+      "Gellert Grindelwald",
+      "Regulus Black"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Quién traicionó a los padres de Harry a Voldemort?",
+    "respuestas": [
+      "Sirius Black",
+      "Peter Pettigrew",
+      "Severus Snape",
+      "Lucius Malfoy"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué criatura se oculta en la Cámara de los Secretos?",
+    "respuestas": [
+      "Trol",
+      "Basilisco",
+      "Acromántula",
+      "Dragón verde galés"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué profesor resulta ser un mortífago infiltrado en el sexto libro?",
+    "respuestas": [
+      "Horace Slughorn",
+      "Gilderoy Lockhart",
+      "Severus Snape",
+      "Barty Crouch Jr."
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿En qué libro muere Dobby?",
+    "respuestas": [
+      "El prisionero de Azkaban",
+      "La Orden del Fénix",
+      "Las Reliquias de la Muerte",
+      "El Cáliz de Fuego"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Cómo se llama el hermano de Dumbledore?",
+    "respuestas": [
+      "Aberforth",
+      "Percival",
+      "Alastor",
+      "Ignatius"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué posición juega Harry en el equipo de Quidditch?",
+    "respuestas": [
+      "Cazador",
+      "Golpeador",
+      "Buscador",
+      "Guardiana"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué objeto destruye Neville Longbottom en la batalla final?",
+    "respuestas": [
+      "Diadema",
+      "Copa",
+      "Nagini",
+      "Anillo"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Cuál es el patronus de Luna Lovegood?",
+    "respuestas": [
+      "Zorro",
+      "Liebre",
+      "Ciervo",
+      "Gato"
+    ],
+    "correcta": 1
+  }
+]
+      ;
 
     let preguntaActual = null;
 
