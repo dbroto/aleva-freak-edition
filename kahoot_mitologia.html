@@ -75,23 +75,1962 @@
   <button id="siguiente" onclick="siguiente()">Siguiente Pregunta</button>
 
   <script>
-    const preguntas = [
-      {
-        "pregunta": "¿Cuál es el nombre del mago que guía a la Comunidad?",
-        "respuestas": ["Saruman", "Radagast", "Gandalf", "Sauron"],
-        "correcta": 2
-      },
-      {
-        "pregunta": "¿Qué objeto debe destruir Frodo?",
-        "respuestas": ["El bastón de Gandalf", "El Anillo Único", "La espada de Aragorn", "El Palantir"],
-        "correcta": 1
-      },
-      {
-        "pregunta": "¿Cómo se llama el padre de Legolas?",
-        "respuestas": ["Elrond", "Thranduil", "Celeborn", "Glorfindel"],
-        "correcta": 1
-      }
-    ];
+    const preguntas = 
+      [
+  {
+    "pregunta": "¿Quién es el dios griego del cielo y el rayo?",
+    "respuestas": [
+      "Zeus",
+      "Hades",
+      "Ares",
+      "Hermes"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Cuál es el equivalente romano de la diosa griega Afrodita?",
+    "respuestas": [
+      "Juno",
+      "Venus",
+      "Diana",
+      "Minerva"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué animal representa al dios egipcio Anubis?",
+    "respuestas": [
+      "Gato",
+      "Ibis",
+      "Halcón",
+      "Chacal"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Qué dios nórdico es ciego y fue manipulado por Loki para matar a Balder?",
+    "respuestas": [
+      "Tyr",
+      "Balder",
+      "Hodr",
+      "Njord"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué criatura mitológica tenía serpientes por cabello y convertía en piedra con la mirada?",
+    "respuestas": [
+      "Hidra",
+      "Quimera",
+      "Medusa",
+      "Esfinge"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Cómo se llama el dios griego del inframundo?",
+    "respuestas": [
+      "Zeus",
+      "Poseidón",
+      "Hades",
+      "Apolo"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué diosa romana era protectora del matrimonio y esposa de Júpiter?",
+    "respuestas": [
+      "Diana",
+      "Juno",
+      "Ceres",
+      "Vesta"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué gigante de un solo ojo aparece en la Odisea?",
+    "respuestas": [
+      "Hecatónquiro",
+      "Minotauro",
+      "Cíclope",
+      "Grifo"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué dios nórdico tenía cuervos llamados Huginn y Muninn?",
+    "respuestas": [
+      "Thor",
+      "Freyr",
+      "Odin",
+      "Loki"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué héroe griego realizó doce trabajos como penitencia?",
+    "respuestas": [
+      "Teseo",
+      "Aquiles",
+      "Hércules",
+      "Perseo"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué dios egipcio presidía el juicio de las almas en el Más Allá?",
+    "respuestas": [
+      "Ra",
+      "Horus",
+      "Anubis",
+      "Osiris"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Qué diosa griega nació de la cabeza de Zeus?",
+    "respuestas": [
+      "Hera",
+      "Artemisa",
+      "Atenea",
+      "Deméter"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué árbol sostiene los nueve mundos en la mitología nórdica?",
+    "respuestas": [
+      "Yggdrasil",
+      "Midgard",
+      "Valhalla",
+      "Niflheim"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Quién guiaba a las almas al inframundo en la mitología griega?",
+    "respuestas": [
+      "Hermes",
+      "Ares",
+      "Hades",
+      "Apolo"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué figura mitológica tenía cuerpo de león y alas de águila?",
+    "respuestas": [
+      "Grifo",
+      "Centauro",
+      "Minotauro",
+      "Esfinge"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué monstruo nórdico está destinado a matar a Odín durante el Ragnarök?",
+    "respuestas": [
+      "Jörmungandr",
+      "Fenrir",
+      "Hel",
+      "Níðhöggr"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué héroe troyano es el protagonista de la Eneida?",
+    "respuestas": [
+      "Eneas",
+      "Paris",
+      "Ulises",
+      "Príamo"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué diosa griega raptó Hades para convertirla en reina del inframundo?",
+    "respuestas": [
+      "Artemisa",
+      "Perséfone",
+      "Hera",
+      "Atenea"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué dios nórdico fue atado con las entrañas de su hijo por provocar el fin del mundo?",
+    "respuestas": [
+      "Thor",
+      "Loki",
+      "Tyr",
+      "Baldur"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué dios azteca estaba representado como una serpiente emplumada?",
+    "respuestas": [
+      "Huitzilopochtli",
+      "Quetzalcóatl",
+      "Tezcatlipoca",
+      "Xipe Tótec"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Quién era el dios del trueno en la mitología nórdica?",
+    "respuestas": [
+      "Thor",
+      "Odin",
+      "Loki",
+      "Tyr"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué diosa griega era conocida por su belleza y nació de la espuma del mar?",
+    "respuestas": [
+      "Atenea",
+      "Afrodita",
+      "Hera",
+      "Deméter"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Cuál era el nombre romano del dios griego Hermes?",
+    "respuestas": [
+      "Neptuno",
+      "Marte",
+      "Mercurio",
+      "Apolo"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Quién era la esposa de Odin en la mitología nórdica?",
+    "respuestas": [
+      "Freyja",
+      "Sif",
+      "Frigg",
+      "Hel"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué dios egipcio tenía cabeza de halcón y estaba asociado al sol?",
+    "respuestas": [
+      "Anubis",
+      "Ra",
+      "Osiris",
+      "Thot"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué semidiós griego murió por la herida en su talón?",
+    "respuestas": [
+      "Hércules",
+      "Aquiles",
+      "Perseo",
+      "Teseo"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué criatura mitológica griega era mitad hombre, mitad toro?",
+    "respuestas": [
+      "Centauro",
+      "Minotauro",
+      "Grifo",
+      "Quimera"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué diosa romana era la equivalente de Artemisa?",
+    "respuestas": [
+      "Venus",
+      "Juno",
+      "Diana",
+      "Ceres"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Cómo se llamaba el martillo de Thor?",
+    "respuestas": [
+      "Stormbreaker",
+      "Gungnir",
+      "Mjölnir",
+      "Andúril"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué dios griego conducía el carro del sol?",
+    "respuestas": [
+      "Zeus",
+      "Apolo",
+      "Hades",
+      "Hermes"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué dios celta era conocido por su habilidad musical y poética?",
+    "respuestas": [
+      "Cernunnos",
+      "Dagda",
+      "Lugh",
+      "Belenus"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué bestia mitológica guardaba el vellocino de oro?",
+    "respuestas": [
+      "Esfinge",
+      "Dragón",
+      "Grifo",
+      "Hidra"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Quién era el dios del caos en la mitología egipcia?",
+    "respuestas": [
+      "Horus",
+      "Set",
+      "Ptah",
+      "Osiris"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué héroe japonés luchó contra demonios conocidos como Oni?",
+    "respuestas": [
+      "Raijin",
+      "Susanoo",
+      "Momotarō",
+      "Amaterasu"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué figura mitológica castigaba a los condenados en el Tártaro con tareas imposibles?",
+    "respuestas": [
+      "Némesis",
+      "Cronos",
+      "Hades",
+      "Érebo"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué diosa nórdica reinaba sobre el inframundo Helheim?",
+    "respuestas": [
+      "Skaði",
+      "Freyja",
+      "Hel",
+      "Frigg"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué tres dioses formaban la primera tríada romana arcaica?",
+    "respuestas": [
+      "Júpiter, Marte y Quirino",
+      "Júpiter, Neptuno y Plutón",
+      "Juno, Ceres y Minerva",
+      "Apolo, Marte y Vesta"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué dios hindú es conocido como 'el destructor' dentro de la Trimurti?",
+    "respuestas": [
+      "Brahma",
+      "Vishnu",
+      "Shiva",
+      "Krishna"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Quién traicionó a Balder en la mitología nórdica causando su muerte?",
+    "respuestas": [
+      "Tyr",
+      "Hodr",
+      "Loki",
+      "Fenrir"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Qué criatura griega era un león con cabeza de cabra en la espalda y una serpiente por cola?",
+    "respuestas": [
+      "Mantícora",
+      "Quimera",
+      "Esfinge",
+      "Sirena"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Quién era el dios griego del mar?",
+    "respuestas": [
+      "Zeus",
+      "Hades",
+      "Apolo",
+      "Poseidón"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Qué animal era sagrado para la diosa egipcia Bastet?",
+    "respuestas": [
+      "Ibis",
+      "Cocodrilo",
+      "Gato",
+      "Halcón"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Cuál es el nombre romano del dios griego Ares?",
+    "respuestas": [
+      "Plutón",
+      "Marte",
+      "Júpiter",
+      "Apolo"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué fruta llevó al conflicto entre Hera, Atenea y Afrodita?",
+    "respuestas": [
+      "Granada",
+      "Manzana",
+      "Uva",
+      "Higo"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué dios nórdico fue encadenado con las entrañas de su hijo?",
+    "respuestas": [
+      "Thor",
+      "Odin",
+      "Loki",
+      "Tyr"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué gigante devoraba a sus hijos en la mitología griega?",
+    "respuestas": [
+      "Cronos",
+      "Atlas",
+      "Prometeo",
+      "Tifón"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Cómo se llamaba la esposa de Hades?",
+    "respuestas": [
+      "Hera",
+      "Perséfone",
+      "Ártemis",
+      "Deméter"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué héroe griego mató a la Medusa?",
+    "respuestas": [
+      "Teseo",
+      "Aquiles",
+      "Perseo",
+      "Orfeo"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué diosa nórdica está asociada al amor, la fertilidad y la guerra?",
+    "respuestas": [
+      "Skadi",
+      "Freyja",
+      "Hel",
+      "Idunn"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué dios egipcio presidía el juicio de los muertos?",
+    "respuestas": [
+      "Ra",
+      "Osiris",
+      "Anubis",
+      "Horus"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué ave resucita de sus propias cenizas en varias mitologías?",
+    "respuestas": [
+      "Cuervo",
+      "Fénix",
+      "Grifo",
+      "Alción"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué dios griego representaba el vino y la locura?",
+    "respuestas": [
+      "Hermes",
+      "Dionisio",
+      "Apolo",
+      "Ares"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Quién era el padre de Hércules según la mitología griega?",
+    "respuestas": [
+      "Zeus",
+      "Poseidón",
+      "Ares",
+      "Apolo"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué figura mitológica japonesa es un zorro con poderes mágicos?",
+    "respuestas": [
+      "Yokai",
+      "Tengu",
+      "Kitsune",
+      "Oni"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué diosa romana era protectora del hogar?",
+    "respuestas": [
+      "Ceres",
+      "Vesta",
+      "Minerva",
+      "Diana"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué ser mitológico nórdico devorará el sol durante el Ragnarök?",
+    "respuestas": [
+      "Fenrir",
+      "Surt",
+      "Jörmungandr",
+      "Sköll"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Quién tocó la lira para intentar rescatar a su esposa del inframundo?",
+    "respuestas": [
+      "Perseo",
+      "Orfeo",
+      "Ulises",
+      "Teseo"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué héroe venció al jabalí de Erimanto como uno de sus trabajos?",
+    "respuestas": [
+      "Hércules",
+      "Aquiles",
+      "Jasón",
+      "Eneas"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué monstruo mitológico tenía cientos de ojos y fue asesinado por Hermes?",
+    "respuestas": [
+      "Quimera",
+      "Argos",
+      "Caribdis",
+      "Lerna"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Cuál es el nombre del árbol nórdico que sostiene los nueve mundos?",
+    "respuestas": [
+      "Yggdrasil",
+      "Bifröst",
+      "Asgard",
+      "Midgard"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué dios griego gobernaba el inframundo?",
+    "respuestas": [
+      "Zeus",
+      "Apolo",
+      "Poseidón",
+      "Hades"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Qué animal está asociado al dios egipcio Anubis?",
+    "respuestas": [
+      "Gato",
+      "Cocodrilo",
+      "Halcón",
+      "Chacal"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Cómo se llamaba el martillo de Thor?",
+    "respuestas": [
+      "Gjallarhorn",
+      "Draupnir",
+      "Gungnir",
+      "Mjölnir"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Qué diosa romana es equivalente a la griega Artemisa?",
+    "respuestas": [
+      "Venus",
+      "Juno",
+      "Minerva",
+      "Diana"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Cuál era el símbolo principal de Hermes?",
+    "respuestas": [
+      "Tridente",
+      "Rayo",
+      "Espada",
+      "Caduceo"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Quién traía las almas al inframundo en la mitología griega?",
+    "respuestas": [
+      "Apolo",
+      "Hermes",
+      "Ares",
+      "Charon"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Qué criatura mitológica tenía cuerpo de león, cabeza humana y alas?",
+    "respuestas": [
+      "Grifo",
+      "Mantícora",
+      "Quimera",
+      "Esfinge"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Cuál era el castigo de Sísifo?",
+    "respuestas": [
+      "Caer eternamente",
+      "Ser devorado",
+      "Perder su sombra",
+      "Empujar una roca sin fin"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Qué dios nórdico tenía un solo ojo?",
+    "respuestas": [
+      "Loki",
+      "Tyr",
+      "Freyr",
+      "Odín"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Qué hija de Zeus surgió de su cabeza ya armada?",
+    "respuestas": [
+      "Afrodita",
+      "Deméter",
+      "Hera",
+      "Atenea"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Qué dios romano representaba la guerra?",
+    "respuestas": [
+      "Júpiter",
+      "Plutón",
+      "Neptuno",
+      "Marte"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Qué figura mitológica está relacionada con el hilo y el laberinto?",
+    "respuestas": [
+      "Orfeo",
+      "Ulises",
+      "Hércules",
+      "Ariadna"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Qué deidad japonesa es el dios del sol?",
+    "respuestas": [
+      "Susanoo",
+      "Tsukuyomi",
+      "Inari",
+      "Amaterasu"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Qué dios griego era conocido por lanzar rayos?",
+    "respuestas": [
+      "Zeus",
+      "Ares",
+      "Hermes",
+      "Apolo"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué guardaba el Cancerbero?",
+    "respuestas": [
+      "El monte Olimpo",
+      "El templo de Apolo",
+      "El laberinto",
+      "La entrada al Hades"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Qué diosa griega era la esposa de Zeus?",
+    "respuestas": [
+      "Deméter",
+      "Artemisa",
+      "Atenea",
+      "Hera"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Qué figura mesopotámica era mitad pez, mitad humano?",
+    "respuestas": [
+      "Tiamat",
+      "Gilgamesh",
+      "Ereshkigal",
+      "Oannes"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Cuál de estas no era una de las Moiras?",
+    "respuestas": [
+      "Átropos",
+      "Cloto",
+      "Talía",
+      "Láquesis"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué héroe griego fue criado por una centaura y mató a su esposa por accidente?",
+    "respuestas": [
+      "Aquiles",
+      "Perseo",
+      "Teseo",
+      "Heracles"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué dios nórdico es considerado el padre de todos?",
+    "respuestas": [
+      "Thor",
+      "Baldur",
+      "Loki",
+      "Odín"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Cuál era la debilidad de Aquiles según la leyenda?",
+    "respuestas": [
+      "Su talón",
+      "Su corazón",
+      "Su brazo derecho",
+      "Su orgullo"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué ser mitológico tenía una mirada que convertía en piedra?",
+    "respuestas": [
+      "Sirena",
+      "Quimera",
+      "Minotauro",
+      "Medusa"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Quién entregó la famosa manzana dorada con la inscripción 'para la más bella'?",
+    "respuestas": [
+      "Apolo",
+      "Eros",
+      "Zeus",
+      "Eris"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Qué castigo eterno sufría Prometeo por robar el fuego a los dioses?",
+    "respuestas": [
+      "Arrastrar cadenas",
+      "Empujar una roca",
+      "Ser devorado cada día",
+      "Caer sin fin"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué tres cabezas tenía el can Cerbero?",
+    "respuestas": [
+      "León, lobo y serpiente",
+      "Tres humanas",
+      "Tres de perro",
+      "Perro, dragón y cabra"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Quién mató al Minotauro en el laberinto de Creta?",
+    "respuestas": [
+      "Heracles",
+      "Teseo",
+      "Orfeo",
+      "Perseo"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué criatura nórdica devorará al sol durante el Ragnarök?",
+    "respuestas": [
+      "Fenrir",
+      "Jörmundgandr",
+      "Sköll",
+      "Nidhogg"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Cómo se llamaba el río del Hades que causaba olvido?",
+    "respuestas": [
+      "Estigia",
+      "Aqueronte",
+      "Flegetonte",
+      "Lete"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Qué titán griego sostenía los cielos sobre sus hombros?",
+    "respuestas": [
+      "Prometeo",
+      "Kronos",
+      "Hiperión",
+      "Atlas"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Quién resolvió el enigma de la Esfinge en Tebas?",
+    "respuestas": [
+      "Heracles",
+      "Teseo",
+      "Odiseo",
+      "Edipo"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Qué objeto fue creado por Dédalo para escapar del laberinto?",
+    "respuestas": [
+      "Una cuerda mágica",
+      "Alas de cera",
+      "Una brújula sagrada",
+      "Un espejo encantado"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué personaje nórdico fue atado con las entrañas de su hijo?",
+    "respuestas": [
+      "Hel",
+      "Fenrir",
+      "Loki",
+      "Tyr"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué era en realidad el Caballo de Troya según la mitología?",
+    "respuestas": [
+      "Un regalo de paz",
+      "Un ariete gigante",
+      "Un escondite militar",
+      "Una ofrenda a Atenea"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué diosa egipcia se representa con alas y es símbolo de justicia?",
+    "respuestas": [
+      "Hathor",
+      "Bastet",
+      "Sekhmet",
+      "Maat"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Qué rey fue castigado con el hambre eterna en el Tártaro?",
+    "respuestas": [
+      "Midas",
+      "Sísifo",
+      "Tántalo",
+      "Laomedonte"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué animal era sagrado para la diosa griega Atenea?",
+    "respuestas": [
+      "Gato",
+      "Búho",
+      "Perro",
+      "Caballo"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué monstruo nórdico es una serpiente marina que rodea el mundo?",
+    "respuestas": [
+      "Fenrir",
+      "Sleipnir",
+      "Sköll",
+      "Jörmundgandr"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Qué dios japonés descendió del cielo para gobernar la tierra según el Kojiki?",
+    "respuestas": [
+      "Tsukuyomi",
+      "Izanagi",
+      "Ninigi",
+      "Susanoo"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Quién era el dios del vino en la mitología griega?",
+    "respuestas": [
+      "Apolo",
+      "Hefesto",
+      "Hermes",
+      "Dionisio"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Qué rey babilonio viajó en busca de la inmortalidad según la epopeya?",
+    "respuestas": [
+      "Hammurabi",
+      "Sargón",
+      "Nabucodonosor",
+      "Gilgamesh"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿En qué ciudad se encontraba el famoso oráculo de Apolo?",
+    "respuestas": [
+      "Delfos",
+      "Atenas",
+      "Corinto",
+      "Esparta"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué día de la semana estaba tradicionalmente dedicado a Thor en las lenguas germánicas?",
+    "respuestas": [
+      "Martes",
+      "Miércoles",
+      "Jueves",
+      "Viernes"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué animal estaba consagrado a la diosa egipcia Bastet?",
+    "respuestas": [
+      "Perro",
+      "León",
+      "Gato",
+      "Cocodrilo"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué flor se asocia con el renacimiento en la mitología egipcia?",
+    "respuestas": [
+      "Rosa",
+      "Loto",
+      "Hibisco",
+      "Crisantemo"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué era el Panteón en Roma?",
+    "respuestas": [
+      "Un palacio",
+      "Una fortaleza",
+      "Un templo a todos los dioses",
+      "Un mausoleo imperial"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Cuál era el propósito principal de las bacanales romanas?",
+    "respuestas": [
+      "Celebrar la primavera",
+      "Honrar a Baco",
+      "Adorar a Venus",
+      "Conmemorar batallas"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué forma tenía el símbolo del Mjölnir, el martillo de Thor?",
+    "respuestas": [
+      "Cruz",
+      "Martillo",
+      "Hacha",
+      "Espada"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué planta se usaba para espantar el mal en rituales griegos?",
+    "respuestas": [
+      "Hiedra",
+      "Laurel",
+      "Olivo",
+      "Mandrágora"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué festival celebraban los griegos en honor a Dionisio con teatro y vino?",
+    "respuestas": [
+      "Panateneas",
+      "Lupercales",
+      "Dionisíacas",
+      "Saturnales"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Cuál era el material más habitual de las máscaras usadas en rituales romanos?",
+    "respuestas": [
+      "Madera",
+      "Marfil",
+      "Bronce",
+      "Terracota"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Qué tipo de estructura era un ziguratt en la antigua Mesopotamia?",
+    "respuestas": [
+      "Un templo escalonado",
+      "Un teatro al aire libre",
+      "Una tumba real",
+      "Una escuela de escribas"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué se quemaba tradicionalmente en los altares de los dioses griegos?",
+    "respuestas": [
+      "Oro",
+      "Animales",
+      "Piedras",
+      "Aceite"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué ave se consideraba mensajera de los dioses en muchas culturas?",
+    "respuestas": [
+      "Gavilán",
+      "Búho",
+      "Cuervo",
+      "Paloma"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Dónde estaba el templo de Karnak, uno de los más grandes del mundo antiguo?",
+    "respuestas": [
+      "Petra",
+      "Menfis",
+      "Luxor",
+      "Babilonia"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué objeto se colocaba en la boca de los muertos en la antigua Grecia para pagar a Caronte?",
+    "respuestas": [
+      "Flor",
+      "Concha",
+      "Moneda",
+      "Amuleto"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Cuál era la función principal de los augures en Roma?",
+    "respuestas": [
+      "Recitar los himnos",
+      "Leer el futuro en las entrañas",
+      "Interpretar el vuelo de aves",
+      "Organizar los juegos"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué representaban los pilares Jötnar en la mitología nórdica?",
+    "respuestas": [
+      "Los puntos cardinales",
+      "La sabiduría",
+      "La fuerza ancestral",
+      "Los huesos de Ymir"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Qué símbolo celta representa la eternidad y los ciclos de la vida?",
+    "respuestas": [
+      "La cruz solar",
+      "El trisquel",
+      "El escudo de Cernunnos",
+      "La piedra Ogham"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué práctica ritual se hacía en el Monte Tai en China para legitimar el poder imperial?",
+    "respuestas": [
+      "Ofrenda de arroz",
+      "Baño ritual",
+      "Ascensión sagrada",
+      "Sacrificio humano"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué tipo de sacerdote egipcio leía los signos del cielo para prever inundaciones del Nilo?",
+    "respuestas": [
+      "Anacoreta",
+      "Cartógrafo",
+      "Astrónomo sagrado",
+      "Lector de horas"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Cuál era el rol de Hermes en el paso de las almas al inframundo?",
+    "respuestas": [
+      "Guía de los muertos",
+      "Juez de las almas",
+      "Guardián del Tártaro",
+      "Vigilante del río Lete"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué estructura mítica sostenía el cielo según los antiguos griegos?",
+    "respuestas": [
+      "El Monte Olimpo",
+      "El Pilar de Hércules",
+      "Atlas",
+      "El Hilo del destino"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué criatura devoraba a quienes no resolvían su acertijo en Tebas?",
+    "respuestas": [
+      "Hidra",
+      "Minotauro",
+      "Quimera",
+      "Esfinge"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Qué dios nórdico renunció a uno de sus ojos para obtener sabiduría?",
+    "respuestas": [
+      "Tyr",
+      "Loki",
+      "Odín",
+      "Thor"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Quién era el padre de Rómulo y Remo según la mitología romana?",
+    "respuestas": [
+      "Júpiter",
+      "Marte",
+      "Neptuno",
+      "Saturno"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué diosa celta se relacionaba con la guerra y los cuervos?",
+    "respuestas": [
+      "Brigid",
+      "Mórrigan",
+      "Epona",
+      "Nemain"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Cuál era el castigo de Sísifo en el Hades?",
+    "respuestas": [
+      "Nadar sin avanzar",
+      "Transportar agua en un colador",
+      "Empujar una piedra eternamente",
+      "Perseguir su sombra"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué figura mitológica japonesa castiga a las almas malvadas con tormentos infernales?",
+    "respuestas": [
+      "Amaterasu",
+      "Yama",
+      "Raijin",
+      "Oni"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué forma tenía el barco Naglfar en la mitología nórdica?",
+    "respuestas": [
+      "Hecho de ramas sagradas",
+      "Forjado con fuego",
+      "Construido con uñas de muertos",
+      "Tallado por el mismísimo Yggdrasil"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué dios hindú es conocido como el destructor del universo para su renovación?",
+    "respuestas": [
+      "Krishna",
+      "Vishnu",
+      "Shiva",
+      "Brahma"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Quién ayudó a Teseo a salir del laberinto con un ovillo de hilo?",
+    "respuestas": [
+      "Medusa",
+      "Ariadna",
+      "Pentesilea",
+      "Antígona"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué guerrera vikinga fue recogida en los textos de Saxo Grammaticus?",
+    "respuestas": [
+      "Brynhild",
+      "Lagertha",
+      "Sigrún",
+      "Gudrun"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué río griego los muertos debían cruzar para llegar al inframundo?",
+    "respuestas": [
+      "Aqueronte",
+      "Tártaro",
+      "Estigia",
+      "Lete"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué animal sagrado escoltaba a la diosa griega Artemisa?",
+    "respuestas": [
+      "Águila",
+      "Ciervo",
+      "Serpiente",
+      "Pantera"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué nombre recibía el lobo destinado a matar a Odín durante el Ragnarök?",
+    "respuestas": [
+      "Fenrir",
+      "Sköll",
+      "Garm",
+      "Jörmungandr"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué festividad romana celebraba el fin del invierno y la llegada del caos temporal?",
+    "respuestas": [
+      "Bacanales",
+      "Floralia",
+      "Saturnales",
+      "Lupercalia"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué objeto permitía a Perseo evitar la mirada mortal de Medusa?",
+    "respuestas": [
+      "Espada divina",
+      "Casco de Hades",
+      "Escudo reflectante",
+      "Sandalias aladas"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué tres hermanas compartían un solo ojo y un solo diente en la mitología griega?",
+    "respuestas": [
+      "Las Erinias",
+      "Las Moiras",
+      "Las Grayas",
+      "Las Hespérides"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué criatura tenía cuerpo de león, cabeza humana y alas de ave en la mitología asiria?",
+    "respuestas": [
+      "Grifo",
+      "Mantícora",
+      "Lamassu",
+      "Anzu"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué práctica ritual se hacía en el Monte Tai en China para legitimar el poder imperial?",
+    "respuestas": [
+      "Ofrenda de arroz",
+      "Baño ritual",
+      "Ascensión sagrada",
+      "Sacrificio humano"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué criatura azteca era símbolo del inframundo y guiaba a las almas de los muertos?",
+    "respuestas": [
+      "Quetzalcóatl",
+      "Xólotl",
+      "Tezcatlipoca",
+      "Tlaloc"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué bestia griega tenía múltiples cabezas que se regeneraban al ser cortadas?",
+    "respuestas": [
+      "Quimera",
+      "Cerbero",
+      "Hidra de Lerna",
+      "Esfinge"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué ser mitológico japonés es una zorra con poderes mágicos?",
+    "respuestas": [
+      "Tengu",
+      "Oni",
+      "Kitsune",
+      "Tanuki"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Cómo se llamaba el dragón nórdico que roía las raíces de Yggdrasil?",
+    "respuestas": [
+      "Fafnir",
+      "Jörmungandr",
+      "Garm",
+      "Níðhöggr"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Qué dios egipcio presidía el juicio de las almas con una balanza?",
+    "respuestas": [
+      "Anubis",
+      "Horus",
+      "Ra",
+      "Osiris"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Qué ave mitológica renacía de sus cenizas en muchas culturas?",
+    "respuestas": [
+      "Roc",
+      "Ave del trueno",
+      "Fénix",
+      "Garuda"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué criatura tenía cuerpo de león, cola de serpiente y una cabeza de cabra en el lomo?",
+    "respuestas": [
+      "Grifo",
+      "Quimera",
+      "Mantícora",
+      "Esfinge"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Cuál es el nombre del monstruo marino babilónico vencido por Marduk?",
+    "respuestas": [
+      "Ereshkigal",
+      "Tiamat",
+      "Ishtar",
+      "Anzu"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué entidad mitológica representaba la oscuridad primordial en la mitología griega?",
+    "respuestas": [
+      "Érebo",
+      "Caos",
+      "Tártaro",
+      "Nix"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué ser celta cambiaba de forma y a menudo aparecía como un caballo blanco?",
+    "respuestas": [
+      "Selkie",
+      "Pooka",
+      "Banshee",
+      "Dullahan"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué monstruo marino aparece en la mitología griega junto a Escila?",
+    "respuestas": [
+      "Caribdis",
+      "Tifón",
+      "Ceto",
+      "Hipocampo"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué figura mitológica hindú representa el mal supremo y es destruida por el dios Rama?",
+    "respuestas": [
+      "Ravana",
+      "Kali",
+      "Shumbha",
+      "Durjodhana"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué demonio sumerio fue vencido por la diosa Inanna durante su descenso al inframundo?",
+    "respuestas": [
+      "Gilgamesh",
+      "Ereshkigal",
+      "Gugalanna",
+      "Kur"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Qué animal mitológico chino es símbolo de poder imperial y buena fortuna?",
+    "respuestas": [
+      "Qilin",
+      "Dragón",
+      "Zorro de nueve colas",
+      "León celestial"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué criatura era enemiga mortal del dios egipcio Ra y habitaba las profundidades?",
+    "respuestas": [
+      "Anubis",
+      "Sobek",
+      "Apep",
+      "Sekhmet"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Cómo se llamaba el gigante de bronce que custodiaba la isla de Creta?",
+    "respuestas": [
+      "Tifón",
+      "Talos",
+      "Gigantes",
+      "Argos"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué criatura tenía cuerpo de pez y torso humano según la mitología mesopotámica?",
+    "respuestas": [
+      "Anzu",
+      "Oannes",
+      "Enkidu",
+      "Marduk"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué diosa japonesa del sol emergió de una cueva devolviendo la luz al mundo?",
+    "respuestas": [
+      "Amaterasu",
+      "Izanami",
+      "Fujin",
+      "Uzume"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué gigante fue derrotado por Thor usando su martillo Mjölnir?",
+    "respuestas": [
+      "Ymir",
+      "Thrym",
+      "Surtr",
+      "Hrungnir"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Qué práctica ritual se hacía en el Monte Tai en China para legitimar el poder imperial?",
+    "respuestas": [
+      "Ofrenda de arroz",
+      "Baño ritual",
+      "Ascensión sagrada",
+      "Sacrificio humano"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué dios griego era conocido por lanzar rayos?",
+    "respuestas": [
+      "Zeus",
+      "Hades",
+      "Apolo",
+      "Hermes"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Cómo se llama el martillo de Thor?",
+    "respuestas": [
+      "Gram",
+      "Gungnir",
+      "Mjölnir",
+      "Laegjarn"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Quién guiaba las almas al inframundo en la mitología griega?",
+    "respuestas": [
+      "Hades",
+      "Hermes",
+      "Ares",
+      "Dionisio"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué diosa romana era equivalente a la griega Atenea?",
+    "respuestas": [
+      "Juno",
+      "Venus",
+      "Minerva",
+      "Diana"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué criatura mitológica tenía cuerpo de caballo y torso humano?",
+    "respuestas": [
+      "Sátiro",
+      "Grifo",
+      "Centauro",
+      "Fauno"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué dios nórdico era hermano de Thor y conocido por ser astuto?",
+    "respuestas": [
+      "Heimdall",
+      "Loki",
+      "Tyr",
+      "Baldur"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué héroe griego mató al Minotauro en el laberinto?",
+    "respuestas": [
+      "Aquiles",
+      "Teseo",
+      "Perseo",
+      "Ulises"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué diosa griega era protectora del matrimonio?",
+    "respuestas": [
+      "Deméter",
+      "Atenea",
+      "Hera",
+      "Afrodita"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué dios egipcio era representado con cabeza de chacal?",
+    "respuestas": [
+      "Ra",
+      "Osiris",
+      "Anubis",
+      "Horus"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué semidiós romano era hijo de Júpiter y derrotó monstruos con una clava?",
+    "respuestas": [
+      "Hércules",
+      "Rómulo",
+      "Neptuno",
+      "Apolo"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué monstruo tenía mirada que convertía en piedra?",
+    "respuestas": [
+      "Sirena",
+      "Medusa",
+      "Esfinge",
+      "Quimera"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué animal representa al dios egipcio Horus?",
+    "respuestas": [
+      "León",
+      "Perro",
+      "Halcón",
+      "Ibis"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué mitología incluye al dios trickster llamado Coyote?",
+    "respuestas": [
+      "China",
+      "Nórdica",
+      "Amerindia",
+      "Celta"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué es el Valhalla en la mitología nórdica?",
+    "respuestas": [
+      "Un dios",
+      "Un arma",
+      "Un lugar para los guerreros caídos",
+      "Un árbol sagrado"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Quién entregó el fuego a la humanidad, desafiando a los dioses?",
+    "respuestas": [
+      "Zeus",
+      "Prometeo",
+      "Apolo",
+      "Hefesto"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué dios hindú tiene forma de elefante?",
+    "respuestas": [
+      "Krishna",
+      "Brahma",
+      "Ganesha",
+      "Indra"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué criatura mitológica custodiaba el vellocino de oro?",
+    "respuestas": [
+      "Dragón",
+      "Grifo",
+      "Serpiente marina",
+      "Minotauro"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Cómo se llama la diosa griega de la caza?",
+    "respuestas": [
+      "Atenea",
+      "Démeter",
+      "Artemisa",
+      "Hera"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué ser mitológico tiene tres cabezas y custodia el inframundo?",
+    "respuestas": [
+      "Esfinge",
+      "Cerbero",
+      "Hidra",
+      "Quimera"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué práctica ritual se hacía en el Monte Tai en China para legitimar el poder imperial?",
+    "respuestas": [
+      "Ofrenda de arroz",
+      "Baño ritual",
+      "Ascensión sagrada",
+      "Sacrificio humano"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué dios griego es conocido por ser el dios del vino y el éxtasis?",
+    "respuestas": [
+      "Zeus",
+      "Hades",
+      "Apolo",
+      "Dionisio"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Qué monstruo mitológico tiene la apariencia de un hombre con cabeza de caballo y cuerpo de león?",
+    "respuestas": [
+      "Ciclope",
+      "Sátiro",
+      "Hidra",
+      "Quimera"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿En qué mitología aparece el dios Thor, conocido por su martillo Mjolnir?",
+    "respuestas": [
+      "Griega",
+      "Egipcia",
+      "Nórdica",
+      "Romana"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Qué dios romano es equivalente a Zeus en la mitología griega?",
+    "respuestas": [
+      "Marte",
+      "Júpiter",
+      "Apolo",
+      "Neptuno"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué dios nórdico es el hermano de Loki y gobierna el rayo y el trueno?",
+    "respuestas": [
+      "Tyr",
+      "Freyr",
+      "Odin",
+      "Thor"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Qué figura mitológica, conocida por su fuerza, fue condenado a realizar doce trabajos?",
+    "respuestas": [
+      "Aquiles",
+      "Perseo",
+      "Teseo",
+      "Hércules"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Qué dios egipcio tiene cuerpo humano y cabeza de halcón?",
+    "respuestas": [
+      "Ra",
+      "Osiris",
+      "Horus",
+      "Anubis"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué titán griego fue castigado a sostener el cielo sobre sus hombros?",
+    "respuestas": [
+      "Prometeo",
+      "Atlas",
+      "Cronos",
+      "Epimeteo"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué diosa griega, conocida por su belleza, nació de la espuma del mar?",
+    "respuestas": [
+      "Hera",
+      "Atenea",
+      "Afrodita",
+      "Artemisa"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué héroe griego derrotó al Minotauro en el laberinto de Creta?",
+    "respuestas": [
+      "Aquiles",
+      "Perseo",
+      "Teseo",
+      "Hércules"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué diosa romana de la sabiduría es equivalente a Atenea en la mitología griega?",
+    "respuestas": [
+      "Juno",
+      "Vesta",
+      "Minerva",
+      "Diana"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué figura mitológica fue transformada en una flor después de ser perseguida por Apolo?",
+    "respuestas": [
+      "Eco",
+      "Dafne",
+      "Lirio",
+      "Calipso"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué criatura mitológica, conocida por su canto, atraía a los marineros hacia la muerte?",
+    "respuestas": [
+      "Sirenas",
+      "Cíclopes",
+      "Hidra",
+      "Minotauro"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué dios nórdico es conocido por su sabiduría y sacrificó un ojo para obtener conocimiento?",
+    "respuestas": [
+      "Odin",
+      "Thor",
+      "Baldur",
+      "Loki"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué monstruo mitológico tiene el poder de petrificar a quienes lo miran a los ojos?",
+    "respuestas": [
+      "Ciclope",
+      "Fénix",
+      "Medusa",
+      "Quimera"
+    ],
+    "correcta": 2
+  }
+]
+      
+      
+      ;
 
     let preguntaActual = null;
 
