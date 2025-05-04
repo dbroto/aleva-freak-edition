@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>🧠 Conectados 🧠</title>
+  <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background: #000;
+      color: #ffcc00;
+      font-family: 'VT323', monospace;
+      text-align: center;
+      padding: 2rem;
+    }
+    .card {
+      background-color: #111;
+      border: 4px solid #ffcc00;
+      border-radius: 8px;
+      padding: 2rem;
+      max-width: 800px;
+      margin: 0 auto;
+      box-shadow: 0 0 20px #ffcc00;
+    }
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 2rem;
+    }
+    #palabra {
+      font-size: 2.5rem;
+      color: #00ffcc;
+      margin: 1.5rem 0;
+    }
+    #conexion {
+      font-size: 2rem;
+      color: #ffffff;
+      margin-top: 2rem;
+    }
+    button {
+      font-family: 'VT323', monospace;
+      font-size: 1.5rem;
+      padding: 1rem 2rem;
+      margin: 1rem;
+      background-color: #000;
+      color: #ffcc00;
+      border: 2px solid #ffcc00;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #222;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>🧠 Conectados 🧠</h1>
+    <div id="palabra">Palabra</div>
+    <div id="conexion"></div>
+    <button onclick="nuevaSerie()">➡️ Siguiente palabra</button>
+    <button onclick="mostrarConexion()">🔍 Mostrar conexión</button>
+  </div>
+
+  <script>
+    const series = [
+      { palabras: ['fuego', 'anillos', 'mago', 'Mordor', 'ojo'], conexion: 'Sauron' },
+      { palabras: ['trono', 'dragón', 'espadas', 'cuervo', 'hielo'], conexion: 'Juego de Tronos' },
+      { palabras: ['ratón', 'castillo', 'princesa', 'mágico', 'Florida'], conexion: 'Disney' },
+      { palabras: ['araña', 'poderes', 'tía', 'traje', 'fotógrafo'], conexion: 'Spider-Man' },
+      { palabras: ['poción', 'escoba', 'cicatriz', 'bufanda', 'varita'], conexion: 'Harry Potter' }
+    ];
+
+    let indicePalabra = 0;
+    let intervalo;
+    let actual = {};
+    let mostradas = [];
+
+    function nuevaSerie() {
+      clearInterval(intervalo);
+      const seleccion = series[Math.floor(Math.random() * series.length)];
+      actual = seleccion;
+      indicePalabra = 0;
+      mostradas = [];
+      document.getElementById('conexion').textContent = '';
+      document.getElementById('palabra').textContent = '';
+
+      mostrarSiguientePalabra();
+      intervalo = setInterval(() => {
+        indicePalabra++;
+        if (indicePalabra < actual.palabras.length) {
+          mostrarSiguientePalabra();
+        } else {
+          clearInterval(intervalo);
+        }
+      }, 1500);
+    }
+
+    function mostrarSiguientePalabra() {
+      mostradas.push(actual.palabras[indicePalabra]);
+      document.getElementById('palabra').textContent = mostradas.join(' - ');
+    }
+
+    function mostrarConexion() {
+      document.getElementById('conexion').textContent = 'Conexión: ' + actual.conexion;
+    }
+  </script>
+</body>
+</html>
