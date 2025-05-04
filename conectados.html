@@ -53,9 +53,10 @@
 <body>
   <div class="card">
     <h1>🧠 Conectados 🧠</h1>
-    <div id="palabra">Palabra</div>
+<div id="palabra">Palabra</div>
     <div id="conexion"></div>
-    <button onclick="nuevaSerie()">➡️ Siguiente palabra</button>
+    <button onclick="nuevaSerie()">➡️ Siguiente secuencia</button>
+    <button onclick="pausarReanudar()" id="botonPausa">⏸ Pausar</button>
     <button onclick="mostrarConexion()">🔍 Mostrar conexión</button>
   </div>
 
@@ -72,6 +73,7 @@
     let intervalo;
     let actual = {};
     let mostradas = [];
+    let pausado = false;
 
     function nuevaSerie() {
       clearInterval(intervalo);
@@ -81,14 +83,18 @@
       mostradas = [];
       document.getElementById('conexion').textContent = '';
       document.getElementById('palabra').textContent = '';
+      document.getElementById('botonPausa').textContent = '⏸ Pausar';
+      pausado = false;
 
       mostrarSiguientePalabra();
       intervalo = setInterval(() => {
-        indicePalabra++;
-        if (indicePalabra < actual.palabras.length) {
-          mostrarSiguientePalabra();
-        } else {
-          clearInterval(intervalo);
+        if (!pausado) {
+          indicePalabra++;
+          if (indicePalabra < actual.palabras.length) {
+            mostrarSiguientePalabra();
+          } else {
+            clearInterval(intervalo);
+          }
         }
       }, 1500);
     }
@@ -100,6 +106,11 @@
 
     function mostrarConexion() {
       document.getElementById('conexion').textContent = 'Conexión: ' + actual.conexion;
+    }
+
+    function pausarReanudar() {
+      pausado = !pausado;
+      document.getElementById('botonPausa').textContent = pausado ? '▶ Reanudar' : '⏸ Pausar';
     }
   </script>
 </body>
