@@ -75,23 +75,2013 @@
   <button id="siguiente" onclick="siguiente()">Siguiente Pregunta</button>
 
   <script>
-    const preguntas = [
-      {
-        "pregunta": "¿Cuál es el nombre del mago que guía a la Comunidad?",
-        "respuestas": ["Saruman", "Radagast", "Gandalf", "Sauron"],
-        "correcta": 2
-      },
-      {
-        "pregunta": "¿Qué objeto debe destruir Frodo?",
-        "respuestas": ["El bastón de Gandalf", "El Anillo Único", "La espada de Aragorn", "El Palantir"],
-        "correcta": 1
-      },
-      {
-        "pregunta": "¿Cómo se llama el padre de Legolas?",
-        "respuestas": ["Elrond", "Thranduil", "Celeborn", "Glorfindel"],
-        "correcta": 1
-      }
-    ];
+    const preguntas = 
+      
+      [
+  {
+    "pregunta": "¿Qué superhéroe de Marvel lleva una armadura tecnológica y es multimillonario?",
+    "respuestas": [
+      "Iron Man",
+      "Hulk",
+      "Ojo de Halcón",
+      "Ant-Man"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Quién empuña el martillo Mjolnir?",
+    "respuestas": [
+      "Loki",
+      "Capitán América",
+      "Thor",
+      "Hulk"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Cuál es el apodo de Natasha Romanoff?",
+    "respuestas": [
+      "Capitana Marvel",
+      "Bruja Escarlata",
+      "Viuda Negra",
+      "Avispa"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué color es la piel de Hulk cuando se transforma?",
+    "respuestas": [
+      "Verde",
+      "Roja",
+      "Azul",
+      "Gris"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿En qué ciudad se desarrolla la batalla final de 'Los Vengadores' (2012)?",
+    "respuestas": [
+      "Londres",
+      "Nueva York",
+      "París",
+      "Washington D.C."
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué piedra del infinito controla el tiempo?",
+    "respuestas": [
+      "Piedra de la mente",
+      "Piedra del tiempo",
+      "Piedra del alma",
+      "Piedra del espacio"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Quién fue el villano principal en 'Vengadores: La era de Ultrón'?",
+    "respuestas": [
+      "Thanos",
+      "Loki",
+      "Ultrón",
+      "Red Skull"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Cómo se llama el reino natal de Thor?",
+    "respuestas": [
+      "Jotunheim",
+      "Asgard",
+      "Sokovia",
+      "Xandar"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué actor interpreta a Doctor Strange en el UCM?",
+    "respuestas": [
+      "Tom Holland",
+      "Benedict Cumberbatch",
+      "Mark Ruffalo",
+      "Chris Pratt"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué superhéroe tiene como nombre real Steve Rogers?",
+    "respuestas": [
+      "Capitán América",
+      "Ojo de Halcón",
+      "Star-Lord",
+      "Loki"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué Vengador fue congelado durante décadas antes de unirse al grupo?",
+    "respuestas": [
+      "Hawkeye",
+      "Capitán América",
+      "Ant-Man",
+      "Falcon"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué personaje dice la frase 'Yo soy inevitable'?",
+    "respuestas": [
+      "Thanos",
+      "Nick Fury",
+      "Loki",
+      "Vision"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué objeto reemplaza al ojo perdido de Thor?",
+    "respuestas": [
+      "Un parche",
+      "Una piedra mágica",
+      "Un ojo cibernético",
+      "Un casco"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Quién creó a Vision?",
+    "respuestas": [
+      "Tony Stark y Bruce Banner",
+      "Ultrón",
+      "Thor",
+      "Nick Fury"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué raza alienígena invade la Tierra en 'Los Vengadores' (2012)?",
+    "respuestas": [
+      "Kree",
+      "Skrulls",
+      "Chitauri",
+      "Nova Corps"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Quién es el director de S.H.I.E.L.D. en la mayoría de películas de los Vengadores?",
+    "respuestas": [
+      "Nick Fury",
+      "Phil Coulson",
+      "Maria Hill",
+      "Rhodey"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué personaje muere al obtener la Piedra del Alma en 'Endgame'?",
+    "respuestas": [
+      "Gamora",
+      "Iron Man",
+      "Viuda Negra",
+      "Doctor Strange"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Cuál es el nombre del padre de Tony Stark?",
+    "respuestas": [
+      "Richard Stark",
+      "Howard Stark",
+      "James Stark",
+      "Edward Stark"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué superhéroe se convierte en Rey de Wakanda?",
+    "respuestas": [
+      "Sam Wilson",
+      "T'Challa",
+      "Rhodey",
+      "Bucky Barnes"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Cuál es el nombre del martillo de Thor?",
+    "respuestas": [
+      "Stormbreaker",
+      "Asgardian",
+      "Mjolnir",
+      "Aether"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Cuál es el nombre real de Hulk?",
+    "respuestas": [
+      "Tony Stark",
+      "Bruce Banner",
+      "Steve Rogers",
+      "Stephen Strange"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué Vengadora tiene habilidades de telequinesis y manipulación mental?",
+    "respuestas": [
+      "Viuda Negra",
+      "Capitana Marvel",
+      "Bruja Escarlata",
+      "Nebula"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Quién dirige la película 'Los Vengadores' de 2012?",
+    "respuestas": [
+      "Joss Whedon",
+      "James Gunn",
+      "Taika Waititi",
+      "Jon Favreau"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Cómo se llama la inteligencia artificial que reemplaza a J.A.R.V.I.S.?",
+    "respuestas": [
+      "F.R.I.D.A.Y.",
+      "S.H.I.E.L.D.",
+      "E.D.I.T.H.",
+      "K.A.R.E.N."
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué personaje de Guardianes de la Galaxia aparece en 'Infinity War' y 'Endgame'?",
+    "respuestas": [
+      "Rocket",
+      "Drax",
+      "Yondu",
+      "Ronan"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué actor interpreta a Star-Lord?",
+    "respuestas": [
+      "Chris Pratt",
+      "Chris Pine",
+      "Chris Evans",
+      "Chris Hemsworth"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué piedra del infinito estaba en la frente de Vision?",
+    "respuestas": [
+      "Piedra del alma",
+      "Piedra de la mente",
+      "Piedra del poder",
+      "Piedra del tiempo"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Quién reemplaza al Capitán América como nuevo portador del escudo al final de 'Endgame'?",
+    "respuestas": [
+      "Bucky",
+      "Sam Wilson",
+      "Loki",
+      "Clint Barton"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Cómo se llama el planeta donde Thanos se retira tras el chasquido?",
+    "respuestas": [
+      "Titan",
+      "Vormir",
+      "Nidavellir",
+      "El Jardín"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Qué superhéroe aparece rejuvenecido gracias al viaje en el tiempo en 'Endgame'?",
+    "respuestas": [
+      "Nick Fury",
+      "Tony Stark",
+      "Steve Rogers",
+      "Ant-Man"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué personaje lidera a los Vengadores en ausencia de Iron Man y Capitán América?",
+    "respuestas": [
+      "Hulk",
+      "Capitana Marvel",
+      "Viuda Negra",
+      "Falcon"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué planeta es destruido en ‘Thor: Ragnarok’?",
+    "respuestas": [
+      "Xandar",
+      "Asgard",
+      "Vormir",
+      "Sakaar"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Quién es el padre de Gamora?",
+    "respuestas": [
+      "Thanos",
+      "Ronan",
+      "Star-Lord",
+      "Ego"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué Vengador tiene un perro llamado Lucky en los cómics y la serie?",
+    "respuestas": [
+      "Ojo de Halcón",
+      "Ant-Man",
+      "Falcon",
+      "Bucky"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué hechizo usa Doctor Strange para visualizar futuros posibles?",
+    "respuestas": [
+      "Portalis",
+      "Tempus Revelare",
+      "Mirada del infinito",
+      "El Ojo de Agamotto"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Cómo se llama la nave de los Guardianes de la Galaxia?",
+    "respuestas": [
+      "El Milano",
+      "Estrella Nova",
+      "La Mantis",
+      "La Galaxia X"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué personaje ha tenido como identidad a Ronin?",
+    "respuestas": [
+      "Bucky Barnes",
+      "Clint Barton",
+      "Sam Wilson",
+      "Peter Parker"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué personaje lleva una gema incrustada en su cabeza?",
+    "respuestas": [
+      "Vision",
+      "Thanos",
+      "Loki",
+      "Nebula"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué Vengador fue un criminal buscado en 'Civil War' por negarse a firmar los Acuerdos de Sokovia?",
+    "respuestas": [
+      "Iron Man",
+      "Falcon",
+      "Capitán América",
+      "Ant-Man"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué personaje resucita a Loki en la serie de Disney+?",
+    "respuestas": [
+      "Mobius",
+      "Kang",
+      "Sylvie",
+      "El Tribunal de Variación Temporal"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Qué superhéroe empuña el martillo Mjolnir?",
+    "respuestas": [
+      "Thor",
+      "Loki",
+      "Hulk",
+      "Capitán América"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Cuál es el nombre real de Iron Man?",
+    "respuestas": [
+      "Bruce Banner",
+      "Tony Stark",
+      "Stephen Strange",
+      "Clint Barton"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué Vengador es un experto arquero?",
+    "respuestas": [
+      "Ant-Man",
+      "Ojo de Halcón",
+      "Loki",
+      "War Machine"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Con qué nombre se conoce a Natasha Romanoff?",
+    "respuestas": [
+      "Bruja Escarlata",
+      "Capitana Marvel",
+      "Viuda Negra",
+      "Gamora"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿En qué ciudad se celebra la gran batalla final de la primera película de 'Los Vengadores'?",
+    "respuestas": [
+      "Washington",
+      "Nueva York",
+      "Los Ángeles",
+      "Sokovia"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Quién destruye el reactor de arco de Tony Stark en 'Iron Man 3'?",
+    "respuestas": [
+      "Él mismo",
+      "Pepper Potts",
+      "Aldrich Killian",
+      "Nick Fury"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Cómo se llama el grupo liderado por Nick Fury?",
+    "respuestas": [
+      "HYDRA",
+      "S.H.I.E.L.D.",
+      "Los Vengadores",
+      "X-Men"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué superhéroe dice 'Yo soy inevitable'?",
+    "respuestas": [
+      "Ultron",
+      "Thanos",
+      "Red Skull",
+      "Doctor Doom"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Cuál es el nombre de la hermana de Black Panther?",
+    "respuestas": [
+      "Nakia",
+      "Shuri",
+      "Ramonda",
+      "Okoye"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué personaje usa el traje 'Mark LXXXV' en 'Endgame'?",
+    "respuestas": [
+      "Spider-Man",
+      "War Machine",
+      "Iron Man",
+      "Ant-Man"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Quién es el villano principal de 'Vengadores: La era de Ultrón'?",
+    "respuestas": [
+      "Loki",
+      "Ultron",
+      "Thanos",
+      "Zemo"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Cuál de estos personajes es un androide?",
+    "respuestas": [
+      "Hawkeye",
+      "Vision",
+      "Sam Wilson",
+      "Shang-Chi"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué personaje viaja al pasado para robar la gema del tiempo?",
+    "respuestas": [
+      "Thor",
+      "Rocket",
+      "Hulk",
+      "Ant-Man"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Cómo se llama el personaje que se convierte en el nuevo Capitán América en la serie 'Falcon y el Soldado de Invierno'?",
+    "respuestas": [
+      "Bucky",
+      "Sam Wilson",
+      "John Walker",
+      "Steve Rogers"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué objeto roba Loki tras escapar en 'Endgame'?",
+    "respuestas": [
+      "El escudo del Capitán",
+      "El cetro",
+      "El Teseracto",
+      "El Ojo de Agamotto"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué personaje de 'Doctor Strange' traiciona a los Maestros de las Artes Místicas?",
+    "respuestas": [
+      "Wong",
+      "Kaecilius",
+      "Mordo",
+      "Anciana"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué gema permite manipular el tiempo?",
+    "respuestas": [
+      "Gema del alma",
+      "Gema del poder",
+      "Gema del tiempo",
+      "Gema de la realidad"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Quién forja el Stormbreaker?",
+    "respuestas": [
+      "Eitri",
+      "Thor",
+      "Rocket",
+      "Odín"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué personaje se sacrifica para obtener la Gema del Alma?",
+    "respuestas": [
+      "Thanos",
+      "Gamora",
+      "Hawkeye",
+      "Black Widow"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Quién decapita a Thanos en los primeros minutos de 'Endgame'?",
+    "respuestas": [
+      "Iron Man",
+      "Capitana Marvel",
+      "Thor",
+      "Rocket"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿De qué material está hecho el escudo del Capitán América?",
+    "respuestas": [
+      "Vibranium",
+      "Titanio",
+      "Adamantium",
+      "Acero"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué superhéroe puede convertirse en gigante y también en miniatura?",
+    "respuestas": [
+      "Doctor Strange",
+      "Ant-Man",
+      "Hawkeye",
+      "Hulk"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Cómo se llama el reino del que procede Thor?",
+    "respuestas": [
+      "Asgard",
+      "Vanaheim",
+      "Jotunheim",
+      "Midgard"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Quién es la inteligencia artificial creada por Tony Stark antes de crear a Vision?",
+    "respuestas": [
+      "JARVIS",
+      "EDITH",
+      "FRIDAY",
+      "KAREN"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Cuál es el nombre del mejor amigo de Tony Stark que pilota la armadura de War Machine?",
+    "respuestas": [
+      "James Rhodes",
+      "Sam Wilson",
+      "Bucky Barnes",
+      "Nick Fury"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué actriz interpreta a la Bruja Escarlata en el UCM?",
+    "respuestas": [
+      "Natalie Portman",
+      "Elizabeth Olsen",
+      "Brie Larson",
+      "Scarlett Johansson"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué personaje dice la frase 'Dormammu, he venido a negociar'?",
+    "respuestas": [
+      "Doctor Strange",
+      "Iron Man",
+      "Loki",
+      "Thanos"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué poder tiene Wanda Maximoff además de la telequinesis?",
+    "respuestas": [
+      "Controlar la tecnología",
+      "Manipular la realidad",
+      "Supervelocidad",
+      "Transformarse"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Cuál de estos personajes es un miembro fundador de los Vengadores en los cómics pero no en la primera película?",
+    "respuestas": [
+      "Ant-Man",
+      "Black Widow",
+      "Nick Fury",
+      "Falcon"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué planeta se destruye cuando Thanos consigue la gema del poder?",
+    "respuestas": [
+      "Xandar",
+      "Sakaar",
+      "Titan",
+      "Vormir"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Cómo se llama el hermano adoptivo de Thor?",
+    "respuestas": [
+      "Odin",
+      "Loki",
+      "Baldur",
+      "Fenrir"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué personaje lucha contra Hulk en la ciudad de Johannesburgo?",
+    "respuestas": [
+      "War Machine",
+      "Iron Man con la armadura Hulkbuster",
+      "Vision",
+      "Ultron"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Dónde estaba escondida la gema de la mente antes de ser insertada en Vision?",
+    "respuestas": [
+      "En el Teseracto",
+      "En el cetro de Loki",
+      "En la armadura de Ultron",
+      "En la Tierra sin saberlo"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Quién es el líder de los Guardianes de la Galaxia?",
+    "respuestas": [
+      "Groot",
+      "Rocket",
+      "Star-Lord",
+      "Drax"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué personaje se convierte en el nuevo portador del martillo de Thor en 'Endgame'?",
+    "respuestas": [
+      "Hulk",
+      "Iron Man",
+      "Capitán América",
+      "Valkiria"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué otro nombre recibe la gema del espacio?",
+    "respuestas": [
+      "Gema azul",
+      "Gema celestial",
+      "Teseracto",
+      "Gema de guerra"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Quién es el director original de S.H.I.E.L.D. en las películas del UCM?",
+    "respuestas": [
+      "Maria Hill",
+      "Nick Fury",
+      "Alexander Pierce",
+      "Phil Coulson"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué personaje hace una aparición sorpresa ayudando a Thor en la batalla de Wakanda?",
+    "respuestas": [
+      "Rocket",
+      "Groot",
+      "Capitán Marvel",
+      "Doctor Strange"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Quién destruye el cuerpo de Vision para evitar que Thanos consiga la gema?",
+    "respuestas": [
+      "Shuri",
+      "Bruce Banner",
+      "Wanda Maximoff",
+      "Thor"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Qué Vengador lleva un tatuaje en honor a Natasha tras los eventos de 'Endgame'?",
+    "respuestas": [
+      "Iron Man",
+      "Thor",
+      "Hawkeye",
+      "Steve Rogers"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Qué animal se transforma en un monstruo en la batalla de Nueva York cuando Hulk lo golpea?",
+    "respuestas": [
+      "Un alienígena",
+      "Un dragón",
+      "Un Leviatán",
+      "Un Titán"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Quién reemplaza a Tony Stark como Iron Man al final de 'Endgame'?",
+    "respuestas": [
+      "Nadie lo reemplaza directamente",
+      "Peter Parker",
+      "Rhodey",
+      "Pepper Potts"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Cómo se llama el programa que crea Ultron?",
+    "respuestas": [
+      "Proyecto Vengador",
+      "Iniciativa Centinela",
+      "Iniciativa Ultron",
+      "Proyecto Iron Legion"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Cuál es el nombre de nacimiento de la Viuda Negra?",
+    "respuestas": [
+      "Nina Romanova",
+      "Natasha Romanoff",
+      "Yelena Belova",
+      "Irina Vostok"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué hace Hulk al ver por primera vez a Black Widow?",
+    "respuestas": [
+      "La ataca",
+      "Sale corriendo",
+      "Se tranquiliza",
+      "Rompe una pared"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué personaje se convierte en el nuevo Capitán América?",
+    "respuestas": [
+      "Sam Wilson",
+      "Bucky Barnes",
+      "Rhodey",
+      "Peter Parker"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿En qué país descubren los Vengadores la existencia de Wakanda?",
+    "respuestas": [
+      "Nigeria",
+      "Sudáfrica",
+      "Etiopía",
+      "Kenia"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Quién hace un cameo como vendedor de perritos calientes en 'Endgame'?",
+    "respuestas": [
+      "Stan Lee",
+      "Joe Russo",
+      "Taika Waititi",
+      "Jon Favreau"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué gema le permite a Thanos manipular el tiempo?",
+    "respuestas": [
+      "Gema del poder",
+      "Gema de la mente",
+      "Gema del tiempo",
+      "Gema de la realidad"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Quién destruye el Teseracto en 'Infinity War' para evitar que Thanos lo consiga?",
+    "respuestas": [
+      "Thor",
+      "Loki",
+      "Heimdall",
+      "Gamora"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué personaje pierde un brazo durante la creación de Ultron?",
+    "respuestas": [
+      "Ulysses Klaue",
+      "Vision",
+      "Bruce Banner",
+      "Hawkeye"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Dónde se encuentra escondido Hulk al comienzo de 'Thor: Ragnarok'?",
+    "respuestas": [
+      "Sakaar",
+      "Xandar",
+      "Knowhere",
+      "Vormir"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué villano de Marvel aparece como coleccionista de reliquias?",
+    "respuestas": [
+      "Thanos",
+      "Red Skull",
+      "The Collector",
+      "Ronan el Acusador"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Cuál de los Vengadores aparece por primera vez en la escena post-créditos de 'Iron Man 2'?",
+    "respuestas": [
+      "Thor",
+      "Capitán América",
+      "Hawkeye",
+      "Nick Fury"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿En qué planeta se encuentra la gema del alma?",
+    "respuestas": [
+      "Xandar",
+      "Vormir",
+      "Ego",
+      "Titan"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Quién destruye la nave de escape de los Guardianes en 'Infinity War'?",
+    "respuestas": [
+      "Ronan",
+      "Thanos",
+      "Nebula",
+      "Thor"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Qué personaje dice 'Yo soy inevitable'?",
+    "respuestas": [
+      "Thanos",
+      "Ultron",
+      "Doctor Strange",
+      "Loki"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué actor interpreta a Falcon/Sam Wilson?",
+    "respuestas": [
+      "Don Cheadle",
+      "Anthony Mackie",
+      "Chadwick Boseman",
+      "Idris Elba"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Cómo se llama el martillo de Thor?",
+    "respuestas": [
+      "Mjolnir",
+      "Gungnir",
+      "Stormbreaker",
+      "Asbringer"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué hija adopta Thanos como su arma definitiva?",
+    "respuestas": [
+      "Gamora",
+      "Nebula",
+      "Proxima Midnight",
+      "Corvus Glaive"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Cuál es el nombre real de Iron Man?",
+    "respuestas": [
+      "Tony Stark",
+      "Bruce Banner",
+      "Steve Rogers",
+      "Clint Barton"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Quién lidera el grupo de los Guardianes de la Galaxia?",
+    "respuestas": [
+      "Rocket",
+      "Star-Lord",
+      "Gamora",
+      "Drax"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué superhéroe usa un escudo como arma principal?",
+    "respuestas": [
+      "Hawkeye",
+      "Black Widow",
+      "Capitán América",
+      "Iron Man"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿En qué ciudad se desarrolla gran parte de 'Los Vengadores' (2012)?",
+    "respuestas": [
+      "Chicago",
+      "Nueva York",
+      "Washington D.C.",
+      "San Francisco"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Cuál es el color de la Gema de la Mente?",
+    "respuestas": [
+      "Rojo",
+      "Amarillo",
+      "Azul",
+      "Verde"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué Vengador dice la frase 'Siempre estoy enfadado'?",
+    "respuestas": [
+      "Hulk",
+      "Iron Man",
+      "Thor",
+      "Capitán América"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Cómo se llama el reino de Thor?",
+    "respuestas": [
+      "Midgard",
+      "Asgard",
+      "Jotunheim",
+      "Sakaar"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué personaje pierde a su familia en el chasquido de Thanos?",
+    "respuestas": [
+      "Wanda",
+      "Clint Barton",
+      "Tony Stark",
+      "Doctor Strange"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué nombre recibe el nuevo martillo que Thor forja en 'Infinity War'?",
+    "respuestas": [
+      "Gungnir",
+      "Rompetormentas",
+      "Excalibur",
+      "Vengador"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Cuál es el segundo nombre de Peter Quill?",
+    "respuestas": [
+      "Jason",
+      "Jude",
+      "Jay",
+      "Jack"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué relación tiene Wanda con Pietro Maximoff?",
+    "respuestas": [
+      "Son primos",
+      "Son hermanos",
+      "Son pareja",
+      "Son enemigos"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Quién fue el villano principal en 'Vengadores: La era de Ultrón'?",
+    "respuestas": [
+      "Loki",
+      "Thanos",
+      "Ultron",
+      "Red Skull"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué personaje aparece como director de S.W.O.R.D. en 'WandaVision'?",
+    "respuestas": [
+      "Monica Rambeau",
+      "Tyler Hayward",
+      "Nick Fury",
+      "Maria Hill"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Cómo se llama la versión malvada de Doctor Strange en el multiverso?",
+    "respuestas": [
+      "Strange Supremo",
+      "Doctor Oscuro",
+      "Strange Corrupto",
+      "NecroStrange"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Quién intenta levantar el martillo de Thor sin éxito en 'La era de Ultrón'?",
+    "respuestas": [
+      "Vision",
+      "Bruce Banner",
+      "Steve Rogers",
+      "Hawkeye"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Qué personaje hace un trato con Dormammu?",
+    "respuestas": [
+      "Loki",
+      "Doctor Strange",
+      "Iron Man",
+      "Scarlet Witch"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Dónde se encuentra la gema del espacio al principio de 'Infinity War'?",
+    "respuestas": [
+      "Con Loki",
+      "Con Doctor Strange",
+      "En Wakanda",
+      "En Xandar"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Quién es el padre de Star-Lord?",
+    "respuestas": [
+      "Yondu",
+      "Thanos",
+      "Ego",
+      "Odin"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué poder específico tiene la Gema de la Realidad?",
+    "respuestas": [
+      "Alterar recuerdos",
+      "Manipular ilusiones",
+      "Modificar la materia",
+      "Controlar el tiempo"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué personaje lanza una bomba en Vormir para destruir la gema del alma?",
+    "respuestas": [
+      "Black Widow",
+      "Nebula",
+      "Rocket",
+      "Hawkeye"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Quién es el villano principal de 'Vengadores: Endgame'?",
+    "respuestas": [
+      "Ultron",
+      "Loki",
+      "Red Skull",
+      "Thanos"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Qué superhéroe es también el rey de Wakanda?",
+    "respuestas": [
+      "Spider-Man",
+      "Black Panther",
+      "Falcon",
+      "Doctor Strange"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Cómo se llama la organización dirigida por Nick Fury?",
+    "respuestas": [
+      "S.W.O.R.D.",
+      "HYDRA",
+      "S.H.I.E.L.D.",
+      "A.I.M."
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué personaje femenino fue espía antes de unirse a los Vengadores?",
+    "respuestas": [
+      "Wanda",
+      "Gamora",
+      "Capitana Marvel",
+      "Black Widow"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Qué vengador es interpretado por Mark Ruffalo?",
+    "respuestas": [
+      "Thor",
+      "Ant-Man",
+      "Iron Man",
+      "Hulk"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Qué personaje lidera los Vengadores tras la desaparición de Tony Stark?",
+    "respuestas": [
+      "Falcon",
+      "Capitana Marvel",
+      "Hulk",
+      "Sam Wilson"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Qué superhéroe tiene como alter ego a Stephen Strange?",
+    "respuestas": [
+      "Doctor Extraño",
+      "Black Panther",
+      "Iron Fist",
+      "Hawkeye"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Quién es el mejor amigo de Tony Stark y también porta una armadura?",
+    "respuestas": [
+      "Falcon",
+      "Rhodey",
+      "Happy Hogan",
+      "Nick Fury"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Dónde se esconde Thanos tras el primer chasquido?",
+    "respuestas": [
+      "Vormir",
+      "Titan",
+      "La Tierra",
+      "Un planeta aislado y agrícola"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Qué personaje de Marvel tiene un brazo biónico y fue un antiguo soldado?",
+    "respuestas": [
+      "Sam Wilson",
+      "Rocket Raccoon",
+      "Soldado de Invierno",
+      "Drax"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué piedra robó Rocket en el pasado en 'Endgame'?",
+    "respuestas": [
+      "Piedra del Tiempo",
+      "Piedra del Poder",
+      "Piedra de la Realidad",
+      "Piedra de la Mente"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Cuál es el nombre real de la Capitana Marvel?",
+    "respuestas": [
+      "Carol Danvers",
+      "Monica Rambeau",
+      "Peggy Carter",
+      "Maria Hill"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué personaje puede manipular la energía del caos?",
+    "respuestas": [
+      "Gamora",
+      "Nebula",
+      "Wanda Maximoff",
+      "Okoye"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Cómo se llama el martillo original de Thor?",
+    "respuestas": [
+      "Stormbreaker",
+      "Excalibur",
+      "Mjölnir",
+      "Gungnir"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Quién acaba con la vida de Thanos en la línea de tiempo principal?",
+    "respuestas": [
+      "Capitán América",
+      "Scarlet Witch",
+      "Thor",
+      "Iron Man"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Qué personaje muere en Vormir para obtener la Gema del Alma?",
+    "respuestas": [
+      "Hawkeye",
+      "Gamora",
+      "Vision",
+      "Natasha Romanoff"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Qué personaje destruye el cetro de Loki en 'La era de Ultrón'?",
+    "respuestas": [
+      "Wanda",
+      "Iron Man",
+      "Thor",
+      "Nadie lo destruye"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Qué Vengador fue un criminal buscado antes de unirse al equipo?",
+    "respuestas": [
+      "Ant-Man",
+      "Spider-Man",
+      "Vision",
+      "Hulk"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué personaje alternativo aparece en la serie 'Loki' y también se llama Loki?",
+    "respuestas": [
+      "Mobius",
+      "Lady Loki",
+      "Sylvie",
+      "Kang"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué villano es el responsable de la creación de Vision?",
+    "respuestas": [
+      "Thanos",
+      "Ultron",
+      "Zemo",
+      "Red Skull"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Quién es el villano principal en la primera película de Los Vengadores?",
+    "respuestas": [
+      "Loki",
+      "Ultron",
+      "Thanos",
+      "Ronan"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Cuál es el nombre real de Hulk?",
+    "respuestas": [
+      "Tony Stark",
+      "Stephen Strange",
+      "Bruce Banner",
+      "Clint Barton"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Quién entrega su escudo a Sam Wilson al final de 'Endgame'?",
+    "respuestas": [
+      "Bucky Barnes",
+      "Steve Rogers",
+      "Tony Stark",
+      "Nick Fury"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿En qué ciudad tiene lugar la gran batalla contra los Chitauri?",
+    "respuestas": [
+      "Londres",
+      "Chicago",
+      "Nueva York",
+      "Washington D.C."
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué personaje usa el traje de 'Rescue' en la batalla final de 'Endgame'?",
+    "respuestas": [
+      "Jane Foster",
+      "Natasha Romanoff",
+      "Pepper Potts",
+      "Hope Van Dyne"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué Vengador tiene un perro llamado Lucky en los cómics y en su serie?",
+    "respuestas": [
+      "Doctor Strange",
+      "Hawkeye",
+      "Spider-Man",
+      "Ant-Man"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Quién dirige la prisión conocida como 'La Balsa'?",
+    "respuestas": [
+      "Nick Fury",
+      "Thunderbolt Ross",
+      "Maria Hill",
+      "Steve Rogers"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Cuál es el nombre de la inteligencia artificial que sustituye a J.A.R.V.I.S.?",
+    "respuestas": [
+      "Friday",
+      "Karen",
+      "E.D.I.T.H.",
+      "Ultron"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué Vengador pierde a toda su familia tras el chasquido de Thanos?",
+    "respuestas": [
+      "Bruce Banner",
+      "Tony Stark",
+      "Clint Barton",
+      "Steve Rogers"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Cuál es el nombre de la hija de Tony Stark?",
+    "respuestas": [
+      "Sarah",
+      "Morgan",
+      "Hope",
+      "Cassie"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Quién construyó el reactor arc de Tony Stark en la cueva?",
+    "respuestas": [
+      "Yinsen",
+      "Obadiah",
+      "Rhodey",
+      "Nick Fury"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué personaje se convierte en el Capitán América en la serie 'Falcon y el Soldado de Invierno'?",
+    "respuestas": [
+      "Bucky Barnes",
+      "Sam Wilson",
+      "Walker",
+      "Rhodey"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué Vengador tiene una hermana llamada Shuri?",
+    "respuestas": [
+      "Vision",
+      "T'Challa",
+      "Peter Parker",
+      "Scott Lang"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Cómo se llama el arma que reemplaza al Mjölnir?",
+    "respuestas": [
+      "Gungnir",
+      "Stormbreaker",
+      "Godslayer",
+      "Nightfall"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué vengadora tiene poderes de manipulación mental y telequinesis?",
+    "respuestas": [
+      "Valkyria",
+      "Scarlet Witch",
+      "Capitana Marvel",
+      "Nebula"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué actor interpretó al falso Mandarín en 'Iron Man 3'?",
+    "respuestas": [
+      "Ben Kingsley",
+      "Guy Pearce",
+      "Don Cheadle",
+      "Jeff Bridges"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué personaje acaba siendo director de S.H.I.E.L.D. en 'Agents of S.H.I.E.L.D.'?",
+    "respuestas": [
+      "Phil Coulson",
+      "Nick Fury",
+      "Maria Hill",
+      "Talbot"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿En qué año se estrenó 'Vengadores: Infinity War'?",
+    "respuestas": [
+      "2019",
+      "2018",
+      "2020",
+      "2017"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Cuál es el verdadero nombre del villano 'Zemo'?",
+    "respuestas": [
+      "Helmut",
+      "Baron",
+      "Otto",
+      "Kurt"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Quién mata a Tony Stark en los cómics de 'Civil War II'?",
+    "respuestas": [
+      "Captain Marvel",
+      "Thanos",
+      "Ulysses",
+      "Hulk"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Quién es el director de S.H.I.E.L.D. en la primera película de Los Vengadores?",
+    "respuestas": [
+      "Maria Hill",
+      "Phil Coulson",
+      "Steve Rogers",
+      "Nick Fury"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Qué objeto se roba Loki en el inicio de 'Infinity War'?",
+    "respuestas": [
+      "La Gema del Alma",
+      "El Cetro",
+      "El Teseracto",
+      "El Ojo de Agamotto"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿En qué país encuentran al Soldado de Invierno congelado?",
+    "respuestas": [
+      "Estados Unidos",
+      "Wakanda",
+      "Alemania",
+      "Rusia"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Cuál es el apodo de Natasha Romanoff?",
+    "respuestas": [
+      "Scarlet Witch",
+      "Captain Marvel",
+      "Valkyria",
+      "Black Widow"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Qué personaje muere en Vormir para obtener la Gema del Alma?",
+    "respuestas": [
+      "Hawkeye",
+      "Thanos",
+      "Gamora",
+      "Black Widow"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Qué vengador fundó las Industrias Stark?",
+    "respuestas": [
+      "Tony Stark",
+      "Howard Stark",
+      "Pepper Potts",
+      "Nick Fury"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué Vengador puede manipular el tiempo usando una gema?",
+    "respuestas": [
+      "Thor",
+      "Doctor Strange",
+      "Vision",
+      "Wanda"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué material compone el escudo del Capitán América?",
+    "respuestas": [
+      "Titanio",
+      "Acero",
+      "Vibranium",
+      "Adamantium"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Quién es el villano en 'Avengers: La era de Ultrón'?",
+    "respuestas": [
+      "Thanos",
+      "Ultron",
+      "Loki",
+      "Zemo"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Cómo se llama el planeta donde Thor combate en la arena con Hulk?",
+    "respuestas": [
+      "Vormir",
+      "Xandar",
+      "Sakaar",
+      "Titan"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Cuál es la relación entre Wanda y Pietro Maximoff?",
+    "respuestas": [
+      "Primos",
+      "Amigos",
+      "Hermanos",
+      "Novios"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿En qué película se introdujo por primera vez a Vision?",
+    "respuestas": [
+      "Civil War",
+      "Age of Ultron",
+      "Infinity War",
+      "Ant-Man"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué Vengadora fue criada en la Habitación Roja?",
+    "respuestas": [
+      "Gamora",
+      "Wasp",
+      "Black Widow",
+      "Nebula"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué personaje hace de enlace entre S.H.I.E.L.D. y los Vengadores en varias películas?",
+    "respuestas": [
+      "Phil Coulson",
+      "Happy Hogan",
+      "Maria Hill",
+      "Nick Fury"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Quién es el padre de Gamora?",
+    "respuestas": [
+      "Ego",
+      "Odin",
+      "Thanos",
+      "Yondu"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué arma utiliza Ronan el Acusador?",
+    "respuestas": [
+      "Hacha de guerra",
+      "Martillo cósmico",
+      "Espada negra",
+      "Guantelete del Infinito"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Cuál es el nombre del satélite que usa Tony Stark para desplegar trajes?",
+    "respuestas": [
+      "Ultron",
+      "E.D.I.T.H.",
+      "Veronica",
+      "Friday"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué actor interpreta a Red Skull en 'Infinity War' y 'Endgame'?",
+    "respuestas": [
+      "Hugo Weaving",
+      "Ross Marquand",
+      "Sebastian Stan",
+      "Lee Pace"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿En qué año se estrenó 'Avengers: Endgame'?",
+    "respuestas": [
+      "2017",
+      "2019",
+      "2018",
+      "2020"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué Gema del Infinito es la última en ser destruida por Thanos?",
+    "respuestas": [
+      "Poder",
+      "Espacio",
+      "Tiempo",
+      "Mente"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Quién dirige la película 'Avengers: Endgame'?",
+    "respuestas": [
+      "James Gunn",
+      "Joe y Anthony Russo",
+      "Joss Whedon",
+      "Taika Waititi"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué superhéroe es conocido como el Hombre Araña en el MCU?",
+    "respuestas": [
+      "Peter Parker",
+      "Tony Stark",
+      "Stephen Strange",
+      "Bruce Banner"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué villano de los Vengadores aparece por primera vez en 'Thor'?",
+    "respuestas": [
+      "Red Skull",
+      "Ultron",
+      "Thanos",
+      "Loki"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿En qué película los Vengadores luchan por primera vez contra Ultron?",
+    "respuestas": [
+      "Avengers: Age of Ultron",
+      "Avengers: Endgame",
+      "Avengers: Infinity War",
+      "Thor: Ragnarok"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Quién es el hermano de Thor?",
+    "respuestas": [
+      "Loki",
+      "Hela",
+      "Odin",
+      "Heimdall"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué personaje interpreta Robert Downey Jr.?",
+    "respuestas": [
+      "Steve Rogers",
+      "Tony Stark",
+      "Bruce Banner",
+      "Clint Barton"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Cuál es el nombre del martillo de Thor?",
+    "respuestas": [
+      "Mjolnir",
+      "Stormbreaker",
+      "Mjölni",
+      "Valkyrie"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Cómo se llama la hija de Tony Stark?",
+    "respuestas": [
+      "Morgan Stark",
+      "Pepper Potts",
+      "Shuri",
+      "Natasha Romanoff"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Quién es el líder de los Vengadores después de 'Infinity War'?",
+    "respuestas": [
+      "Capitán América",
+      "Thor",
+      "Viuda Negra",
+      "Hawkeye"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué Gema del Infinito posee el Cetro de Loki?",
+    "respuestas": [
+      "Gema del Espacio",
+      "Gema de la Mente",
+      "Gema del Poder",
+      "Gema del Alma"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿En qué película aparece por primera vez el personaje de Wanda Maximoff?",
+    "respuestas": [
+      "Avengers: Age of Ultron",
+      "Capitán América: Civil War",
+      "Avengers: Infinity War",
+      "Avengers: Endgame"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué héroe de los Vengadores es conocido por su habilidad de encogerse?",
+    "respuestas": [
+      "Ant-Man",
+      "Spider-Man",
+      "Iron Man",
+      "Hawkeye"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿En qué película aparece el personaje de T'Challa, el rey de Wakanda?",
+    "respuestas": [
+      "Capitán América: Civil War",
+      "Avengers: Infinity War",
+      "Black Panther",
+      "Thor: Ragnarok"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Quién forma parte de los Vengadores en 'Endgame' pero no en 'Infinity War'?",
+    "respuestas": [
+      "Black Widow",
+      "Iron Man",
+      "Hawkeye",
+      "Ant-Man"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Qué superhéroe del MCU tiene el poder de alterar la realidad?",
+    "respuestas": [
+      "Doctor Strange",
+      "Scarlet Witch",
+      "Vision",
+      "Captain Marvel"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Cuál es el nombre del planeta natal de Thanos?",
+    "respuestas": [
+      "Titan",
+      "Wakanda",
+      "Xandar",
+      "Asgard"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué héroe muere al final de 'Avengers: Endgame'?",
+    "respuestas": [
+      "Black Widow",
+      "Iron Man",
+      "Captain America",
+      "Hawkeye"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué superhéroe está vinculado con el personaje de Peter Quill en 'Guardians of the Galaxy'?",
+    "respuestas": [
+      "Thor",
+      "Nebula",
+      "Rocket Raccoon",
+      "Gamora"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Qué personaje es conocido por decir 'I am Groot'?",
+    "respuestas": [
+      "Gamora",
+      "Rocket Raccoon",
+      "Star-Lord",
+      "Groot"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Quién fue el primer Vengador en obtener el Guantelete del Infinito?",
+    "respuestas": [
+      "Thor",
+      "Iron Man",
+      "Hulk",
+      "Thanos"
+    ],
+    "correcta": 2
+  }
+]
+      
+      
+      ;
 
     let preguntaActual = null;
 
