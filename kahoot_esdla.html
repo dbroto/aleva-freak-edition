@@ -76,31 +76,40 @@
   <script>
     const preguntas = [
       {
-        "pregunta": "¿Soy una pregunta?",
-        "respuestas": ["1", "2", "3", "4"],
+        "pregunta": "¿Cuál es el nombre del mago que guía a la Comunidad?",
+        "respuestas": ["Saruman", "Radagast", "Gandalf", "Sauron"],
+        "correcta": 2
+      },
+      {
+        "pregunta": "¿Qué objeto debe destruir Frodo?",
+        "respuestas": ["El bastón de Gandalf", "El Anillo Único", "La espada de Aragorn", "El Palantir"],
+        "correcta": 1
+      },
+      {
+        "pregunta": "¿Cómo se llama el padre de Legolas?",
+        "respuestas": ["Elrond", "Thranduil", "Celeborn", "Glorfindel"],
         "correcta": 1
       }
     ];
 
-    let indice = 0;
+    function cargarPreguntaAleatoria() {
+      const aleatoria = preguntas[Math.floor(Math.random() * preguntas.length)];
+      document.getElementById("pregunta").textContent = aleatoria.pregunta;
 
-    function cargarPregunta() {
-      const actual = preguntas[indice];
-      document.getElementById("pregunta").textContent = actual.pregunta;
       const contenedor = document.getElementById("respuestas");
       contenedor.innerHTML = "";
-      actual.respuestas.forEach((r, i) => {
+
+      aleatoria.respuestas.forEach((r, i) => {
         const btn = document.createElement("button");
         btn.textContent = r;
         btn.className = "respuesta";
-        btn.onclick = () => responder(i, btn);
+        btn.onclick = () => responder(i, btn, aleatoria.correcta);
         contenedor.appendChild(btn);
       });
     }
 
-    function responder(i, boton) {
+    function responder(i, boton, correcta) {
       if (boton.classList.contains("correcta") || boton.classList.contains("incorrecta")) return;
-      const correcta = preguntas[indice].correcta;
       if (i === correcta) {
         boton.classList.add("correcta");
       } else {
@@ -109,17 +118,11 @@
     }
 
     function siguiente() {
-      if (indice < preguntas.length - 1) {
-        indice++;
-        cargarPregunta();
-      } else {
-        document.getElementById("pregunta").textContent = "¡Has completado La Comunidad de los Anillos!";
-        document.getElementById("respuestas").innerHTML = "";
-        document.getElementById("siguiente").style.display = "none";
-      }
+      cargarPreguntaAleatoria();
     }
 
-    cargarPregunta();
+    // Cargar la primera pregunta aleatoria al inicio
+    cargarPreguntaAleatoria();
   </script>
 </body>
 </html>
