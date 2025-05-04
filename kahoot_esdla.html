@@ -67,7 +67,7 @@
 </head>
 <body>
   <h1>💍 La Comunidad de los Anillos 🧙‍♂️</h1>
-  <div class="card">
+   <div class="card">
     <div id="pregunta">Pregunta</div>
     <div id="respuestas"></div>
   </div>
@@ -92,25 +92,28 @@
       }
     ];
 
-    function cargarPreguntaAleatoria() {
-      const aleatoria = preguntas[Math.floor(Math.random() * preguntas.length)];
-      document.getElementById("pregunta").textContent = aleatoria.pregunta;
+    let preguntaActual = null;
 
+    function cargarPreguntaAleatoria() {
+      preguntaActual = preguntas[Math.floor(Math.random() * preguntas.length)];
+      document.getElementById("pregunta").textContent = preguntaActual.pregunta;
       const contenedor = document.getElementById("respuestas");
       contenedor.innerHTML = "";
 
-      aleatoria.respuestas.forEach((r, i) => {
+      preguntaActual.respuestas.forEach((r, i) => {
         const btn = document.createElement("button");
         btn.textContent = r;
         btn.className = "respuesta";
-        btn.onclick = () => responder(i, btn, aleatoria.correcta);
+        btn.dataset.index = i;
+        btn.onclick = () => responder(i, btn);
         contenedor.appendChild(btn);
       });
     }
 
-    function responder(i, boton, correcta) {
+    function responder(i, boton) {
       if (boton.classList.contains("correcta") || boton.classList.contains("incorrecta")) return;
-      if (i === correcta) {
+
+      if (i === preguntaActual.correcta) {
         boton.classList.add("correcta");
       } else {
         boton.classList.add("incorrecta");
@@ -121,8 +124,9 @@
       cargarPreguntaAleatoria();
     }
 
-    // Cargar la primera pregunta aleatoria al inicio
+    // Cargar una pregunta al inicio
     cargarPreguntaAleatoria();
   </script>
 </body>
 </html>
+ 
