@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>🗣️ ¿Quién dijo qué? 🗣️</title>
+  <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background: #000;
+      color: #ffcc00;
+      font-family: 'VT323', monospace;
+      text-align: center;
+      padding: 2rem;
+    }
+    .card {
+      background-color: #111;
+      border: 4px solid #ffcc00;
+      border-radius: 8px;
+      padding: 2rem;
+      max-width: 800px;
+      margin: 0 auto;
+      box-shadow: 0 0 20px #ffcc00;
+    }
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 2rem;
+    }
+    #frase {
+      font-size: 2rem;
+      color: #00ffcc;
+      margin: 2rem 0;
+    }
+    #pista {
+      font-size: 1.5rem;
+      color: #ffffff;
+      margin: 1rem 0;
+    }
+    #respuesta {
+      font-size: 2rem;
+      color: #ff4444;
+      font-weight: bold;
+      margin: 2rem 0;
+      text-shadow: 2px 2px #000;
+    }
+    button {
+      font-family: 'VT323', monospace;
+      font-size: 1.2rem;
+      padding: 1rem 2rem;
+      margin: 1rem;
+      background-color: #000;
+      color: #ffcc00;
+      border: 2px solid #ffcc00;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #222;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>🗣️ ¿Quién dijo qué? 🗣️</h1>
+    <div id="frase">Frase mítica...</div>
+    <div id="pista"></div>
+    <div id="respuesta"></div>
+    <button onclick="siguienteFrase()">⏩ Siguiente frase</button>
+    <button onclick="togglePista()">🕵️ Pista</button>
+    <button onclick="toggleRespuesta()">🧑‍💬 Mostrar respuesta</button>
+  </div>
+
+  <script>
+    const frases = [
+{ frase: 'Yo soy tu padre.', pista: 'Oscuridad familiar', autor: 'Darth Vader' },
+{ frase: 'Hazlo o no lo hagas, pero no lo intentes.', pista: 'Maestro diminuto', autor: 'Yoda' },
+{ frase: 'Un gran poder conlleva una gran responsabilidad.', pista: 'Tío sabio', autor: 'Tío Ben (Spider-Man)' },
+{ frase: 'Francamente, querida, me importa un bledo.', pista: 'Despedida elegante', autor: 'Rhett Butler (Lo que el viento se llevó)' },
+{ frase: 'Volveré.', pista: 'Cyborg decidido', autor: 'Terminator' },
+{ frase: 'Aquí mi fusil, aquí mi pistola...', pista: 'Adiestramiento extremo', autor: 'Sargento Hartman (La chaqueta metálica)' },
+{ frase: 'Corre, Forrest, corre.', pista: 'Motivación pura', autor: 'Jenny (Forrest Gump)' },
+{ frase: 'En ocasiones, veo gente muerta.', pista: 'Niño inquietante', autor: 'Cole Sear (El sexto sentido)' },
+{ frase: 'Mi tesoro...', pista: 'Obsesión en la oscuridad', autor: 'Gollum (El Señor de los Anillos)' },
+{ frase: '¡Esto es Esparta!', pista: 'Rey musculado', autor: 'Leónidas (300)' },
+{ frase: 'Houston, tenemos un problema.', pista: 'Espacio complicado', autor: 'Jim Lovell (Apollo 13)' },
+{ frase: 'Estoy volando, Jack.', pista: 'Proa del amor', autor: 'Rose (Titanic)' },
+{ frase: 'Siempre nos quedará París.', pista: 'Melancolía romántica', autor: 'Rick Blaine (Casablanca)' },
+{ frase: 'Hasta el infinito... ¡y más allá!', pista: 'Juguete valiente', autor: 'Buzz Lightyear (Toy Story)' },
+{ frase: 'La primera regla del club de la lucha es: nadie habla del club de la lucha.', pista: 'Reglas estrictas', autor: 'Tyler Durden (Fight Club)' },
+{ frase: 'Soy el rey del mundo.', pista: 'Proa triunfal', autor: 'Jack Dawson (Titanic)' },
+{ frase: 'Pienso, luego existo.', pista: 'Filósofo cartesiano', autor: 'René Descartes' },
+{ frase: 'La imaginación es más importante que el conocimiento.', pista: 'Genio del siglo XX', autor: 'Albert Einstein' },
+{ frase: 'El conocimiento es poder.', pista: 'Filósofo inglés del siglo XVI', autor: 'Francis Bacon' },
+{ frase: 'Solo sé que no sé nada.', pista: 'Sabio griego clásico', autor: 'Sócrates' },
+{ frase: 'La historia me absolverá.', pista: 'Revolución cubana', autor: 'Fidel Castro' },
+{ frase: 'Veni, vidi, vici.', pista: 'Conquistador romano', autor: 'Julio César' },
+{ frase: 'I have a dream.', pista: 'Discurso por los derechos civiles', autor: 'Martin Luther King Jr.' },
+{ frase: 'Ser o no ser, esa es la cuestión.', pista: 'Príncipe de Dinamarca', autor: 'Hamlet (William Shakespeare)' },
+{ frase: 'Lo que no te mata te hace más fuerte.', pista: 'Filósofo alemán', autor: 'Friedrich Nietzsche' },
+{ frase: 'La libertad no se implora, se conquista.', pista: 'Libertador latinoamericano', autor: 'Simón Bolívar' },
+{ frase: 'No hay caminos para la paz, la paz es el camino.', pista: 'Pacifista hindú', autor: 'Mahatma Gandhi' },
+{ frase: 'Al final, recordaremos no las palabras de nuestros enemigos, sino el silencio de nuestros amigos.', pista: 'Líder afroamericano', autor: 'Martin Luther King Jr.' },
+{ frase: 'Un pequeño paso para el hombre, un gran salto para la humanidad.', pista: 'En la Luna', autor: 'Neil Armstrong' },
+{ frase: 'Divide y vencerás.', pista: 'Táctica clásica', autor: 'Julio César' },
+{ frase: 'El hombre es el lobo del hombre.', pista: 'Filósofo pesimista', autor: 'Thomas Hobbes' },
+{ frase: 'La pluma es más poderosa que la espada.', pista: 'Autor inglés del siglo XIX', autor: 'Edward Bulwer-Lytton' },
+{ frase: 'Todos los animales son iguales, pero algunos son más iguales que otros.', pista: 'Novela sobre el poder', autor: 'George Orwell' },
+{ frase: 'No estoy de acuerdo con lo que dices, pero defenderé con mi vida tu derecho a decirlo.', pista: 'Tolerancia ilustrada', autor: 'Voltaire (atribuida)' },
+{ frase: 'Prefiero morir de pie que vivir siempre arrodillado.', pista: 'Revolucionario mexicano', autor: 'Emiliano Zapata' },
+{ frase: 'Sé el cambio que quieres ver en el mundo.', pista: 'Sabio hindú', autor: 'Mahatma Gandhi' },
+{ frase: 'El tiempo es relativo.', pista: 'Teoría famosa', autor: 'Albert Einstein' },
+{ frase: 'El arte es la mentira que nos permite conocer la verdad.', pista: 'Pintor español', autor: 'Pablo Picasso' },
+{ frase: 'Si buscas resultados distintos, no hagas siempre lo mismo.', pista: 'Científico alemán', autor: 'Albert Einstein' },
+{ frase: 'La tierra es azul.', pista: 'Desde el espacio', autor: 'Yuri Gagarin' },
+{ frase: 'El Estado soy yo.', pista: 'Monarca absolutista', autor: 'Luis XIV' },
+{ frase: 'La prensa es la artillería de la libertad.', pista: 'Figura de la Revolución Francesa', autor: 'Hans-Dietrich Genscher (atribuida)' },
+{ frase: 'Amar es encontrar en la felicidad de otro la propia felicidad.', pista: 'Romántico universal', autor: 'Gottfried Leibniz' },
+{ frase: 'La educación es el arma más poderosa para cambiar el mundo.', pista: 'Luchó contra el apartheid', autor: 'Nelson Mandela' },
+{ frase: 'La paciencia es amarga, pero su fruto es dulce.', pista: 'Filósofo griego', autor: 'Jean-Jacques Rousseau (a menudo confundido con Aristóteles)' },
+{ frase: 'Cuando el poder del amor supere al amor por el poder, el mundo conocerá la paz.', pista: 'Guitarrista legendario', autor: 'Jimi Hendrix' },
+{ frase: 'En un lugar de la Mancha, de cuyo nombre no quiero acordarme...', pista: 'Caballero andante', autor: 'Miguel de Cervantes (Don Quijote de la Mancha)' },
+{ frase: 'España es una gran nación y los españoles muy españoles y mucho españoles.', pista: 'Presidente con frases legendarias', autor: 'Mariano Rajoy' },
+{ frase: 'Un vaso es un vaso y un plato es un plato.', pista: 'Declaración evidente', autor: 'Mariano Rajoy' },
+{ frase: 'Cuanto peor, mejor para todos y cuanto peor para todos, mejor.', pista: 'Razonamiento confuso', autor: 'Mariano Rajoy' },
+{ frase: '¿Tú sabes lo que es un trío?', pista: 'Lección culinaria', autor: 'Karlos Arguiñano' },
+{ frase: '¿Te gusta conducir?', pista: 'Campaña reflexiva', autor: 'Bruce Lee (en anuncio de BMW)' },
+{ frase: 'Es el vecino el que elige al alcalde.', pista: 'Lógica institucional', autor: 'Mariano Rajoy' },
+{ frase: 'Te falta calle.', pista: 'Reproche generacional', autor: 'C. Tangana' },
+{ frase: 'Me siento violento pero elegante.', pista: 'Paradoja millennial', autor: 'Bad Bunny' },
+{ { frase: '¿Dónde está la juventud? Pues en los bares.', pista: 'Análisis sociológico', autor: 'José María García' },
+{ frase: 'Yo soy así, y así seguiré.', pista: 'Defensa con flow', autor: 'Isabel Pantoja' },
+{ frase: 'Vamos a ir todos a la cárcel menos el Rey.', pista: 'Profecía en directo', autor: 'Willy Toledo' },
+{ frase: 'We don’t need no education.', pista: 'Crítica escolar con ritmo', autor: 'Pink Floyd' },
+{ frase: 'Y nos dieron las diez y las once...', pista: 'Taberna sentimental', autor: 'Joaquín Sabina' },
+{ frase: 'Imagine all the people living life in peace.', pista: 'Utopía musical', autor: 'John Lennon' },
+{ frase: 'No woman, no cry.', pista: 'Llanto contenido', autor: 'Bob Marley' },
+{ frase: 'Libre, como el sol cuando amanece, yo soy libre.', pista: 'Canto a la libertad', autor: 'Nino Bravo' },
+{ frase: 'I will survive, oh, as long as I know how to love I know I’ll stay alive.', pista: 'Supervivencia emocional', autor: 'Gloria Gaynor' },
+{ frase: 'Resistiré, erguido frente a todo...', pista: 'Himno de lucha', autor: 'Dúo Dinámico' },
+{ frase: 'It’s a beautiful day, don’t let it get away.', pista: 'Optimismo irlandés', autor: 'U2' },
+{ frase: 'La vida es un carnaval, y las penas se van cantando.', pista: 'Alegría antillana', autor: 'Celia Cruz' },
+{ frase: 'Hoy el cielo escupió fuego, y el infierno está en mi piel.', pista: 'Pasión rockera', autor: 'Extremoduro' },
+{ frase: 'Y me enamoré de ti sin darme cuenta.', pista: 'Balada repentina', autor: 'David Bisbal' },
+{ frase: 'Highway to hell!', pista: 'Carretera infernal', autor: 'AC/DC' },
+{ frase: 'Como una ola, tu amor llegó a mi vida.', pista: 'Marejada emocional', autor: 'Rocío Jurado' },
+{ frase: 'I want to break free.', pista: 'Grito de independencia', autor: 'Queen' },
+{ frase: 'Y cómo es él, en qué lugar se enamoró de ti...', pista: 'Duda dolorosa', autor: 'José Luis Perales' },
+{ frase: 'Let it be, let it be...', pista: 'Consejo en calma', autor: 'The Beatles' },
+{ frase: 'Antes muerta que sencilla.', pista: 'Autoestima total', autor: 'María Isabel' },
+{ frase: 'Esos besos que me das, son como el fuego que quema mi piel.', pista: 'Pasión noventera', autor: 'Amistades Peligrosas' },
+{ frase: 'All you need is love.', pista: 'Himno del amor', autor: 'The Beatles' },
+{ frase: 'Despacito...', pista: 'Éxito global', autor: 'Luis Fonsi' },
+{ frase: 'Échame la culpa.', pista: 'Tú tranquilo, yo culpable', autor: 'Luis Fonsi y Demi Lovato' },
+{ frase: 'Bailando, bailando...', pista: 'Ritmo contagioso', autor: 'Enrique Iglesias' },
+{ frase: 'Y, ¿si fuera ella?', pista: 'Reflexión romántica', autor: 'Alejandro Sanz' },
+{ frase: 'Mi música es tu voz.', pista: 'Éxito de academia', autor: 'Operación Triunfo 1' },
+{ frase: 'Mamma mia, here I go again.', pista: 'Drama bailable', autor: 'ABBA' },
+{ frase: 'Nunca es suficiente para mí...', pista: 'Bolero moderno', autor: 'Natalia Lafourcade' },
+{ frase: 'Porque te quiero, te quiero...', pista: 'Amor inevitable', autor: 'José Ángel Buesa / Raphael' },
+{ frase: 'No me mires, ¡no me mires!', pista: 'Look total', autor: 'Alaska y Dinarama' },
+{ frase: 'Volare, oh oh, cantare, oh oh oh oh...', pista: 'Vuelo melódico', autor: 'Domenico Modugno' },
+{ frase: 'Ay mamá, ay mamá, ay mamá...', pista: 'Canto feminista', autor: 'Rigoberta Bandini' },
+{ frase: 'Hakuna Matata. Vive y sé feliz.', pista: 'Filosofía selvática', autor: 'Timon y Pumba (El Rey León)' },
+{ frase: 'Ohana significa familia. Y familia que está unida, permanece unida.', pista: 'Familia azul', autor: 'Lilo (Lilo & Stitch)' },
+{ frase: 'Hasta el infinito… ¡y más allá!', pista: 'Valiente con alas', autor: 'Buzz Lightyear (Toy Story)' },
+{ frase: 'Lo más importante es invisible a los ojos.', pista: 'Zorro sabio', autor: 'El Principito (Disney versión)' },
+{ frase: 'El pasado puede doler, pero puedes huir de él o aprender.', pista: 'Sabio felino', autor: 'Rafiki (El Rey León)' },
+{ frase: 'Siempre deja que tu conciencia sea tu guía.', pista: 'Pequeño y brillante', autor: 'Pepito Grillo (Pinocho)' },
+{ frase: 'Eres más valiente de lo que crees, más fuerte de lo que pareces y más inteligente de lo que piensas.', pista: 'Reflexión de osito', autor: 'Winnie the Pooh' },
+{ frase: 'Los sueños se pueden hacer realidad, solo tienes que creer en ellos.', pista: 'Hada madrina', autor: 'Cenicienta' },
+{ frase: 'Un héroe verdadero no lo es por el tamaño de sus músculos, sino por el de su corazón.', pista: 'Entrenadora de dioses', autor: 'Zeus (Hércules)' },
+{ frase: 'Yo soy una chica lista. Lo único que me faltaba era tiempo para demostrarlo.', pista: 'Lectora empedernida', autor: 'Bella (La Bella y la Bestia)' },
+{ frase: 'Nadie se mete con mi hermana.', pista: 'Corazón congelado', autor: 'Elsa (Frozen)' },
+{ frase: 'Solo tú puedes decidir lo que serás.', pista: 'Destino en el reflejo', autor: 'Mulan' },
+{ frase: 'Quiero ser parte de tu mundo.', pista: 'Sueño bajo el mar', autor: 'Ariel (La Sirenita)' },
+{ frase: 'Yo no me casaré nunca. Quiero ser libre como el viento.', pista: 'Princesa rebelde', autor: 'Jazmín (Aladdín)' },
+{ frase: 'El amor es poner las necesidades de otro antes que las tuyas.', pista: 'Reno sabio', autor: 'Olaf (Frozen)' },
+{ frase: 'Prefiero morir mañana que vivir cien años sin haberte conocido.', pista: 'Romántico prehispánico', autor: 'John Smith (Pocahontas)' },
+{ frase: '¡Soy un niño de verdad!', pista: 'Mentira cumplida', autor: 'Pinocho' },
+{ frase: 'Cuando miras una estrella... ¿puedes pedir un deseo?', pista: 'Guía celestial', autor: 'Pinocho / Canción' },
+{ frase: '¡No te detengas por los errores del pasado!', pista: 'Rugido del futuro', autor: 'Simba (El Rey León)' },
+{ frase: 'Algunos dicen que nuestro destino está ligado a la tierra...', pista: 'Escocesa con carácter', autor: 'Merida (Brave)' },
+{ frase: 'El verdadero tesoro no es el oro, sino la amistad.', pista: 'Aventureros espaciales', autor: 'Jim Hawkins (El planeta del tesoro)' },
+{ frase: 'No necesitas magia para ser especial.', pista: 'Hija de madrina', autor: 'Ella (Cenicienta live-action)' },
+{ frase: 'Ser diferente no es malo. Significa que eres lo suficientemente valiente para ser tú mismo.', pista: 'Mamá elefante', autor: 'Dumbo (película de 2019)' },
+{ frase: '¡Yo soy Groot!', pista: 'Árbol con encanto', autor: 'Groot (Guardianes de la Galaxia – Disney/Marvel)' },
+{ frase: 'Recuerda quién eres.', pista: 'Voz celestial', autor: 'Mufasa (El Rey León)' },
+{ frase: 'La flor que florece en la adversidad es la más rara y hermosa de todas.', pista: 'Sabiduría imperial', autor: 'El emperador (Mulan)' },
+{ frase: 'Soy valiente, soy fuerte, soy quien quiero ser.', pista: 'Princesa moderna', autor: 'Vaiana' },
+{ frase: 'La única forma de conseguir lo que quieres en este mundo es trabajando duro.', pista: 'Camarera soñadora', autor: 'Tiana (Tiana y el sapo)' },
+{ frase: '¡Libreeee soyyyyy!', pista: 'Canto helado', autor: 'Elsa (Frozen)' },
+{ frase: 'No necesito suerte. Tengo a mi familia.', pista: 'Día de los Muertos', autor: 'Miguel (Coco)' },
+{ frase: '¡Yo soy el rey del mundo!', pista: 'León joven y orgulloso', autor: 'Simba (El Rey León)' },
+{ frase: 'Las mujeres en mi familia no lloran, cantan.', pista: 'Tradición familiar', autor: 'Abuela (Encanto)' },
+{ frase: '¡Deshonra sobre ti, deshonra sobre tu vaca!', pista: 'Dragón miniatura', autor: 'Mushu (Mulan)' },
+{ frase: '¡A callar, bestia peluda, babosa y maloliente!', pista: 'Beldad con carácter', autor: 'Bella (La Bella y la Bestia)' },
+{ frase: '¡Yo quiero aventuras en el gran ancho mundo!', pista: 'Anhelo entre libros', autor: 'Bella (La Bella y la Bestia)' },
+{ frase: '¡Cuidado, humanos sueltos!', pista: 'Oficina monstruosa', autor: 'Mike Wazowski (Monstruos S.A.)' },
+{ frase: 'Soy una princesa, ¡no necesito que me rescaten!', pista: 'Rebelde entre bestias', autor: 'Vanellope (¡Rompe Ralph!)' },
+{ frase: 'No necesito una razón para ayudar a alguien.', pista: 'Robot de corazón', autor: 'Baymax (Big Hero 6)' },
+{ frase: 'Me presento: Ralph, el demoledor.', pista: 'Villano reformado', autor: 'Ralph (¡Rompe Ralph!)' },
+{ frase: 'El cambio es bueno, chico.', pista: 'León sabio', autor: 'Rafiki (El Rey León)' },
+{ frase: '¡Yo puedo hacer que un hombre salga corriendo!', pista: 'La hermana valiente', autor: 'Anna (Frozen)' },
+{ frase: '¿Y si lo que más temes te hace más fuerte?', pista: 'Confianza peluda', autor: 'Raya (Raya y el último dragón)' },
+{ frase: '¡He sido capturada por un oso de peluche con complejo de dictador!', pista: 'Muñeca sarcástica', autor: 'Barbie (Toy Story 3)' },
+{ frase: 'El mar y yo tenemos una conexión.', pista: 'Llamado oceánico', autor: 'Vaiana (Moana)' },
+{ frase: '¡Yo no floto, yo navego!', pista: 'Cangrejo diva', autor: 'Tamatoa (Moana)' },
+{ frase: 'Las aventuras suenan peligrosas.', pista: 'Perro volador', autor: 'Dug (Up)' },
+{ frase: '¿A quién estás llamando pollito?', pista: 'Niña fiera', autor: 'Boo (Monstruos S.A.)' },
+{ frase: 'A veces, el camino correcto no es el más fácil.', pista: 'Árbol parlante', autor: 'Abuela Sauce (Pocahontas)' },
+{ frase: '¡Lo llamo “el golpe de Kuzco”!', pista: 'Emperador extravagante', autor: 'Kuzco (El emperador y sus locuras)' },
+{ frase: '¿Quién necesita una corona para ser reina?', pista: 'Empoderada y mágica', autor: 'Elsa (Frozen II)' },
+{ frase: 'Tu único límite es tu alma.', pista: 'Chef con acento', autor: 'Gusteau (Ratatouille)' },
+{ frase: '¡Levántate y brilla, princesa!', pista: 'Mamá protectora', autor: 'La Reina (Brave)' },
+{ frase: '¿Y si lo que piensas que es un error, en realidad es lo mejor que te ha pasado?', pista: 'Mente en guerra', autor: 'Alegría (Inside Out)' },
+{ frase: '¡Me llaman el Capitán Garfio... cuando no está Peter Pan!', pista: 'Villano pirata', autor: 'Capitán Garfio (Peter Pan)' },
+{ frase: 'El amor es una canción que nunca termina.', pista: 'Sabiduría musical', autor: 'Narrador (Bambi)' },
+{ frase: '¡Si no puedes decir nada bonito, mejor no digas nada!', pista: 'Conejito sabio', autor: 'Tambor (Bambi)' },
+{ frase: 'Me gusta la oscuridad. Sin ella, nunca veríamos las estrellas.', pista: 'Luz en la torre', autor: 'Rapunzel (Enredados)' },
+{ frase: 'La magia no viene del deseo, sino de tu interior.', pista: 'Aprendiz de hechicero', autor: 'Mickey Mouse (Fantasía)' },
+{ frase: '¡Nunca subestimes a un mapache hambriento!', pista: 'Comedia animal', autor: 'Meeko (Pocahontas)' },
+
+
+
+
+
+    ];
+
+    let actual = {};
+    let pistaVisible = false;
+    let respuestaVisible = false;
+
+    function siguienteFrase() {
+      actual = frases[Math.floor(Math.random() * frases.length)];
+      document.getElementById('frase').textContent = '"' + actual.frase + '"';
+      document.getElementById('pista').textContent = '';
+      document.getElementById('respuesta').textContent = '';
+      pistaVisible = false;
+      respuestaVisible = false;
+    }
+
+    function togglePista() {
+      const el = document.getElementById('pista');
+      pistaVisible = !pistaVisible;
+      el.textContent = pistaVisible ? 'Pista: ' + actual.pista : '';
+    }
+
+    function toggleRespuesta() {
+      const el = document.getElementById('respuesta');
+      respuestaVisible = !respuestaVisible;
+      el.textContent = respuestaVisible ? 'Respuesta: ' + actual.autor : '';
+    }
+
+    siguienteFrase();
+  </script>
+</body>
+</html>
