@@ -75,21 +75,898 @@
 
   <script>
     const preguntas = [
-      {
-        "pregunta": "¿Cuál es el nombre del mago que guía a la Comunidad?",
-        "respuestas": ["Saruman", "Radagast", "Gandalf", "Sauron"],
-        "correcta": 2
-      },
-      {
-        "pregunta": "¿Qué objeto debe destruir Frodo?",
-        "respuestas": ["El bastón de Gandalf", "El Anillo Único", "La espada de Aragorn", "El Palantir"],
-        "correcta": 1
-      },
-      {
-        "pregunta": "¿Cómo se llama el padre de Legolas?",
-        "respuestas": ["Elrond", "Thranduil", "Celeborn", "Glorfindel"],
-        "correcta": 1
-      }
+{
+  "pregunta": "¿En qué videojuego de PlayStation controlas a un protagonista llamado 'Kratos' y su hijo 'Atreus' en la mitología nórdica?",
+  "respuestas": ["Horizon Zero Dawn", "God of War", "Dark Souls", "The Last of Us"],
+  "correcta": 1
+},
+{
+  "pregunta": "¿Qué videojuego de la saga 'Star Wars' te permite jugar como un Jedi y vivir grandes batallas galácticas?",
+  "respuestas": ["Star Wars: Battlefront II", "Star Wars: The Force Unleashed", "Star Wars: Knights of the Old Republic", "Star Wars: Squadrons"],
+  "correcta": 2
+},
+{
+  "pregunta": "¿Qué videojuego de PlayStation te pone al mando de un joven llamado 'Nathan Drake', un cazador de tesoros?",
+  "respuestas": ["Tomb Raider", "Uncharted", "Assassin's Creed", "Red Dead Redemption"],
+  "correcta": 1
+},
+{
+  "pregunta": "¿Qué videojuego de mundo abierto te permite vivir en un mundo post-apocalíptico con monstruos radiactivos?",
+  "respuestas": ["Fallout 4", "The Witcher 3", "Skyrim", "Metal Gear Solid V"],
+  "correcta": 0
+},
+{
+  "pregunta": "¿En qué juego de PlayStation luchas contra zombis en una ciudad devastada con un protagonista llamado 'Joel'?",
+  "respuestas": ["Resident Evil", "The Walking Dead", "The Last of Us", "Horizon Zero Dawn"],
+  "correcta": 2
+},
+{
+  "pregunta": "¿En qué videojuego de la saga 'Assassin's Creed' controlas a un asesino llamado 'Ezio Auditore' en Italia durante el Renacimiento?",
+  "respuestas": ["Assassin's Creed II", "Assassin's Creed IV: Black Flag", "Assassin's Creed Odyssey", "Assassin's Creed Unity"],
+  "correcta": 0
+},
+{
+  "pregunta": "¿Qué videojuego de aventuras tiene como protagonista a un ratón llamado 'Mickey Mouse' en un mundo fantástico?",
+  "respuestas": ["Epic Mickey", "Mickey's Magical Quest", "Kingdom Hearts", "Mickey Mouse Clubhouse"],
+  "correcta": 0
+},
+{
+  "pregunta": "¿En qué videojuego de PS4 eres un hombre llamado 'Arthur Morgan' que forma parte de una banda de forajidos?",
+  "respuestas": ["Red Dead Redemption 2", "GTA V", "The Witcher 3", "Skyrim"],
+  "correcta": 0
+},
+{
+  "pregunta": "¿Qué juego de carreras de PlayStation te permite competir en circuitos futuristas con vehículos antigravedad?",
+  "respuestas": ["Gran Turismo", "Wipeout", "Need for Speed", "Crash Team Racing"],
+  "correcta": 1
+},
+{
+  "pregunta": "¿Qué videojuego de Nintendo Switch protagoniza un fontanero que viaja por mundos mágicos y rescata a la princesa 'Peach'?",
+  "respuestas": ["Super Mario Odyssey", "The Legend of Zelda: Breath of the Wild", "Splatoon 2", "Animal Crossing"],
+  "correcta": 0
+},
+{
+  "pregunta": "¿En qué juego de lucha de PlayStation puedes elegir a personajes como 'Ryu', 'Ken' o 'Chun-Li'?",
+  "respuestas": ["Tekken", "Street Fighter V", "Mortal Kombat 11", "Super Smash Bros. Ultimate"],
+  "correcta": 1
+},
+{
+  "pregunta": "¿Qué juego de rol tiene como protagonista a un joven llamado 'Link' que intenta salvar a la princesa 'Zelda'?",
+  "respuestas": ["Final Fantasy XV", "The Legend of Zelda: Breath of the Wild", "Dark Souls III", "Bloodborne"],
+  "correcta": 1
+},
+{
+  "pregunta": "¿En qué videojuego de aventuras y acción controlas a un personaje llamado 'Geralt de Rivia' en un mundo lleno de monstruos y magia?",
+  "respuestas": ["The Witcher 3: Wild Hunt", "Dragon Age: Inquisition", "Skyrim", "Mass Effect"],
+  "correcta": 0
+},
+{
+  "pregunta": "¿En qué juego de disparos en primera persona debes luchar por sobrevivir en un campo de batalla con 99 jugadores más?",
+  "respuestas": ["Call of Duty: Warzone", "Fortnite", "Apex Legends", "PUBG"],
+  "correcta": 2
+},
+{
+  "pregunta": "¿Qué juego de simulación de vida permite a los jugadores crear su propio pueblo y vivir con animales antropomórficos?",
+  "respuestas": ["The Sims", "Animal Crossing: New Horizons", "Harvest Moon", "Stardew Valley"],
+  "correcta": 1
+},
+{
+  "pregunta": "¿Qué juego de terror de supervivencia te pone en la piel de un astronauta atrapado en una nave espacial infestada de criaturas alienígenas?",
+  "respuestas": ["Dead Space", "Resident Evil 7", "Outlast", "The Evil Within"],
+  "correcta": 0
+},
+{
+  "pregunta": "¿Qué videojuego de PS4 cuenta la historia de un joven llamado 'Ellie' mientras lucha por sobrevivir en un mundo post-apocalíptico?",
+  "respuestas": ["Uncharted 4", "The Last of Us Part II", "Horizon Zero Dawn", "God of War"],
+  "correcta": 1
+},
+{
+  "pregunta": "¿Qué juego de aventuras y rol en PlayStation tiene un protagonista llamado 'Kratos' que debe enfrentarse a los dioses de la mitología griega y nórdica?",
+  "respuestas": ["Horizon Zero Dawn", "God of War", "Uncharted", "Red Dead Redemption"],
+  "correcta": 1
+}
+{
+  "pregunta": "¿Cuál es el nombre del hermano de Mario en los videojuegos de Nintendo?",
+  "respuestas": ["Luigi", "Wario", "Toad", "Yoshi"],
+  "correcta": 0
+},
+{
+  "pregunta": "¿Qué personaje es el protagonista en los juegos de 'The Legend of Zelda'?",
+  "respuestas": ["Zelda", "Ganondorf", "Link", "Sheik"],
+  "correcta": 2
+},
+{
+  "pregunta": "¿Qué criatura es Pikachu en los videojuegos de Pokémon?",
+  "respuestas": ["Gato", "Ratón eléctrico", "Perro", "Mapache"],
+  "correcta": 1
+},
+{
+  "pregunta": "¿Cómo se llama el videojuego donde construyes con bloques y sobrevives a criaturas por la noche?",
+  "respuestas": ["Terraria", "Minecraft", "Roblox", "Lego Worlds"],
+  "correcta": 1
+},
+{
+  "pregunta": "¿Qué videojuego de baile fue un gran éxito con Kinect y PlayStation Move?",
+  "respuestas": ["Just Dance", "Dance Dance Revolution", "Beat Saber", "SingStar"],
+  "correcta": 0
+},
+{
+  "pregunta": "¿Cuál de estos juegos es exclusivo de PlayStation?",
+  "respuestas": ["Halo", "Gears of War", "Spider-Man", "Forza Horizon"],
+  "correcta": 2
+},
+{
+  "pregunta": "¿Qué saga de videojuegos está ambientada en una ciudad ficticia llamada Raccoon City?",
+  "respuestas": ["Silent Hill", "Dead Rising", "Resident Evil", "Outlast"],
+  "correcta": 2
+},
+{
+  "pregunta": "¿En qué videojuego de lucha aparecen personajes como Sub-Zero y Scorpion?",
+  "respuestas": ["Mortal Kombat", "Tekken", "Street Fighter", "Injustice"],
+  "correcta": 0
+},
+{
+  "pregunta": "¿Cuál de estos videojuegos permite crear civilizaciones desde la Edad de Piedra hasta el futuro?",
+  "respuestas": ["Age of Empires", "Civilization", "SimCity", "StarCraft"],
+  "correcta": 1
+},
+{
+  "pregunta": "¿Qué famoso videojuego de sigilo tiene como protagonista a 'Solid Snake'?",
+  "respuestas": ["Hitman", "Metal Gear Solid", "Splinter Cell", "Deus Ex"],
+  "correcta": 1
+},
+{
+  "pregunta": "¿En qué videojuego eres un joven aprendiz en Hogwarts que explora un mundo abierto?",
+  "respuestas": ["Hogwarts Legacy", "Harry Potter y la Piedra Filosofal", "LEGO Harry Potter", "Magicka"],
+  "correcta": 0
+},
+{
+  "pregunta": "¿Qué videojuego tiene como protagonista a una arqueóloga llamada Lara Croft?",
+  "respuestas": ["Tomb Raider", "Uncharted", "Prince of Persia", "Control"],
+  "correcta": 0
+},
+{
+  "pregunta": "¿Qué juego de aventuras mezcla personajes de Disney con los de Final Fantasy?",
+  "respuestas": ["Kingdom Hearts", "Epic Mickey", "Disney Infinity", "Final Fantasy Tactics"],
+  "correcta": 0
+},
+{
+  "pregunta": "¿Qué saga de videojuegos incluye títulos como 'San Andreas', 'Vice City' y 'V'?",
+  "respuestas": ["Grand Theft Auto", "Saints Row", "Mafia", "Sleeping Dogs"],
+  "correcta": 0
+},
+{
+  "pregunta": "¿Qué juego de rol multijugador masivo online tiene lugar en Azeroth?",
+  "respuestas": ["Final Fantasy XIV", "World of Warcraft", "Guild Wars 2", "Runescape"],
+  "correcta": 1
+},
+{
+  "pregunta": "¿Qué videojuego te permite formar un equipo con campeones como Jinx, Yasuo y Lux?",
+  "respuestas": ["League of Legends", "Overwatch", "Dota 2", "Valorant"],
+  "correcta": 0
+},
+{
+  "pregunta": "¿En qué juego de terror de PC exploras una casa abandonada con una videocámara como única herramienta?",
+  "respuestas": ["Outlast", "Resident Evil 4", "Amnesia: The Dark Descent", "Phasmophobia"],
+  "correcta": 0
+},
+{
+  "pregunta": "¿Qué videojuego combina cocina frenética con trabajo en equipo y caos en la cocina?",
+  "respuestas": ["Overcooked", "Cook, Serve, Delicious!", "Kitchen Simulator", "Chef Life"],
+  "correcta": 0
+},
+{
+  "pregunta": "¿Qué videojuego de cartas digital se basa en el universo de Warcraft?",
+  "respuestas": ["Hearthstone", "Gwent", "Magic: Arena", "Slay the Spire"],
+  "correcta": 0
+},
+{
+  "pregunta": "¿Qué juego indie de exploración y gestión está ambientado en una pequeña granja heredada de tu abuelo?",
+  "respuestas": ["Stardew Valley", "Harvest Moon", "Animal Crossing", "Slime Rancher"],
+  "correcta": 0
+}
+{
+  "pregunta": "¿En qué juego encarnas a Geralt de Rivia?",
+  "respuestas": ["The Elder Scrolls", "Dark Souls", "The Witcher 3", "Dragon Age"],
+  "correcta": 2
+},
+{
+  "pregunta": "¿Cuál de estos juegos está ambientado en una ciudad inundada llamada Rapture?",
+  "respuestas": ["BioShock", "Dishonored", "Subnautica", "Half-Life 2"],
+  "correcta": 0
+},
+{
+  "pregunta": "¿Qué videojuego tiene como protagonista a Kratos?",
+  "respuestas": ["God of War", "Devil May Cry", "Bayonetta", "Darksiders"],
+  "correcta": 0
+},
+{
+  "pregunta": "¿Qué consola portátil fue lanzada por Sony como sucesora de la PSP?",
+  "respuestas": ["Nintendo DS", "PS Vita", "Game Boy Advance", "PSP Go"],
+  "correcta": 1
+},
+{
+  "pregunta": "¿Qué personaje acompaña a Ellie en 'The Last of Us' Parte II?",
+  "respuestas": ["Joel", "Dina", "Tommy", "Abby"],
+  "correcta": 1
+},
+{
+  "pregunta": "¿Qué saga combina acción y sigilo en un mundo de asesinos?",
+  "respuestas": ["Hitman", "Metal Gear Solid", "Splinter Cell", "Assassin's Creed"],
+  "correcta": 3
+},
+{
+  "pregunta": "¿Cuál de estos juegos está ambientado en el Lejano Oeste?",
+  "respuestas": ["Red Dead Redemption 2", "Call of Juarez", "GUN", "Outlaws"],
+  "correcta": 0
+},
+{
+  "pregunta": "¿Qué juego permite construir tu propio mundo bloque a bloque?",
+  "respuestas": ["Terraria", "Minecraft", "Roblox", "Lego Worlds"],
+  "correcta": 1
+},
+{
+  "pregunta": "¿Cuál de estas consolas es de Nintendo?",
+  "respuestas": ["Xbox Series X", "PlayStation 5", "Nintendo Switch", "Steam Deck"],
+  "correcta": 2
+},
+{
+  "pregunta": "¿Qué videojuego de carreras es conocido por sus ítems como plátanos o caparazones?",
+  "respuestas": ["Crash Team Racing", "Mario Kart", "F-Zero", "Wipeout"],
+  "correcta": 1
+},
+{
+  "pregunta": "¿Qué videojuego popularizó el género survival horror?",
+  "respuestas": ["Resident Evil", "Outlast", "Silent Hill", "Alone in the Dark"],
+  "correcta": 0
+},
+{
+  "pregunta": "¿En qué juego llevas a cabo un atraco organizado desde varios puntos de vista?",
+  "respuestas": ["GTA V", "Payday 2", "Watch Dogs", "Mafia III"],
+  "correcta": 0
+},
+{
+  "pregunta": "¿Qué título es conocido por su dificultad extrema y el lema 'You Died'?",
+  "respuestas": ["Sekiro", "Bloodborne", "Dark Souls", "Elden Ring"],
+  "correcta": 2
+},
+{
+  "pregunta": "¿Qué juego trata sobre un joven mago en una escuela de hechicería?",
+  "respuestas": ["Hogwarts Legacy", "Dragon's Dogma", "Fable", "Magicka"],
+  "correcta": 0
+},
+{
+  "pregunta": "¿Cuál de estos juegos es un MOBA muy popular?",
+  "respuestas": ["Overwatch", "League of Legends", "Apex Legends", "Valorant"],
+  "correcta": 1
+},
+{
+  "pregunta": "¿Qué videojuego simula la gestión de un hospital con enfermedades cómicas?",
+  "respuestas": ["Theme Hospital", "Two Point Hospital", "Hospital Tycoon", "Project Hospital"],
+  "correcta": 1
+},
+{
+  "pregunta": "¿Qué personaje lucha contra criaturas con su látigo en 'Castlevania'?",
+  "respuestas": ["Richter Belmont", "Trevor", "Simon Belmont", "Alucard"],
+  "correcta": 2
+},
+{
+  "pregunta": "¿Qué videojuego está inspirado en la obra de J.R.R. Tolkien?",
+  "respuestas": ["Middle-earth: Shadow of Mordor", "Skyrim", "Dragon Age", "Baldur's Gate"],
+  "correcta": 0
+},
+{
+  "pregunta": "¿Cuál de estos juegos fue pionero en realidad virtual con ritmo musical?",
+  "respuestas": ["Beat Saber", "Thumper", "Pistol Whip", "Rez Infinite"],
+  "correcta": 0
+},
+{
+  "pregunta": "¿Qué videojuego fue desarrollado por CD Projekt Red y se ambienta en Night City?",
+  "respuestas": ["Cyberpunk 2077", "Deus Ex", "Watch Dogs: Legion", "The Ascent"],
+  "correcta": 0
+}
+{
+  "pregunta": "¿Qué personaje de videojuegos es conocido por su gorra roja y bigote?",
+  "respuestas": ["Luigi", "Toad", "Bowser", "Mario"],
+  "correcta": 3
+},
+{
+  "pregunta": "¿Qué juego tiene lugar en la ciudad ficticia de Los Santos?",
+  "respuestas": ["Watch Dogs", "Saints Row", "Sleeping Dogs", "GTA V"],
+  "correcta": 3
+},
+{
+  "pregunta": "¿En qué juego puedes capturar criaturas con Poké Balls?",
+  "respuestas": ["Yo-Kai Watch", "Digimon", "Monster Hunter", "Pokémon"],
+  "correcta": 3
+},
+{
+  "pregunta": "¿Cuál es el nombre del androide protagonista en 'Detroit: Become Human'?",
+  "respuestas": ["Connor", "Markus", "Kara", "David"],
+  "correcta": 0
+},
+{
+  "pregunta": "¿Qué videojuego de FromSoftware se inspira en la era samurái?",
+  "respuestas": ["Dark Souls", "Bloodborne", "Elden Ring", "Sekiro"],
+  "correcta": 3
+},
+{
+  "pregunta": "¿Qué juego de terror tiene cámaras de seguridad y animatrónicos asesinos?",
+  "respuestas": ["Until Dawn", "Outlast", "Little Nightmares", "Five Nights at Freddy's"],
+  "correcta": 3
+},
+{
+  "pregunta": "¿Cuál de estos juegos es un shooter con estética de dibujos animados?",
+  "respuestas": ["Valorant", "Overwatch", "Counter-Strike", "Battlefield"],
+  "correcta": 1
+},
+{
+  "pregunta": "¿Qué famoso personaje de videojuegos vive en Hyrule?",
+  "respuestas": ["Mario", "Samus", "Kirby", "Link"],
+  "correcta": 3
+},
+{
+  "pregunta": "¿Qué entrega de 'Final Fantasy' fue la primera en lanzarse para PlayStation 1?",
+  "respuestas": ["Final Fantasy IX", "Final Fantasy VI", "Final Fantasy VIII", "Final Fantasy VII"],
+  "correcta": 3
+},
+{
+  "pregunta": "¿Qué videojuego mezcla construcción y supervivencia en un mundo de bloques?",
+  "respuestas": ["Terraria", "Roblox", "Lego Worlds", "Minecraft"],
+  "correcta": 3
+},
+{
+  "pregunta": "¿Qué videojuego de Ubisoft está ambientado en la antigua Grecia?",
+  "respuestas": ["Assassin's Creed Valhalla", "Assassin's Creed Origins", "Prince of Persia", "Assassin's Creed Odyssey"],
+  "correcta": 3
+},
+{
+  "pregunta": "¿Cuál de estos juegos se basa en el universo de Harry Potter?",
+  "respuestas": ["Dragon Age", "Lego Dimensions", "The Sims", "Hogwarts Legacy"],
+  "correcta": 3
+},
+{
+  "pregunta": "¿Qué título tiene como protagonista a un gato en una ciudad futurista?",
+  "respuestas": ["Inside", "Limbo", "Little Misfortune", "Stray"],
+  "correcta": 3
+},
+{
+  "pregunta": "¿En qué saga de videojuegos se enfrentan el Jefe Maestro y los Covenant?",
+  "respuestas": ["Call of Duty", "Gears of War", "Mass Effect", "Halo"],
+  "correcta": 3
+},
+{
+  "pregunta": "¿Qué juego se centra en sobrevivir en una isla tras un accidente aéreo?",
+  "respuestas": ["The Forest", "Stranded Deep", "Green Hell", "Sons of the Forest"],
+  "correcta": 3
+},
+{
+  "pregunta": "¿Qué popular juego indie se desarrolla en un mundo subterráneo con insectos?",
+  "respuestas": ["Dead Cells", "Celeste", "Undertale", "Hollow Knight"],
+  "correcta": 3
+},
+{
+  "pregunta": "¿Qué juego multijugador consiste en engañar a tus compañeros mientras haces tareas?",
+  "respuestas": ["Fall Guys", "Human Fall Flat", "Gang Beasts", "Among Us"],
+  "correcta": 3
+},
+{
+  "pregunta": "¿Qué videojuego combina agricultura, relaciones sociales y minería?",
+  "respuestas": ["Animal Crossing", "Harvest Moon", "My Time at Portia", "Stardew Valley"],
+  "correcta": 3
+},
+{
+  "pregunta": "¿Qué juego de estrategia en tiempo real está ambientado en el medievo?",
+  "respuestas": ["Empire Earth", "Total War: Warhammer", "StarCraft", "Age of Empires II"],
+  "correcta": 3
+},
+{
+  "pregunta": "¿Qué videojuego de terror te obliga a esconderte de un alienígena letal?",
+  "respuestas": ["Resident Evil 2", "Dead Space", "SOMA", "Alien: Isolation"],
+  "correcta": 3
+}
+{
+  "pregunta": "¿Qué personaje femenino protagoniza la saga Tomb Raider?",
+  "respuestas": ["Lara Croft", "Jill Valentine", "Ellie", "Samus Aran"],
+  "correcta": 0
+},
+{
+  "pregunta": "¿Cuál es el nombre del fontanero que suele salvar a la Princesa Peach?",
+  "respuestas": ["Mario", "Luigi", "Toad", "Yoshi"],
+  "correcta": 0
+},
+{
+  "pregunta": "¿En qué juego eres un cazador de monstruos y puedes cocinar carne al ritmo de una canción?",
+  "respuestas": ["Monster Hunter", "ARK", "Dauntless", "Horizon Zero Dawn"],
+  "correcta": 0
+},
+{
+  "pregunta": "¿Qué videojuego de ritmo cuenta con versiones de Link y Zelda al estilo musical?",
+  "respuestas": ["Cadence of Hyrule", "Just Dance", "Crypt of the NecroDancer", "Beat Saber"],
+  "correcta": 0
+},
+{
+  "pregunta": "¿Qué consola fue la primera de Sony?",
+  "respuestas": ["PlayStation", "PS2", "PSX", "PSP"],
+  "correcta": 0
+},
+{
+  "pregunta": "¿Qué personaje se enfrenta a Sephiroth en 'Final Fantasy VII'?",
+  "respuestas": ["Tidus", "Cloud", "Squall", "Zidane"],
+  "correcta": 1
+},
+{
+  "pregunta": "¿Cuál de estos juegos fue desarrollado por Naughty Dog?",
+  "respuestas": ["God of War", "Uncharted", "Horizon", "Ratchet & Clank"],
+  "correcta": 1
+},
+{
+  "pregunta": "¿En qué saga se juega al quidditch y se asiste a clases de magia?",
+  "respuestas": ["Final Fantasy", "Harry Potter", "The Witcher", "Fable"],
+  "correcta": 1
+},
+{
+  "pregunta": "¿Qué tipo de juego es FIFA?",
+  "respuestas": ["Shooter", "Deportivo", "Puzles", "Terror"],
+  "correcta": 1
+},
+{
+  "pregunta": "¿Qué criatura acompaña a Kratos en 'God of War: Ragnarok'?",
+  "respuestas": ["Pegaso", "Lobo gigante", "Águila", "Serpiente marina"],
+  "correcta": 1
+},
+{
+  "pregunta": "¿Qué videojuego de construcción permite usar mods como 'BuildCraft' y 'IndustrialCraft'?",
+  "respuestas": ["Roblox", "Terraria", "Minecraft", "Lego Worlds"],
+  "correcta": 2
+},
+{
+  "pregunta": "¿Qué criatura mitológica aparece en el juego 'Hades'?",
+  "respuestas": ["Minotauro", "Gárgola", "Cerbero", "Fénix"],
+  "correcta": 2
+},
+{
+  "pregunta": "¿Qué franquicia mezcla Pokémon con combates por turnos y mundo abierto?",
+  "respuestas": ["Digimon", "Yo-Kai Watch", "Temtem", "Bakugan"],
+  "correcta": 2
+},
+{
+  "pregunta": "¿Qué videojuego trata de sobrevivir en una estación espacial con una amenaza biológica?",
+  "respuestas": ["SOMA", "Dead Space", "Prey", "Alien: Isolation"],
+  "correcta": 2
+},
+{
+  "pregunta": "¿En qué videojuego exploras un mundo de fantasía como Geralt de Rivia?",
+  "respuestas": ["Skyrim", "Dark Souls", "The Witcher", "Dragon Age"],
+  "correcta": 2
+},
+{
+  "pregunta": "¿Qué videojuego es conocido por su dificultad extrema y jefes enormes?",
+  "respuestas": ["Hollow Knight", "The Legend of Zelda", "Devil May Cry", "Dark Souls"],
+  "correcta": 3
+},
+{
+  "pregunta": "¿Qué título indie consiste en resolver puzles a base de portales?",
+  "respuestas": ["Celeste", "Superliminal", "The Talos Principle", "Portal"],
+  "correcta": 3
+},
+{
+  "pregunta": "¿Qué videojuego online fue conocido por sus bailes y construcción rápida?",
+  "respuestas": ["PUBG", "Call of Duty: Warzone", "Apex Legends", "Fortnite"],
+  "correcta": 3
+},
+{
+  "pregunta": "¿Qué juego transcurre en Midgar y tiene un remake reciente?",
+  "respuestas": ["Persona 5", "Xenoblade", "Kingdom Hearts", "Final Fantasy VII"],
+  "correcta": 3
+},
+{
+  "pregunta": "¿Qué videojuego de Rockstar te pone en la piel de un forajido en el salvaje oeste?",
+  "respuestas": ["Mafia", "GTA IV", "L.A. Noire", "Red Dead Redemption"],
+  "correcta": 3
+}
+{
+  "pregunta": "¿Qué criatura captura y entrena el protagonista en Pokémon?",
+  "respuestas": ["Digimon", "Mascotas", "Pokémon", "Slimes"],
+  "correcta": 2
+},
+{
+  "pregunta": "¿Qué consola popularizó el uso del DVD como formato de juego?",
+  "respuestas": ["PlayStation 3", "Xbox", "PlayStation 2", "GameCube"],
+  "correcta": 2
+},
+{
+  "pregunta": "¿Cuál de estos personajes es un erizo azul muy rápido?",
+  "respuestas": ["Shadow", "Knuckles", "Tails", "Sonic"],
+  "correcta": 3
+},
+{
+  "pregunta": "¿En qué juego puedes formar una banda de rock con instrumentos de plástico?",
+  "respuestas": ["Just Dance", "Rock Band", "Guitar Hero", "SingStar"],
+  "correcta": 2
+},
+{
+  "pregunta": "¿Qué videojuego de disparos popularizó el modo Battle Royale?",
+  "respuestas": ["Call of Duty", "PUBG", "CS:GO", "Overwatch"],
+  "correcta": 1
+},
+{
+  "pregunta": "¿En qué juego se debe eliminar tinta enemiga mientras se pinta el suelo?",
+  "respuestas": ["Splatoon", "Crash Team Racing", "Overcooked", "Fall Guys"],
+  "correcta": 0
+},
+{
+  "pregunta": "¿Cuál de estos juegos es un RPG de acción ambientado en Japón feudal?",
+  "respuestas": ["Sekiro", "Ghost of Tsushima", "Nioh", "Yakuza"],
+  "correcta": 1
+},
+{
+  "pregunta": "¿Qué saga es conocida por tener a Link como protagonista?",
+  "respuestas": ["Metroid", "Fire Emblem", "The Legend of Zelda", "Bayonetta"],
+  "correcta": 2
+},
+{
+  "pregunta": "¿En qué juego el protagonista es un joven aprendiz de brujo?",
+  "respuestas": ["Dragon Age", "Final Fantasy", "The Witcher", "Harry Potter y la Piedra Filosofal"],
+  "correcta": 3
+},
+{
+  "pregunta": "¿Qué consola portátil competía directamente con la Nintendo DS?",
+  "respuestas": ["PS Vita", "Game Boy Advance", "PSP", "Nokia N-Gage"],
+  "correcta": 2
+},
+{
+  "pregunta": "¿Qué título incluye una ciudad submarina llamada Rapture?",
+  "respuestas": ["Dead Space", "Dishonored", "Bioshock", "Half-Life 2"],
+  "correcta": 2
+},
+{
+  "pregunta": "¿Qué personaje lleva un traje de energía llamado HEV?",
+  "respuestas": ["Marcus Fenix", "Master Chief", "Sam Fisher", "Gordon Freeman"],
+  "correcta": 3
+},
+{
+  "pregunta": "¿Qué videojuego te enfrenta a un jefe llamado Ornstein y Smough?",
+  "respuestas": ["Dark Souls", "Bloodborne", "Elden Ring", "Demon’s Souls"],
+  "correcta": 0
+},
+{
+  "pregunta": "¿Qué juego permite gestionar tu propia isla con aldeanos adorables?",
+  "respuestas": ["The Sims", "Stardew Valley", "Animal Crossing", "Harvest Moon"],
+  "correcta": 2
+},
+{
+  "pregunta": "¿Qué juego está basado en las novelas de Andrzej Sapkowski?",
+  "respuestas": ["The Witcher", "Skyrim", "Dragon’s Dogma", "Assassin’s Creed"],
+  "correcta": 0
+},
+{
+  "pregunta": "¿Qué juego combina exploración espacial, comercio y combate en tiempo real?",
+  "respuestas": ["Starfield", "Elite Dangerous", "No Man’s Sky", "Mass Effect"],
+  "correcta": 2
+},
+{
+  "pregunta": "¿Qué videojuego se desarrolla en una ciudad infestada por un virus llamado T-Virus?",
+  "respuestas": ["Resident Evil", "Dead Island", "Left 4 Dead", "The Evil Within"],
+  "correcta": 0
+},
+{
+  "pregunta": "¿Qué saga incluye a los personajes Big Boss y Solid Snake?",
+  "respuestas": ["Call of Duty", "Metal Gear Solid", "Hitman", "Battlefield"],
+  "correcta": 1
+},
+{
+  "pregunta": "¿Qué juego popular comenzó como un mod de Half-Life?",
+  "respuestas": ["Team Fortress", "CS:GO", "Dota 2", "Valorant"],
+  "correcta": 2
+},
+{
+  "pregunta": "¿Qué videojuego cuenta con un protagonista que explora recuerdos de sus antepasados?",
+  "respuestas": ["Cyberpunk 2077", "Watch Dogs", "Deus Ex", "Assassin’s Creed"],
+  "correcta": 3
+}
+{
+  "pregunta": "¿Qué consola fue la primera en usar cartuchos intercambiables?",
+  "respuestas": ["NES", "Atari 2600", "Sega Master System", "PlayStation"],
+  "correcta": 1
+},
+{
+  "pregunta": "¿En qué videojuego puedes cazar criaturas con una Poké Ball?",
+  "respuestas": ["Monster Hunter", "Digimon World", "Pokémon", "Slime Rancher"],
+  "correcta": 2
+},
+{
+  "pregunta": "¿Cuál fue el nombre en clave de la Nintendo GameCube durante su desarrollo?",
+  "respuestas": ["Project Phoenix", "Dolphin", "Revolution", "Orca"],
+  "correcta": 1
+},
+{
+  "pregunta": "¿Qué consola lanzó Sony después de la PS2?",
+  "respuestas": ["PS5", "PS Vita", "PS3", "PSP"],
+  "correcta": 2
+},
+{
+  "pregunta": "¿Quién es el protagonista de la saga *Uncharted*?",
+  "respuestas": ["Ezio Auditore", "Nathan Drake", "Joel Miller", "Lara Croft"],
+  "correcta": 1
+},
+{
+  "pregunta": "¿Qué videojuego introdujo el personaje Kratos?",
+  "respuestas": ["Hades", "God of War", "Dark Souls", "Mortal Kombat"],
+  "correcta": 1
+},
+{
+  "pregunta": "¿Qué saga incluye títulos como Brotherhood, Revelations y Origins?",
+  "respuestas": ["Assassin’s Creed", "Final Fantasy", "Far Cry", "Watch Dogs"],
+  "correcta": 0
+},
+{
+  "pregunta": "¿Cuál de estas habilidades es típica en los juegos de *Bioshock*?",
+  "respuestas": ["Telequinesis", "Viajar en el tiempo", "Domar dinosaurios", "Cambio de forma"],
+  "correcta": 0
+},
+{
+  "pregunta": "¿Qué título se ambienta en una distopía controlada por corporaciones y hackers?",
+  "respuestas": ["Cyberpunk 2077", "Halo", "The Division", "Control"],
+  "correcta": 0
+},
+{
+  "pregunta": "¿En qué año se lanzó la primera consola PlayStation en Europa?",
+  "respuestas": ["1996", "1994", "1995", "1993"],
+  "correcta": 2
+},
+{
+  "pregunta": "¿Cómo se llama el niño que lleva un hacha mágica en *God of War (2018)*?",
+  "respuestas": ["Atreus", "Loki", "Tyr", "Thor"],
+  "correcta": 0
+},
+{
+  "pregunta": "¿Qué videojuego es conocido por la frase '¡Es peligroso ir solo, toma esto!'?",
+  "respuestas": ["Chrono Trigger", "The Legend of Zelda", "EarthBound", "Secret of Mana"],
+  "correcta": 1
+},
+{
+  "pregunta": "¿Qué juego de terror transcurre en un barco abandonado en el mar?",
+  "respuestas": ["Soma", "Man of Medan", "Until Dawn", "Amnesia"],
+  "correcta": 1
+},
+{
+  "pregunta": "¿Qué protagonista sufre amnesia al inicio de *The Witcher*?",
+  "respuestas": ["Geralt de Rivia", "Altair", "Cloud Strife", "Lara Croft"],
+  "correcta": 0
+},
+{
+  "pregunta": "¿Cuál fue el primer juego en presentar a Solid Snake?",
+  "respuestas": ["Metal Gear", "Metal Gear Solid", "Metal Gear Acid", "Metal Gear 2: Solid Snake"],
+  "correcta": 0
+},
+{
+  "pregunta": "¿Qué videojuego combina cubos, supervivencia y creatividad?",
+  "respuestas": ["Terraria", "Roblox", "Minecraft", "Portal"],
+  "correcta": 2
+},
+{
+  "pregunta": "¿Qué consola lanzó Microsoft como su debut en el mundo de los videojuegos?",
+  "respuestas": ["Xbox 360", "Xbox One", "Xbox", "Xbox Series X"],
+  "correcta": 2
+},
+{
+  "pregunta": "¿Cuál de estos juegos es una simulación de gestión de parque jurásico?",
+  "respuestas": ["Zoo Tycoon", "Jurassic World Evolution", "Planet Zoo", "Spore"],
+  "correcta": 1
+},
+{
+  "pregunta": "¿Qué juego multijugador incluye impostores en una nave espacial?",
+  "respuestas": ["Among Us", "Fall Guys", "Apex Legends", "Rust"],
+  "correcta": 0
+},
+{
+  "pregunta": "¿Qué saga de videojuegos tiene a Samus Aran como protagonista?",
+  "respuestas": ["Mass Effect", "Metroid", "Halo", "Prey"],
+  "correcta": 1
+}
+{
+  "pregunta": "¿Qué videojuego popularizado por streamers incluye construcción y supervivencia con cubos?",
+  "respuestas": ["Roblox", "Fortnite", "Minecraft", "Terraria"],
+  "correcta": 2
+},
+{
+  "pregunta": "¿Cómo se llama el hermano de Mario en los juegos de Nintendo?",
+  "respuestas": ["Wario", "Toad", "Luigi", "Yoshi"],
+  "correcta": 2
+},
+{
+  "pregunta": "¿En qué plataforma debutó la saga *Crash Bandicoot*?",
+  "respuestas": ["Nintendo 64", "PlayStation", "GameCube", "Dreamcast"],
+  "correcta": 1
+},
+{
+  "pregunta": "¿Cuál es el nombre del reino donde se ambienta la saga *The Legend of Zelda*?",
+  "respuestas": ["Hyrule", "Lemuria", "Valoran", "Midgar"],
+  "correcta": 0
+},
+{
+  "pregunta": "¿Qué botón se usaba tradicionalmente para disparar en los juegos de disparos de PlayStation?",
+  "respuestas": ["X", "L1", "R1", "Triángulo"],
+  "correcta": 2
+},
+{
+  "pregunta": "¿Qué personaje de videojuegos es conocido por coleccionar anillos dorados?",
+  "respuestas": ["Mario", "Kirby", "Sonic", "Donkey Kong"],
+  "correcta": 2
+},
+{
+  "pregunta": "¿Cuál fue la consola portátil que compitió directamente con la Game Boy?",
+  "respuestas": ["PSP", "Neo Geo Pocket", "Game Gear", "N-Gage"],
+  "correcta": 2
+},
+{
+  "pregunta": "¿Qué videojuego introdujo el término 'Battle Royale' en la cultura popular?",
+  "respuestas": ["Call of Duty", "H1Z1", "Fortnite", "PUBG"],
+  "correcta": 3
+},
+{
+  "pregunta": "¿Qué personaje femenino es una arqueóloga y protagonista de una saga famosa?",
+  "respuestas": ["Aloy", "Lara Croft", "Jill Valentine", "Zelda"],
+  "correcta": 1
+},
+{
+  "pregunta": "¿En qué año se lanzó la primera Xbox original en Europa?",
+  "respuestas": ["2000", "2002", "2001", "2003"],
+  "correcta": 1
+},
+{
+  "pregunta": "¿Qué videojuego indie trata sobre un caballero que explora un reino subterráneo?",
+  "respuestas": ["Celeste", "Hollow Knight", "Dead Cells", "Shovel Knight"],
+  "correcta": 1
+},
+{
+  "pregunta": "¿Cuál de estas consolas permitía leer discos en formato miniDVD?",
+  "respuestas": ["GameCube", "PS2", "Wii", "Dreamcast"],
+  "correcta": 0
+},
+{
+  "pregunta": "¿Qué saga de videojuegos está ambientada en Tamriel?",
+  "respuestas": ["Elden Ring", "Final Fantasy", "The Elder Scrolls", "Dragon Age"],
+  "correcta": 2
+},
+{
+  "pregunta": "¿Qué videojuego tiene como protagonista a un chico que se convierte en lobo?",
+  "respuestas": ["Twilight Princess", "Okami", "Bloodborne", "Shadow of the Colossus"],
+  "correcta": 0
+},
+{
+  "pregunta": "¿Qué consola introdujo los Joy-Con como mandos extraíbles?",
+  "respuestas": ["Nintendo Switch", "Wii U", "Nintendo DS", "PS Vita"],
+  "correcta": 0
+},
+{
+  "pregunta": "¿En qué juego puedes hackear cámaras, puertas y enemigos como parte del gameplay principal?",
+  "respuestas": ["BioShock", "Watch Dogs", "Cyberpunk 2077", "Deus Ex"],
+  "correcta": 1
+},
+{
+  "pregunta": "¿Qué habilidad especial tiene Ellie en *The Last of Us Part II* que la diferencia de Joel?",
+  "respuestas": ["No puede nadar", "Puede esquivar y moverse sigilosamente", "Es inmune a los infectados", "Puede usar armas automáticas"],
+  "correcta": 1
+},
+{
+  "pregunta": "¿Qué videojuego te pone al mando de civilizaciones desde la Edad de Piedra hasta el futuro?",
+  "respuestas": ["Civilization VI", "Age of Empires II", "Anno 1800", "Total War: Rome"],
+  "correcta": 0
+},
+{
+  "pregunta": "¿Cuál es el nombre del protagonista de la saga *Red Dead Redemption* en la segunda entrega?",
+  "respuestas": ["Arthur Morgan", "John Marston", "Dutch van der Linde", "Micah Bell"],
+  "correcta": 0
+},
+{
+  "pregunta": "¿Qué videojuego de estrategia tiene a Kerrigan como uno de sus personajes principales?",
+  "respuestas": ["StarCraft", "Warhammer 40K", "XCOM", "Command & Conquer"],
+  "correcta": 0
+}
+{
+  "pregunta": "¿Cuál fue la primera consola de Sony?",
+  "respuestas": ["PlayStation", "PlayStation 2", "PlayStation One", "PSP"],
+  "correcta": 0
+},
+{
+  "pregunta": "¿Qué personaje de *Mortal Kombat* es conocido por su grito '¡Get over here!'?",
+  "respuestas": ["Raiden", "Sub-Zero", "Scorpion", "Liu Kang"],
+  "correcta": 2
+},
+{
+  "pregunta": "¿En qué saga puedes usar una espada llamada Llave Espada?",
+  "respuestas": ["Zelda", "Final Fantasy", "Kingdom Hearts", "Dark Souls"],
+  "correcta": 2
+},
+{
+  "pregunta": "¿Cuál es la consola portátil de Nintendo que tenía dos pantallas?",
+  "respuestas": ["Game Boy Advance", "Nintendo DS", "Game Gear", "Switch Lite"],
+  "correcta": 1
+},
+{
+  "pregunta": "¿Qué juego popular incluye un calamar como arma principal?",
+  "respuestas": ["Splatoon", "Overwatch", "Apex Legends", "Valorant"],
+  "correcta": 0
+},
+{
+  "pregunta": "¿Cómo se llama el planeta donde se desarrolla *Mass Effect 1* al principio del juego?",
+  "respuestas": ["Noveria", "Terra Nova", "Eden Prime", "Virmire"],
+  "correcta": 2
+},
+{
+  "pregunta": "¿Qué compañía desarrolló *The Witcher 3: Wild Hunt*?",
+  "respuestas": ["Ubisoft", "CD Projekt Red", "Bethesda", "Square Enix"],
+  "correcta": 1
+},
+{
+  "pregunta": "¿Qué título español de terror en primera persona se ambienta en un hospital abandonado?",
+  "respuestas": ["Blasphemous", "MADiSON", "Yuppie Psycho", "Fear the Dark Unknown"],
+  "correcta": 3
+},
+{
+  "pregunta": "¿Qué juego de Rockstar se ambienta en un instituto?",
+  "respuestas": ["Manhunt", "Bully", "GTA: Vice City", "Max Payne"],
+  "correcta": 1
+},
+{
+  "pregunta": "¿Qué saga es conocida por su dificultad extrema y combates contra jefes enormes?",
+  "respuestas": ["Assassin’s Creed", "Dark Souls", "Far Cry", "Doom"],
+  "correcta": 1
+},
+{
+  "pregunta": "¿En qué juego exploras Noruega y la Inglaterra anglosajona como un vikingo?",
+  "respuestas": ["For Honor", "God of War", "Assassin’s Creed Valhalla", "Skyrim"],
+  "correcta": 2
+},
+{
+  "pregunta": "¿Qué consola de Sony salió en 2004 y competía con la Nintendo DS?",
+  "respuestas": ["PlayStation Portable", "PlayStation Vita", "PS2 Slim", "PSX"],
+  "correcta": 0
+},
+{
+  "pregunta": "¿Cuál es el poder principal del protagonista en *Control*?",
+  "respuestas": ["Telequinesis", "Viajar en el tiempo", "Invisibilidad", "Velocidad"],
+  "correcta": 0
+},
+{
+  "pregunta": "¿Qué personaje es el jefe final en *Portal*?",
+  "respuestas": ["Chell", "GLaDOS", "Wheatley", "Atlas"],
+  "correcta": 1
+},
+{
+  "pregunta": "¿Qué videojuego de terror se ambienta en una nave espacial infestada por necromorfos?",
+  "respuestas": ["Alien Isolation", "Dead Space", "Callisto Protocol", "Prey"],
+  "correcta": 1
+},
+{
+  "pregunta": "¿En qué saga puedes capturar criaturas y enfrentarte a otros entrenadores?",
+  "respuestas": ["Digimon", "Pokémon", "Monster Hunter", "Temtem"],
+  "correcta": 1
+},
+{
+  "pregunta": "¿Qué famoso mod de *Warcraft III* dio origen a los MOBA?",
+  "respuestas": ["Tower Defense", "DotA", "Auto Chess", "Footmen Frenzy"],
+  "correcta": 1
+},
+{
+  "pregunta": "¿Qué juego de PlayStation 2 está protagonizado por un joven que derriba gigantes a caballo?",
+  "respuestas": ["Ico", "Final Fantasy X", "Shadow of the Colossus", "The Last Guardian"],
+  "correcta": 2
+},
+{
+  "pregunta": "¿En qué videojuego el protagonista viaja con su hija adoptiva llamada Clementine?",
+  "respuestas": ["The Walking Dead", "The Last of Us", "Heavy Rain", "Life is Strange"],
+  "correcta": 0
+},
+{
+  "pregunta": "¿Cuál de estos juegos es un simulador de gestión de parque jurásico?",
+  "respuestas": ["Zoo Tycoon", "Jurassic World Evolution", "RollerCoaster Tycoon", "Planet Zoo"],
+  "correcta": 1
+}
+
+    
     ];
 
     let preguntaActual = null;
