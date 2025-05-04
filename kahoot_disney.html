@@ -74,23 +74,1402 @@
   <button id="siguiente" onclick="siguiente()">Siguiente Pregunta</button>
 
   <script>
-    const preguntas = [
-      {
-        "pregunta": "¿Cuál es el nombre del mago que guía a la Comunidad?",
-        "respuestas": ["Saruman", "Radagast", "Gandalf", "Sauron"],
-        "correcta": 2
-      },
-      {
-        "pregunta": "¿Qué objeto debe destruir Frodo?",
-        "respuestas": ["El bastón de Gandalf", "El Anillo Único", "La espada de Aragorn", "El Palantir"],
-        "correcta": 1
-      },
-      {
-        "pregunta": "¿Cómo se llama el padre de Legolas?",
-        "respuestas": ["Elrond", "Thranduil", "Celeborn", "Glorfindel"],
-        "correcta": 1
-      }
-    ];
+    const preguntas = 
+      [
+  {
+    "pregunta": "¿Qué objeto pierde Cenicienta en el baile?",
+    "respuestas": [
+      "Un pendiente",
+      "Un guante",
+      "Una zapatilla de cristal",
+      "Un collar"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Cómo se llama el león padre de Simba?",
+    "respuestas": [
+      "Mufasa",
+      "Scar",
+      "Rafiki",
+      "Zazú"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Quién es el mejor amigo de Aladdín?",
+    "respuestas": [
+      "Jafar",
+      "Rajah",
+      "Abú",
+      "Iago"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿En qué película aparece la canción 'Bajo el mar'?",
+    "respuestas": [
+      "Hércules",
+      "La Sirenita",
+      "Peter Pan",
+      "Atlantis"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Cuál de estas películas es de Pixar y no de Disney clásico?",
+    "respuestas": [
+      "Toy Story",
+      "Pocahontas",
+      "El jorobado de Notre Dame",
+      "La bella durmiente"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué animal acompaña a Mulan como su pequeño dragón guardián?",
+    "respuestas": [
+      "Shere Khan",
+      "Mushu",
+      "Khan",
+      "Ping"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Dónde transcurre la historia de 'Ratatouille'?",
+    "respuestas": [
+      "Roma",
+      "Madrid",
+      "París",
+      "Londres"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué princesa vive en la torre custodiada por la madrastra Gothel?",
+    "respuestas": [
+      "Aurora",
+      "Rapunzel",
+      "Anna",
+      "Ariel"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Cómo se llama la ciudad de los animales en la que Judy Hopps es policía?",
+    "respuestas": [
+      "Zootrópolis",
+      "Ciudad Animalia",
+      "Zoomania",
+      "Bestiópolis"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Cuál es el oficio de Tiana en 'Tiana y el sapo'?",
+    "respuestas": [
+      "Cantante",
+      "Chef",
+      "Diseñadora",
+      "Bailarina"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué personaje dice: 'Hasta el infinito... ¡y más allá!'?",
+    "respuestas": [
+      "Buzz Lightyear",
+      "Woody",
+      "Mr. Potato",
+      "Rex"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Cómo se llama la madre de Bambi?",
+    "respuestas": [
+      "No tiene nombre",
+      "Flor",
+      "Nala",
+      "Fauna"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué villano quiere hacer un abrigo con los dálmatas?",
+    "respuestas": [
+      "Madame Medusa",
+      "Cruella de Vil",
+      "Maléfica",
+      "Úrsula"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué personaje tiene una lámpara mágica?",
+    "respuestas": [
+      "Jasmín",
+      "Aladdín",
+      "El Genio",
+      "Sultán"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué princesa fue la primera en aparecer en un largometraje?",
+    "respuestas": [
+      "Cenicienta",
+      "Aurora",
+      "Blancanieves",
+      "Bella"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué película Disney mezcla animación y acción real con dibujos en la ciudad?",
+    "respuestas": [
+      "¿Quién engañó a Roger Rabbit?",
+      "Encantada",
+      "Space Jam",
+      "Mary Poppins"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿En qué década se estrenó *El Rey León*?",
+    "respuestas": [
+      "Años 80",
+      "Años 90",
+      "Años 2000",
+      "Años 70"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué película de Disney se inspira en una leyenda china?",
+    "respuestas": [
+      "Mulan",
+      "Big Hero 6",
+      "Atlantis",
+      "Valiente"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Cuál de estas películas tiene como protagonista a un robot recogebasura?",
+    "respuestas": [
+      "WALL·E",
+      "Robots",
+      "Big Hero 6",
+      "Baymax"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué personaje de Disney es conocido por su risa diabólica y su amor por los gatos?",
+    "respuestas": [
+      "Cruella de Vil",
+      "Maléfica",
+      "Ursula",
+      "La Reina Malvada"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿En qué película Disney aparece un oso llamado Baloo?",
+    "respuestas": [
+      "El libro de la selva",
+      "Tarzán",
+      "Bambi",
+      "La jungla de cristal"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué princesa de Disney tiene una bestia como compañero?",
+    "respuestas": [
+      "Aurora",
+      "Cenicienta",
+      "Bella",
+      "Rapunzel"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué tipo de animal es el compañero de Simba, Timón?",
+    "respuestas": [
+      "Hiena",
+      "Jirafa",
+      "Suricata",
+      "Mono"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué película de Disney tiene como tema central una familia de superhéroes?",
+    "respuestas": [
+      "Los Increíbles",
+      "Zootrópolis",
+      "Monstruos, S.A.",
+      "Ratatouille"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué película de Disney se basa en una novela de Victor Hugo?",
+    "respuestas": [
+      "La Bella y la Bestia",
+      "El Jorobado de Notre Dame",
+      "Pinocho",
+      "Aladino"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué película Disney muestra la historia de una sirena llamada Ariel?",
+    "respuestas": [
+      "La sirenita",
+      "Cenicienta",
+      "Peter Pan",
+      "La bella durmiente"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Cuál es el nombre del ratón protagonista de *Cenicienta*?",
+    "respuestas": [
+      "Gus Gus",
+      "Remy",
+      "Jaq",
+      "Figaro"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué película de Disney se desarrolla en el continente africano?",
+    "respuestas": [
+      "El rey león",
+      "Pocahontas",
+      "Hércules",
+      "Tarzán"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Cuál es el nombre de la madre de Simba en *El Rey León*?",
+    "respuestas": [
+      "Sarabi",
+      "Nala",
+      "Timon",
+      "Zazu"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Cómo se llama el dragón que aparece en la película *Mulán*?",
+    "respuestas": [
+      "Mushu",
+      "Shenlong",
+      "Sisu",
+      "Drogon"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué película de Disney es protagonizada por una princesa con un zapato perdido?",
+    "respuestas": [
+      "Cenicienta",
+      "La bella durmiente",
+      "Aladino",
+      "Blancanieves"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿En qué año se estrenó *Blancanieves y los siete enanitos*?",
+    "respuestas": [
+      "1937",
+      "1950",
+      "1965",
+      "1980"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué animal acompaña a Pinocho en su aventura?",
+    "respuestas": [
+      "Un pez",
+      "Un burro",
+      "Un grillo",
+      "Un perro"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿En qué película de Disney se encuentra el personaje de la madre Gothel?",
+    "respuestas": [
+      "Rapunzel",
+      "La bella durmiente",
+      "Cenicienta",
+      "Alicia en el País de las Maravillas"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué princesa se convierte en un cisne en *El Lago de los Cisnes*?",
+    "respuestas": [
+      "Aurora",
+      "Blancanieves",
+      "Odette",
+      "Cenicienta"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué villano Disney tiene la capacidad de transformarse en una enorme serpiente?",
+    "respuestas": [
+      "Maléfica",
+      "Ursula",
+      "Kaa",
+      "Scar"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Cómo se llama el lugar donde viven Elsa y Anna?",
+    "respuestas": [
+      "Arendelle",
+      "Elsaland",
+      "Reino de Hielo",
+      "Nordheim"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué animal acompaña a Dumbo?",
+    "respuestas": [
+      "Un ratón",
+      "Un elefante",
+      "Un pájaro",
+      "Un conejo"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué personaje de Disney es una muñeca que pertenece a una niña llamada Bonnie?",
+    "respuestas": [
+      "Buzz Lightyear",
+      "Woody",
+      "Forky",
+      "Ken"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué princesa de Disney se enamora de un príncipe convertido en una bestia?",
+    "respuestas": [
+      "Aurora",
+      "Bella",
+      "Cenicienta",
+      "Blancanieves"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Cómo se llama el gato de Alicia en el País de las Maravillas?",
+    "respuestas": [
+      "Cheshire",
+      "Tom",
+      "Garfield",
+      "Felix"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿En qué película Disney un hombre se convierte en una bestia por una maldición?",
+    "respuestas": [
+      "La Bella y la Bestia",
+      "La princesa y el sapo",
+      "Cenicienta",
+      "Pinocho"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué personaje se convierte en rana en *La Princesa y el Sapo*?",
+    "respuestas": [
+      "Naveen",
+      "Mushu",
+      "Aladdín",
+      "Simba"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Cómo se llama el compañero de Elsa en *Frozen* que es un muñeco de nieve?",
+    "respuestas": [
+      "Kristoff",
+      "Olaf",
+      "Sven",
+      "Hans"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Cuál de los siguientes personajes es un villano de *La Sirenita*?",
+    "respuestas": [
+      "Úrsula",
+      "Jafar",
+      "Maléfica",
+      "Gastón"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué personaje se enamora de un hombre llamado Eric?",
+    "respuestas": [
+      "Blancanieves",
+      "Cenicienta",
+      "Ariel",
+      "Rapunzel"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué color tiene el vestido de Aurora cuando se transforma de rosa a azul?",
+    "respuestas": [
+      "Rojo",
+      "Verde",
+      "Rosa",
+      "Azul"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Qué personaje de Disney vive en la ciudad de Zootrópolis?",
+    "respuestas": [
+      "Nick Wilde",
+      "Judy Hopps",
+      "Flash",
+      "El gran jefazo"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué princesa es la más joven de todas?",
+    "respuestas": [
+      "Blancanieves",
+      "Cenicienta",
+      "Aurora",
+      "Rapunzel"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Cuál es el nombre de la madrastra de Blanca Nieves?",
+    "respuestas": [
+      "La Reina Malvada",
+      "Madame Medusa",
+      "Maléfica",
+      "Cruella de Vil"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Quién es el mejor amigo de Simba?",
+    "respuestas": [
+      "Timon",
+      "Zazu",
+      "Pumba",
+      "Rafiki"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué villano tiene un gato llamado Lucifer?",
+    "respuestas": [
+      "La Reina Malvada",
+      "Cruella de Vil",
+      "Lady Tremaine",
+      "Maléfica"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué personaje tiene la habilidad de transformarse en un monstruo gigante en *Monstruos, S.A.*?",
+    "respuestas": [
+      "Randall",
+      "Sully",
+      "Mike Wazowski",
+      "Celia Mae"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿En qué película Disney aparece un personaje llamado Judy Hopps?",
+    "respuestas": [
+      "Zootrópolis",
+      "Monstruos, S.A.",
+      "Ratatouille",
+      "Frozen"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Cómo se llama el dragón en *Raya y el último dragón*?",
+    "respuestas": [
+      "Malefica",
+      "Sisu",
+      "Mushu",
+      "Shenron"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Quién es la villana principal en *La bella durmiente*?",
+    "respuestas": [
+      "La Reina Malvada",
+      "Maléfica",
+      "Cruella de Vil",
+      "Ursula"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué princesa Disney tiene una lámpara mágica como su principal herramienta?",
+    "respuestas": [
+      "Rapunzel",
+      "Ariel",
+      "Jazmín",
+      "Cenicienta"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿En qué película se encuentra un robot llamado WALL-E?",
+    "respuestas": [
+      "Monsters University",
+      "WALL-E",
+      "Buscando a Nemo",
+      "Ratatouille"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué animal acompaña a la princesa Moana en su aventura?",
+    "respuestas": [
+      "Kuma",
+      "Héctor",
+      "Pato Donald",
+      "Pua"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Qué personaje de *Frozen* tiene el poder de controlar el hielo?",
+    "respuestas": [
+      "Kristoff",
+      "Olaf",
+      "Elsa",
+      "Anna"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿En qué película aparece el personaje de Miguel Rivera?",
+    "respuestas": [
+      "Frozen",
+      "Coco",
+      "Zootrópolis",
+      "Moana"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Cuál es el nombre de la hermana de Elsa en *Frozen*?",
+    "respuestas": [
+      "Rapunzel",
+      "Anna",
+      "Aurora",
+      "Ariel"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Cómo se llama el restaurante donde trabaja Remy en *Ratatouille*?",
+    "respuestas": [
+      "La Tour Eiffel",
+      "La Bella Taverna",
+      "Gusteau's",
+      "Le Petit Chef"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿En qué año se estrenó *Toy Story 4*?",
+    "respuestas": [
+      "2020",
+      "2017",
+      "2015",
+      "2019"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Qué villano aparece en *Hércules* que tiene la capacidad de convertir a los héroes en ratas?",
+    "respuestas": [
+      "Yzma",
+      "Maléfica",
+      "Hades",
+      "Jafar"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Cuál es el nombre del oso protagonista de *El libro de la selva*?",
+    "respuestas": [
+      "Baloo",
+      "Bagheera",
+      "Shere Khan",
+      "Kaa"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué personaje de *La Sirenita* sueña con ser humano?",
+    "respuestas": [
+      "Cenicienta",
+      "Úrsula",
+      "Ariel",
+      "Jazmín"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué princesa Disney fue la primera en protagonizar su propia película en el siglo XXI?",
+    "respuestas": [
+      "Rapunzel",
+      "Tiana",
+      "Ariel",
+      "Elsa"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿En qué película de Disney se basa el personaje de un muñeco llamado Forky?",
+    "respuestas": [
+      "La era del hielo",
+      "Toy Story 4",
+      "Monstruos S.A.",
+      "Ratatouille"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Cómo se llama el tiburón amigo de Dory en *Buscando a Nemo*?",
+    "respuestas": [
+      "Bubbles",
+      "Gill",
+      "Bruce",
+      "Marlin"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué personaje de *Pocahontas* es un capitán inglés?",
+    "respuestas": [
+      "Wiggins",
+      "John Rolfe",
+      "Ratcliffe",
+      "John Smith"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Qué tipo de animal es el compañero de Simba en *El Rey León*?",
+    "respuestas": [
+      "Suricata",
+      "Jirafa",
+      "Hiena",
+      "Rata"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué personaje de *Frozen* tiene una muñeca de nieve llamada Olaf?",
+    "respuestas": [
+      "Kristoff",
+      "Anna",
+      "Elsa",
+      "Olaf"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "En *Cenicienta*, ¿quién transforma la calabaza en un carruaje?",
+    "respuestas": [
+      "El Hada Madrina",
+      "El Rey",
+      "El Príncipe",
+      "Las Hermanastras"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué personaje de *La Bella y la Bestia* tiene una biblioteca enorme?",
+    "respuestas": [
+      "La Bestia",
+      "Gastón",
+      "Maurice",
+      "Lumière"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿En qué película aparece un dragón llamado Mushu?",
+    "respuestas": [
+      "Mulán",
+      "Pocahontas",
+      "La Bella Durmiente",
+      "Aladino"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Cuál es el sueño de Miguel Rivera en *Coco*?",
+    "respuestas": [
+      "Ser músico",
+      "Ser pintor",
+      "Ser actor",
+      "Ser cocinero"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué tipo de animales son los principales villanos de *Zootrópolis*?",
+    "respuestas": [
+      "Lobos",
+      "Zorros",
+      "Conejos",
+      "Búfalos"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué nombre recibe la ciudad de la que proviene Rapunzel en *Enredados*?",
+    "respuestas": [
+      "Corona",
+      "Aldea Dorada",
+      "La Torre",
+      "San Martín"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Cuál es el primer deseo que pide el Genio en *Aladino*?",
+    "respuestas": [
+      "Ser libre",
+      "Matar al sultán",
+      "Ser rico",
+      "Un palacio"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué cantante le presta su voz al personaje de Elsa en *Frozen*?",
+    "respuestas": [
+      "Idina Menzel",
+      "Ariana Grande",
+      "Demi Lovato",
+      "Katy Perry"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "En *Moana*, ¿quién ayuda a Moana a encontrar el corazón de Te Fiti?",
+    "respuestas": [
+      "Maui",
+      "Tía Tala",
+      "Sina",
+      "Heihei"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Cómo se llama el monstruo que persigue a Mike y Sully en *Monstruos, S.A.*?",
+    "respuestas": [
+      "Randall",
+      "Roz",
+      "Henry J. Waternoose",
+      "Smitty"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Quién es el primer personaje en aparecer en *Toy Story*?",
+    "respuestas": [
+      "Buzz Lightyear",
+      "Woody",
+      "Rex",
+      "Mr. Potato Head"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿En qué película Disney se encuentra la famosa escena del baile bajo las estrellas entre Bella y la Bestia?",
+    "respuestas": [
+      "La Bella y la Bestia",
+      "Cenicienta",
+      "Aladino",
+      "Pocahontas"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué tipo de animal es el compañero de Ariel en *La Sirenita*?",
+    "respuestas": [
+      "Pececillo",
+      "Cangrejo",
+      "Delfín",
+      "Estrella de mar"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué personaje de *Ratatouille* sueña con convertirse en chef?",
+    "respuestas": [
+      "Gusteau",
+      "Remy",
+      "Linguini",
+      "Colette"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué película tiene un personaje llamado Pacha que es emperador?",
+    "respuestas": [
+      "El emperador y sus locuras",
+      "Mulan",
+      "Pocahontas",
+      "Hércules"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Cómo se llama el perro que acompaña a Dug en *Up*?",
+    "respuestas": [
+      "Buddy",
+      "Squirrel",
+      "Chester",
+      "Doug"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "En *El Rey León*, ¿qué nombre tiene el malvado hermano de Mufasa?",
+    "respuestas": [
+      "Timon",
+      "Scar",
+      "Rafiki",
+      "Simba"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué personaje de *La Sirenita* tiene una voz maravillosa que desea Ariel?",
+    "respuestas": [
+      "Úrsula",
+      "Flounder",
+      "Prince Eric",
+      "Ariel"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Qué famosa canción cantan los personajes de *El Rey León* durante su aventura?",
+    "respuestas": [
+      "Hakuna Matata",
+      "El ciclo sin fin",
+      "Te quiero más",
+      "La canción del trabajo"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Cómo se llama el monstruo que vive bajo la cama en *Monstruos, S.A.*?",
+    "respuestas": [
+      "Sully",
+      "Randall",
+      "Boo",
+      "Mike"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "En *Pocahontas*, ¿cómo se llama el amigo mapache de la protagonista?",
+    "respuestas": [
+      "Flit",
+      "Meeko",
+      "Pocahontas",
+      "Thomas"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué personaje de *Frozen* tiene el poder de crear nieve y hielo?",
+    "respuestas": [
+      "Anna",
+      "Olaf",
+      "Elsa",
+      "Kristoff"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Cuál es el nombre del personaje principal en *Coco*?",
+    "respuestas": [
+      "Héctor",
+      "Miguel",
+      "Ernesto de la Cruz",
+      "Mamerto"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Cómo se llama la sirena amiga de Ariel en *La Sirenita*?",
+    "respuestas": [
+      "Ursula",
+      "Flounder",
+      "Vanessa",
+      "Ariel"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Cuál es el nombre del perro que acompaña a Dug en *Up*?",
+    "respuestas": [
+      "Doug",
+      "Squirrel",
+      "Buddy",
+      "Chester"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Cómo se llama el gigante amable en *Los Increíbles*?",
+    "respuestas": [
+      "Frozone",
+      "Bob Parr",
+      "Mr. Increíble",
+      "Dash"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué personaje de *La Bella y la Bestia* es una tetera animada?",
+    "respuestas": [
+      "Lumière",
+      "Madame Samovar",
+      "Chip",
+      "Maurice"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿En qué película de Disney se introduce el personaje de Elsa?",
+    "respuestas": [
+      "Frozen",
+      "Cenicienta",
+      "La Bella Durmiente",
+      "Alicia en el País de las Maravillas"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Cuál es el nombre del villano en *Hércules* que quiere derrotar a los dioses?",
+    "respuestas": [
+      "Hades",
+      "Medusa",
+      "Jafar",
+      "Ursula"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "En *Aladino*, ¿quién es el amigo que acompaña a Aladino en su aventura?",
+    "respuestas": [
+      "Jafar",
+      "Abu",
+      "Sultan",
+      "Genio"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué princesa Disney se convierte en un oso en la película *Brave*?",
+    "respuestas": [
+      "Rapunzel",
+      "Merida",
+      "Ariel",
+      "Aurora"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Cuál es el nombre del personaje principal en *Mulán*?",
+    "respuestas": [
+      "Shan Yu",
+      "Li Shang",
+      "Mushu",
+      "Mulán"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Qué personaje de *Monsters, Inc.* tiene un ojo gigante?",
+    "respuestas": [
+      "Mike Wazowski",
+      "Randall",
+      "Sully",
+      "Boo"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Cómo se llama el ratón que es el mejor amigo de Remy en *Ratatouille*?",
+    "respuestas": [
+      "Linguini",
+      "Colette",
+      "Emile",
+      "Remy"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué tipo de animal es el compañero de Elsa en *Frozen*?",
+    "respuestas": [
+      "Reno",
+      "Tigre",
+      "Llama",
+      "Rápido como un venado"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué personaje de *Aladino* tiene la capacidad de volar en una alfombra mágica?",
+    "respuestas": [
+      "Jafar",
+      "Genio",
+      "Aladino",
+      "Sultán"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué película de Disney cuenta la historia de un joven que quiere ser un gran mago y lucha contra un hechicero malvado?",
+    "respuestas": [
+      "La espada en la piedra",
+      "El aprendiz de brujo",
+      "Merlín el encantador",
+      "Hércules"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Cómo se llama el compañero de Buzz Lightyear en *Toy Story*?",
+    "respuestas": [
+      "Jessie",
+      "Andy",
+      "Rex",
+      "Woody"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Qué princesa Disney tiene una conexión con los elementos de la naturaleza en *Pocahontas*?",
+    "respuestas": [
+      "Mulan",
+      "Ariel",
+      "Pocahontas",
+      "Aurora"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué personaje de *El Rey León* fue destinado a ser el rey pero se convirtió en el villano?",
+    "respuestas": [
+      "Mufasa",
+      "Timon",
+      "Simba",
+      "Scar"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿En *La Bella y la Bestia*, qué personaje es la madre de Bella?",
+    "respuestas": [
+      "La madre de Bella",
+      "Gaston",
+      "Maurice",
+      "Madame Samovar"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué personaje de *Frozen* tiene el poder de hacer que todo a su alrededor se congele?",
+    "respuestas": [
+      "Anna",
+      "Kristoff",
+      "Olaf",
+      "Elsa"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿En qué película de Disney aparece un dragón llamado Mushu?",
+    "respuestas": [
+      "Pocahontas",
+      "El Rey León",
+      "Hércules",
+      "Mulán"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Qué personaje de *Los Increíbles* tiene la habilidad de correr a velocidades increíbles?",
+    "respuestas": [
+      "Violet",
+      "Frozone",
+      "Dash",
+      "Elastigirl"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿En *La Sirenita*, qué personaje quiere robar la voz de Ariel?",
+    "respuestas": [
+      "Flounder",
+      "Ariel",
+      "Sebastián",
+      "Úrsula"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Cómo se llama el muñeco de nieve que es amigo de Anna y Elsa en *Frozen*?",
+    "respuestas": [
+      "Kristoff",
+      "Sven",
+      "Reina Elsa",
+      "Olaf"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿En *Aladino*, cómo se llama el tigre que acompaña a la princesa Jasmine?",
+    "respuestas": [
+      "Rajah",
+      "Aladino",
+      "Sultán",
+      "Abu"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué personaje de *Mulan* es un dragón que ayuda a la protagonista?",
+    "respuestas": [
+      "Shan Yu",
+      "Mushu",
+      "Cri-Kee",
+      "Li Shang"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Cuál es el nombre del pequeño elefante en *Dumbo*?",
+    "respuestas": [
+      "Timothy",
+      "Bambi",
+      "Stumpy",
+      "Dumbo"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Qué personaje de *Bambi* es su mejor amigo que también es un conejo?",
+    "respuestas": [
+      "Faline",
+      "Bambi",
+      "Flower",
+      "Tambor"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Qué princesa de Disney vive en un reino helado con su hermana?",
+    "respuestas": [
+      "Cenicienta",
+      "Rapunzel",
+      "Aurora",
+      "Elsa"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿En qué película de Disney encontramos al personaje de la ratona Bianca?",
+    "respuestas": [
+      "Los rescatadores",
+      "El libro de la selva",
+      "La dama y el vagabundo",
+      "La sirenita"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué personaje de *La Bella y la Bestia* es un candelabro parlante?",
+    "respuestas": [
+      "Lumière",
+      "Gastón",
+      "La Bestia",
+      "Maurice"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Cómo se llama el perro de *Cenicienta*?",
+    "respuestas": [
+      "Duchess",
+      "Perdita",
+      "Rex",
+      "Bruto"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Qué película de Disney tiene lugar en un circo y está protagonizada por un elefante?",
+    "respuestas": [
+      "Dumbo",
+      "Bambi",
+      "Ferdinand",
+      "Ratatouille"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿En *Toy Story 2*, qué personaje es un muñeco de acción que fue de gran valor en su época?",
+    "respuestas": [
+      "Buzz Lightyear",
+      "Woody",
+      "Jesse",
+      "Stinky Pete"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Cómo se llama la madre de *Ariel* en *La Sirenita*?",
+    "respuestas": [
+      "Úrsula",
+      "Reina Athena",
+      "Cenicienta",
+      "La Reina de los mares"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿En qué película de Disney el protagonista viaja por el tiempo usando una máquina del tiempo?",
+    "respuestas": [
+      "Enredados",
+      "Hércules",
+      "Tangled",
+      "El gran golpe"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué princesa Disney se enamora de un príncipe mientras está bajo un hechizo que la pone a dormir?",
+    "respuestas": [
+      "Blanca Nieves",
+      "Aurora",
+      "Cenicienta",
+      "Rapunzel"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿En *El Rey León*, quién es el mejor amigo de Simba?",
+    "respuestas": [
+      "Timon",
+      "Pumba",
+      "Zazu",
+      "Nala"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿En *La Bella y la Bestia*, qué personaje es una tetera parlante?",
+    "respuestas": [
+      "Madame Samovar",
+      "Lumière",
+      "Plumette",
+      "Maurice"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué animal es el compañero de Rapunzel en *Enredados*?",
+    "respuestas": [
+      "Pato",
+      "Caballo",
+      "Camaleón",
+      "Gato"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿En *Frozen*, qué es lo que provoca que Elsa se descongele por completo?",
+    "respuestas": [
+      "Un abrazo",
+      "El amor verdadero",
+      "Un hechizo",
+      "Una pelea"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Cómo se llama el ratón protagonista en *Ratatouille*?",
+    "respuestas": [
+      "Remy",
+      "Gusteau",
+      "Linguini",
+      "Emile"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué personaje es la mascota de Simba en *El Rey León*?",
+    "respuestas": [
+      "Rafiki",
+      "Timon",
+      "Zazu",
+      "Pumba"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Quién es el villano de *La Sirenita*?",
+    "respuestas": [
+      "Úrsula",
+      "Gaston",
+      "Shan Yu",
+      "Scar"
+    ],
+    "correcta": 0
+  }
+]
+      
+      
+      ;
 
     let preguntaActual = null;
 
