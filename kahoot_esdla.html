@@ -74,1104 +74,2201 @@
   <button id="siguiente" onclick="siguiente()">Siguiente Pregunta</button>
 
   <script>
-    const preguntas = [
-     {
-  "pregunta": "¿Cómo se llama el hobbit protagonista de 'El Señor de los Anillos'?",
-  "respuestas": ["Bilbo Bolsón", "Frodo Bolsón", "Sam Gamyi", "Pippin Took"],
-  "correcta": 1
-},
-{
-  "pregunta": "¿Qué criatura dice 'Mi tesoro' refiriéndose al Anillo Único?",
-  "respuestas": ["Gollum", "Saruman", "Sauron", "Legolas"],
-  "correcta": 0
-},
-{
-  "pregunta": "¿Cómo se llama el mago gris que guía a la Comunidad del Anillo?",
-  "respuestas": ["Saruman", "Radagast", "Gandalf", "Elrond"],
-  "correcta": 2
-},
-{
-  "pregunta": "¿Qué raza es Legolas?",
-  "respuestas": ["Humano", "Elfo", "Enano", "Orco"],
-  "correcta": 1
-},
-{
-  "pregunta": "¿En qué montaña debe ser destruido el Anillo Único?",
-  "respuestas": ["Monte Caradhras", "Monte Gundabad", "Monte del Destino", "Monte Erebor"],
-  "correcta": 2
-},
-{
-  "pregunta": "¿Quién forjó el Anillo Único?",
-  "respuestas": ["Elrond", "Celebrimbor", "Sauron", "Isildur"],
-  "correcta": 2
-},
-{
-  "pregunta": "¿Cómo se llama el padre de Boromir y Faramir?",
-  "respuestas": ["Théoden", "Denethor", "Elrond", "Aragorn"],
-  "correcta": 1
-},
-{
-  "pregunta": "¿Qué ser alado montan los Nazgûl?",
-  "respuestas": ["Grifos", "Águilas", "Bestias aladas", "Dragones"],
-  "correcta": 2
-},
-{
-  "pregunta": "¿Quién mata al Rey Brujo de Angmar?",
-  "respuestas": ["Aragorn", "Gandalf", "Éowyn", "Merry"],
-  "correcta": 2
-},
-{
-  "pregunta": "¿Cómo se llama la espada de Aragorn?",
-  "respuestas": ["Andúril", "Sting", "Narsil", "Orcrist"],
-  "correcta": 0
-},
-{
-  "pregunta": "¿Qué criatura gigantesca protege las puertas de Moria?",
-  "respuestas": ["Dragón", "Trol de las cavernas", "Balrog", "Ent"],
-  "correcta": 2
-},
-{
-  "pregunta": "¿Qué ciudad es la capital de Rohan?",
-  "respuestas": ["Minas Tirith", "Edoras", "Gondor", "Dale"],
-  "correcta": 1
-},
-{
-  "pregunta": "¿Quién es el padre de Legolas?",
-  "respuestas": ["Thranduil", "Elrond", "Celeborn", "Finwë"],
-  "correcta": 0
-},
-{
-  "pregunta": "¿Qué hobbit acompaña a Frodo hasta el final del viaje?",
-  "respuestas": ["Pippin", "Merry", "Sam", "Bilbo"],
-  "correcta": 2
-},
-{
-  "pregunta": "¿Qué personaje es tanto rey como montaraz?",
-  "respuestas": ["Faramir", "Théoden", "Aragorn", "Boromir"],
-  "correcta": 2
-},
-{
-  "pregunta": "¿Cómo se llama la araña gigante que ataca a Frodo?",
-  "respuestas": ["Ungoliant", "Shelob", "Aragog", "Glaurung"],
-  "correcta": 1
-},
-{
-  "pregunta": "¿Qué elfo lucha en el Abismo de Helm?",
-  "respuestas": ["Thranduil", "Elrond", "Legolas", "Glorfindel"],
-  "correcta": 2
-},
-{
-  "pregunta": "¿Cuál es el verdadero nombre de Gollum?",
-  "respuestas": ["Deagol", "Smeagol", "Gríma", "Guritz"],
-  "correcta": 1
-},
-{
-  "pregunta": "¿Qué palabra hace que se abran las puertas de Moria?",
-  "respuestas": ["Amigo", "Ábrete", "Elbereth", "Mellon"],
-  "correcta": 3
-},
-{
-  "pregunta": "¿Quién fue el primer portador humano del Anillo Único?",
-  "respuestas": ["Elendil", "Isildur", "Ar-Pharazôn", "Gil-galad"],
-  "correcta": 1
-}
-
-{
-  "pregunta": "¿Quién interpreta a Frodo en la trilogía de 'El Señor de los Anillos'?",
-  "respuestas": ["Elijah Wood", "Daniel Radcliffe", "Tobey Maguire", "Rupert Grint"],
-  "correcta": 0
-},
-{
-  "pregunta": "¿Cómo se llama el creador del universo de 'El Señor de los Anillos'?",
-  "respuestas": ["George R.R. Martin", "J.R.R. Tolkien", "C.S. Lewis", "Isaac Asimov"],
-  "correcta": 1
-},
-{
-  "pregunta": "¿Qué actor interpreta a Gandalf?",
-  "respuestas": ["Michael Gambon", "Ian McKellen", "Christopher Lee", "Patrick Stewart"],
-  "correcta": 1
-},
-{
-  "pregunta": "¿Cuántas películas componen la trilogía original dirigida por Peter Jackson?",
-  "respuestas": ["Dos", "Tres", "Cuatro", "Cinco"],
-  "correcta": 1
-},
-{
-  "pregunta": "¿Qué objeto debe ser destruido para vencer a Sauron?",
-  "respuestas": ["La espada de Morgoth", "El Anillo Único", "La corona de Angmar", "El Palantir"],
-  "correcta": 1
-},
-{
-  "pregunta": "¿Qué actor interpretó a Saruman?",
-  "respuestas": ["Ian Holm", "Christopher Lee", "Hugo Weaving", "Sean Bean"],
-  "correcta": 1
-},
-{
-  "pregunta": "¿Qué criatura salva a Frodo y Sam al final de 'El Retorno del Rey'?",
-  "respuestas": ["Un dragón", "Una bestia alada", "Un águila gigante", "Un balrog bueno"],
-  "correcta": 2
-},
-{
-  "pregunta": "¿Qué raza de criaturas vive en Fangorn y son parecidos a árboles?",
-  "respuestas": ["Hombres del bosque", "Ents", "Elfos silvanos", "Dúnedain"],
-  "correcta": 1
-},
-{
-  "pregunta": "¿Qué hobbit encuentra el Anillo antes que Frodo?",
-  "respuestas": ["Sam", "Merry", "Pippin", "Bilbo"],
-  "correcta": 3
-},
-{
-  "pregunta": "¿Quién dirige la versión cinematográfica de 'El Señor de los Anillos'?",
-  "respuestas": ["Peter Jackson", "Steven Spielberg", "James Cameron", "George Lucas"],
-  "correcta": 0
-},
-{
-  "pregunta": "¿Cómo se llama la posada donde se encuentran con Aragorn en Bree?",
-  "respuestas": ["La Pradera Verde", "El Pony Pisador", "El Dragón Azul", "La Casa del Bosque"],
-  "correcta": 1
-},
-{
-  "pregunta": "¿Cómo se llama el reino gobernado por Elrond?",
-  "respuestas": ["Gondor", "Lothlórien", "Rivendel", "Valinor"],
-  "correcta": 2
-},
-{
-  "pregunta": "¿Cuál es el nombre completo del autor de los libros?",
-  "respuestas": ["John Ronald Reuel Tolkien", "James Robert Tolkien", "Joseph Richard Tolkien", "Jonathan Raymond Tolkien"],
-  "correcta": 0
-},
-{
-  "pregunta": "¿Quién interpreta a Arwen en las películas?",
-  "respuestas": ["Cate Blanchett", "Liv Tyler", "Natalie Portman", "Keira Knightley"],
-  "correcta": 1
-},
-{
-  "pregunta": "¿Qué ser maligno es el principal antagonista de la historia?",
-  "respuestas": ["Saruman", "Melkor", "Sauron", "Nazgûl"],
-  "correcta": 2
-},
-{
-  "pregunta": "¿Cómo se llama el libro donde aparece por primera vez el Anillo Único?",
-  "respuestas": ["El Retorno del Rey", "El Silmarillion", "El Hobbit", "Los Hijos de Húrin"],
-  "correcta": 2
-},
-{
-  "pregunta": "¿Qué actriz interpreta a Galadriel?",
-  "respuestas": ["Liv Tyler", "Cate Blanchett", "Tilda Swinton", "Helena Bonham Carter"],
-  "correcta": 1
-},
-{
-  "pregunta": "¿Qué ciudad es asediada por las fuerzas de Sauron en 'El Retorno del Rey'?",
-  "respuestas": ["Minas Tirith", "Edoras", "Barad-dûr", "Osgiliath"],
-  "correcta": 0
-},
-{
-  "pregunta": "¿Qué personaje es tentado por el Anillo y trata de quitárselo a Frodo en Emyn Muil?",
-  "respuestas": ["Boromir", "Sam", "Gollum", "Faramir"],
-  "correcta": 0
-},
-{
-  "pregunta": "¿Qué otro nombre recibe Sauron en tiempos antiguos?",
-  "respuestas": ["Mairon", "Morgoth", "Melian", "Ulmo"],
-  "correcta": 0
-}
-{
-  "pregunta": "¿Quién es el mejor amigo de Frodo en su viaje?",
-  "respuestas": ["Pippin", "Merry", "Gollum", "Sam"],
-  "correcta": 3
-},
-{
-  "pregunta": "¿Qué color caracteriza a Gandalf después de su resurrección?",
-  "respuestas": ["Negro", "Rojo", "Blanco", "Azul"],
-  "correcta": 2
-},
-{
-  "pregunta": "¿Qué criatura destruye el Anillo al final?",
-  "respuestas": ["Gollum", "Frodo", "Sam", "Sauron"],
-  "correcta": 0
-},
-{
-  "pregunta": "¿Qué actor interpreta a Aragorn?",
-  "respuestas": ["Orlando Bloom", "Karl Urban", "Sean Bean", "Viggo Mortensen"],
-  "correcta": 3
-},
-{
-  "pregunta": "¿Qué raza es Gimli?",
-  "respuestas": ["Elfo", "Humano", "Hobbit", "Enano"],
-  "correcta": 3
-},
-{
-  "pregunta": "¿Qué título tenía Aragorn antes de ser coronado rey?",
-  "respuestas": ["Thain", "Capitán de Gondor", "Montaraz", "Guardia del Norte"],
-  "correcta": 2
-},
-{
-  "pregunta": "¿Qué tipo de arma usa Legolas principalmente?",
-  "respuestas": ["Espada", "Lanza", "Arco", "Hacha"],
-  "correcta": 2
-},
-{
-  "pregunta": "¿Qué ser maligno fue maestro de Sauron?",
-  "respuestas": ["Melkor", "Balrog", "Nazgûl", "Saruman"],
-  "correcta": 0
-},
-{
-  "pregunta": "¿Cómo se llama el rey de Rohan?",
-  "respuestas": ["Théoden", "Denethor", "Balin", "Thranduil"],
-  "correcta": 0
-},
-{
-  "pregunta": "¿Qué actor interpretó a Boromir?",
-  "respuestas": ["Sean Astin", "Karl Urban", "Sean Bean", "Dominic Monaghan"],
-  "correcta": 2
-},
-{
-  "pregunta": "¿Dónde vive Galadriel?",
-  "respuestas": ["Rivendel", "Lothlórien", "Minas Tirith", "Dol Guldur"],
-  "correcta": 1
-},
-{
-  "pregunta": "¿Qué evento inicia la Guerra del Anillo?",
-  "respuestas": ["La muerte de Gandalf", "La pérdida del anillo", "El descubrimiento del anillo por Sauron", "La traición de Saruman"],
-  "correcta": 2
-},
-{
-  "pregunta": "¿Quién es el mayordomo de Gondor durante 'El Retorno del Rey'?",
-  "respuestas": ["Faramir", "Théoden", "Isildur", "Denethor"],
-  "correcta": 3
-},
-{
-  "pregunta": "¿Quién canta la canción de los hobbits en la corte de Denethor?",
-  "respuestas": ["Merry", "Frodo", "Sam", "Pippin"],
-  "correcta": 3
-},
-{
-  "pregunta": "¿Cómo se llama el hijo de Denethor que muere?",
-  "respuestas": ["Faramir", "Boromir", "Isildur", "Theodred"],
-  "correcta": 1
-},
-{
-  "pregunta": "¿Qué objeto permite a Sauron vigilar la Tierra Media?",
-  "respuestas": ["El Anillo Único", "El Palantir", "El Ojo de Morgoth", "La Piedra de Lothlórien"],
-  "correcta": 1
-},
-{
-  "pregunta": "¿Qué raza antigua habitaba Khazad-dûm antes de que llegara el Balrog?",
-  "respuestas": ["Enanos", "Orcos", "Elfos", "Numenóreanos"],
-  "correcta": 0
-},
-{
-  "pregunta": "¿Cómo se llama la espada que se rompe y luego se forja de nuevo para Aragorn?",
-  "respuestas": ["Orcrist", "Sting", "Narsil", "Glamdring"],
-  "correcta": 2
-},
-{
-  "pregunta": "¿Cuál es el verdadero nombre del Rey Brujo de Angmar?",
-  "respuestas": ["Nunca se menciona", "Ar-Pharazôn", "Annatar", "Círdan"],
-  "correcta": 0
-},
-{
-  "pregunta": "¿Qué personaje dice la frase: 'No todos los que vagan están perdidos'?",
-  "respuestas": ["Gandalf", "Frodo", "Aragorn", "Bilbo"],
-  "correcta": 3
-}
-{
-  "pregunta": "¿Qué actor interpreta a Legolas?",
-  "respuestas": ["Elijah Wood", "Orlando Bloom", "Dominic Monaghan", "Billy Boyd"],
-  "correcta": 1
-},
-{
-  "pregunta": "¿Qué criatura era Gollum antes de corromperse por el Anillo?",
-  "respuestas": ["Hobbit", "Elfo", "Humano", "Enano"],
-  "correcta": 0
-},
-{
-  "pregunta": "¿Qué nombre recibe el Anillo creado por Sauron?",
-  "respuestas": ["El Anillo Único", "El Anillo de Poder", "El Anillo Maldito", "El Anillo Negro"],
-  "correcta": 0
-},
-{
-  "pregunta": "¿Cómo se llama el actor que interpreta a Sam?",
-  "respuestas": ["Sean Bean", "Sean Astin", "Andy Serkis", "Elijah Wood"],
-  "correcta": 1
-},
-{
-  "pregunta": "¿Cuál es la capital de Gondor?",
-  "respuestas": ["Rivendel", "Edoras", "Minas Tirith", "Dol Amroth"],
-  "correcta": 2
-},
-{
-  "pregunta": "¿Cómo se llama el caballo blanco de Gandalf?",
-  "respuestas": ["Arod", "Sombragrís", "Asfaloth", "Roheryn"],
-  "correcta": 1
-},
-{
-  "pregunta": "¿Quién fue el portador del Anillo antes que Bilbo?",
-  "respuestas": ["Isildur", "Sauron", "Gollum", "Elrond"],
-  "correcta": 2
-},
-{
-  "pregunta": "¿Qué ser es mitad águila y mitad espíritu superior según la mitología de Tolkien?",
-  "respuestas": ["Maiar", "Manwë", "Thorondor", "Ent"],
-  "correcta": 2
-},
-{
-  "pregunta": "¿Qué personaje empuña la espada Glamdring?",
-  "respuestas": ["Aragorn", "Gimli", "Legolas", "Gandalf"],
-  "correcta": 3
-},
-{
-  "pregunta": "¿Qué miembro de la Compañía es heredero de Isildur?",
-  "respuestas": ["Frodo", "Boromir", "Gandalf", "Aragorn"],
-  "correcta": 3
-},
-{
-  "pregunta": "¿Qué significa Mordor en la lengua negra?",
-  "respuestas": ["Tierra Oscura", "Tierra del Este", "Tierra del Mal", "Tierra del Anillo"],
-  "correcta": 0
-},
-{
-  "pregunta": "¿Quién dice la frase: 'Mi tesoro' refiriéndose al Anillo?",
-  "respuestas": ["Sauron", "Frodo", "Gollum", "Saruman"],
-  "correcta": 2
-},
-{
-  "pregunta": "¿Qué criatura aparece en el lago frente a las puertas de Moria?",
-  "respuestas": ["Balrog", "El Guardián", "Hidra", "Serpiente Marina"],
-  "correcta": 1
-},
-{
-  "pregunta": "¿Quién mata al Rey Brujo de Angmar?",
-  "respuestas": ["Aragorn", "Éowyn", "Gandalf", "Faramir"],
-  "correcta": 1
-},
-{
-  "pregunta": "¿Qué personaje lleva una luz estelar en un frasco?",
-  "respuestas": ["Frodo", "Gandalf", "Sam", "Arwen"],
-  "correcta": 0
-},
-{
-  "pregunta": "¿Cómo se llama la torre donde reside Saruman?",
-  "respuestas": ["Minas Morgul", "Barad-dûr", "Orthanc", "Angband"],
-  "correcta": 2
-},
-{
-  "pregunta": "¿Qué raza fue corrompida para crear a los orcos?",
-  "respuestas": ["Hombres", "Elfos", "Enanos", "Maiar"],
-  "correcta": 1
-},
-{
-  "pregunta": "¿Cómo se llama el rey de los muertos que habita la Montaña Blanca?",
-  "respuestas": ["Rey Tumulario", "Rey Pálido", "Rey Sin Nombre", "No tiene nombre"],
-  "correcta": 3
-},
-{
-  "pregunta": "¿Qué elfo aparece tanto en 'El Hobbit' como en 'El Señor de los Anillos'?",
-  "respuestas": ["Legolas", "Galadriel", "Elrond", "Thranduil"],
-  "correcta": 2
-},
-{
-  "pregunta": "¿Qué día se destruye el Anillo según el calendario de la Tierra Media?",
-  "respuestas": ["1 de marzo", "25 de marzo", "15 de febrero", "3 de abril"],
-  "correcta": 1
-}
-{
-  "pregunta": "¿Cómo se llama el anillo que lleva Frodo?",
-  "respuestas": ["Anillo del Destino", "Anillo de Fuego", "Anillo Único", "Anillo de los Elfos"],
-  "correcta": 2
-},
-{
-  "pregunta": "¿Quién es el mejor amigo de Frodo durante el viaje?",
-  "respuestas": ["Merry", "Gandalf", "Pippin", "Sam"],
-  "correcta": 3
-},
-{
-  "pregunta": "¿Qué tipo de criatura es Legolas?",
-  "respuestas": ["Hobbit", "Elfo", "Enano", "Hombre"],
-  "correcta": 1
-},
-{
-  "pregunta": "¿Cómo se llama el mago que guía a la Compañía del Anillo?",
-  "respuestas": ["Saruman", "Radagast", "Gandalf", "Sauron"],
-  "correcta": 2
-},
-{
-  "pregunta": "¿Qué ser maligno busca recuperar el Anillo Único?",
-  "respuestas": ["Saruman", "Sauron", "Smaug", "Morgoth"],
-  "correcta": 1
-},
-{
-  "pregunta": "¿Cuál es el nombre completo de Frodo?",
-  "respuestas": ["Frodo Bolsón", "Frodo Gamyi", "Frodo Brandybuck", "Frodo Took"],
-  "correcta": 0
-},
-{
-  "pregunta": "¿Quién es el padre de Boromir?",
-  "respuestas": ["Théoden", "Denethor", "Faramir", "Isildur"],
-  "correcta": 1
-},
-{
-  "pregunta": "¿Qué criatura persigue a Frodo y Sam durante su viaje a Mordor?",
-  "respuestas": ["Balrog", "Gollum", "Nazgûl", "Trol"],
-  "correcta": 1
-},
-{
-  "pregunta": "¿Qué pueblo vive en la Comarca?",
-  "respuestas": ["Hombres", "Elfos", "Hobbits", "Enanos"],
-  "correcta": 2
-},
-{
-  "pregunta": "¿Cuál es el nombre élfico de Aragorn?",
-  "respuestas": ["Thorongil", "Estel", "Elessar", "Isildurion"],
-  "correcta": 2
-},
-{
-  "pregunta": "¿Quién entrega a Frodo la espada Dardo?",
-  "respuestas": ["Aragorn", "Bilbo", "Gandalf", "Elrond"],
-  "correcta": 1
-},
-{
-  "pregunta": "¿Qué personaje muere luchando contra el Balrog?",
-  "respuestas": ["Boromir", "Legolas", "Gandalf", "Aragorn"],
-  "correcta": 2
-},
-{
-  "pregunta": "¿Qué objeto usa Arwen para salvar a Frodo del ataque de los espectros del Anillo?",
-  "respuestas": ["Una espada", "Una planta élfica", "El poder del río", "Un anillo élfico"],
-  "correcta": 2
-},
-{
-  "pregunta": "¿Qué ciudad elfica es gobernada por Elrond?",
-  "respuestas": ["Lothlórien", "Rivendel", "Valinor", "Gondolin"],
-  "correcta": 1
-},
-{
-  "pregunta": "¿Quién es el líder de los Jinetes de Rohan?",
-  "respuestas": ["Éomer", "Théoden", "Gríma", "Faramir"],
-  "correcta": 1
-},
-{
-  "pregunta": "¿Qué personaje dice la frase: 'No puedes pasar'?",
-  "respuestas": ["Saruman", "Elrond", "Gandalf", "Aragorn"],
-  "correcta": 2
-},
-{
-  "pregunta": "¿Cuál es el arma principal de Gimli?",
-  "respuestas": ["Espada", "Lanza", "Arco", "Hacha"],
-  "correcta": 3
-},
-{
-  "pregunta": "¿Quién gobierna la ciudad élfica de Lothlórien junto a Celeborn?",
-  "respuestas": ["Arwen", "Tauriel", "Galadriel", "Éowyn"],
-  "correcta": 2
-},
-{
-  "pregunta": "¿Qué miembro de la Compañía intenta quedarse con el Anillo?",
-  "respuestas": ["Sam", "Boromir", "Merry", "Gimli"],
-  "correcta": 1
-},
-{
-  "pregunta": "¿Qué pueblo de la Tierra Media fue destruido por Sauron antes del inicio de la historia?",
-  "respuestas": ["Dale", "Osgiliath", "Eregion", "Númenor"],
-  "correcta": 3
-}
-{
-  "pregunta": "¿Cómo se llama el creador del universo de El Señor de los Anillos?",
-  "respuestas": ["George R. R. Martin", "C. S. Lewis", "J. R. R. Tolkien", "Philip Pullman"],
-  "correcta": 2
-},
-{
-  "pregunta": "¿Qué raza mide menos de un metro y ama las comidas y las fiestas?",
-  "respuestas": ["Enanos", "Hobbits", "Elfos", "Ents"],
-  "correcta": 1
-},
-{
-  "pregunta": "¿Quién es el jardinero de Frodo?",
-  "respuestas": ["Merry", "Sam", "Pippin", "Boromir"],
-  "correcta": 1
-},
-{
-  "pregunta": "¿Qué mago viste de blanco al final de la trilogía?",
-  "respuestas": ["Saruman", "Radagast", "Gandalf", "Alatar"],
-  "correcta": 2
-},
-{
-  "pregunta": "¿Dónde vive Frodo al inicio de la historia?",
-  "respuestas": ["Minas Tirith", "Rivendel", "Hobbiton", "Lothlórien"],
-  "correcta": 2
-},
-{
-  "pregunta": "¿Cómo se llama la espada de Aragorn que fue forjada de nuevo?",
-  "respuestas": ["Glamdring", "Andúril", "Sting", "Narsil"],
-  "correcta": 1
-},
-{
-  "pregunta": "¿Qué personaje es conocido como el Rey de los Nazgûl?",
-  "respuestas": ["Mouth of Sauron", "Rey Brujo de Angmar", "Sauron", "Saruman"],
-  "correcta": 1
-},
-{
-  "pregunta": "¿Qué miembro de la Compañía es hijo del senescal de Gondor?",
-  "respuestas": ["Boromir", "Gimli", "Frodo", "Merry"],
-  "correcta": 0
-},
-{
-  "pregunta": "¿Qué elfa entrega a Frodo el frasco con la luz de Eärendil?",
-  "respuestas": ["Arwen", "Galadriel", "Tauriel", "Lúthien"],
-  "correcta": 1
-},
-{
-  "pregunta": "¿Cómo se llama el monte donde debe destruirse el Anillo?",
-  "respuestas": ["Monte Nublado", "Monte del Juicio", "Monte del Destino", "Monte Rojo"],
-  "correcta": 2
-},
-{
-  "pregunta": "¿Qué criatura es Bárbol?",
-  "respuestas": ["Trol", "Ent", "Orco", "Hobbit"],
-  "correcta": 1
-},
-{
-  "pregunta": "¿Qué personaje muere defendiendo a Merry y Pippin?",
-  "respuestas": ["Aragorn", "Faramir", "Boromir", "Gandalf"],
-  "correcta": 2
-},
-{
-  "pregunta": "¿Quién dirige la batalla en el Abismo de Helm?",
-  "respuestas": ["Faramir", "Éomer", "Théoden", "Aragorn"],
-  "correcta": 2
-},
-{
-  "pregunta": "¿Qué hijo de Gondor sobrevive al final de la historia?",
-  "respuestas": ["Boromir", "Denethor", "Faramir", "Isildur"],
-  "correcta": 2
-},
-{
-  "pregunta": "¿Cómo se llama la ciudad elfa donde se reúne la Compañía del Anillo?",
-  "respuestas": ["Hobbiton", "Edoras", "Rivendel", "Lothlórien"],
-  "correcta": 2
-},
-{
-  "pregunta": "¿Quién es Gríma Lengua de Serpiente?",
-  "respuestas": ["Un elfo traidor", "El senescal de Gondor", "El consejero corrupto de Théoden", "El capitán de los orcos"],
-  "correcta": 2
-},
-{
-  "pregunta": "¿Qué criatura aparece al final de El Retorno del Rey intentando detener a Frodo?",
-  "respuestas": ["Gollum", "Balrog", "Trol", "Araña"],
-  "correcta": 0
-},
-{
-  "pregunta": "¿Qué raza fue creada por Aulë el herrero?",
-  "respuestas": ["Hombres", "Enanos", "Elfos", "Orcos"],
-  "correcta": 1
-},
-{
-  "pregunta": "¿Qué símbolo aparece en la puerta de Moria?",
-  "respuestas": ["Una luna creciente", "El Árbol Blanco", "El emblema de Durin", "El ojo de Sauron"],
-  "correcta": 2
-},
-{
-  "pregunta": "¿Qué criatura mítica guía a los personajes por las montañas en El Hobbit y aparece como símbolo en El Señor de los Anillos?",
-  "respuestas": ["Ent", "Águila gigante", "Dragón", "Huargo"],
-  "correcta": 1
-}
-{
-  "pregunta": "¿Qué actor interpreta a Frodo en las películas?",
-  "respuestas": ["Elijah Wood", "Daniel Radcliffe", "Orlando Bloom", "Tobey Maguire"],
-  "correcta": 0
-},
-{
-  "pregunta": "¿Qué criatura es Gollum originalmente?",
-  "respuestas": ["Hobbit", "Elfo", "Orco", "Enano"],
-  "correcta": 0
-},
-{
-  "pregunta": "¿Qué actor da vida a Gandalf?",
-  "respuestas": ["Christopher Lee", "Ian Holm", "Ian McKellen", "John Hurt"],
-  "correcta": 2
-},
-{
-  "pregunta": "¿Cómo se llama el anillo que Bilbo entrega a Frodo?",
-  "respuestas": ["Anillo de Poder", "Anillo Único", "Anillo Oscuro", "Anillo de Fuego"],
-  "correcta": 1
-},
-{
-  "pregunta": "¿Qué día se celebra el cumpleaños de Bilbo y Frodo?",
-  "respuestas": ["21 de septiembre", "23 de octubre", "22 de septiembre", "1 de enero"],
-  "correcta": 2
-},
-{
-  "pregunta": "¿Qué criatura hiere a Frodo con una hoja envenenada?",
-  "respuestas": ["Gollum", "Nazgûl", "Orco", "Trol"],
-  "correcta": 1
-},
-{
-  "pregunta": "¿Qué ciudad humana es gobernada por el senescal Denethor?",
-  "respuestas": ["Osgiliath", "Minas Tirith", "Dol Amroth", "Pelargir"],
-  "correcta": 1
-},
-{
-  "pregunta": "¿Qué arma utiliza Legolas principalmente?",
-  "respuestas": ["Espada", "Hacha", "Lanza", "Arco"],
-  "correcta": 3
-},
-{
-  "pregunta": "¿Quién lidera la carga en la Batalla de los Campos del Pelennor?",
-  "respuestas": ["Faramir", "Gandalf", "Aragorn", "Théoden"],
-  "correcta": 3
-},
-{
-  "pregunta": "¿Cómo se llama el caballo blanco de Gandalf?",
-  "respuestas": ["Sombragris", "Ventolín", "Arod", "Rayo"],
-  "correcta": 0
-},
-{
-  "pregunta": "¿Qué criatura envenena a Frodo antes de que lo capturen los orcos?",
-  "respuestas": ["Ungoliant", "Ella-Laraña", "Nazgûl", "Huargo"],
-  "correcta": 1
-},
-{
-  "pregunta": "¿Qué personaje masculino se disfraza de soldado para luchar en la batalla?",
-  "respuestas": ["Faramir", "Pippin", "Merry", "Ninguno, es Éowyn"],
-  "correcta": 3
-},
-{
-  "pregunta": "¿Qué personaje destruye finalmente el Anillo?",
-  "respuestas": ["Frodo", "Sam", "Gollum", "Aragorn"],
-  "correcta": 2
-},
-{
-  "pregunta": "¿Cómo se llama el padre de Aragorn?",
-  "respuestas": ["Isildur", "Elendil", "Arathorn", "Théoden"],
-  "correcta": 2
-},
-{
-  "pregunta": "¿Qué título adopta Aragorn al ser coronado?",
-  "respuestas": ["Rey de Rohan", "Rey de Arnor", "Rey de Gondor", "Rey Elessar"],
-  "correcta": 3
-},
-{
-  "pregunta": "¿Dónde se forjó el Anillo Único?",
-  "respuestas": ["Barad-dûr", "Moria", "Monte del Destino", "Minas Morgul"],
-  "correcta": 2
-},
-{
-  "pregunta": "¿Quién fue el primer portador del Anillo Único?",
-  "respuestas": ["Gollum", "Isildur", "Sauron", "Celebrimbor"],
-  "correcta": 2
-},
-{
-  "pregunta": "¿Qué personaje lucha contra el Rey Brujo y lo derrota?",
-  "respuestas": ["Gandalf", "Aragorn", "Éowyn", "Théoden"],
-  "correcta": 2
-},
-{
-  "pregunta": "¿Qué ser mitológico representa a las águilas gigantes?",
-  "respuestas": ["Maiar", "Valar", "Ents", "Animales normales"],
-  "correcta": 0
-},
-{
-  "pregunta": "¿Qué objeto permite ver a distancia y fue usado por Saruman y Sauron?",
-  "respuestas": ["Palantir", "Silmaril", "Elendilmir", "Anillo de visión"],
-  "correcta": 0
-}
-{
-  "pregunta": "¿Cómo se llama el lugar donde Frodo y sus compañeros se encuentran con los Elfos en el primer libro?",
-  "respuestas": ["Rivendel", "Lothlórien", "Moria", "Minas Tirith"],
-  "correcta": 0
-},
-{
-  "pregunta": "¿Quién es el heredero de Isildur?",
-  "respuestas": ["Gandalf", "Aragorn", "Boromir", "Faramir"],
-  "correcta": 1
-},
-{
-  "pregunta": "¿Qué criatura le salva la vida a Gandalf en el abismo de Helm?",
-  "respuestas": ["Una águila", "Un caballo", "Un soldado de Rohan", "Un ente"],
-  "correcta": 0
-},
-{
-  "pregunta": "¿Cómo se llama la espada que Frodo usa en el viaje?",
-  "respuestas": ["Glamdring", "Andúril", "Dardo", "Sting"],
-  "correcta": 3
-},
-{
-  "pregunta": "¿Cómo se llama el amigo de Frodo que acompaña a los hobbits al viaje?",
-  "respuestas": ["Merry", "Sam", "Pippin", "Gimli"],
-  "correcta": 1
-},
-{
-  "pregunta": "¿Qué actor interpreta a Legolas?",
-  "respuestas": ["Orlando Bloom", "Ian McKellen", "Viggo Mortensen", "Sean Astin"],
-  "correcta": 0
-},
-{
-  "pregunta": "¿Quién es el rey de Rohan durante la guerra del Anillo?",
-  "respuestas": ["Théoden", "Faramir", "Aragorn", "Boromir"],
-  "correcta": 0
-},
-{
-  "pregunta": "¿Qué persona mítica vive en el bosque de Lothlórien?",
-  "respuestas": ["Elfos", "Hombres", "Enanos", "Orcos"],
-  "correcta": 0
-},
-{
-  "pregunta": "¿En qué ciudad se encuentra el Palantír que Saruman usa?",
-  "respuestas": ["Minas Tirith", "Rivendel", "Isengard", "Osgiliath"],
-  "correcta": 2
-},
-{
-  "pregunta": "¿Cómo se llama el hermano de Boromir?",
-  "respuestas": ["Faramir", "Aragorn", "Gimli", "Théoden"],
-  "correcta": 0
-},
-{
-  "pregunta": "¿Qué elfo acompaña a los hobbits durante su viaje hasta Rivendel?",
-  "respuestas": ["Gimli", "Glorfindel", "Arwen", "Legolas"],
-  "correcta": 1
-},
-{
-  "pregunta": "¿Qué enano es conocido por su lealtad y valentía en la Compañía del Anillo?",
-  "respuestas": ["Gimli", "Dáin", "Thorin", "Balin"],
-  "correcta": 0
-},
-{
-  "pregunta": "¿Cómo se llama la hermana de Boromir y Faramir?",
-  "respuestas": ["Arwen", "Éowyn", "Galadriel", "Éomer"],
-  "correcta": 1
-},
-{
-  "pregunta": "¿Qué persona obtiene la Espada de Elendil?",
-  "respuestas": ["Faramir", "Gandalf", "Aragorn", "Théoden"],
-  "correcta": 2
-},
-{
-  "pregunta": "¿Cómo se llama el Balrog que Gandalf enfrenta en Moria?",
-  "respuestas": ["Durin", "Shathar", "Gorbag", "Durin's Bane"],
-  "correcta": 3
-},
-{
-  "pregunta": "¿Qué criatura sirve a Sauron como su mensajero?",
-  "respuestas": ["Gollum", "Nazgûl", "Balrog", "Sauron mismo"],
-  "correcta": 1
-},
-{
-  "pregunta": "¿Qué elfo tiene una relación especial con Aragorn?",
-  "respuestas": ["Galadriel", "Arwen", "Glorfindel", "Legolas"],
-  "correcta": 1
-},
-{
-  "pregunta": "¿Cómo se llama el viaje final de Frodo y Bilbo?",
-  "respuestas": ["El Viaje del Anillo", "La Ruta de los Elfos", "El Viaje a los Puertos Grises", "El Viaje de los Viajantes"],
-  "correcta": 2
-},
-{
-  "pregunta": "¿Quién acompaña a Aragorn en la batalla en los campos de Pelennor?",
-  "respuestas": ["Faramir", "Gimli", "Legolas", "Gandalf"],
-  "correcta": 2
-},
-{
-  "pregunta": "¿Qué actor interpreta a Gimli, el enano?",
-  "respuestas": ["Viggo Mortensen", "Sean Bean", "John Rhys-Davies", "Orlando Bloom"],
-  "correcta": 2
-}
-{
-  "pregunta": "¿Cuál es el nombre del gran árbol en la ciudad de los Elfos, Lothlórien?",
-  "respuestas": ["Árbol Blanco", "Árbol de Valinor", "Mallorn", "Olmo de los Elfos"],
-  "correcta": 2
-},
-{
-  "pregunta": "¿Cómo se llama el hombre que acompaña a Frodo en la última parte del viaje?",
-  "respuestas": ["Sam", "Gimli", "Merry", "Aragorn"],
-  "correcta": 0
-},
-{
-  "pregunta": "¿Quién es el líder de los Nazgûl?",
-  "respuestas": ["El Rey Brujo de Angmar", "Sauron", "Saruman", "Gollum"],
-  "correcta": 0
-},
-{
-  "pregunta": "¿Quién destruye el Anillo en el Monte del Destino?",
-  "respuestas": ["Gollum", "Frodo", "Aragorn", "Sam"],
-  "correcta": 0
-},
-{
-  "pregunta": "¿Qué enano es el último en sobrevivir en Erebor?",
-  "respuestas": ["Thorin", "Balin", "Dáin", "Gimli"],
-  "correcta": 2
-},
-{
-  "pregunta": "¿Qué miembro de la Compañía del Anillo es el primero en morir?",
-  "respuestas": ["Boromir", "Gimli", "Legolas", "Aragorn"],
-  "correcta": 0
-},
-{
-  "pregunta": "¿Quién se convierte en el rey de Gondor?",
-  "respuestas": ["Aragorn", "Boromir", "Faramir", "Gimli"],
-  "correcta": 0
-},
-{
-  "pregunta": "¿Cuál es el nombre del caballo de Aragorn?",
-  "respuestas": ["Arod", "Sombragris", "Brego", "Ventolín"],
-  "correcta": 2
-},
-{
-  "pregunta": "¿Quién es el hermano de Éowyn?",
-  "respuestas": ["Faramir", "Théoden", "Éomer", "Boromir"],
-  "correcta": 2
-},
-{
-  "pregunta": "¿Quién es el líder de los Elfos de Mirkwood?",
-  "respuestas": ["Elrond", "Thranduil", "Galadriel", "Glorfindel"],
-  "correcta": 1
-},
-{
-  "pregunta": "¿Qué ser mitológico crea Sauron como su ejército?",
-  "respuestas": ["Orcos", "Elfos", "Ents", "Hombres"],
-  "correcta": 0
-},
-{
-  "pregunta": "¿Qué isla es el lugar de exilio para los hombres que usan el Palantír?",
-  "respuestas": ["Numenor", "Osgiliath", "Isengard", "Amon Hen"],
-  "correcta": 0
-},
-{
-  "pregunta": "¿Quién se convierte en la reina de Gondor al final?",
-  "respuestas": ["Éowyn", "Arwen", "Galadriel", "Lúthien"],
-  "correcta": 1
-},
-{
-  "pregunta": "¿Quién ayuda a Frodo a llegar a Rivendel después de ser atacado por los Nazgûl?",
-  "respuestas": ["Aragorn", "Gandalf", "Glorfindel", "Elrond"],
-  "correcta": 2
-},
-{
-  "pregunta": "¿Qué evento provoca la batalla entre las fuerzas de Saruman y Rohan?",
-  "respuestas": ["La invasión de Moria", "El ataque de los orcos", "El sitio de Helm", "El regreso de Aragorn"],
-  "correcta": 2
-},
-{
-  "pregunta": "¿Qué se encuentra Frodo al principio de su viaje en Hobbiton?",
-  "respuestas": ["El Anillo Único", "Un mapa de Rivendel", "Un libro de historias", "Una carta de Bilbo"],
-  "correcta": 0
-},
-{
-  "pregunta": "¿Qué ocurre en el Abismo de Helm?",
-  "respuestas": ["Una batalla", "Una tormenta mágica", "La muerte de un mago", "La derrota de un dragón"],
-  "correcta": 0
-},
-{
-  "pregunta": "¿Qué objeto usa Gandalf para luchar contra el Balrog?",
-  "respuestas": ["Espada", "Bastón", "Arco", "Cuerda"],
-  "correcta": 1
-},
-{
-  "pregunta": "¿Cómo se llama el lugar donde se encuentra la Compañía con los Ents?",
-  "respuestas": ["Lothlórien", "Bosque de Fangorn", "Rivendel", "Mirkwood"],
-  "correcta": 1
-}
-{
-  "pregunta": "¿Qué personaje se convierte en el rey de los muertos?",
-  "respuestas": ["Aragorn", "Faramir", "Théoden", "Boromir"],
-  "correcta": 0
-},
-{
-  "pregunta": "¿Qué elfo lucha junto a Legolas durante la Batalla de los Campos del Pelennor?",
-  "respuestas": ["Gimli", "Glorfindel", "Elrond", "Arwen"],
-  "correcta": 1
-},
-{
-  "pregunta": "¿Quién es el creador de los Anillos de Poder?",
-  "respuestas": ["Sauron", "Saruman", "Celebrimbor", "Galadriel"],
-  "correcta": 2
-},
-{
-  "pregunta": "¿Qué tipo de criaturas son los huargos?",
-  "respuestas": ["Lobos", "Osos", "Dragones", "Caballos"],
-  "correcta": 0
-},
-{
-  "pregunta": "¿Cómo se llama el hijo de Éowyn y Faramir?",
-  "respuestas": ["Eldarion", "Elboron", "Beren", "Aragorn II"],
-  "correcta": 1
-},
-{
-  "pregunta": "¿Qué batalla marca la caída de Saruman?",
-  "respuestas": ["La Batalla de Helm", "La Batalla de los Campos del Pelennor", "La Batalla de Osgiliath", "La Batalla de los Puertos Grises"],
-  "correcta": 0
-},
-{
-  "pregunta": "¿Qué miembro de la Compañía del Anillo no es un hombre, sino un hobbit?",
-  "respuestas": ["Aragorn", "Faramir", "Boromir", "Sam"],
-  "correcta": 3
-},
-{
-  "pregunta": "¿En qué lugar se encuentran los Puertos Grises?",
-  "respuestas": ["Rohan", "Gondor", "Mordor", "Valinor"],
-  "correcta": 3
-},
-{
-  "pregunta": "¿Quién se sacrifica para salvar a la Compañía del Anillo en Moria?",
-  "respuestas": ["Boromir", "Gimli", "Aragorn", "Gandalf"],
-  "correcta": 3
-},
-{
-  "pregunta": "¿Qué personaje lleva la espada Andúril?",
-  "respuestas": ["Aragorn", "Faramir", "Gimli", "Legolas"],
-  "correcta": 0
-},
-{
-  "pregunta": "¿Qué criatura ayuda a Frodo a llevar el Anillo?",
-  "respuestas": ["Gollum", "Aragorn", "Gandalf", "Legolas"],
-  "correcta": 0
-},
-{
-  "pregunta": "¿Cómo se llama el principal caballo de Rohan que monta Théoden?",
-  "respuestas": ["Arod", "Sombragris", "Brego", "Snowmane"],
-  "correcta": 3
-},
-{
-  "pregunta": "¿Qué enano es el líder de la expedición a Erebor en 'El Hobbit'?",
-  "respuestas": ["Gimli", "Dáin", "Thorin", "Balin"],
-  "correcta": 2
-},
-{
-  "pregunta": "¿Cómo se llama la espada de Frodo?",
-  "respuestas": ["Sting", "Glamdring", "Andúril", "Narsil"],
-  "correcta": 0
-},
-{
-  "pregunta": "¿Qué personaje es el último en unir fuerzas con los demás en la Batalla de los Campos del Pelennor?",
-  "respuestas": ["Faramir", "Gimli", "Legolas", "Aragorn"],
-  "correcta": 3
-},
-{
-  "pregunta": "¿Qué elfo tiene una relación romántica con Aragorn?",
-  "respuestas": ["Galadriel", "Éowyn", "Arwen", "Lúthien"],
-  "correcta": 2
-},
-{
-  "pregunta": "¿Qué lugar es el hogar de los Ents?",
-  "respuestas": ["Bosque de Fangorn", "Mirkwood", "Rohan", "Isengard"],
-  "correcta": 0
-},
-{
-  "pregunta": "¿Qué personaje dice 'No puedo llevar el Anillo, pero puedo llevarlo'?",
-  "respuestas": ["Frodo", "Sam", "Aragorn", "Gandalf"],
-  "correcta": 1
-},
-{
-  "pregunta": "¿Qué Anillo de Poder usa Galadriel?",
-  "respuestas": ["El Anillo Único", "Narya", "Nenya", "Vilya"],
-  "correcta": 2
-},
-{
-  "pregunta": "¿Qué ciudad es conocida como la 'Ciudad Blanca' de Gondor?",
-  "respuestas": ["Minas Tirith", "Osgiliath", "Pelargir", "Dol Amroth"],
-  "correcta": 0
-}
-{
-  "pregunta": "¿Qué elfo es el padre de Arwen?",
-  "respuestas": ["Elrond", "Glorfindel", "Thranduil", "Celeborn"],
-  "correcta": 0
-},
-{
-  "pregunta": "¿Cómo se llama el hermano de Legolas?",
-  "respuestas": ["Thranduil", "Faramir", "Amdir", "Oropher"],
-  "correcta": 0
-},
-{
-  "pregunta": "¿Qué enano es conocido por ser el último rey bajo la montaña en Erebor?",
-  "respuestas": ["Thorin", "Balin", "Dáin", "Gimli"],
-  "correcta": 2
-},
-{
-  "pregunta": "¿Qué elfo porta el anillo Narya?",
-  "respuestas": ["Elrond", "Gandalf", "Galadriel", "Cirdan"],
-  "correcta": 3
-},
-{
-  "pregunta": "¿Cómo se llama el lugar donde Frodo y Sam luchan por el control del Anillo?",
-  "respuestas": ["Mordor", "La Comarca", "Lothlórien", "Rohan"],
-  "correcta": 0
-},
-{
-  "pregunta": "¿En qué reino vive Aragorn antes de convertirse en rey?",
-  "respuestas": ["Gondor", "Rohan", "Arnor", "Lothlórien"],
-  "correcta": 2
-},
-{
-  "pregunta": "¿Cómo se llama el cuervo que pertenece a Gandalf?",
-  "respuestas": ["Rohan", "Samwise", "Gwaihir", "Shadowfax"],
-  "correcta": 2
-},
-{
-  "pregunta": "¿Qué hobbit acompaña a Frodo a Rivendel?",
-  "respuestas": ["Merry", "Pippin", "Sam", "Gimli"],
-  "correcta": 2
-},
-{
-  "pregunta": "¿Qué personaje lleva la espada Glamdring?",
-  "respuestas": ["Gimli", "Aragorn", "Gandalf", "Faramir"],
-  "correcta": 2
-},
-{
-  "pregunta": "¿Quién es el creador de los Elfos?",
-  "respuestas": ["Eru Ilúvatar", "Aulë", "Melkor", "Manwë"],
-  "correcta": 0
-},
-{
-  "pregunta": "¿Qué criatura se encuentra en las Minas de Moria y ataca a la Compañía del Anillo?",
-  "respuestas": ["Balrog", "Troll", "Goblin", "Dragón"],
-  "correcta": 0
-},
-{
-  "pregunta": "¿Cómo se llama el reino de los hombres en el que se encuentra Minas Tirith?",
-  "respuestas": ["Gondor", "Rohan", "Isengard", "Arnor"],
-  "correcta": 0
-},
-{
-  "pregunta": "¿Qué personaje sacrifica su vida para salvar a los demás en la batalla de Helm?",
-  "respuestas": ["Gimli", "Aragorn", "Boromir", "Gandalf"],
-  "correcta": 2
-},
-{
-  "pregunta": "¿Qué ciudad se encuentra en el corazón de Rohan?",
-  "respuestas": ["Edoras", "Minas Tirith", "Rivendel", "Helm's Deep"],
-  "correcta": 0
-},
-{
-  "pregunta": "¿Qué elfo es conocido por ser el último superviviente de los Noldor?",
-  "respuestas": ["Elrond", "Glorfindel", "Celeborn", "Galadriel"],
-  "correcta": 1
-},
-{
-  "pregunta": "¿Qué miembro de la Compañía del Anillo muere al final de la batalla en los Campos del Pelennor?",
-  "respuestas": ["Boromir", "Gimli", "Legolas", "Aragorn"],
-  "correcta": 0
-},
-{
-  "pregunta": "¿Qué criatura del bosque es conocida por su sabiduría y habilidad en la magia?",
-  "respuestas": ["Elfo", "Ent", "Orco", "Hobbit"],
-  "correcta": 1
-},
-{
-  "pregunta": "¿Qué reino es conocido por tener la Ciudad Blanca?",
-  "respuestas": ["Gondor", "Rohan", "Mordor", "Lothlórien"],
-  "correcta": 0
-},
-{
-  "pregunta": "¿Qué es el Anillo Único?",
-  "respuestas": ["Un objeto mágico", "Una espada poderosa", "Un libro antiguo", "Una piedra mágica"],
-  "correcta": 0
-},
-{
-  "pregunta": "¿Quién es el líder de los orcos de Moria?",
-  "respuestas": ["Azog", "Saruman", "Sauron", "Gollum"],
-  "correcta": 0
-}
-    ];
+    const preguntas = 
+      [
+  {
+    "pregunta": "¿Cómo se llama el hobbit protagonista de 'El Señor de los Anillos'?",
+    "respuestas": [
+      "Bilbo Bolsón",
+      "Frodo Bolsón",
+      "Sam Gamyi",
+      "Pippin Took"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué criatura dice 'Mi tesoro' refiriéndose al Anillo Único?",
+    "respuestas": [
+      "Gollum",
+      "Saruman",
+      "Sauron",
+      "Legolas"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Cómo se llama el mago gris que guía a la Comunidad del Anillo?",
+    "respuestas": [
+      "Saruman",
+      "Radagast",
+      "Gandalf",
+      "Elrond"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué raza es Legolas?",
+    "respuestas": [
+      "Humano",
+      "Elfo",
+      "Enano",
+      "Orco"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿En qué montaña debe ser destruido el Anillo Único?",
+    "respuestas": [
+      "Monte Caradhras",
+      "Monte Gundabad",
+      "Monte del Destino",
+      "Monte Erebor"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Quién forjó el Anillo Único?",
+    "respuestas": [
+      "Elrond",
+      "Celebrimbor",
+      "Sauron",
+      "Isildur"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Cómo se llama el padre de Boromir y Faramir?",
+    "respuestas": [
+      "Théoden",
+      "Denethor",
+      "Elrond",
+      "Aragorn"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué ser alado montan los Nazgûl?",
+    "respuestas": [
+      "Grifos",
+      "Águilas",
+      "Bestias aladas",
+      "Dragones"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Quién mata al Rey Brujo de Angmar?",
+    "respuestas": [
+      "Aragorn",
+      "Gandalf",
+      "Éowyn",
+      "Merry"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Cómo se llama la espada de Aragorn?",
+    "respuestas": [
+      "Andúril",
+      "Sting",
+      "Narsil",
+      "Orcrist"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué criatura gigantesca protege las puertas de Moria?",
+    "respuestas": [
+      "Dragón",
+      "Trol de las cavernas",
+      "Balrog",
+      "Ent"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué ciudad es la capital de Rohan?",
+    "respuestas": [
+      "Minas Tirith",
+      "Edoras",
+      "Gondor",
+      "Dale"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Quién es el padre de Legolas?",
+    "respuestas": [
+      "Thranduil",
+      "Elrond",
+      "Celeborn",
+      "Finwë"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué hobbit acompaña a Frodo hasta el final del viaje?",
+    "respuestas": [
+      "Pippin",
+      "Merry",
+      "Sam",
+      "Bilbo"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué personaje es tanto rey como montaraz?",
+    "respuestas": [
+      "Faramir",
+      "Théoden",
+      "Aragorn",
+      "Boromir"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Cómo se llama la araña gigante que ataca a Frodo?",
+    "respuestas": [
+      "Ungoliant",
+      "Shelob",
+      "Aragog",
+      "Glaurung"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué elfo lucha en el Abismo de Helm?",
+    "respuestas": [
+      "Thranduil",
+      "Elrond",
+      "Legolas",
+      "Glorfindel"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Cuál es el verdadero nombre de Gollum?",
+    "respuestas": [
+      "Deagol",
+      "Smeagol",
+      "Gríma",
+      "Guritz"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué palabra hace que se abran las puertas de Moria?",
+    "respuestas": [
+      "Amigo",
+      "Ábrete",
+      "Elbereth",
+      "Mellon"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Quién fue el primer portador humano del Anillo Único?",
+    "respuestas": [
+      "Elendil",
+      "Isildur",
+      "Ar-Pharazôn",
+      "Gil-galad"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Quién interpreta a Frodo en la trilogía de 'El Señor de los Anillos'?",
+    "respuestas": [
+      "Elijah Wood",
+      "Daniel Radcliffe",
+      "Tobey Maguire",
+      "Rupert Grint"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Cómo se llama el creador del universo de 'El Señor de los Anillos'?",
+    "respuestas": [
+      "George R.R. Martin",
+      "J.R.R. Tolkien",
+      "C.S. Lewis",
+      "Isaac Asimov"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué actor interpreta a Gandalf?",
+    "respuestas": [
+      "Michael Gambon",
+      "Ian McKellen",
+      "Christopher Lee",
+      "Patrick Stewart"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Cuántas películas componen la trilogía original dirigida por Peter Jackson?",
+    "respuestas": [
+      "Dos",
+      "Tres",
+      "Cuatro",
+      "Cinco"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué objeto debe ser destruido para vencer a Sauron?",
+    "respuestas": [
+      "La espada de Morgoth",
+      "El Anillo Único",
+      "La corona de Angmar",
+      "El Palantir"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué actor interpretó a Saruman?",
+    "respuestas": [
+      "Ian Holm",
+      "Christopher Lee",
+      "Hugo Weaving",
+      "Sean Bean"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué criatura salva a Frodo y Sam al final de 'El Retorno del Rey'?",
+    "respuestas": [
+      "Un dragón",
+      "Una bestia alada",
+      "Un águila gigante",
+      "Un balrog bueno"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué raza de criaturas vive en Fangorn y son parecidos a árboles?",
+    "respuestas": [
+      "Hombres del bosque",
+      "Ents",
+      "Elfos silvanos",
+      "Dúnedain"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué hobbit encuentra el Anillo antes que Frodo?",
+    "respuestas": [
+      "Sam",
+      "Merry",
+      "Pippin",
+      "Bilbo"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Quién dirige la versión cinematográfica de 'El Señor de los Anillos'?",
+    "respuestas": [
+      "Peter Jackson",
+      "Steven Spielberg",
+      "James Cameron",
+      "George Lucas"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Cómo se llama la posada donde se encuentran con Aragorn en Bree?",
+    "respuestas": [
+      "La Pradera Verde",
+      "El Pony Pisador",
+      "El Dragón Azul",
+      "La Casa del Bosque"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Cómo se llama el reino gobernado por Elrond?",
+    "respuestas": [
+      "Gondor",
+      "Lothlórien",
+      "Rivendel",
+      "Valinor"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Cuál es el nombre completo del autor de los libros?",
+    "respuestas": [
+      "John Ronald Reuel Tolkien",
+      "James Robert Tolkien",
+      "Joseph Richard Tolkien",
+      "Jonathan Raymond Tolkien"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Quién interpreta a Arwen en las películas?",
+    "respuestas": [
+      "Cate Blanchett",
+      "Liv Tyler",
+      "Natalie Portman",
+      "Keira Knightley"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué ser maligno es el principal antagonista de la historia?",
+    "respuestas": [
+      "Saruman",
+      "Melkor",
+      "Sauron",
+      "Nazgûl"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Cómo se llama el libro donde aparece por primera vez el Anillo Único?",
+    "respuestas": [
+      "El Retorno del Rey",
+      "El Silmarillion",
+      "El Hobbit",
+      "Los Hijos de Húrin"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué actriz interpreta a Galadriel?",
+    "respuestas": [
+      "Liv Tyler",
+      "Cate Blanchett",
+      "Tilda Swinton",
+      "Helena Bonham Carter"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué ciudad es asediada por las fuerzas de Sauron en 'El Retorno del Rey'?",
+    "respuestas": [
+      "Minas Tirith",
+      "Edoras",
+      "Barad-dûr",
+      "Osgiliath"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué personaje es tentado por el Anillo y trata de quitárselo a Frodo en Emyn Muil?",
+    "respuestas": [
+      "Boromir",
+      "Sam",
+      "Gollum",
+      "Faramir"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué otro nombre recibe Sauron en tiempos antiguos?",
+    "respuestas": [
+      "Mairon",
+      "Morgoth",
+      "Melian",
+      "Ulmo"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Quién es el mejor amigo de Frodo en su viaje?",
+    "respuestas": [
+      "Pippin",
+      "Merry",
+      "Gollum",
+      "Sam"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Qué color caracteriza a Gandalf después de su resurrección?",
+    "respuestas": [
+      "Negro",
+      "Rojo",
+      "Blanco",
+      "Azul"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué criatura destruye el Anillo al final?",
+    "respuestas": [
+      "Gollum",
+      "Frodo",
+      "Sam",
+      "Sauron"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué actor interpreta a Aragorn?",
+    "respuestas": [
+      "Orlando Bloom",
+      "Karl Urban",
+      "Sean Bean",
+      "Viggo Mortensen"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Qué raza es Gimli?",
+    "respuestas": [
+      "Elfo",
+      "Humano",
+      "Hobbit",
+      "Enano"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Qué título tenía Aragorn antes de ser coronado rey?",
+    "respuestas": [
+      "Thain",
+      "Capitán de Gondor",
+      "Montaraz",
+      "Guardia del Norte"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué tipo de arma usa Legolas principalmente?",
+    "respuestas": [
+      "Espada",
+      "Lanza",
+      "Arco",
+      "Hacha"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué ser maligno fue maestro de Sauron?",
+    "respuestas": [
+      "Melkor",
+      "Balrog",
+      "Nazgûl",
+      "Saruman"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Cómo se llama el rey de Rohan?",
+    "respuestas": [
+      "Théoden",
+      "Denethor",
+      "Balin",
+      "Thranduil"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué actor interpretó a Boromir?",
+    "respuestas": [
+      "Sean Astin",
+      "Karl Urban",
+      "Sean Bean",
+      "Dominic Monaghan"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Dónde vive Galadriel?",
+    "respuestas": [
+      "Rivendel",
+      "Lothlórien",
+      "Minas Tirith",
+      "Dol Guldur"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué evento inicia la Guerra del Anillo?",
+    "respuestas": [
+      "La muerte de Gandalf",
+      "La pérdida del anillo",
+      "El descubrimiento del anillo por Sauron",
+      "La traición de Saruman"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Quién es el mayordomo de Gondor durante 'El Retorno del Rey'?",
+    "respuestas": [
+      "Faramir",
+      "Théoden",
+      "Isildur",
+      "Denethor"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Quién canta la canción de los hobbits en la corte de Denethor?",
+    "respuestas": [
+      "Merry",
+      "Frodo",
+      "Sam",
+      "Pippin"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Cómo se llama el hijo de Denethor que muere?",
+    "respuestas": [
+      "Faramir",
+      "Boromir",
+      "Isildur",
+      "Theodred"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué objeto permite a Sauron vigilar la Tierra Media?",
+    "respuestas": [
+      "El Anillo Único",
+      "El Palantir",
+      "El Ojo de Morgoth",
+      "La Piedra de Lothlórien"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué raza antigua habitaba Khazad-dûm antes de que llegara el Balrog?",
+    "respuestas": [
+      "Enanos",
+      "Orcos",
+      "Elfos",
+      "Numenóreanos"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Cómo se llama la espada que se rompe y luego se forja de nuevo para Aragorn?",
+    "respuestas": [
+      "Orcrist",
+      "Sting",
+      "Narsil",
+      "Glamdring"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Cuál es el verdadero nombre del Rey Brujo de Angmar?",
+    "respuestas": [
+      "Nunca se menciona",
+      "Ar-Pharazôn",
+      "Annatar",
+      "Círdan"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué personaje dice la frase: 'No todos los que vagan están perdidos'?",
+    "respuestas": [
+      "Gandalf",
+      "Frodo",
+      "Aragorn",
+      "Bilbo"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Qué actor interpreta a Legolas?",
+    "respuestas": [
+      "Elijah Wood",
+      "Orlando Bloom",
+      "Dominic Monaghan",
+      "Billy Boyd"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué criatura era Gollum antes de corromperse por el Anillo?",
+    "respuestas": [
+      "Hobbit",
+      "Elfo",
+      "Humano",
+      "Enano"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué nombre recibe el Anillo creado por Sauron?",
+    "respuestas": [
+      "El Anillo Único",
+      "El Anillo de Poder",
+      "El Anillo Maldito",
+      "El Anillo Negro"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Cómo se llama el actor que interpreta a Sam?",
+    "respuestas": [
+      "Sean Bean",
+      "Sean Astin",
+      "Andy Serkis",
+      "Elijah Wood"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Cuál es la capital de Gondor?",
+    "respuestas": [
+      "Rivendel",
+      "Edoras",
+      "Minas Tirith",
+      "Dol Amroth"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Cómo se llama el caballo blanco de Gandalf?",
+    "respuestas": [
+      "Arod",
+      "Sombragrís",
+      "Asfaloth",
+      "Roheryn"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Quién fue el portador del Anillo antes que Bilbo?",
+    "respuestas": [
+      "Isildur",
+      "Sauron",
+      "Gollum",
+      "Elrond"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué ser es mitad águila y mitad espíritu superior según la mitología de Tolkien?",
+    "respuestas": [
+      "Maiar",
+      "Manwë",
+      "Thorondor",
+      "Ent"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué personaje empuña la espada Glamdring?",
+    "respuestas": [
+      "Aragorn",
+      "Gimli",
+      "Legolas",
+      "Gandalf"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Qué miembro de la Compañía es heredero de Isildur?",
+    "respuestas": [
+      "Frodo",
+      "Boromir",
+      "Gandalf",
+      "Aragorn"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Qué significa Mordor en la lengua negra?",
+    "respuestas": [
+      "Tierra Oscura",
+      "Tierra del Este",
+      "Tierra del Mal",
+      "Tierra del Anillo"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Quién dice la frase: 'Mi tesoro' refiriéndose al Anillo?",
+    "respuestas": [
+      "Sauron",
+      "Frodo",
+      "Gollum",
+      "Saruman"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué criatura aparece en el lago frente a las puertas de Moria?",
+    "respuestas": [
+      "Balrog",
+      "El Guardián",
+      "Hidra",
+      "Serpiente Marina"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Quién mata al Rey Brujo de Angmar?",
+    "respuestas": [
+      "Aragorn",
+      "Éowyn",
+      "Gandalf",
+      "Faramir"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué personaje lleva una luz estelar en un frasco?",
+    "respuestas": [
+      "Frodo",
+      "Gandalf",
+      "Sam",
+      "Arwen"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Cómo se llama la torre donde reside Saruman?",
+    "respuestas": [
+      "Minas Morgul",
+      "Barad-dûr",
+      "Orthanc",
+      "Angband"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué raza fue corrompida para crear a los orcos?",
+    "respuestas": [
+      "Hombres",
+      "Elfos",
+      "Enanos",
+      "Maiar"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Cómo se llama el rey de los muertos que habita la Montaña Blanca?",
+    "respuestas": [
+      "Rey Tumulario",
+      "Rey Pálido",
+      "Rey Sin Nombre",
+      "No tiene nombre"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Qué elfo aparece tanto en 'El Hobbit' como en 'El Señor de los Anillos'?",
+    "respuestas": [
+      "Legolas",
+      "Galadriel",
+      "Elrond",
+      "Thranduil"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué día se destruye el Anillo según el calendario de la Tierra Media?",
+    "respuestas": [
+      "1 de marzo",
+      "25 de marzo",
+      "15 de febrero",
+      "3 de abril"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Cómo se llama el anillo que lleva Frodo?",
+    "respuestas": [
+      "Anillo del Destino",
+      "Anillo de Fuego",
+      "Anillo Único",
+      "Anillo de los Elfos"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Quién es el mejor amigo de Frodo durante el viaje?",
+    "respuestas": [
+      "Merry",
+      "Gandalf",
+      "Pippin",
+      "Sam"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Qué tipo de criatura es Legolas?",
+    "respuestas": [
+      "Hobbit",
+      "Elfo",
+      "Enano",
+      "Hombre"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Cómo se llama el mago que guía a la Compañía del Anillo?",
+    "respuestas": [
+      "Saruman",
+      "Radagast",
+      "Gandalf",
+      "Sauron"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué ser maligno busca recuperar el Anillo Único?",
+    "respuestas": [
+      "Saruman",
+      "Sauron",
+      "Smaug",
+      "Morgoth"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Cuál es el nombre completo de Frodo?",
+    "respuestas": [
+      "Frodo Bolsón",
+      "Frodo Gamyi",
+      "Frodo Brandybuck",
+      "Frodo Took"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Quién es el padre de Boromir?",
+    "respuestas": [
+      "Théoden",
+      "Denethor",
+      "Faramir",
+      "Isildur"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué criatura persigue a Frodo y Sam durante su viaje a Mordor?",
+    "respuestas": [
+      "Balrog",
+      "Gollum",
+      "Nazgûl",
+      "Trol"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué pueblo vive en la Comarca?",
+    "respuestas": [
+      "Hombres",
+      "Elfos",
+      "Hobbits",
+      "Enanos"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Cuál es el nombre élfico de Aragorn?",
+    "respuestas": [
+      "Thorongil",
+      "Estel",
+      "Elessar",
+      "Isildurion"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Quién entrega a Frodo la espada Dardo?",
+    "respuestas": [
+      "Aragorn",
+      "Bilbo",
+      "Gandalf",
+      "Elrond"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué personaje muere luchando contra el Balrog?",
+    "respuestas": [
+      "Boromir",
+      "Legolas",
+      "Gandalf",
+      "Aragorn"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué objeto usa Arwen para salvar a Frodo del ataque de los espectros del Anillo?",
+    "respuestas": [
+      "Una espada",
+      "Una planta élfica",
+      "El poder del río",
+      "Un anillo élfico"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué ciudad elfica es gobernada por Elrond?",
+    "respuestas": [
+      "Lothlórien",
+      "Rivendel",
+      "Valinor",
+      "Gondolin"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Quién es el líder de los Jinetes de Rohan?",
+    "respuestas": [
+      "Éomer",
+      "Théoden",
+      "Gríma",
+      "Faramir"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué personaje dice la frase: 'No puedes pasar'?",
+    "respuestas": [
+      "Saruman",
+      "Elrond",
+      "Gandalf",
+      "Aragorn"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Cuál es el arma principal de Gimli?",
+    "respuestas": [
+      "Espada",
+      "Lanza",
+      "Arco",
+      "Hacha"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Quién gobierna la ciudad élfica de Lothlórien junto a Celeborn?",
+    "respuestas": [
+      "Arwen",
+      "Tauriel",
+      "Galadriel",
+      "Éowyn"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué miembro de la Compañía intenta quedarse con el Anillo?",
+    "respuestas": [
+      "Sam",
+      "Boromir",
+      "Merry",
+      "Gimli"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué pueblo de la Tierra Media fue destruido por Sauron antes del inicio de la historia?",
+    "respuestas": [
+      "Dale",
+      "Osgiliath",
+      "Eregion",
+      "Númenor"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Cómo se llama el creador del universo de El Señor de los Anillos?",
+    "respuestas": [
+      "George R. R. Martin",
+      "C. S. Lewis",
+      "J. R. R. Tolkien",
+      "Philip Pullman"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué raza mide menos de un metro y ama las comidas y las fiestas?",
+    "respuestas": [
+      "Enanos",
+      "Hobbits",
+      "Elfos",
+      "Ents"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Quién es el jardinero de Frodo?",
+    "respuestas": [
+      "Merry",
+      "Sam",
+      "Pippin",
+      "Boromir"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué mago viste de blanco al final de la trilogía?",
+    "respuestas": [
+      "Saruman",
+      "Radagast",
+      "Gandalf",
+      "Alatar"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Dónde vive Frodo al inicio de la historia?",
+    "respuestas": [
+      "Minas Tirith",
+      "Rivendel",
+      "Hobbiton",
+      "Lothlórien"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Cómo se llama la espada de Aragorn que fue forjada de nuevo?",
+    "respuestas": [
+      "Glamdring",
+      "Andúril",
+      "Sting",
+      "Narsil"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué personaje es conocido como el Rey de los Nazgûl?",
+    "respuestas": [
+      "Mouth of Sauron",
+      "Rey Brujo de Angmar",
+      "Sauron",
+      "Saruman"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué miembro de la Compañía es hijo del senescal de Gondor?",
+    "respuestas": [
+      "Boromir",
+      "Gimli",
+      "Frodo",
+      "Merry"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué elfa entrega a Frodo el frasco con la luz de Eärendil?",
+    "respuestas": [
+      "Arwen",
+      "Galadriel",
+      "Tauriel",
+      "Lúthien"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Cómo se llama el monte donde debe destruirse el Anillo?",
+    "respuestas": [
+      "Monte Nublado",
+      "Monte del Juicio",
+      "Monte del Destino",
+      "Monte Rojo"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué criatura es Bárbol?",
+    "respuestas": [
+      "Trol",
+      "Ent",
+      "Orco",
+      "Hobbit"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué personaje muere defendiendo a Merry y Pippin?",
+    "respuestas": [
+      "Aragorn",
+      "Faramir",
+      "Boromir",
+      "Gandalf"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Quién dirige la batalla en el Abismo de Helm?",
+    "respuestas": [
+      "Faramir",
+      "Éomer",
+      "Théoden",
+      "Aragorn"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué hijo de Gondor sobrevive al final de la historia?",
+    "respuestas": [
+      "Boromir",
+      "Denethor",
+      "Faramir",
+      "Isildur"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Cómo se llama la ciudad elfa donde se reúne la Compañía del Anillo?",
+    "respuestas": [
+      "Hobbiton",
+      "Edoras",
+      "Rivendel",
+      "Lothlórien"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Quién es Gríma Lengua de Serpiente?",
+    "respuestas": [
+      "Un elfo traidor",
+      "El senescal de Gondor",
+      "El consejero corrupto de Théoden",
+      "El capitán de los orcos"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué criatura aparece al final de El Retorno del Rey intentando detener a Frodo?",
+    "respuestas": [
+      "Gollum",
+      "Balrog",
+      "Trol",
+      "Araña"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué raza fue creada por Aulë el herrero?",
+    "respuestas": [
+      "Hombres",
+      "Enanos",
+      "Elfos",
+      "Orcos"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué símbolo aparece en la puerta de Moria?",
+    "respuestas": [
+      "Una luna creciente",
+      "El Árbol Blanco",
+      "El emblema de Durin",
+      "El ojo de Sauron"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué criatura mítica guía a los personajes por las montañas en El Hobbit y aparece como símbolo en El Señor de los Anillos?",
+    "respuestas": [
+      "Ent",
+      "Águila gigante",
+      "Dragón",
+      "Huargo"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué actor interpreta a Frodo en las películas?",
+    "respuestas": [
+      "Elijah Wood",
+      "Daniel Radcliffe",
+      "Orlando Bloom",
+      "Tobey Maguire"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué criatura es Gollum originalmente?",
+    "respuestas": [
+      "Hobbit",
+      "Elfo",
+      "Orco",
+      "Enano"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué actor da vida a Gandalf?",
+    "respuestas": [
+      "Christopher Lee",
+      "Ian Holm",
+      "Ian McKellen",
+      "John Hurt"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Cómo se llama el anillo que Bilbo entrega a Frodo?",
+    "respuestas": [
+      "Anillo de Poder",
+      "Anillo Único",
+      "Anillo Oscuro",
+      "Anillo de Fuego"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué día se celebra el cumpleaños de Bilbo y Frodo?",
+    "respuestas": [
+      "21 de septiembre",
+      "23 de octubre",
+      "22 de septiembre",
+      "1 de enero"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué criatura hiere a Frodo con una hoja envenenada?",
+    "respuestas": [
+      "Gollum",
+      "Nazgûl",
+      "Orco",
+      "Trol"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué ciudad humana es gobernada por el senescal Denethor?",
+    "respuestas": [
+      "Osgiliath",
+      "Minas Tirith",
+      "Dol Amroth",
+      "Pelargir"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué arma utiliza Legolas principalmente?",
+    "respuestas": [
+      "Espada",
+      "Hacha",
+      "Lanza",
+      "Arco"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Quién lidera la carga en la Batalla de los Campos del Pelennor?",
+    "respuestas": [
+      "Faramir",
+      "Gandalf",
+      "Aragorn",
+      "Théoden"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Cómo se llama el caballo blanco de Gandalf?",
+    "respuestas": [
+      "Sombragris",
+      "Ventolín",
+      "Arod",
+      "Rayo"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué criatura envenena a Frodo antes de que lo capturen los orcos?",
+    "respuestas": [
+      "Ungoliant",
+      "Ella-Laraña",
+      "Nazgûl",
+      "Huargo"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué personaje masculino se disfraza de soldado para luchar en la batalla?",
+    "respuestas": [
+      "Faramir",
+      "Pippin",
+      "Merry",
+      "Ninguno, es Éowyn"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Qué personaje destruye finalmente el Anillo?",
+    "respuestas": [
+      "Frodo",
+      "Sam",
+      "Gollum",
+      "Aragorn"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Cómo se llama el padre de Aragorn?",
+    "respuestas": [
+      "Isildur",
+      "Elendil",
+      "Arathorn",
+      "Théoden"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué título adopta Aragorn al ser coronado?",
+    "respuestas": [
+      "Rey de Rohan",
+      "Rey de Arnor",
+      "Rey de Gondor",
+      "Rey Elessar"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Dónde se forjó el Anillo Único?",
+    "respuestas": [
+      "Barad-dûr",
+      "Moria",
+      "Monte del Destino",
+      "Minas Morgul"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Quién fue el primer portador del Anillo Único?",
+    "respuestas": [
+      "Gollum",
+      "Isildur",
+      "Sauron",
+      "Celebrimbor"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué personaje lucha contra el Rey Brujo y lo derrota?",
+    "respuestas": [
+      "Gandalf",
+      "Aragorn",
+      "Éowyn",
+      "Théoden"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué ser mitológico representa a las águilas gigantes?",
+    "respuestas": [
+      "Maiar",
+      "Valar",
+      "Ents",
+      "Animales normales"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué objeto permite ver a distancia y fue usado por Saruman y Sauron?",
+    "respuestas": [
+      "Palantir",
+      "Silmaril",
+      "Elendilmir",
+      "Anillo de visión"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Cómo se llama el lugar donde Frodo y sus compañeros se encuentran con los Elfos en el primer libro?",
+    "respuestas": [
+      "Rivendel",
+      "Lothlórien",
+      "Moria",
+      "Minas Tirith"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Quién es el heredero de Isildur?",
+    "respuestas": [
+      "Gandalf",
+      "Aragorn",
+      "Boromir",
+      "Faramir"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué criatura le salva la vida a Gandalf en el abismo de Helm?",
+    "respuestas": [
+      "Una águila",
+      "Un caballo",
+      "Un soldado de Rohan",
+      "Un ente"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Cómo se llama la espada que Frodo usa en el viaje?",
+    "respuestas": [
+      "Glamdring",
+      "Andúril",
+      "Dardo",
+      "Sting"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Cómo se llama el amigo de Frodo que acompaña a los hobbits al viaje?",
+    "respuestas": [
+      "Merry",
+      "Sam",
+      "Pippin",
+      "Gimli"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué actor interpreta a Legolas?",
+    "respuestas": [
+      "Orlando Bloom",
+      "Ian McKellen",
+      "Viggo Mortensen",
+      "Sean Astin"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Quién es el rey de Rohan durante la guerra del Anillo?",
+    "respuestas": [
+      "Théoden",
+      "Faramir",
+      "Aragorn",
+      "Boromir"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué persona mítica vive en el bosque de Lothlórien?",
+    "respuestas": [
+      "Elfos",
+      "Hombres",
+      "Enanos",
+      "Orcos"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿En qué ciudad se encuentra el Palantír que Saruman usa?",
+    "respuestas": [
+      "Minas Tirith",
+      "Rivendel",
+      "Isengard",
+      "Osgiliath"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Cómo se llama el hermano de Boromir?",
+    "respuestas": [
+      "Faramir",
+      "Aragorn",
+      "Gimli",
+      "Théoden"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué elfo acompaña a los hobbits durante su viaje hasta Rivendel?",
+    "respuestas": [
+      "Gimli",
+      "Glorfindel",
+      "Arwen",
+      "Legolas"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué enano es conocido por su lealtad y valentía en la Compañía del Anillo?",
+    "respuestas": [
+      "Gimli",
+      "Dáin",
+      "Thorin",
+      "Balin"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Cómo se llama la hermana de Boromir y Faramir?",
+    "respuestas": [
+      "Arwen",
+      "Éowyn",
+      "Galadriel",
+      "Éomer"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué persona obtiene la Espada de Elendil?",
+    "respuestas": [
+      "Faramir",
+      "Gandalf",
+      "Aragorn",
+      "Théoden"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Cómo se llama el Balrog que Gandalf enfrenta en Moria?",
+    "respuestas": [
+      "Durin",
+      "Shathar",
+      "Gorbag",
+      "Durin's Bane"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Qué criatura sirve a Sauron como su mensajero?",
+    "respuestas": [
+      "Gollum",
+      "Nazgûl",
+      "Balrog",
+      "Sauron mismo"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué elfo tiene una relación especial con Aragorn?",
+    "respuestas": [
+      "Galadriel",
+      "Arwen",
+      "Glorfindel",
+      "Legolas"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Cómo se llama el viaje final de Frodo y Bilbo?",
+    "respuestas": [
+      "El Viaje del Anillo",
+      "La Ruta de los Elfos",
+      "El Viaje a los Puertos Grises",
+      "El Viaje de los Viajantes"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Quién acompaña a Aragorn en la batalla en los campos de Pelennor?",
+    "respuestas": [
+      "Faramir",
+      "Gimli",
+      "Legolas",
+      "Gandalf"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué actor interpreta a Gimli, el enano?",
+    "respuestas": [
+      "Viggo Mortensen",
+      "Sean Bean",
+      "John Rhys-Davies",
+      "Orlando Bloom"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Cuál es el nombre del gran árbol en la ciudad de los Elfos, Lothlórien?",
+    "respuestas": [
+      "Árbol Blanco",
+      "Árbol de Valinor",
+      "Mallorn",
+      "Olmo de los Elfos"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Cómo se llama el hombre que acompaña a Frodo en la última parte del viaje?",
+    "respuestas": [
+      "Sam",
+      "Gimli",
+      "Merry",
+      "Aragorn"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Quién es el líder de los Nazgûl?",
+    "respuestas": [
+      "El Rey Brujo de Angmar",
+      "Sauron",
+      "Saruman",
+      "Gollum"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Quién destruye el Anillo en el Monte del Destino?",
+    "respuestas": [
+      "Gollum",
+      "Frodo",
+      "Aragorn",
+      "Sam"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué enano es el último en sobrevivir en Erebor?",
+    "respuestas": [
+      "Thorin",
+      "Balin",
+      "Dáin",
+      "Gimli"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué miembro de la Compañía del Anillo es el primero en morir?",
+    "respuestas": [
+      "Boromir",
+      "Gimli",
+      "Legolas",
+      "Aragorn"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Quién se convierte en el rey de Gondor?",
+    "respuestas": [
+      "Aragorn",
+      "Boromir",
+      "Faramir",
+      "Gimli"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Cuál es el nombre del caballo de Aragorn?",
+    "respuestas": [
+      "Arod",
+      "Sombragris",
+      "Brego",
+      "Ventolín"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Quién es el hermano de Éowyn?",
+    "respuestas": [
+      "Faramir",
+      "Théoden",
+      "Éomer",
+      "Boromir"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Quién es el líder de los Elfos de Mirkwood?",
+    "respuestas": [
+      "Elrond",
+      "Thranduil",
+      "Galadriel",
+      "Glorfindel"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué ser mitológico crea Sauron como su ejército?",
+    "respuestas": [
+      "Orcos",
+      "Elfos",
+      "Ents",
+      "Hombres"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué isla es el lugar de exilio para los hombres que usan el Palantír?",
+    "respuestas": [
+      "Numenor",
+      "Osgiliath",
+      "Isengard",
+      "Amon Hen"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Quién se convierte en la reina de Gondor al final?",
+    "respuestas": [
+      "Éowyn",
+      "Arwen",
+      "Galadriel",
+      "Lúthien"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Quién ayuda a Frodo a llegar a Rivendel después de ser atacado por los Nazgûl?",
+    "respuestas": [
+      "Aragorn",
+      "Gandalf",
+      "Glorfindel",
+      "Elrond"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué evento provoca la batalla entre las fuerzas de Saruman y Rohan?",
+    "respuestas": [
+      "La invasión de Moria",
+      "El ataque de los orcos",
+      "El sitio de Helm",
+      "El regreso de Aragorn"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué se encuentra Frodo al principio de su viaje en Hobbiton?",
+    "respuestas": [
+      "El Anillo Único",
+      "Un mapa de Rivendel",
+      "Un libro de historias",
+      "Una carta de Bilbo"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué ocurre en el Abismo de Helm?",
+    "respuestas": [
+      "Una batalla",
+      "Una tormenta mágica",
+      "La muerte de un mago",
+      "La derrota de un dragón"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué objeto usa Gandalf para luchar contra el Balrog?",
+    "respuestas": [
+      "Espada",
+      "Bastón",
+      "Arco",
+      "Cuerda"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Cómo se llama el lugar donde se encuentra la Compañía con los Ents?",
+    "respuestas": [
+      "Lothlórien",
+      "Bosque de Fangorn",
+      "Rivendel",
+      "Mirkwood"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué personaje se convierte en el rey de los muertos?",
+    "respuestas": [
+      "Aragorn",
+      "Faramir",
+      "Théoden",
+      "Boromir"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué elfo lucha junto a Legolas durante la Batalla de los Campos del Pelennor?",
+    "respuestas": [
+      "Gimli",
+      "Glorfindel",
+      "Elrond",
+      "Arwen"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Quién es el creador de los Anillos de Poder?",
+    "respuestas": [
+      "Sauron",
+      "Saruman",
+      "Celebrimbor",
+      "Galadriel"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué tipo de criaturas son los huargos?",
+    "respuestas": [
+      "Lobos",
+      "Osos",
+      "Dragones",
+      "Caballos"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Cómo se llama el hijo de Éowyn y Faramir?",
+    "respuestas": [
+      "Eldarion",
+      "Elboron",
+      "Beren",
+      "Aragorn II"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué batalla marca la caída de Saruman?",
+    "respuestas": [
+      "La Batalla de Helm",
+      "La Batalla de los Campos del Pelennor",
+      "La Batalla de Osgiliath",
+      "La Batalla de los Puertos Grises"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué miembro de la Compañía del Anillo no es un hombre, sino un hobbit?",
+    "respuestas": [
+      "Aragorn",
+      "Faramir",
+      "Boromir",
+      "Sam"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿En qué lugar se encuentran los Puertos Grises?",
+    "respuestas": [
+      "Rohan",
+      "Gondor",
+      "Mordor",
+      "Valinor"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Quién se sacrifica para salvar a la Compañía del Anillo en Moria?",
+    "respuestas": [
+      "Boromir",
+      "Gimli",
+      "Aragorn",
+      "Gandalf"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Qué personaje lleva la espada Andúril?",
+    "respuestas": [
+      "Aragorn",
+      "Faramir",
+      "Gimli",
+      "Legolas"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué criatura ayuda a Frodo a llevar el Anillo?",
+    "respuestas": [
+      "Gollum",
+      "Aragorn",
+      "Gandalf",
+      "Legolas"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Cómo se llama el principal caballo de Rohan que monta Théoden?",
+    "respuestas": [
+      "Arod",
+      "Sombragris",
+      "Brego",
+      "Snowmane"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Qué enano es el líder de la expedición a Erebor en 'El Hobbit'?",
+    "respuestas": [
+      "Gimli",
+      "Dáin",
+      "Thorin",
+      "Balin"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Cómo se llama la espada de Frodo?",
+    "respuestas": [
+      "Sting",
+      "Glamdring",
+      "Andúril",
+      "Narsil"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué personaje es el último en unir fuerzas con los demás en la Batalla de los Campos del Pelennor?",
+    "respuestas": [
+      "Faramir",
+      "Gimli",
+      "Legolas",
+      "Aragorn"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Qué elfo tiene una relación romántica con Aragorn?",
+    "respuestas": [
+      "Galadriel",
+      "Éowyn",
+      "Arwen",
+      "Lúthien"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué lugar es el hogar de los Ents?",
+    "respuestas": [
+      "Bosque de Fangorn",
+      "Mirkwood",
+      "Rohan",
+      "Isengard"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué personaje dice 'No puedo llevar el Anillo, pero puedo llevarlo'?",
+    "respuestas": [
+      "Frodo",
+      "Sam",
+      "Aragorn",
+      "Gandalf"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué Anillo de Poder usa Galadriel?",
+    "respuestas": [
+      "El Anillo Único",
+      "Narya",
+      "Nenya",
+      "Vilya"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué ciudad es conocida como la 'Ciudad Blanca' de Gondor?",
+    "respuestas": [
+      "Minas Tirith",
+      "Osgiliath",
+      "Pelargir",
+      "Dol Amroth"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué elfo es el padre de Arwen?",
+    "respuestas": [
+      "Elrond",
+      "Glorfindel",
+      "Thranduil",
+      "Celeborn"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Cómo se llama el hermano de Legolas?",
+    "respuestas": [
+      "Thranduil",
+      "Faramir",
+      "Amdir",
+      "Oropher"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué enano es conocido por ser el último rey bajo la montaña en Erebor?",
+    "respuestas": [
+      "Thorin",
+      "Balin",
+      "Dáin",
+      "Gimli"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué elfo porta el anillo Narya?",
+    "respuestas": [
+      "Elrond",
+      "Gandalf",
+      "Galadriel",
+      "Cirdan"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Cómo se llama el lugar donde Frodo y Sam luchan por el control del Anillo?",
+    "respuestas": [
+      "Mordor",
+      "La Comarca",
+      "Lothlórien",
+      "Rohan"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿En qué reino vive Aragorn antes de convertirse en rey?",
+    "respuestas": [
+      "Gondor",
+      "Rohan",
+      "Arnor",
+      "Lothlórien"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Cómo se llama el cuervo que pertenece a Gandalf?",
+    "respuestas": [
+      "Rohan",
+      "Samwise",
+      "Gwaihir",
+      "Shadowfax"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué hobbit acompaña a Frodo a Rivendel?",
+    "respuestas": [
+      "Merry",
+      "Pippin",
+      "Sam",
+      "Gimli"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué personaje lleva la espada Glamdring?",
+    "respuestas": [
+      "Gimli",
+      "Aragorn",
+      "Gandalf",
+      "Faramir"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Quién es el creador de los Elfos?",
+    "respuestas": [
+      "Eru Ilúvatar",
+      "Aulë",
+      "Melkor",
+      "Manwë"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué criatura se encuentra en las Minas de Moria y ataca a la Compañía del Anillo?",
+    "respuestas": [
+      "Balrog",
+      "Troll",
+      "Goblin",
+      "Dragón"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Cómo se llama el reino de los hombres en el que se encuentra Minas Tirith?",
+    "respuestas": [
+      "Gondor",
+      "Rohan",
+      "Isengard",
+      "Arnor"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué personaje sacrifica su vida para salvar a los demás en la batalla de Helm?",
+    "respuestas": [
+      "Gimli",
+      "Aragorn",
+      "Boromir",
+      "Gandalf"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué ciudad se encuentra en el corazón de Rohan?",
+    "respuestas": [
+      "Edoras",
+      "Minas Tirith",
+      "Rivendel",
+      "Helm's Deep"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué elfo es conocido por ser el último superviviente de los Noldor?",
+    "respuestas": [
+      "Elrond",
+      "Glorfindel",
+      "Celeborn",
+      "Galadriel"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué miembro de la Compañía del Anillo muere al final de la batalla en los Campos del Pelennor?",
+    "respuestas": [
+      "Boromir",
+      "Gimli",
+      "Legolas",
+      "Aragorn"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué criatura del bosque es conocida por su sabiduría y habilidad en la magia?",
+    "respuestas": [
+      "Elfo",
+      "Ent",
+      "Orco",
+      "Hobbit"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué reino es conocido por tener la Ciudad Blanca?",
+    "respuestas": [
+      "Gondor",
+      "Rohan",
+      "Mordor",
+      "Lothlórien"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué es el Anillo Único?",
+    "respuestas": [
+      "Un objeto mágico",
+      "Una espada poderosa",
+      "Un libro antiguo",
+      "Una piedra mágica"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Quién es el líder de los orcos de Moria?",
+    "respuestas": [
+      "Azog",
+      "Saruman",
+      "Sauron",
+      "Gollum"
+    ],
+    "correcta": 0
+  }
+]
+      
+      ;
 
     let preguntaActual = null;
 
