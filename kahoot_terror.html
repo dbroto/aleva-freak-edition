@@ -74,955 +74,1899 @@
   <button id="siguiente" onclick="siguiente()">Siguiente Pregunta</button>
 
   <script>
-    const preguntas = [
-{
-  "pregunta": "¿Quién es el protagonista de la película 'Pesadilla en Elm Street'?",
-  "respuestas": ["Jason Voorhees", "Freddy Krueger", "Michael Myers", "Chucky"],
-  "correcta": 1
-},
-{
-  "pregunta": "¿En qué año se estrenó la película 'El sexto sentido'?",
-  "respuestas": ["1995", "1999", "2002", "1997"],
-  "correcta": 1
-},
-{
-  "pregunta": "¿Qué película de terror se desarrolla en una casa donde se escuchan ruidos extraños y aparecen fantasmas?",
-  "respuestas": ["Poltergeist", "La cabaña en el bosque", "El conjuro", "Los otros"],
-  "correcta": 0
-},
-{
-  "pregunta": "¿En qué película aparece el asesino Jason Voorhees?",
-  "respuestas": ["Pesadilla en Elm Street", "Viernes 13", "La matanza de Texas", "Scream"],
-  "correcta": 1
-},
-{
-  "pregunta": "¿Qué monstruo aterrador aparece en 'It' de Stephen King?",
-  "respuestas": ["Un zombi", "Un payaso", "Un hombre lobo", "Un vampiro"],
-  "correcta": 1
-},
-{
-  "pregunta": "¿Qué película de terror se basa en una leyenda sobre un video maldito?",
-  "respuestas": ["The Ring", "La maldición", "Annabelle", "Scream"],
-  "correcta": 0
-},
-{
-  "pregunta": "¿Cuál es el nombre del espíritu que persigue a la protagonista en 'La huérfana'?",
-  "respuestas": ["Esther", "Constance", "Regan", "Carrie"],
-  "correcta": 0
-},
-{
-  "pregunta": "¿Qué película de terror se desarrolla en un hospital psiquiátrico?",
-  "respuestas": ["Shutter Island", "El exorcista", "El orfanato", "El resplandor"],
-  "correcta": 0
-},
-{
-  "pregunta": "¿Quién es el director de la famosa película 'El sexto sentido'?",
-  "respuestas": ["Martin Scorsese", "M. Night Shyamalan", "James Wan", "John Carpenter"],
-  "correcta": 1
-},
-{
-  "pregunta": "¿Qué tipo de criatura ataca a los humanos en 'La cosa'?",
-  "respuestas": ["Zombis", "Vampiros", "Extraterrestres", "Serpientes"],
-  "correcta": 2
-},
-{
-  "pregunta": "¿Qué película de terror se centra en un asesino que lleva una máscara de hockey?",
-  "respuestas": ["Scream", "Halloween", "Viernes 13", "Pesadilla en Elm Street"],
-  "correcta": 2
-},
-{
-  "pregunta": "¿En qué película de terror se utiliza un tablero Ouija?",
-  "respuestas": ["Annabelle", "El conjuro", "Ouija", "El exorcista"],
-  "correcta": 2
-},
-{
-  "pregunta": "¿Qué película de terror está basada en el libro de Stephen King sobre una niña con poderes telequinéticos?",
-  "respuestas": ["It", "Carrie", "El resplandor", "La niebla"],
-  "correcta": 1
-},
-{
-  "pregunta": "¿En qué ciudad se desarrolla la trama de 'The Blair Witch Project'?",
-  "respuestas": ["Nueva York", "Burkittsville", "Los Ángeles", "Chicago"],
-  "correcta": 1
-},
-{
-  "pregunta": "¿Qué actor interpreta a Jack Torrance en 'El resplandor'?",
-  "respuestas": ["Johnny Depp", "Jack Nicholson", "Tom Hanks", "Robert De Niro"],
-  "correcta": 1
-},
-{
-  "pregunta": "¿En qué película aparece el asesino conocido como 'Ghostface'?",
-  "respuestas": ["Scream", "Viernes 13", "Halloween", "Pesadilla en Elm Street"],
-  "correcta": 0
-},
-{
-  "pregunta": "¿Quién es el director de la película 'La cabaña en el bosque'?",
-  "respuestas": ["Joss Whedon", "Sam Raimi", "Guillermo del Toro", "James Wan"],
-  "correcta": 0
-},
-{
-  "pregunta": "¿Qué tipo de criatura se encuentra en la película 'La cosa' de John Carpenter?",
-  "respuestas": ["Un monstruo extraterrestre", "Un demonio", "Un zombi", "Un lobo gigante"],
-  "correcta": 0
-},
-{
-  "pregunta": "¿Qué película de terror trata sobre una casa encantada que toma posesión de sus habitantes?",
-  "respuestas": ["Los otros", "El conjuro", "La maldición", "Amityville Horror"],
-  "correcta": 3
-}
-{
-  "pregunta": "¿Qué película de terror está basada en la historia de una familia que se muda a una casa donde ocurrieron eventos traumáticos?",
-  "respuestas": ["La maldición", "Los otros", "El resplandor", "Amityville Horror"],
-  "correcta": 3
-},
-{
-  "pregunta": "¿Qué famosa película de terror fue dirigida por Alfred Hitchcock?",
-  "respuestas": ["El exorcista", "Psicosis", "La cabaña en el bosque", "El resplandor"],
-  "correcta": 1
-},
-{
-  "pregunta": "¿En qué película aparece una muñeca llamada Annabelle?",
-  "respuestas": ["El conjuro", "Insidious", "Annabelle", "El orfanato"],
-  "correcta": 2
-},
-{
-  "pregunta": "¿Cómo se llama el asesino de la saga de películas 'Halloween'?",
-  "respuestas": ["Freddy Krueger", "Chucky", "Michael Myers", "Jason Voorhees"],
-  "correcta": 2
-},
-{
-  "pregunta": "¿Quién es el director de la película 'El conjuro'?",
-  "respuestas": ["James Wan", "John Carpenter", "Sam Raimi", "Guillermo del Toro"],
-  "correcta": 0
-},
-{
-  "pregunta": "¿En qué película de terror aparece un fantasma llamado 'The Bride'?",
-  "respuestas": ["La maldición", "La novia cadáver", "El orfanato", "Los otros"],
-  "correcta": 1
-},
-{
-  "pregunta": "¿Qué película de terror de 2007 se desarrolla en un hospital psiquiátrico?",
-  "respuestas": ["Shutter Island", "El resplandor", "La cabaña en el bosque", "El orfanato"],
-  "correcta": 0
-},
-{
-  "pregunta": "¿Qué tipo de criatura aparece en la película 'El hombre lobo' de 2010?",
-  "respuestas": ["Vampiros", "Zombis", "Hombres lobo", "Muertos vivientes"],
-  "correcta": 2
-},
-{
-  "pregunta": "¿En qué película el personaje principal tiene una obsesión con la casa de un vecino?",
-  "respuestas": ["La ventana indiscreta", "La cabaña en el bosque", "La maldición", "El exorcista"],
-  "correcta": 0
-},
-{
-  "pregunta": "¿Quién es el actor principal de 'El resplandor'?",
-  "respuestas": ["Jack Nicholson", "Leonardo DiCaprio", "Johnny Depp", "Robert Pattinson"],
-  "correcta": 0
-},
-{
-  "pregunta": "¿En qué película de terror un grupo de estudiantes se enfrenta a una criatura llamada 'The Blair Witch'?",
-  "respuestas": ["El proyecto de la bruja de Blair", "El conjuro", "La cabaña en el bosque", "Scream"],
-  "correcta": 0
-},
-{
-  "pregunta": "¿Qué película de terror está basada en una novela de Stephen King sobre un perro rabioso?",
-  "respuestas": ["Pet Sematary", "Cujo", "It", "Carrie"],
-  "correcta": 1
-},
-{
-  "pregunta": "¿Cómo se llama el pueblo donde se desarrollan los sucesos en 'La casa de los mil cadáveres'?",
-  "respuestas": ["Sandy Creek", "Hill Valley", "Neverland", "Devil's Rejects"],
-  "correcta": 0
-},
-{
-  "pregunta": "¿Qué película trata sobre un asesino que mata a las víctimas durante las fiestas de Halloween?",
-  "respuestas": ["Viernes 13", "Scream", "Halloween", "Pesadilla en Elm Street"],
-  "correcta": 2
-},
-{
-  "pregunta": "¿Qué famosa película de terror incluye la frase 'En el nombre del padre, del hijo y del espíritu santo'?",
-  "respuestas": ["El conjuro", "El exorcista", "La maldición", "El orfanato"],
-  "correcta": 1
-},
-{
-  "pregunta": "¿Qué película de terror se desarrolla en un hotel aislado en las montañas durante el invierno?",
-  "respuestas": ["El resplandor", "Scream", "La cabaña en el bosque", "El conjuro"],
-  "correcta": 0
-},
-{
-  "pregunta": "¿En qué película un niño se enfrenta a una serie de fenómenos paranormales en su propia casa?",
-  "respuestas": ["Poltergeist", "El conjuro", "La cabaña en el bosque", "El orfanato"],
-  "correcta": 0
-},
-{
-  "pregunta": "¿Qué película de terror trata sobre una casa en la que se realizan experimentos científicos?",
-  "respuestas": ["La maldición", "El orfanato", "La cabaña en el bosque", "El proyecto de la bruja de Blair"],
-  "correcta": 2
-},
-{
-  "pregunta": "¿En qué película un grupo de personas se encuentra atrapado en un edificio mientras son atacados por una criatura?",
-  "respuestas": ["La cabaña en el bosque", "The Mist", "Quarantine", "Scream"],
-  "correcta": 2
-}
-{
-  "pregunta": "¿Qué película de Tim Burton se basa en un poema de Edgar Allan Poe?",
-  "respuestas": ["Sweeney Todd", "El joven manos de tijera", "La novia cadáver", "La leyenda del jinete sin cabeza"],
-  "correcta": 3
-},
-{
-  "pregunta": "¿Qué película de terror de 1999 es conocida por su historia sobre una familia que se muda a una casa en la que ocurren sucesos paranormales?",
-  "respuestas": ["El orfanato", "La maldición", "Los otros", "La casa de los mil cadáveres"],
-  "correcta": 2
-},
-{
-  "pregunta": "¿En qué película de Tim Burton aparece un mago llamado 'Chesire Cat'?",
-  "respuestas": ["Alicia en el país de las maravillas", "Batman", "Beetlejuice", "La novia cadáver"],
-  "correcta": 0
-},
-{
-  "pregunta": "¿Quién interpretó al villano 'Jack Torrance' en la película 'El resplandor'?",
-  "respuestas": ["Johnny Depp", "Jack Nicholson", "Christian Bale", "Tom Cruise"],
-  "correcta": 1
-},
-{
-  "pregunta": "¿Qué película de Tim Burton se desarrolla en el mundo de la fantasía y presenta una ciudad extraña llamada Halloween Town?",
-  "respuestas": ["Pesadilla antes de Navidad", "El joven manos de tijera", "Beetlejuice", "Alicia en el país de las maravillas"],
-  "correcta": 0
-},
-{
-  "pregunta": "¿En qué película de terror un asesino llamado 'Jigsaw' pone a sus víctimas a resolver macabras trampas?",
-  "respuestas": ["Scream", "The Ring", "Saw", "El orfanato"],
-  "correcta": 2
-},
-{
-  "pregunta": "¿Qué actor interpreta a Edward Scissorhands en la película de Tim Burton?",
-  "respuestas": ["Johnny Depp", "Edward Norton", "Robert Downey Jr.", "Daniel Day-Lewis"],
-  "correcta": 0
-},
-{
-  "pregunta": "¿En qué película de terror se utiliza un antiguo libro de hechizos que convoca a un demonio?",
-  "respuestas": ["El conjuro", "Evil Dead", "La cabaña en el bosque", "Anabelle"],
-  "correcta": 1
-},
-{
-  "pregunta": "¿Qué película de Tim Burton está basada en un libro de Roald Dahl y trata sobre una mujer que enfrenta a unos villanos con poderes especiales?",
-  "respuestas": ["Matilda", "Charlie y la fábrica de chocolate", "Los fantasmas de Scrooge", "Big Fish"],
-  "correcta": 0
-},
-{
-  "pregunta": "¿En qué película de terror se muestra un pueblo donde los habitantes están condenados a morir de forma violenta cada noche?",
-  "respuestas": ["The Others", "Scream", "Sleepy Hollow", "The Village"],
-  "correcta": 3
-},
-{
-  "pregunta": "¿Qué director es conocido por sus colaboraciones frecuentes con Johnny Depp y su estilo gótico y excéntrico en las películas?",
-  "respuestas": ["Stanley Kubrick", "Guillermo del Toro", "Tim Burton", "David Lynch"],
-  "correcta": 2
-},
-{
-  "pregunta": "¿Qué famosa película de terror dirigida por James Wan presenta a una familia que vive aterrorizada por una entidad demoníaca?",
-  "respuestas": ["Insidious", "El conjuro", "Poltergeist", "La maldición"],
-  "correcta": 1
-},
-{
-  "pregunta": "¿En qué película de Tim Burton un hombre sin manos es el protagonista que crea esculturas con cuchillas?",
-  "respuestas": ["Beetlejuice", "El joven manos de tijera", "Sweeney Todd", "La novia cadáver"],
-  "correcta": 1
-},
-{
-  "pregunta": "¿Qué película de terror se basa en una leyenda urbana de un espíritu vengativo que se manifiesta a través de un teléfono?",
-  "respuestas": ["The Ring", "La maldición", "Annabelle", "Scream"],
-  "correcta": 0
-},
-{
-  "pregunta": "¿Cuál es el nombre del personaje principal en la película 'Beetlejuice' de Tim Burton?",
-  "respuestas": ["Lydia Deetz", "Barbara Maitland", "Beetlejuice", "Adam Maitland"],
-  "correcta": 2
-},
-{
-  "pregunta": "¿Qué película de Tim Burton está inspirada en un clásico cuento de hadas sobre una niña que cae en un mundo fantástico?",
-  "respuestas": ["Alicia en el país de las maravillas", "La novia cadáver", "El joven manos de tijera", "La leyenda del jinete sin cabeza"],
-  "correcta": 0
-},
-{
-  "pregunta": "¿Qué película de terror trata sobre un grupo de amigos atrapados en un edificio mientras una criatura desconocida los persigue?",
-  "respuestas": ["Quarantine", "La cabaña en el bosque", "The Mist", "El resplandor"],
-  "correcta": 0
-},
-{
-  "pregunta": "¿Qué película de Tim Burton presenta a un personaje llamado 'The Corpse Bride'?",
-  "respuestas": ["Sweeney Todd", "La novia cadáver", "Beetlejuice", "El joven manos de tijera"],
-  "correcta": 1
-},
-{
-  "pregunta": "¿En qué película de terror un grupo de personas se enfrenta a un asesino serial conocido como 'Ghostface'?",
-  "respuestas": ["Scream", "Halloween", "Pesadilla en Elm Street", "Viernes 13"],
-  "correcta": 0
-}
-{
-  "pregunta": "En la saga de 'Pesadilla en Elm Street', ¿qué poder tiene Freddy Krueger?",
-  "respuestas": ["Viajar en el tiempo", "Manipular las mentes de sus víctimas", "Matar en los sueños", "Controlar el fuego"],
-  "correcta": 2
-},
-{
-  "pregunta": "La atmósfera gótica de 'Beetlejuice' se mezcla con humor negro. ¿Qué personaje no muere de manera convencional?",
-  "respuestas": ["Barbara Maitland", "Lydia Deetz", "Beetlejuice", "Adam Maitland"],
-  "correcta": 0
-},
-{
-  "pregunta": "En 'La novia cadáver', ¿qué país es el escenario principal de la historia?",
-  "respuestas": ["Francia", "Inglaterra", "Alemania", "Rusia"],
-  "correcta": 1
-},
-{
-  "pregunta": "¿Cuál de las siguientes criaturas NO aparece en la película 'El joven manos de tijera'?",
-  "respuestas": ["Gárgolas", "Un perro", "Una águila", "Un león"],
-  "correcta": 0
-},
-{
-  "pregunta": "¿En qué aspecto de su personaje Jack Torrance, de 'El resplandor', experimenta una transformación aterradora?",
-  "respuestas": ["Su rostro se convierte en un esqueleto", "Se vuelve más agresivo y violento", "Sus ojos se vuelven rojos", "Su piel comienza a arder"],
-  "correcta": 1
-},
-{
-  "pregunta": "En la película 'It' de 2017, ¿qué forma adopta el payaso Pennywise para asustar a sus víctimas?",
-  "respuestas": ["Un perro gigante", "Una serpiente", "Un monstruo con múltiples ojos", "Una figura con dientes afilados"],
-  "correcta": 3
-},
-{
-  "pregunta": "¿Qué tipo de insectos son utilizados como una de las principales amenazas en la película 'La maldición'?",
-  "respuestas": ["Escorpiones", "Arañas", "Cucarachas", "Termitas"],
-  "correcta": 2
-},
-{
-  "pregunta": "La famosa casa de 'La cabaña en el bosque' está llena de secretos. ¿Qué tipo de habitaciones esconden las trampas?",
-  "respuestas": ["Habitaciones de lujo", "Cuartos con objetos familiares", "Cuartos con símbolos extraños", "Habitaciones temáticas de terror"],
-  "correcta": 2
-},
-{
-  "pregunta": "En la película 'The Ring', ¿qué se supone que sucede después de ver el video maldito?",
-  "respuestas": ["Aparecen sombras extrañas", "Te atacan criaturas del video", "Recibes una llamada telefónica", "Se te aparece un espíritu"],
-  "correcta": 2
-},
-{
-  "pregunta": "¿Qué fenómeno paranormal tiene lugar en 'Poltergeist' que hace que los muebles se desplacen por sí solos?",
-  "respuestas": ["Fenómenos electromagnéticos", "Vientos intensos", "Fuerzas invisibles", "Energía psíquica"],
-  "correcta": 3
-},
-{
-  "pregunta": "En la película 'Sweeney Todd', ¿qué es lo que Sweeney hace con sus víctimas?",
-  "respuestas": ["Las convierte en pasteles", "Las diseca", "Las entierra en el jardín", "Las mata con veneno"],
-  "correcta": 0
-},
-{
-  "pregunta": "¿Qué popular personaje de Tim Burton está obsesionado con el concepto de la muerte y la vida después de ella?",
-  "respuestas": ["Beetlejuice", "Edward Scissorhands", "Jack Skellington", "El joven manos de tijera"],
-  "correcta": 2
-},
-{
-  "pregunta": "¿Qué elemento clave conecta a todas las historias en 'El proyecto de la bruja de Blair'?",
-  "respuestas": ["Un antiguo libro", "Una cámara de video", "Un mapa", "Un árbol maldito"],
-  "correcta": 1
-},
-{
-  "pregunta": "¿Cuál de los siguientes es un personaje de 'Pesadilla antes de Navidad'?",
-  "respuestas": ["Drácula", "Jack Skellington", "Frankenstein", "El Hombre Lobo"],
-  "correcta": 1
-},
-{
-  "pregunta": "En la película 'La casa de los mil cadáveres', ¿qué situación desencadena los eventos aterradores?",
-  "respuestas": ["Un experimento científico", "Un accidente de tráfico", "Un festival local", "La búsqueda de una familia desaparecida"],
-  "correcta": 3
-},
-{
-  "pregunta": "En 'Sleepy Hollow', ¿quién se enfrenta al Jinete sin cabeza?",
-  "respuestas": ["Ichabod Crane", "Brom Bones", "Katrina Van Tassel", "Lord Crane"],
-  "correcta": 0
-},
-{
-  "pregunta": "En 'Alicia en el país de las maravillas', ¿qué personaje tiene un sombrero extremadamente grande y habla de manera confusa?",
-  "respuestas": ["El Gato Cheshire", "El Sombrerero Loco", "La Reina Roja", "El Conejo Blanco"],
-  "correcta": 1
-},
-{
-  "pregunta": "¿Cuál es el nombre del monstruo que acecha en 'La cabaña en el bosque'?",
-  "respuestas": ["El monstruo de la niebla", "El ángel vengador", "El hombre de las sombras", "El monstruo del sótano"],
-  "correcta": 0
-}
-{
-  "pregunta": "¿En qué película de terror un hombre es poseído por un demonio llamado Pazuzu?",
-  "respuestas": ["La maldición", "El exorcista", "Poltergeist", "The Conjuring"],
-  "correcta": 1
-},
-{
-  "pregunta": "¿En qué ciudad se encuentra la casa que aparece en 'Poltergeist'?",
-  "respuestas": ["Nueva York", "Los Ángeles", "Chicago", "San Francisco"],
-  "correcta": 1
-},
-{
-  "pregunta": "¿Qué famoso asesino es el villano principal de la saga 'Viernes 13'?",
-  "respuestas": ["Freddy Krueger", "Jason Voorhees", "Michael Myers", "Chucky"],
-  "correcta": 1
-},
-{
-  "pregunta": "¿Cuál de las siguientes películas se desarrolla en una isla deshabitada llena de secretos?",
-  "respuestas": ["La cabaña en el bosque", "Saw", "El faro", "The Witch"],
-  "correcta": 2
-},
-{
-  "pregunta": "En la película 'La bruja', ¿qué elemento sobrenatural acecha a la familia en su granja?",
-  "respuestas": ["Un lobo gigante", "Un demonio", "Una bruja", "Un vampiro"],
-  "correcta": 2
-},
-{
-  "pregunta": "¿Qué objeto aparece constantemente en la película 'Annabelle' como elemento central del terror?",
-  "respuestas": ["Una muñeca", "Un reloj antiguo", "Un espejo", "Una lámpara de aceite"],
-  "correcta": 0
-},
-{
-  "pregunta": "¿Cómo se llama el lugar en el que se desarrolla la mayor parte de 'The Witch'?",
-  "respuestas": ["El bosque negro", "La granja aislada", "El pueblo maldito", "El cementerio"],
-  "correcta": 1
-},
-{
-  "pregunta": "En 'El conjuro', ¿qué es lo que intenta ayudar a resolver la familia Warren?",
-  "respuestas": ["Una casa con fantasmas", "Una niña poseída", "Un caso de desapariciones", "Una criatura demoníaca"],
-  "correcta": 0
-},
-{
-  "pregunta": "¿Qué famosa película de terror de los años 70 incluye la frase: '¿Me estás diciendo que tengo que asesinar a mi hija?'?",
-  "respuestas": ["El resplandor", "El exorcista", "La casa de los mil cadáveres", "Scream"],
-  "correcta": 1
-},
-{
-  "pregunta": "¿Qué asesino aparece en las películas de terror de 'Pesadilla en Elm Street'?",
-  "respuestas": ["Jason Voorhees", "Michael Myers", "Freddy Krueger", "Chucky"],
-  "correcta": 2
-},
-{
-  "pregunta": "¿Cuál es la principal fuente de terror en la película 'La cabaña en el bosque'?",
-  "respuestas": ["Un grupo de zombies", "Un culto satánico", "Una criatura de otro mundo", "El despertar de fuerzas oscuras"],
-  "correcta": 3
-},
-{
-  "pregunta": "¿Qué habilidad tiene el protagonista de 'El resplandor' para entrar en contacto con los espíritus?",
-  "respuestas": ["Visión remota", "Telequinesis", "Clarividencia", "Psicometría"],
-  "correcta": 2
-},
-{
-  "pregunta": "¿En qué año se estrenó la primera película de 'La matanza de Texas'?",
-  "respuestas": ["1975", "1980", "1969", "1974"],
-  "correcta": 3
-},
-{
-  "pregunta": "¿Qué película de terror tiene como villano a un muñeco poseído llamado Chucky?",
-  "respuestas": ["La maldición", "Child's Play", "El muñeco diabólico", "Annabelle"],
-  "correcta": 2
-},
-{
-  "pregunta": "¿Cuál de las siguientes criaturas NO aparece en la película 'It' de Stephen King?",
-  "respuestas": ["Un payaso", "Un hombre lobo", "Un leproso", "Un muerto viviente"],
-  "correcta": 1
-},
-{
-  "pregunta": "¿Qué arma es utilizada para destruir a Freddy Krueger en las películas de 'Pesadilla en Elm Street'?",
-  "respuestas": ["Un machete", "Un hacha", "Un cuchillo", "Sus propias garras"],
-  "correcta": 3
-},
-{
-  "pregunta": "¿Cuál es el nombre del pueblo en el que se desarrolla 'The Village' de M. Night Shyamalan?",
-  "respuestas": ["Rosewood", "Hollow Creek", "Sundance", "Covington"],
-  "correcta": 3
-},
-{
-  "pregunta": "¿Quién es el director de la película 'Los otros', protagonizada por Nicole Kidman?",
-  "respuestas": ["Guillermo del Toro", "M. Night Shyamalan", "Alejandro Amenábar", "James Wan"],
-  "correcta": 2
-},
-{
-  "pregunta": "¿Qué tipo de animal se convierte en el compañero de 'Edward Scissorhands'?",
-  "respuestas": ["Perro", "Gato", "Pájaro", "Ave"],
-  "correcta": 0
-}
-{
-  "pregunta": "En la película 'Hereditary', ¿qué figura aterradora aparece en el final de la película?",
-  "respuestas": ["Un demonio con múltiples cabezas", "Un hombre desfigurado", "La madre poseída", "Un culto oscuro"],
-  "correcta": 3
-},
-{
-  "pregunta": "En 'El sexto sentido', ¿qué es lo que finalmente descubre el protagonista?",
-  "respuestas": ["Que está muerto", "Que su esposa está poseída", "Que los niños tienen poderes especiales", "Que él es un fantasma"],
-  "correcta": 0
-},
-{
-  "pregunta": "¿Qué actor interpreta a Jack Torrance en 'El resplandor' de Stanley Kubrick?",
-  "respuestas": ["Jack Nicholson", "Johnny Depp", "Bruce Willis", "Matthew McConaughey"],
-  "correcta": 0
-},
-{
-  "pregunta": "En 'La forma del agua', ¿qué criatura es la que aparece como el protagonista principal?",
-  "respuestas": ["Un hombre lobo", "Un hombre pez", "Un fantasma", "Un demonio"],
-  "correcta": 1
-},
-{
-  "pregunta": "¿Qué objeto maldito en la película 'Annabelle' causa el caos en la vida de una joven familia?",
-  "respuestas": ["Una muñeca", "Una carta de tarot", "Una caja musical", "Un espejo antiguo"],
-  "correcta": 0
-},
-{
-  "pregunta": "En 'It', ¿cómo se llama el ser maligno que aterroriza a los niños de Derry?",
-  "respuestas": ["El Hombre Rojo", "Pennywise", "El Payaso del Terror", "Misterioso"],
-  "correcta": 1
-},
-{
-  "pregunta": "¿Cuál es la razón principal por la que la familia en 'Los otros' se aísla en su mansión?",
-  "respuestas": ["Por miedo a los robos", "Por enfermedad", "Por la guerra", "Por una maldición"],
-  "correcta": 2
-},
-{
-  "pregunta": "En 'El conjuro', ¿quiénes son los investigadores paranormales que tratan de ayudar a la familia Perron?",
-  "respuestas": ["Los Warren", "Los Greys", "Los Croft", "Los Mason"],
-  "correcta": 0
-},
-{
-  "pregunta": "En 'La cabaña en el bosque', ¿qué tipo de criaturas están atrapadas en el sótano?",
-  "respuestas": ["Zombis", "Vampiros", "Monstruos mitológicos", "Espíritus vengativos"],
-  "correcta": 2
-},
-{
-  "pregunta": "¿En qué película dirigida por Ridley Scott aparece un alienígena que aterroriza a la tripulación de una nave espacial?",
-  "respuestas": ["Terminator", "Aliens", "El exorcista", "Alien, el octavo pasajero"],
-  "correcta": 3
-},
-{
-  "pregunta": "En 'La maldición de Hill House', ¿quién es la hermana que sobrevive a la tragedia en la casa?",
-  "respuestas": ["Olivia", "Nell", "Theo", "Shirley"],
-  "correcta": 2
-},
-{
-  "pregunta": "En 'Midsommar', ¿en qué temporada del año transcurre la mayor parte de la película?",
-  "respuestas": ["Invierno", "Otoño", "Verano", "Primavera"],
-  "correcta": 2
-},
-{
-  "pregunta": "¿Qué famosa casa aparece en la película 'La cabaña en el bosque'?",
-  "respuestas": ["La Casa de los Mil Cadáveres", "La Casa del Árbol", "La Casa Abandonada", "La Casa Aislada"],
-  "correcta": 3
-},
-{
-  "pregunta": "¿Qué elemento es crucial en la película 'El juego' para sobrevivir a la situación mortal en la que los protagonistas se encuentran?",
-  "respuestas": ["Un mapa antiguo", "El tiempo", "Un teléfono móvil", "Una pista clave"],
-  "correcta": 1
-},
-{
-  "pregunta": "¿En qué película se presenta un extraño asesino con un 'máscara' en forma de cara de gas?",
-  "respuestas": ["Scream", "Halloween", "La matanza de Texas", "Lunatic"],
-  "correcta": 1
-},
-{
-  "pregunta": "En la película 'Pesadilla antes de Navidad', ¿qué personaje no es un 'habitante' de Halloween Town?",
-  "respuestas": ["Jack Skellington", "El Hombre de Jengibre", "Santa Claus", "Zero"],
-  "correcta": 2
-},
-{
-  "pregunta": "¿Qué objeto tiene el poder de despertar los terrores en la película 'La Casa del Diablo'?",
-  "respuestas": ["Una puerta secreta", "Una antigua radio", "Un espejo", "Un disco antiguo"],
-  "correcta": 3
-},
-{
-  "pregunta": "¿Quién protagoniza 'El hombre de las sombras', la película de terror dirigida por Mark Pellington?",
-  "respuestas": ["Edward Norton", "Richard Gere", "Liam Neeson", "Matthew McConaughey"],
-  "correcta": 1
-},
-{
-  "pregunta": "En 'The Ring', ¿qué sucede al ver el video maldito?",
-  "respuestas": ["La persona muere inmediatamente", "La persona recibe una llamada telefónica", "La persona se convierte en un espíritu", "La persona pierde su memoria"],
-  "correcta": 1
-},
-{
-  "pregunta": "En la película 'El resplandor', ¿qué mensaje escribe Jack Torrance repetidamente en su máquina de escribir?",
-  "respuestas": ["¡Estoy bien!", "¡El terror ha comenzado!", "Todo está bajo control", "All work and no play makes Jack a dull boy"],
-  "correcta": 3
-}
-{
-  "pregunta": "En 'La Casa del Diablo', ¿qué tipo de culto está detrás de los eventos macabros?",
-  "respuestas": ["Culto satánico", "Culto alienígena", "Culto de la muerte", "Culto de los zombis"],
-  "correcta": 0
-},
-{
-  "pregunta": "En 'El exorcista', ¿qué nombre recibe la niña poseída por el demonio?",
-  "respuestas": ["Regan", "Sarah", "Mary", "Lucy"],
-  "correcta": 0
-},
-{
-  "pregunta": "¿En qué ciudad se desarrolla la película 'La maldición' (The Grudge)?",
-  "respuestas": ["Los Ángeles", "Tokio", "Londres", "Nueva York"],
-  "correcta": 1
-},
-{
-  "pregunta": "En 'La cabaña en el bosque', ¿qué tipo de criaturas provocan los horrores en la cabaña?",
-  "respuestas": ["Monstruos mitológicos", "Zombis", "Demonios", "Espíritus"],
-  "correcta": 2
-},
-{
-  "pregunta": "¿Qué personaje principal de 'Pesadilla en Elm Street' es el único que logra derrotar a Freddy Krueger?",
-  "respuestas": ["Nancy Thompson", "Tina Gray", "Gloria Simmons", "Heather Langenkamp"],
-  "correcta": 0
-},
-{
-  "pregunta": "En 'Scream', ¿qué frase se utiliza para identificar al asesino al teléfono?",
-  "respuestas": ["¿Cuál es tu película favorita?", "¿Qué estás viendo?", "¿Quién te matará?", "¿Te atreves a jugar?"],
-  "correcta": 0
-},
-{
-  "pregunta": "¿Qué famoso director de cine dirigió 'El sexto sentido'?",
-  "respuestas": ["Steven Spielberg", "James Cameron", "M. Night Shyamalan", "Tim Burton"],
-  "correcta": 2
-},
-{
-  "pregunta": "¿Qué objeto siniestro está en el centro de la historia de 'Annabelle'?",
-  "respuestas": ["Una muñeca", "Un espejo", "Una caja musical", "Un libro antiguo"],
-  "correcta": 0
-},
-{
-  "pregunta": "¿Cómo se llama la película en la que un grupo de personas se encuentra atrapado en un sótano con una criatura demoníaca?",
-  "respuestas": ["The Cabin in the Woods", "The Evil Dead", "The Descent", "The Witch"],
-  "correcta": 2
-},
-{
-  "pregunta": "¿En qué película dirigida por Guillermo del Toro se presenta un mundo de fantasía oscuro con criaturas y una niña protagonista?",
-  "respuestas": ["El laberinto del fauno", "La cueva", "La sombra del viento", "Los otros"],
-  "correcta": 0
-},
-{
-  "pregunta": "En 'La Casa de los 1000 cadáveres', ¿quién es el líder del grupo de asesinos?",
-  "respuestas": ["Dr. Satan", "Captain Spaulding", "Otis", "Baby"],
-  "correcta": 1
-},
-{
-  "pregunta": "¿En qué película de terror aparece un hombre con un saco en la cabeza que persigue a los adolescentes?",
-  "respuestas": ["La noche de Halloween", "The Strangers", "La cabaña del terror", "La maldición"],
-  "correcta": 1
-},
-{
-  "pregunta": "En 'It', ¿cuál es el nombre del payaso demoníaco que aterroriza a los niños?",
-  "respuestas": ["Pennywise", "Bozo", "Grumpy", "Itchy"],
-  "correcta": 0
-},
-{
-  "pregunta": "¿Cuál es el apodo que recibe el asesino en serie de 'Viernes 13'?",
-  "respuestas": ["Ghostface", "Jason", "Freddy", "Michael Myers"],
-  "correcta": 1
-},
-{
-  "pregunta": "¿En qué película de terror aparece un hotel aislado que se convierte en un lugar lleno de terror para una familia?",
-  "respuestas": ["The Shining", "El Conjuro", "La Casa del Diablo", "La matanza de Texas"],
-  "correcta": 0
-},
-{
-  "pregunta": "¿Qué famosa película de terror está basada en la obra de Stephen King sobre una niña con poderes psíquicos?",
-  "respuestas": ["Carrie", "It", "Misery", "Cujo"],
-  "correcta": 0
-},
-{
-  "pregunta": "¿Qué fenómeno paranormal ocurre en la película 'Poltergeist'?",
-  "respuestas": ["La posesión de una niña", "La comunicación con los muertos", "Un poltergeist atormenta a una familia", "Un culto oscuro se apodera de la casa"],
-  "correcta": 2
-},
-{
-  "pregunta": "¿En qué película de terror una madre intenta proteger a sus hijos de los espíritus malignos en una casa?",
-  "respuestas": ["El Conjuro", "La huérfana", "Los otros", "El orfanato"],
-  "correcta": 3
-},
-{
-  "pregunta": "¿Qué elemento sobrenatural aparece en la película 'El orfanato'?",
-  "respuestas": ["Una muñeca poseída", "Un fantasma infantil", "Un demonio ancestral", "Un extraño ritual"],
-  "correcta": 1
-}
-{
-  "pregunta": "En 'La Noche de Halloween', ¿qué arma utiliza Michael Myers para cometer sus crímenes?",
-  "respuestas": ["Un cuchillo", "Una motosierra", "Un hacha", "Un martillo"],
-  "correcta": 0
-},
-{
-  "pregunta": "¿En qué película de terror aparece un demonio llamado Valak que toma la forma de una monja?",
-  "respuestas": ["El Conjuro", "Annabelle", "La monja", "Insidious"],
-  "correcta": 2
-},
-{
-  "pregunta": "En 'La cabaña en el bosque', ¿qué tipo de criaturas emergen como resultado de los sacrificios?",
-  "respuestas": ["Zombis", "Demonios", "Monstruos", "Vampiros"],
-  "correcta": 2
-},
-{
-  "pregunta": "¿En qué película de terror aparece un pueblo que está siendo acechado por una criatura del bosque conocida como el Wendigo?",
-  "respuestas": ["Antlers", "El Ritual", "The Lodge", "The Blair Witch Project"],
-  "correcta": 0
-},
-{
-  "pregunta": "¿Qué película de Tim Burton es conocida por ser una mezcla entre comedia y terror, protagonizada por un hombre que regresa de la muerte?",
-  "respuestas": ["Beetlejuice", "El joven manos de tijera", "La novia cadáver", "El hogar de Miss Peregrine para niños peculiares"],
-  "correcta": 0
-},
-{
-  "pregunta": "En 'Bajo la sombra', ¿dónde tiene lugar la película?",
-  "respuestas": ["En un campo de refugiados", "En una ciudad en ruinas", "En un suburbio de Londres", "En una casa aislada en el desierto"],
-  "correcta": 0
-},
-{
-  "pregunta": "¿Cómo se llama la película en la que un grupo de personas se enfrenta a un asesino con una máscara de hockey?",
-  "respuestas": ["La matanza de Texas", "Viernes 13", "Scream", "Pesadilla en Elm Street"],
-  "correcta": 1
-},
-{
-  "pregunta": "En 'Scream', ¿qué personaje usa la famosa máscara de Ghostface?",
-  "respuestas": ["Billy Loomis", "Stu Macher", "Sidney Prescott", "Dewey Riley"],
-  "correcta": 0
-},
-{
-  "pregunta": "¿Quién protagoniza la película 'El proyecto de la bruja de Blair'?",
-  "respuestas": ["Un grupo de turistas", "Un grupo de estudiantes", "Un equipo de documentalistas", "Una familia"],
-  "correcta": 2
-},
-{
-  "pregunta": "En 'Hereditary', ¿quién se convierte en el objetivo del espíritu vengativo de la familia?",
-  "respuestas": ["Peter", "Annie", "Charlie", "Joan"],
-  "correcta": 0
-},
-{
-  "pregunta": "En la película 'La huérfana', ¿qué es lo que revela al final de la historia sobre la niña?",
-  "respuestas": ["Es un espíritu", "Es una persona mayor con una enfermedad", "Es una mujer adulta con un trastorno mental", "Es una niña normal"],
-  "correcta": 2
-},
-{
-  "pregunta": "¿En qué película de terror un grupo de amigos se enfrenta a una entidad que persigue sus peores miedos?",
-  "respuestas": ["It", "Midsommar", "Verónica", "Fear Street"],
-  "correcta": 0
-},
-{
-  "pregunta": "¿Qué criatura es el villano principal en la película 'The Descent'?",
-  "respuestas": ["Vampiros", "Hombres lobo", "Monstruos subterráneos", "Demonios"],
-  "correcta": 2
-},
-{
-  "pregunta": "En 'It Follows', ¿qué es lo que persigue a las personas?",
-  "respuestas": ["Un espíritu vengativo", "Una maldición ancestral", "Una entidad sobrenatural", "Un asesino con un cuchillo"],
-  "correcta": 2
-},
-{
-  "pregunta": "¿Quién es el director de la película de terror 'La bruja' (The Witch)?",
-  "respuestas": ["Robert Eggers", "Jordan Peele", "Ari Aster", "James Wan"],
-  "correcta": 0
-},
-{
-  "pregunta": "¿Qué famosa película de terror se desarrolla en una casa encantada que es vendida por la familia que la habita?",
-  "respuestas": ["Poltergeist", "Los otros", "La cabaña en el bosque", "El conjuro"],
-  "correcta": 0
-},
-{
-  "pregunta": "¿En qué película de terror dirigida por Tim Burton se muestra una historia gótica sobre un hombre con cuchillas por manos?",
-  "respuestas": ["El joven manos de tijera", "Beetlejuice", "La novia cadáver", "Sleepy Hollow"],
-  "correcta": 0
-},
-{
-  "pregunta": "En la película 'The Ring', ¿cómo se transmite el maleficio?",
-  "respuestas": ["A través de una llamada telefónica", "A través de un vídeo", "A través de una carta", "A través de un mensaje de texto"],
-  "correcta": 1
-},
-{
-  "pregunta": "En 'El exorcista', ¿qué tipo de demonio posee a Regan?",
-  "respuestas": ["Un espíritu vengativo", "El diablo", "Un ángel caído", "Un demonio antiguo"],
-  "correcta": 1
-}
-{
-  "pregunta": "¿En qué película de terror dirigida por Jordan Peele un grupo de personas es atacado por sus dobles?",
-  "respuestas": ["Us", "Get Out", "Midsommar", "Hereditary"],
-  "correcta": 0
-},
-{
-  "pregunta": "¿Qué monstruo es la principal amenaza en 'A Quiet Place'?",
-  "respuestas": ["Zombis", "Demonios", "Criaturas alienígenas", "Vampiros"],
-  "correcta": 2
-},
-{
-  "pregunta": "En 'Midsommar', ¿en qué país se desarrolla la historia?",
-  "respuestas": ["Suecia", "Finlandia", "Islandia", "Noruega"],
-  "correcta": 0
-},
-{
-  "pregunta": "¿Qué personaje principal es interpretado por Toni Collette en 'Hereditary'?",
-  "respuestas": ["Annie Graham", "Sarah Hable", "Miriam Yates", "Alice Green"],
-  "correcta": 0
-},
-{
-  "pregunta": "En 'El Conjuro', ¿quiénes son los principales investigadores paranormales?",
-  "respuestas": ["Ed y Lorraine Warren", "John y Sarah Turner", "Peter y Rebecca Evans", "Tom y Lizzy Fields"],
-  "correcta": 0
-},
-{
-  "pregunta": "¿En qué película de terror los habitantes de una ciudad pequeña se enfrentan a una plaga de criaturas sobrenaturales?",
-  "respuestas": ["The Mist", "El Bosque", "La Cabaña en el Bosque", "The Descent"],
-  "correcta": 0
-},
-{
-  "pregunta": "En 'It Follows', ¿qué tipo de entidad persigue a las personas?",
-  "respuestas": ["Un espíritu", "Un monstruo", "Una maldición", "Una sombra"],
-  "correcta": 2
-},
-{
-  "pregunta": "¿Qué película de terror dirigida por Ari Aster trata sobre una mujer que enfrenta la muerte de su madre y lo que ocurre después?",
-  "respuestas": ["Midsommar", "Hereditary", "La Cabaña del Terror", "The Lighthouse"],
-  "correcta": 1
-},
-{
-  "pregunta": "¿Qué fenómeno sobrenatural ocurre en 'La Llamada' (The Ring)?",
-  "respuestas": ["Una maldición que se transmite a través de un vídeo", "Un pacto con un demonio", "Una comunicación con los muertos", "Una invasión extraterrestre"],
-  "correcta": 0
-},
-{
-  "pregunta": "En 'Verónica', ¿qué actividad desencadena los eventos paranormales?",
-  "respuestas": ["Una Ouija", "Un espejo encantado", "Una muñeca poseída", "Un libro antiguo"],
-  "correcta": 0
-},
-{
-  "pregunta": "¿Qué director es responsable de la película de terror 'The Witch'?",
-  "respuestas": ["Robert Eggers", "Jordan Peele", "Ari Aster", "James Wan"],
-  "correcta": 0
-},
-{
-  "pregunta": "¿En qué película de terror aparece un grupo de amigos atrapados en un pueblo, siendo perseguidos por un culto?",
-  "respuestas": ["The Lodge", "Midsommar", "El Bosque", "La Cabaña del Terror"],
-  "correcta": 1
-},
-{
-  "pregunta": "En 'The Invisible Man', ¿quién es la protagonista que huye de su abusivo exnovio?",
-  "respuestas": ["Cecilia", "Sarah", "Emma", "Jessica"],
-  "correcta": 0
-},
-{
-  "pregunta": "En 'La maldición de Hill House', ¿qué evento marcó la vida de los personajes principales?",
-  "respuestas": ["Un asesinato en la casa", "Una serie de visiones paranormales", "Un incendio", "El suicidio de un familiar"],
-  "correcta": 2
-},
-{
-  "pregunta": "En 'The Lodge', ¿qué situación desencadena los horrores para la familia protagonista?",
-  "respuestas": ["Una tormenta de nieve", "Un accidente de coche", "Un robo en su casa", "Un ritual satánico"],
-  "correcta": 0
-},
-{
-  "pregunta": "¿En qué película un hombre sufre un accidente y comienza a ver una versión retorcida de la realidad?",
-  "respuestas": ["Get Out", "The Invisible Man", "Hereditary", "Shutter Island"],
-  "correcta": 1
-},
-{
-  "pregunta": "En 'The Autopsy of Jane Doe', ¿qué encuentran los forenses en el cuerpo de la mujer desconocida?",
-  "respuestas": ["Evidencias de un ritual satánico", "Un virus mortal", "Una maldición antigua", "Un extraño simbolismo"],
-  "correcta": 0
-},
-{
-  "pregunta": "En 'Ready or Not', ¿qué juego de supervivencia deben jugar los personajes?",
-  "respuestas": ["Un juego de cartas", "Un juego de mesa", "Un juego de escondidas", "Un juego de caza"],
-  "correcta": 3
-},
-{
-  "pregunta": "¿Quién protagoniza 'La Noche de Halloween' (2018) como Laurie Strode?",
-  "respuestas": ["Jamie Lee Curtis", "Sigourney Weaver", "Neve Campbell", "Scream"],
-  "correcta": 0
-}
-{
-  "pregunta": "¿Qué película de terror dirigida por James Wan trata sobre una mujer que investiga misteriosos crímenes relacionados con una antigua pintura?",
-  "respuestas": ["Malignant", "El Conjuro", "Insidious", "La Llamada"],
-  "correcta": 0
-},
-{
-  "pregunta": "¿En qué película un grupo de amigos descubre un portal en el bosque que lleva a una dimensión paralela?",
-  "respuestas": ["La Cabaña en el Bosque", "Midsommar", "The Ritual", "Verónica"],
-  "correcta": 0
-},
-{
-  "pregunta": "¿Cuál es la principal amenaza en la película de terror 'It' (2017)?",
-  "respuestas": ["Un demonio disfrazado de payaso", "Un asesino en serie", "Un espíritu vengativo", "Una invasión alienígena"],
-  "correcta": 0
-},
-{
-  "pregunta": "En 'A Quiet Place', ¿qué provoca la destrucción masiva de la humanidad?",
-  "respuestas": ["Un virus", "Una invasión extraterrestre", "Un terremoto", "Criaturas que cazan por el sonido"],
-  "correcta": 3
-},
-{
-  "pregunta": "En 'Us', ¿qué otro tipo de seres atacan a los personajes principales?",
-  "respuestas": ["Los clones", "Los zombis", "Los fantasmas", "Los demonios"],
-  "correcta": 0
-},
-{
-  "pregunta": "En 'La Llamada' (The Ring), ¿qué sucede a las personas que ven el video maldito?",
-  "respuestas": ["Mueren a los siete días", "Se convierten en zombies", "Son poseídas por un demonio", "Sufren pesadillas interminables"],
-  "correcta": 0
-},
-{
-  "pregunta": "¿Qué película de terror de 2020 está ambientada en un pequeño pueblo y gira en torno a la desaparición de varias personas?",
-  "respuestas": ["The Lodge", "Relic", "The Invisible Man", "The Wretched"],
-  "correcta": 1
-},
-{
-  "pregunta": "¿Qué película de terror protagonizada por Florence Pugh se desarrolla en una comunidad aislada sueca?",
-  "respuestas": ["Midsommar", "Hereditary", "The Wicker Man", "The Ritual"],
-  "correcta": 0
-},
-{
-  "pregunta": "¿Cuál es el principal tema de la película de terror 'The Witch' (2015)?",
-  "respuestas": ["La brujería en el siglo XVII", "Una invasión de demonios", "El regreso de un asesino", "Una familia atrapada en una casa maldita"],
-  "correcta": 0
-},
-{
-  "pregunta": "¿En qué película de terror, los protagonistas intentan escapar de un monstruo a través de un oscuro laberinto subterráneo?",
-  "respuestas": ["The Descent", "The Ritual", "La cabaña en el bosque", "As Above, So Below"],
-  "correcta": 3
-},
-{
-  "pregunta": "¿En qué película de terror un hombre se enfrenta a un espíritu vengativo después de haber sido responsable de su muerte?",
-  "respuestas": ["El Conjuro", "The Grudge", "El Juego del Miedo", "The Ring"],
-  "correcta": 1
-},
-{
-  "pregunta": "En 'The Invisible Man', ¿qué arma mortal utiliza el antagonista para acechar a su víctima?",
-  "respuestas": ["Un cuchillo", "Un martillo", "Un lazo", "Su invisibilidad"],
-  "correcta": 3
-},
-{
-  "pregunta": "En la película 'Get Out', ¿qué práctica extraña realizan los personajes principales en la casa de los padres de la novia?",
-  "respuestas": ["Un ritual de intercambio de cuerpos", "Una posesión demoníaca", "Un asesinato ritual", "Una sesión de espiritismo"],
-  "correcta": 0
-},
-{
-  "pregunta": "¿Cuál es la premisa de 'The Autopsy of Jane Doe'?",
-  "respuestas": ["Un grupo de forenses realiza una autopsia a una mujer desconocida con misteriosas circunstancias", "Una familia es atacada por un espíritu maligno", "Un detective investiga una serie de muertes inexplicables", "Un grupo de investigadores paranormales intenta encontrar a un asesino serial"],
-  "correcta": 0
-},
-{
-  "pregunta": "¿Quién protagoniza la película de terror 'La Cabaña en el Bosque'?",
-  "respuestas": ["Chris Hemsworth", "Jessica Chastain", "Neve Campbell", "Ethan Hawke"],
-  "correcta": 0
-},
-{
-  "pregunta": "En 'It Follows', ¿cómo se puede detener a la entidad que persigue a las personas?",
-  "respuestas": ["Matándola", "Pasándosela a otra persona", "Haciendo un ritual", "Escapando a otro país"],
-  "correcta": 1
-},
-{
-  "pregunta": "En 'Hereditary', ¿qué es lo que parece causar los problemas sobrenaturales en la familia Graham?",
-  "respuestas": ["Un pacto con el diablo", "La influencia de un libro maldito", "Un demonio familiar", "Un traumas del pasado no resuelto"],
-  "correcta": 2
-},
-{
-  "pregunta": "¿En qué película de terror los personajes enfrentan una amenaza sobrenatural que aparece en fotos y videos?",
-  "respuestas": ["The Ring", "El Conjuro", "Insidious", "Poltergeist"],
-  "correcta": 0
-}
-
-      
-    ];
+    const preguntas = 
+      [
+  {
+    "pregunta": "¿Quién es el protagonista de la película 'Pesadilla en Elm Street'?",
+    "respuestas": [
+      "Jason Voorhees",
+      "Freddy Krueger",
+      "Michael Myers",
+      "Chucky"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿En qué año se estrenó la película 'El sexto sentido'?",
+    "respuestas": [
+      "1995",
+      "1999",
+      "2002",
+      "1997"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué película de terror se desarrolla en una casa donde se escuchan ruidos extraños y aparecen fantasmas?",
+    "respuestas": [
+      "Poltergeist",
+      "La cabaña en el bosque",
+      "El conjuro",
+      "Los otros"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿En qué película aparece el asesino Jason Voorhees?",
+    "respuestas": [
+      "Pesadilla en Elm Street",
+      "Viernes 13",
+      "La matanza de Texas",
+      "Scream"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué monstruo aterrador aparece en 'It' de Stephen King?",
+    "respuestas": [
+      "Un zombi",
+      "Un payaso",
+      "Un hombre lobo",
+      "Un vampiro"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué película de terror se basa en una leyenda sobre un video maldito?",
+    "respuestas": [
+      "The Ring",
+      "La maldición",
+      "Annabelle",
+      "Scream"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Cuál es el nombre del espíritu que persigue a la protagonista en 'La huérfana'?",
+    "respuestas": [
+      "Esther",
+      "Constance",
+      "Regan",
+      "Carrie"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué película de terror se desarrolla en un hospital psiquiátrico?",
+    "respuestas": [
+      "Shutter Island",
+      "El exorcista",
+      "El orfanato",
+      "El resplandor"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Quién es el director de la famosa película 'El sexto sentido'?",
+    "respuestas": [
+      "Martin Scorsese",
+      "M. Night Shyamalan",
+      "James Wan",
+      "John Carpenter"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué tipo de criatura ataca a los humanos en 'La cosa'?",
+    "respuestas": [
+      "Zombis",
+      "Vampiros",
+      "Extraterrestres",
+      "Serpientes"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué película de terror se centra en un asesino que lleva una máscara de hockey?",
+    "respuestas": [
+      "Scream",
+      "Halloween",
+      "Viernes 13",
+      "Pesadilla en Elm Street"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿En qué película de terror se utiliza un tablero Ouija?",
+    "respuestas": [
+      "Annabelle",
+      "El conjuro",
+      "Ouija",
+      "El exorcista"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué película de terror está basada en el libro de Stephen King sobre una niña con poderes telequinéticos?",
+    "respuestas": [
+      "It",
+      "Carrie",
+      "El resplandor",
+      "La niebla"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿En qué ciudad se desarrolla la trama de 'The Blair Witch Project'?",
+    "respuestas": [
+      "Nueva York",
+      "Burkittsville",
+      "Los Ángeles",
+      "Chicago"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué actor interpreta a Jack Torrance en 'El resplandor'?",
+    "respuestas": [
+      "Johnny Depp",
+      "Jack Nicholson",
+      "Tom Hanks",
+      "Robert De Niro"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿En qué película aparece el asesino conocido como 'Ghostface'?",
+    "respuestas": [
+      "Scream",
+      "Viernes 13",
+      "Halloween",
+      "Pesadilla en Elm Street"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Quién es el director de la película 'La cabaña en el bosque'?",
+    "respuestas": [
+      "Joss Whedon",
+      "Sam Raimi",
+      "Guillermo del Toro",
+      "James Wan"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué tipo de criatura se encuentra en la película 'La cosa' de John Carpenter?",
+    "respuestas": [
+      "Un monstruo extraterrestre",
+      "Un demonio",
+      "Un zombi",
+      "Un lobo gigante"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué película de terror trata sobre una casa encantada que toma posesión de sus habitantes?",
+    "respuestas": [
+      "Los otros",
+      "El conjuro",
+      "La maldición",
+      "Amityville Horror"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Qué película de terror está basada en la historia de una familia que se muda a una casa donde ocurrieron eventos traumáticos?",
+    "respuestas": [
+      "La maldición",
+      "Los otros",
+      "El resplandor",
+      "Amityville Horror"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Qué famosa película de terror fue dirigida por Alfred Hitchcock?",
+    "respuestas": [
+      "El exorcista",
+      "Psicosis",
+      "La cabaña en el bosque",
+      "El resplandor"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿En qué película aparece una muñeca llamada Annabelle?",
+    "respuestas": [
+      "El conjuro",
+      "Insidious",
+      "Annabelle",
+      "El orfanato"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Cómo se llama el asesino de la saga de películas 'Halloween'?",
+    "respuestas": [
+      "Freddy Krueger",
+      "Chucky",
+      "Michael Myers",
+      "Jason Voorhees"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Quién es el director de la película 'El conjuro'?",
+    "respuestas": [
+      "James Wan",
+      "John Carpenter",
+      "Sam Raimi",
+      "Guillermo del Toro"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿En qué película de terror aparece un fantasma llamado 'The Bride'?",
+    "respuestas": [
+      "La maldición",
+      "La novia cadáver",
+      "El orfanato",
+      "Los otros"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué película de terror de 2007 se desarrolla en un hospital psiquiátrico?",
+    "respuestas": [
+      "Shutter Island",
+      "El resplandor",
+      "La cabaña en el bosque",
+      "El orfanato"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué tipo de criatura aparece en la película 'El hombre lobo' de 2010?",
+    "respuestas": [
+      "Vampiros",
+      "Zombis",
+      "Hombres lobo",
+      "Muertos vivientes"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿En qué película el personaje principal tiene una obsesión con la casa de un vecino?",
+    "respuestas": [
+      "La ventana indiscreta",
+      "La cabaña en el bosque",
+      "La maldición",
+      "El exorcista"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Quién es el actor principal de 'El resplandor'?",
+    "respuestas": [
+      "Jack Nicholson",
+      "Leonardo DiCaprio",
+      "Johnny Depp",
+      "Robert Pattinson"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿En qué película de terror un grupo de estudiantes se enfrenta a una criatura llamada 'The Blair Witch'?",
+    "respuestas": [
+      "El proyecto de la bruja de Blair",
+      "El conjuro",
+      "La cabaña en el bosque",
+      "Scream"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué película de terror está basada en una novela de Stephen King sobre un perro rabioso?",
+    "respuestas": [
+      "Pet Sematary",
+      "Cujo",
+      "It",
+      "Carrie"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Cómo se llama el pueblo donde se desarrollan los sucesos en 'La casa de los mil cadáveres'?",
+    "respuestas": [
+      "Sandy Creek",
+      "Hill Valley",
+      "Neverland",
+      "Devil's Rejects"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué película trata sobre un asesino que mata a las víctimas durante las fiestas de Halloween?",
+    "respuestas": [
+      "Viernes 13",
+      "Scream",
+      "Halloween",
+      "Pesadilla en Elm Street"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué famosa película de terror incluye la frase 'En el nombre del padre, del hijo y del espíritu santo'?",
+    "respuestas": [
+      "El conjuro",
+      "El exorcista",
+      "La maldición",
+      "El orfanato"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué película de terror se desarrolla en un hotel aislado en las montañas durante el invierno?",
+    "respuestas": [
+      "El resplandor",
+      "Scream",
+      "La cabaña en el bosque",
+      "El conjuro"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿En qué película un niño se enfrenta a una serie de fenómenos paranormales en su propia casa?",
+    "respuestas": [
+      "Poltergeist",
+      "El conjuro",
+      "La cabaña en el bosque",
+      "El orfanato"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué película de terror trata sobre una casa en la que se realizan experimentos científicos?",
+    "respuestas": [
+      "La maldición",
+      "El orfanato",
+      "La cabaña en el bosque",
+      "El proyecto de la bruja de Blair"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿En qué película un grupo de personas se encuentra atrapado en un edificio mientras son atacados por una criatura?",
+    "respuestas": [
+      "La cabaña en el bosque",
+      "The Mist",
+      "Quarantine",
+      "Scream"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué película de Tim Burton se basa en un poema de Edgar Allan Poe?",
+    "respuestas": [
+      "Sweeney Todd",
+      "El joven manos de tijera",
+      "La novia cadáver",
+      "La leyenda del jinete sin cabeza"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Qué película de terror de 1999 es conocida por su historia sobre una familia que se muda a una casa en la que ocurren sucesos paranormales?",
+    "respuestas": [
+      "El orfanato",
+      "La maldición",
+      "Los otros",
+      "La casa de los mil cadáveres"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿En qué película de Tim Burton aparece un mago llamado 'Chesire Cat'?",
+    "respuestas": [
+      "Alicia en el país de las maravillas",
+      "Batman",
+      "Beetlejuice",
+      "La novia cadáver"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Quién interpretó al villano 'Jack Torrance' en la película 'El resplandor'?",
+    "respuestas": [
+      "Johnny Depp",
+      "Jack Nicholson",
+      "Christian Bale",
+      "Tom Cruise"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué película de Tim Burton se desarrolla en el mundo de la fantasía y presenta una ciudad extraña llamada Halloween Town?",
+    "respuestas": [
+      "Pesadilla antes de Navidad",
+      "El joven manos de tijera",
+      "Beetlejuice",
+      "Alicia en el país de las maravillas"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿En qué película de terror un asesino llamado 'Jigsaw' pone a sus víctimas a resolver macabras trampas?",
+    "respuestas": [
+      "Scream",
+      "The Ring",
+      "Saw",
+      "El orfanato"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué actor interpreta a Edward Scissorhands en la película de Tim Burton?",
+    "respuestas": [
+      "Johnny Depp",
+      "Edward Norton",
+      "Robert Downey Jr.",
+      "Daniel Day-Lewis"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿En qué película de terror se utiliza un antiguo libro de hechizos que convoca a un demonio?",
+    "respuestas": [
+      "El conjuro",
+      "Evil Dead",
+      "La cabaña en el bosque",
+      "Anabelle"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué película de Tim Burton está basada en un libro de Roald Dahl y trata sobre una mujer que enfrenta a unos villanos con poderes especiales?",
+    "respuestas": [
+      "Matilda",
+      "Charlie y la fábrica de chocolate",
+      "Los fantasmas de Scrooge",
+      "Big Fish"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿En qué película de terror se muestra un pueblo donde los habitantes están condenados a morir de forma violenta cada noche?",
+    "respuestas": [
+      "The Others",
+      "Scream",
+      "Sleepy Hollow",
+      "The Village"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Qué director es conocido por sus colaboraciones frecuentes con Johnny Depp y su estilo gótico y excéntrico en las películas?",
+    "respuestas": [
+      "Stanley Kubrick",
+      "Guillermo del Toro",
+      "Tim Burton",
+      "David Lynch"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué famosa película de terror dirigida por James Wan presenta a una familia que vive aterrorizada por una entidad demoníaca?",
+    "respuestas": [
+      "Insidious",
+      "El conjuro",
+      "Poltergeist",
+      "La maldición"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿En qué película de Tim Burton un hombre sin manos es el protagonista que crea esculturas con cuchillas?",
+    "respuestas": [
+      "Beetlejuice",
+      "El joven manos de tijera",
+      "Sweeney Todd",
+      "La novia cadáver"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué película de terror se basa en una leyenda urbana de un espíritu vengativo que se manifiesta a través de un teléfono?",
+    "respuestas": [
+      "The Ring",
+      "La maldición",
+      "Annabelle",
+      "Scream"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Cuál es el nombre del personaje principal en la película 'Beetlejuice' de Tim Burton?",
+    "respuestas": [
+      "Lydia Deetz",
+      "Barbara Maitland",
+      "Beetlejuice",
+      "Adam Maitland"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué película de Tim Burton está inspirada en un clásico cuento de hadas sobre una niña que cae en un mundo fantástico?",
+    "respuestas": [
+      "Alicia en el país de las maravillas",
+      "La novia cadáver",
+      "El joven manos de tijera",
+      "La leyenda del jinete sin cabeza"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué película de terror trata sobre un grupo de amigos atrapados en un edificio mientras una criatura desconocida los persigue?",
+    "respuestas": [
+      "Quarantine",
+      "La cabaña en el bosque",
+      "The Mist",
+      "El resplandor"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué película de Tim Burton presenta a un personaje llamado 'The Corpse Bride'?",
+    "respuestas": [
+      "Sweeney Todd",
+      "La novia cadáver",
+      "Beetlejuice",
+      "El joven manos de tijera"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿En qué película de terror un grupo de personas se enfrenta a un asesino serial conocido como 'Ghostface'?",
+    "respuestas": [
+      "Scream",
+      "Halloween",
+      "Pesadilla en Elm Street",
+      "Viernes 13"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "En la saga de 'Pesadilla en Elm Street', ¿qué poder tiene Freddy Krueger?",
+    "respuestas": [
+      "Viajar en el tiempo",
+      "Manipular las mentes de sus víctimas",
+      "Matar en los sueños",
+      "Controlar el fuego"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "La atmósfera gótica de 'Beetlejuice' se mezcla con humor negro. ¿Qué personaje no muere de manera convencional?",
+    "respuestas": [
+      "Barbara Maitland",
+      "Lydia Deetz",
+      "Beetlejuice",
+      "Adam Maitland"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "En 'La novia cadáver', ¿qué país es el escenario principal de la historia?",
+    "respuestas": [
+      "Francia",
+      "Inglaterra",
+      "Alemania",
+      "Rusia"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Cuál de las siguientes criaturas NO aparece en la película 'El joven manos de tijera'?",
+    "respuestas": [
+      "Gárgolas",
+      "Un perro",
+      "Una águila",
+      "Un león"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿En qué aspecto de su personaje Jack Torrance, de 'El resplandor', experimenta una transformación aterradora?",
+    "respuestas": [
+      "Su rostro se convierte en un esqueleto",
+      "Se vuelve más agresivo y violento",
+      "Sus ojos se vuelven rojos",
+      "Su piel comienza a arder"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "En la película 'It' de 2017, ¿qué forma adopta el payaso Pennywise para asustar a sus víctimas?",
+    "respuestas": [
+      "Un perro gigante",
+      "Una serpiente",
+      "Un monstruo con múltiples ojos",
+      "Una figura con dientes afilados"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Qué tipo de insectos son utilizados como una de las principales amenazas en la película 'La maldición'?",
+    "respuestas": [
+      "Escorpiones",
+      "Arañas",
+      "Cucarachas",
+      "Termitas"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "La famosa casa de 'La cabaña en el bosque' está llena de secretos. ¿Qué tipo de habitaciones esconden las trampas?",
+    "respuestas": [
+      "Habitaciones de lujo",
+      "Cuartos con objetos familiares",
+      "Cuartos con símbolos extraños",
+      "Habitaciones temáticas de terror"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "En la película 'The Ring', ¿qué se supone que sucede después de ver el video maldito?",
+    "respuestas": [
+      "Aparecen sombras extrañas",
+      "Te atacan criaturas del video",
+      "Recibes una llamada telefónica",
+      "Se te aparece un espíritu"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué fenómeno paranormal tiene lugar en 'Poltergeist' que hace que los muebles se desplacen por sí solos?",
+    "respuestas": [
+      "Fenómenos electromagnéticos",
+      "Vientos intensos",
+      "Fuerzas invisibles",
+      "Energía psíquica"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "En la película 'Sweeney Todd', ¿qué es lo que Sweeney hace con sus víctimas?",
+    "respuestas": [
+      "Las convierte en pasteles",
+      "Las diseca",
+      "Las entierra en el jardín",
+      "Las mata con veneno"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué popular personaje de Tim Burton está obsesionado con el concepto de la muerte y la vida después de ella?",
+    "respuestas": [
+      "Beetlejuice",
+      "Edward Scissorhands",
+      "Jack Skellington",
+      "El joven manos de tijera"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué elemento clave conecta a todas las historias en 'El proyecto de la bruja de Blair'?",
+    "respuestas": [
+      "Un antiguo libro",
+      "Una cámara de video",
+      "Un mapa",
+      "Un árbol maldito"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Cuál de los siguientes es un personaje de 'Pesadilla antes de Navidad'?",
+    "respuestas": [
+      "Drácula",
+      "Jack Skellington",
+      "Frankenstein",
+      "El Hombre Lobo"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "En la película 'La casa de los mil cadáveres', ¿qué situación desencadena los eventos aterradores?",
+    "respuestas": [
+      "Un experimento científico",
+      "Un accidente de tráfico",
+      "Un festival local",
+      "La búsqueda de una familia desaparecida"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "En 'Sleepy Hollow', ¿quién se enfrenta al Jinete sin cabeza?",
+    "respuestas": [
+      "Ichabod Crane",
+      "Brom Bones",
+      "Katrina Van Tassel",
+      "Lord Crane"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "En 'Alicia en el país de las maravillas', ¿qué personaje tiene un sombrero extremadamente grande y habla de manera confusa?",
+    "respuestas": [
+      "El Gato Cheshire",
+      "El Sombrerero Loco",
+      "La Reina Roja",
+      "El Conejo Blanco"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Cuál es el nombre del monstruo que acecha en 'La cabaña en el bosque'?",
+    "respuestas": [
+      "El monstruo de la niebla",
+      "El ángel vengador",
+      "El hombre de las sombras",
+      "El monstruo del sótano"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿En qué película de terror un hombre es poseído por un demonio llamado Pazuzu?",
+    "respuestas": [
+      "La maldición",
+      "El exorcista",
+      "Poltergeist",
+      "The Conjuring"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿En qué ciudad se encuentra la casa que aparece en 'Poltergeist'?",
+    "respuestas": [
+      "Nueva York",
+      "Los Ángeles",
+      "Chicago",
+      "San Francisco"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué famoso asesino es el villano principal de la saga 'Viernes 13'?",
+    "respuestas": [
+      "Freddy Krueger",
+      "Jason Voorhees",
+      "Michael Myers",
+      "Chucky"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Cuál de las siguientes películas se desarrolla en una isla deshabitada llena de secretos?",
+    "respuestas": [
+      "La cabaña en el bosque",
+      "Saw",
+      "El faro",
+      "The Witch"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "En la película 'La bruja', ¿qué elemento sobrenatural acecha a la familia en su granja?",
+    "respuestas": [
+      "Un lobo gigante",
+      "Un demonio",
+      "Una bruja",
+      "Un vampiro"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué objeto aparece constantemente en la película 'Annabelle' como elemento central del terror?",
+    "respuestas": [
+      "Una muñeca",
+      "Un reloj antiguo",
+      "Un espejo",
+      "Una lámpara de aceite"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Cómo se llama el lugar en el que se desarrolla la mayor parte de 'The Witch'?",
+    "respuestas": [
+      "El bosque negro",
+      "La granja aislada",
+      "El pueblo maldito",
+      "El cementerio"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "En 'El conjuro', ¿qué es lo que intenta ayudar a resolver la familia Warren?",
+    "respuestas": [
+      "Una casa con fantasmas",
+      "Una niña poseída",
+      "Un caso de desapariciones",
+      "Una criatura demoníaca"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué famosa película de terror de los años 70 incluye la frase: '¿Me estás diciendo que tengo que asesinar a mi hija?'?",
+    "respuestas": [
+      "El resplandor",
+      "El exorcista",
+      "La casa de los mil cadáveres",
+      "Scream"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué asesino aparece en las películas de terror de 'Pesadilla en Elm Street'?",
+    "respuestas": [
+      "Jason Voorhees",
+      "Michael Myers",
+      "Freddy Krueger",
+      "Chucky"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Cuál es la principal fuente de terror en la película 'La cabaña en el bosque'?",
+    "respuestas": [
+      "Un grupo de zombies",
+      "Un culto satánico",
+      "Una criatura de otro mundo",
+      "El despertar de fuerzas oscuras"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Qué habilidad tiene el protagonista de 'El resplandor' para entrar en contacto con los espíritus?",
+    "respuestas": [
+      "Visión remota",
+      "Telequinesis",
+      "Clarividencia",
+      "Psicometría"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿En qué año se estrenó la primera película de 'La matanza de Texas'?",
+    "respuestas": [
+      "1975",
+      "1980",
+      "1969",
+      "1974"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Qué película de terror tiene como villano a un muñeco poseído llamado Chucky?",
+    "respuestas": [
+      "La maldición",
+      "Child's Play",
+      "El muñeco diabólico",
+      "Annabelle"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Cuál de las siguientes criaturas NO aparece en la película 'It' de Stephen King?",
+    "respuestas": [
+      "Un payaso",
+      "Un hombre lobo",
+      "Un leproso",
+      "Un muerto viviente"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué arma es utilizada para destruir a Freddy Krueger en las películas de 'Pesadilla en Elm Street'?",
+    "respuestas": [
+      "Un machete",
+      "Un hacha",
+      "Un cuchillo",
+      "Sus propias garras"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Cuál es el nombre del pueblo en el que se desarrolla 'The Village' de M. Night Shyamalan?",
+    "respuestas": [
+      "Rosewood",
+      "Hollow Creek",
+      "Sundance",
+      "Covington"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Quién es el director de la película 'Los otros', protagonizada por Nicole Kidman?",
+    "respuestas": [
+      "Guillermo del Toro",
+      "M. Night Shyamalan",
+      "Alejandro Amenábar",
+      "James Wan"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué tipo de animal se convierte en el compañero de 'Edward Scissorhands'?",
+    "respuestas": [
+      "Perro",
+      "Gato",
+      "Pájaro",
+      "Ave"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "En la película 'Hereditary', ¿qué figura aterradora aparece en el final de la película?",
+    "respuestas": [
+      "Un demonio con múltiples cabezas",
+      "Un hombre desfigurado",
+      "La madre poseída",
+      "Un culto oscuro"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "En 'El sexto sentido', ¿qué es lo que finalmente descubre el protagonista?",
+    "respuestas": [
+      "Que está muerto",
+      "Que su esposa está poseída",
+      "Que los niños tienen poderes especiales",
+      "Que él es un fantasma"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué actor interpreta a Jack Torrance en 'El resplandor' de Stanley Kubrick?",
+    "respuestas": [
+      "Jack Nicholson",
+      "Johnny Depp",
+      "Bruce Willis",
+      "Matthew McConaughey"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "En 'La forma del agua', ¿qué criatura es la que aparece como el protagonista principal?",
+    "respuestas": [
+      "Un hombre lobo",
+      "Un hombre pez",
+      "Un fantasma",
+      "Un demonio"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué objeto maldito en la película 'Annabelle' causa el caos en la vida de una joven familia?",
+    "respuestas": [
+      "Una muñeca",
+      "Una carta de tarot",
+      "Una caja musical",
+      "Un espejo antiguo"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "En 'It', ¿cómo se llama el ser maligno que aterroriza a los niños de Derry?",
+    "respuestas": [
+      "El Hombre Rojo",
+      "Pennywise",
+      "El Payaso del Terror",
+      "Misterioso"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Cuál es la razón principal por la que la familia en 'Los otros' se aísla en su mansión?",
+    "respuestas": [
+      "Por miedo a los robos",
+      "Por enfermedad",
+      "Por la guerra",
+      "Por una maldición"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "En 'El conjuro', ¿quiénes son los investigadores paranormales que tratan de ayudar a la familia Perron?",
+    "respuestas": [
+      "Los Warren",
+      "Los Greys",
+      "Los Croft",
+      "Los Mason"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "En 'La cabaña en el bosque', ¿qué tipo de criaturas están atrapadas en el sótano?",
+    "respuestas": [
+      "Zombis",
+      "Vampiros",
+      "Monstruos mitológicos",
+      "Espíritus vengativos"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿En qué película dirigida por Ridley Scott aparece un alienígena que aterroriza a la tripulación de una nave espacial?",
+    "respuestas": [
+      "Terminator",
+      "Aliens",
+      "El exorcista",
+      "Alien, el octavo pasajero"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "En 'La maldición de Hill House', ¿quién es la hermana que sobrevive a la tragedia en la casa?",
+    "respuestas": [
+      "Olivia",
+      "Nell",
+      "Theo",
+      "Shirley"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "En 'Midsommar', ¿en qué temporada del año transcurre la mayor parte de la película?",
+    "respuestas": [
+      "Invierno",
+      "Otoño",
+      "Verano",
+      "Primavera"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué famosa casa aparece en la película 'La cabaña en el bosque'?",
+    "respuestas": [
+      "La Casa de los Mil Cadáveres",
+      "La Casa del Árbol",
+      "La Casa Abandonada",
+      "La Casa Aislada"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Qué elemento es crucial en la película 'El juego' para sobrevivir a la situación mortal en la que los protagonistas se encuentran?",
+    "respuestas": [
+      "Un mapa antiguo",
+      "El tiempo",
+      "Un teléfono móvil",
+      "Una pista clave"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿En qué película se presenta un extraño asesino con un 'máscara' en forma de cara de gas?",
+    "respuestas": [
+      "Scream",
+      "Halloween",
+      "La matanza de Texas",
+      "Lunatic"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "En la película 'Pesadilla antes de Navidad', ¿qué personaje no es un 'habitante' de Halloween Town?",
+    "respuestas": [
+      "Jack Skellington",
+      "El Hombre de Jengibre",
+      "Santa Claus",
+      "Zero"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué objeto tiene el poder de despertar los terrores en la película 'La Casa del Diablo'?",
+    "respuestas": [
+      "Una puerta secreta",
+      "Una antigua radio",
+      "Un espejo",
+      "Un disco antiguo"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Quién protagoniza 'El hombre de las sombras', la película de terror dirigida por Mark Pellington?",
+    "respuestas": [
+      "Edward Norton",
+      "Richard Gere",
+      "Liam Neeson",
+      "Matthew McConaughey"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "En 'The Ring', ¿qué sucede al ver el video maldito?",
+    "respuestas": [
+      "La persona muere inmediatamente",
+      "La persona recibe una llamada telefónica",
+      "La persona se convierte en un espíritu",
+      "La persona pierde su memoria"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "En la película 'El resplandor', ¿qué mensaje escribe Jack Torrance repetidamente en su máquina de escribir?",
+    "respuestas": [
+      "¡Estoy bien!",
+      "¡El terror ha comenzado!",
+      "Todo está bajo control",
+      "All work and no play makes Jack a dull boy"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "En 'La Casa del Diablo', ¿qué tipo de culto está detrás de los eventos macabros?",
+    "respuestas": [
+      "Culto satánico",
+      "Culto alienígena",
+      "Culto de la muerte",
+      "Culto de los zombis"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "En 'El exorcista', ¿qué nombre recibe la niña poseída por el demonio?",
+    "respuestas": [
+      "Regan",
+      "Sarah",
+      "Mary",
+      "Lucy"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿En qué ciudad se desarrolla la película 'La maldición' (The Grudge)?",
+    "respuestas": [
+      "Los Ángeles",
+      "Tokio",
+      "Londres",
+      "Nueva York"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "En 'La cabaña en el bosque', ¿qué tipo de criaturas provocan los horrores en la cabaña?",
+    "respuestas": [
+      "Monstruos mitológicos",
+      "Zombis",
+      "Demonios",
+      "Espíritus"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué personaje principal de 'Pesadilla en Elm Street' es el único que logra derrotar a Freddy Krueger?",
+    "respuestas": [
+      "Nancy Thompson",
+      "Tina Gray",
+      "Gloria Simmons",
+      "Heather Langenkamp"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "En 'Scream', ¿qué frase se utiliza para identificar al asesino al teléfono?",
+    "respuestas": [
+      "¿Cuál es tu película favorita?",
+      "¿Qué estás viendo?",
+      "¿Quién te matará?",
+      "¿Te atreves a jugar?"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué famoso director de cine dirigió 'El sexto sentido'?",
+    "respuestas": [
+      "Steven Spielberg",
+      "James Cameron",
+      "M. Night Shyamalan",
+      "Tim Burton"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué objeto siniestro está en el centro de la historia de 'Annabelle'?",
+    "respuestas": [
+      "Una muñeca",
+      "Un espejo",
+      "Una caja musical",
+      "Un libro antiguo"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Cómo se llama la película en la que un grupo de personas se encuentra atrapado en un sótano con una criatura demoníaca?",
+    "respuestas": [
+      "The Cabin in the Woods",
+      "The Evil Dead",
+      "The Descent",
+      "The Witch"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿En qué película dirigida por Guillermo del Toro se presenta un mundo de fantasía oscuro con criaturas y una niña protagonista?",
+    "respuestas": [
+      "El laberinto del fauno",
+      "La cueva",
+      "La sombra del viento",
+      "Los otros"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "En 'La Casa de los 1000 cadáveres', ¿quién es el líder del grupo de asesinos?",
+    "respuestas": [
+      "Dr. Satan",
+      "Captain Spaulding",
+      "Otis",
+      "Baby"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿En qué película de terror aparece un hombre con un saco en la cabeza que persigue a los adolescentes?",
+    "respuestas": [
+      "La noche de Halloween",
+      "The Strangers",
+      "La cabaña del terror",
+      "La maldición"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "En 'It', ¿cuál es el nombre del payaso demoníaco que aterroriza a los niños?",
+    "respuestas": [
+      "Pennywise",
+      "Bozo",
+      "Grumpy",
+      "Itchy"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Cuál es el apodo que recibe el asesino en serie de 'Viernes 13'?",
+    "respuestas": [
+      "Ghostface",
+      "Jason",
+      "Freddy",
+      "Michael Myers"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿En qué película de terror aparece un hotel aislado que se convierte en un lugar lleno de terror para una familia?",
+    "respuestas": [
+      "The Shining",
+      "El Conjuro",
+      "La Casa del Diablo",
+      "La matanza de Texas"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué famosa película de terror está basada en la obra de Stephen King sobre una niña con poderes psíquicos?",
+    "respuestas": [
+      "Carrie",
+      "It",
+      "Misery",
+      "Cujo"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué fenómeno paranormal ocurre en la película 'Poltergeist'?",
+    "respuestas": [
+      "La posesión de una niña",
+      "La comunicación con los muertos",
+      "Un poltergeist atormenta a una familia",
+      "Un culto oscuro se apodera de la casa"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿En qué película de terror una madre intenta proteger a sus hijos de los espíritus malignos en una casa?",
+    "respuestas": [
+      "El Conjuro",
+      "La huérfana",
+      "Los otros",
+      "El orfanato"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Qué elemento sobrenatural aparece en la película 'El orfanato'?",
+    "respuestas": [
+      "Una muñeca poseída",
+      "Un fantasma infantil",
+      "Un demonio ancestral",
+      "Un extraño ritual"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "En 'La Noche de Halloween', ¿qué arma utiliza Michael Myers para cometer sus crímenes?",
+    "respuestas": [
+      "Un cuchillo",
+      "Una motosierra",
+      "Un hacha",
+      "Un martillo"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿En qué película de terror aparece un demonio llamado Valak que toma la forma de una monja?",
+    "respuestas": [
+      "El Conjuro",
+      "Annabelle",
+      "La monja",
+      "Insidious"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "En 'La cabaña en el bosque', ¿qué tipo de criaturas emergen como resultado de los sacrificios?",
+    "respuestas": [
+      "Zombis",
+      "Demonios",
+      "Monstruos",
+      "Vampiros"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿En qué película de terror aparece un pueblo que está siendo acechado por una criatura del bosque conocida como el Wendigo?",
+    "respuestas": [
+      "Antlers",
+      "El Ritual",
+      "The Lodge",
+      "The Blair Witch Project"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué película de Tim Burton es conocida por ser una mezcla entre comedia y terror, protagonizada por un hombre que regresa de la muerte?",
+    "respuestas": [
+      "Beetlejuice",
+      "El joven manos de tijera",
+      "La novia cadáver",
+      "El hogar de Miss Peregrine para niños peculiares"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "En 'Bajo la sombra', ¿dónde tiene lugar la película?",
+    "respuestas": [
+      "En un campo de refugiados",
+      "En una ciudad en ruinas",
+      "En un suburbio de Londres",
+      "En una casa aislada en el desierto"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Cómo se llama la película en la que un grupo de personas se enfrenta a un asesino con una máscara de hockey?",
+    "respuestas": [
+      "La matanza de Texas",
+      "Viernes 13",
+      "Scream",
+      "Pesadilla en Elm Street"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "En 'Scream', ¿qué personaje usa la famosa máscara de Ghostface?",
+    "respuestas": [
+      "Billy Loomis",
+      "Stu Macher",
+      "Sidney Prescott",
+      "Dewey Riley"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Quién protagoniza la película 'El proyecto de la bruja de Blair'?",
+    "respuestas": [
+      "Un grupo de turistas",
+      "Un grupo de estudiantes",
+      "Un equipo de documentalistas",
+      "Una familia"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "En 'Hereditary', ¿quién se convierte en el objetivo del espíritu vengativo de la familia?",
+    "respuestas": [
+      "Peter",
+      "Annie",
+      "Charlie",
+      "Joan"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "En la película 'La huérfana', ¿qué es lo que revela al final de la historia sobre la niña?",
+    "respuestas": [
+      "Es un espíritu",
+      "Es una persona mayor con una enfermedad",
+      "Es una mujer adulta con un trastorno mental",
+      "Es una niña normal"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿En qué película de terror un grupo de amigos se enfrenta a una entidad que persigue sus peores miedos?",
+    "respuestas": [
+      "It",
+      "Midsommar",
+      "Verónica",
+      "Fear Street"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué criatura es el villano principal en la película 'The Descent'?",
+    "respuestas": [
+      "Vampiros",
+      "Hombres lobo",
+      "Monstruos subterráneos",
+      "Demonios"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "En 'It Follows', ¿qué es lo que persigue a las personas?",
+    "respuestas": [
+      "Un espíritu vengativo",
+      "Una maldición ancestral",
+      "Una entidad sobrenatural",
+      "Un asesino con un cuchillo"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Quién es el director de la película de terror 'La bruja' (The Witch)?",
+    "respuestas": [
+      "Robert Eggers",
+      "Jordan Peele",
+      "Ari Aster",
+      "James Wan"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué famosa película de terror se desarrolla en una casa encantada que es vendida por la familia que la habita?",
+    "respuestas": [
+      "Poltergeist",
+      "Los otros",
+      "La cabaña en el bosque",
+      "El conjuro"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿En qué película de terror dirigida por Tim Burton se muestra una historia gótica sobre un hombre con cuchillas por manos?",
+    "respuestas": [
+      "El joven manos de tijera",
+      "Beetlejuice",
+      "La novia cadáver",
+      "Sleepy Hollow"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "En la película 'The Ring', ¿cómo se transmite el maleficio?",
+    "respuestas": [
+      "A través de una llamada telefónica",
+      "A través de un vídeo",
+      "A través de una carta",
+      "A través de un mensaje de texto"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "En 'El exorcista', ¿qué tipo de demonio posee a Regan?",
+    "respuestas": [
+      "Un espíritu vengativo",
+      "El diablo",
+      "Un ángel caído",
+      "Un demonio antiguo"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿En qué película de terror dirigida por Jordan Peele un grupo de personas es atacado por sus dobles?",
+    "respuestas": [
+      "Us",
+      "Get Out",
+      "Midsommar",
+      "Hereditary"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué monstruo es la principal amenaza en 'A Quiet Place'?",
+    "respuestas": [
+      "Zombis",
+      "Demonios",
+      "Criaturas alienígenas",
+      "Vampiros"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "En 'Midsommar', ¿en qué país se desarrolla la historia?",
+    "respuestas": [
+      "Suecia",
+      "Finlandia",
+      "Islandia",
+      "Noruega"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué personaje principal es interpretado por Toni Collette en 'Hereditary'?",
+    "respuestas": [
+      "Annie Graham",
+      "Sarah Hable",
+      "Miriam Yates",
+      "Alice Green"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "En 'El Conjuro', ¿quiénes son los principales investigadores paranormales?",
+    "respuestas": [
+      "Ed y Lorraine Warren",
+      "John y Sarah Turner",
+      "Peter y Rebecca Evans",
+      "Tom y Lizzy Fields"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿En qué película de terror los habitantes de una ciudad pequeña se enfrentan a una plaga de criaturas sobrenaturales?",
+    "respuestas": [
+      "The Mist",
+      "El Bosque",
+      "La Cabaña en el Bosque",
+      "The Descent"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "En 'It Follows', ¿qué tipo de entidad persigue a las personas?",
+    "respuestas": [
+      "Un espíritu",
+      "Un monstruo",
+      "Una maldición",
+      "Una sombra"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué película de terror dirigida por Ari Aster trata sobre una mujer que enfrenta la muerte de su madre y lo que ocurre después?",
+    "respuestas": [
+      "Midsommar",
+      "Hereditary",
+      "La Cabaña del Terror",
+      "The Lighthouse"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué fenómeno sobrenatural ocurre en 'La Llamada' (The Ring)?",
+    "respuestas": [
+      "Una maldición que se transmite a través de un vídeo",
+      "Un pacto con un demonio",
+      "Una comunicación con los muertos",
+      "Una invasión extraterrestre"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "En 'Verónica', ¿qué actividad desencadena los eventos paranormales?",
+    "respuestas": [
+      "Una Ouija",
+      "Un espejo encantado",
+      "Una muñeca poseída",
+      "Un libro antiguo"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué director es responsable de la película de terror 'The Witch'?",
+    "respuestas": [
+      "Robert Eggers",
+      "Jordan Peele",
+      "Ari Aster",
+      "James Wan"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿En qué película de terror aparece un grupo de amigos atrapados en un pueblo, siendo perseguidos por un culto?",
+    "respuestas": [
+      "The Lodge",
+      "Midsommar",
+      "El Bosque",
+      "La Cabaña del Terror"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "En 'The Invisible Man', ¿quién es la protagonista que huye de su abusivo exnovio?",
+    "respuestas": [
+      "Cecilia",
+      "Sarah",
+      "Emma",
+      "Jessica"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "En 'La maldición de Hill House', ¿qué evento marcó la vida de los personajes principales?",
+    "respuestas": [
+      "Un asesinato en la casa",
+      "Una serie de visiones paranormales",
+      "Un incendio",
+      "El suicidio de un familiar"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "En 'The Lodge', ¿qué situación desencadena los horrores para la familia protagonista?",
+    "respuestas": [
+      "Una tormenta de nieve",
+      "Un accidente de coche",
+      "Un robo en su casa",
+      "Un ritual satánico"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿En qué película un hombre sufre un accidente y comienza a ver una versión retorcida de la realidad?",
+    "respuestas": [
+      "Get Out",
+      "The Invisible Man",
+      "Hereditary",
+      "Shutter Island"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "En 'The Autopsy of Jane Doe', ¿qué encuentran los forenses en el cuerpo de la mujer desconocida?",
+    "respuestas": [
+      "Evidencias de un ritual satánico",
+      "Un virus mortal",
+      "Una maldición antigua",
+      "Un extraño simbolismo"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "En 'Ready or Not', ¿qué juego de supervivencia deben jugar los personajes?",
+    "respuestas": [
+      "Un juego de cartas",
+      "Un juego de mesa",
+      "Un juego de escondidas",
+      "Un juego de caza"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Quién protagoniza 'La Noche de Halloween' (2018) como Laurie Strode?",
+    "respuestas": [
+      "Jamie Lee Curtis",
+      "Sigourney Weaver",
+      "Neve Campbell",
+      "Scream"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué película de terror dirigida por James Wan trata sobre una mujer que investiga misteriosos crímenes relacionados con una antigua pintura?",
+    "respuestas": [
+      "Malignant",
+      "El Conjuro",
+      "Insidious",
+      "La Llamada"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿En qué película un grupo de amigos descubre un portal en el bosque que lleva a una dimensión paralela?",
+    "respuestas": [
+      "La Cabaña en el Bosque",
+      "Midsommar",
+      "The Ritual",
+      "Verónica"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Cuál es la principal amenaza en la película de terror 'It' (2017)?",
+    "respuestas": [
+      "Un demonio disfrazado de payaso",
+      "Un asesino en serie",
+      "Un espíritu vengativo",
+      "Una invasión alienígena"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "En 'A Quiet Place', ¿qué provoca la destrucción masiva de la humanidad?",
+    "respuestas": [
+      "Un virus",
+      "Una invasión extraterrestre",
+      "Un terremoto",
+      "Criaturas que cazan por el sonido"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "En 'Us', ¿qué otro tipo de seres atacan a los personajes principales?",
+    "respuestas": [
+      "Los clones",
+      "Los zombis",
+      "Los fantasmas",
+      "Los demonios"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "En 'La Llamada' (The Ring), ¿qué sucede a las personas que ven el video maldito?",
+    "respuestas": [
+      "Mueren a los siete días",
+      "Se convierten en zombies",
+      "Son poseídas por un demonio",
+      "Sufren pesadillas interminables"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué película de terror de 2020 está ambientada en un pequeño pueblo y gira en torno a la desaparición de varias personas?",
+    "respuestas": [
+      "The Lodge",
+      "Relic",
+      "The Invisible Man",
+      "The Wretched"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué película de terror protagonizada por Florence Pugh se desarrolla en una comunidad aislada sueca?",
+    "respuestas": [
+      "Midsommar",
+      "Hereditary",
+      "The Wicker Man",
+      "The Ritual"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Cuál es el principal tema de la película de terror 'The Witch' (2015)?",
+    "respuestas": [
+      "La brujería en el siglo XVII",
+      "Una invasión de demonios",
+      "El regreso de un asesino",
+      "Una familia atrapada en una casa maldita"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿En qué película de terror, los protagonistas intentan escapar de un monstruo a través de un oscuro laberinto subterráneo?",
+    "respuestas": [
+      "The Descent",
+      "The Ritual",
+      "La cabaña en el bosque",
+      "As Above, So Below"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿En qué película de terror un hombre se enfrenta a un espíritu vengativo después de haber sido responsable de su muerte?",
+    "respuestas": [
+      "El Conjuro",
+      "The Grudge",
+      "El Juego del Miedo",
+      "The Ring"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "En 'The Invisible Man', ¿qué arma mortal utiliza el antagonista para acechar a su víctima?",
+    "respuestas": [
+      "Un cuchillo",
+      "Un martillo",
+      "Un lazo",
+      "Su invisibilidad"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "En la película 'Get Out', ¿qué práctica extraña realizan los personajes principales en la casa de los padres de la novia?",
+    "respuestas": [
+      "Un ritual de intercambio de cuerpos",
+      "Una posesión demoníaca",
+      "Un asesinato ritual",
+      "Una sesión de espiritismo"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Cuál es la premisa de 'The Autopsy of Jane Doe'?",
+    "respuestas": [
+      "Un grupo de forenses realiza una autopsia a una mujer desconocida con misteriosas circunstancias",
+      "Una familia es atacada por un espíritu maligno",
+      "Un detective investiga una serie de muertes inexplicables",
+      "Un grupo de investigadores paranormales intenta encontrar a un asesino serial"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Quién protagoniza la película de terror 'La Cabaña en el Bosque'?",
+    "respuestas": [
+      "Chris Hemsworth",
+      "Jessica Chastain",
+      "Neve Campbell",
+      "Ethan Hawke"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "En 'It Follows', ¿cómo se puede detener a la entidad que persigue a las personas?",
+    "respuestas": [
+      "Matándola",
+      "Pasándosela a otra persona",
+      "Haciendo un ritual",
+      "Escapando a otro país"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "En 'Hereditary', ¿qué es lo que parece causar los problemas sobrenaturales en la familia Graham?",
+    "respuestas": [
+      "Un pacto con el diablo",
+      "La influencia de un libro maldito",
+      "Un demonio familiar",
+      "Un traumas del pasado no resuelto"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿En qué película de terror los personajes enfrentan una amenaza sobrenatural que aparece en fotos y videos?",
+    "respuestas": [
+      "The Ring",
+      "El Conjuro",
+      "Insidious",
+      "Poltergeist"
+    ],
+    "correcta": 0
+  }
+];
 
     let preguntaActual = null;
 
