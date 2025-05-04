@@ -75,23 +75,1741 @@
   <button id="siguiente" onclick="siguiente()">Siguiente Pregunta</button>
 
   <script>
-    const preguntas = [
-      {
-        "pregunta": "¿Cuál es el nombre del mago que guía a la Comunidad?",
-        "respuestas": ["Saruman", "Radagast", "Gandalf", "Sauron"],
-        "correcta": 2
-      },
-      {
-        "pregunta": "¿Qué objeto debe destruir Frodo?",
-        "respuestas": ["El bastón de Gandalf", "El Anillo Único", "La espada de Aragorn", "El Palantir"],
-        "correcta": 1
-      },
-      {
-        "pregunta": "¿Cómo se llama el padre de Legolas?",
-        "respuestas": ["Elrond", "Thranduil", "Celeborn", "Glorfindel"],
-        "correcta": 1
-      }
-    ];
+    const preguntas = 
+      [
+  {
+    "pregunta": "¿En qué ciudad se desarrolla principalmente la serie 'Friends'?",
+    "respuestas": [
+      "Nueva York",
+      "Los Ángeles",
+      "Chicago",
+      "San Francisco"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Cómo se llama el personaje interpretado por Pedro Pascal en 'The Mandalorian'?",
+    "respuestas": [
+      "Boba Fett",
+      "Din Djarin",
+      "Grogu",
+      "Kylo Ren"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Cuál es el nombre del reino principal en 'Juego de Tronos'?",
+    "respuestas": [
+      "Narnia",
+      "Camelot",
+      "Hogwarts",
+      "Poniente"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Qué serie española fue un éxito internacional en Netflix?",
+    "respuestas": [
+      "Isabel",
+      "El Ministerio del Tiempo",
+      "Élite",
+      "La Casa de Papel"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Quién interpreta a Eleven en 'Stranger Things'?",
+    "respuestas": [
+      "Millie Bobby Brown",
+      "Sadie Sink",
+      "Natalia Dyer",
+      "Winona Ryder"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué personaje dice 'Winter is coming' en la primera temporada de 'Juego de Tronos'?",
+    "respuestas": [
+      "Tyrion Lannister",
+      "Eddard Stark",
+      "Jon Snow",
+      "Daenerys Targaryen"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿En qué década transcurre la mayoría de la acción de 'Stranger Things'?",
+    "respuestas": [
+      "1970",
+      "1990",
+      "1980",
+      "2000"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Cuál es el nombre completo de Walter en 'Breaking Bad'?",
+    "respuestas": [
+      "Walter Hill",
+      "Walter Black",
+      "Walter White",
+      "Walter Gray"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿En qué serie aparecen personajes como Sheldon, Leonard y Penny?",
+    "respuestas": [
+      "Modern Family",
+      "How I Met Your Mother",
+      "Friends",
+      "The Big Bang Theory"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Qué actor protagoniza la serie 'Loki' del universo Marvel?",
+    "respuestas": [
+      "Chris Hemsworth",
+      "Tom Hiddleston",
+      "Sebastian Stan",
+      "Jeremy Renner"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Quién es el creador de la serie 'The Office' en su versión estadounidense?",
+    "respuestas": [
+      "Larry David",
+      "Ricky Gervais",
+      "Dan Harmon",
+      "Greg Daniels"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Cómo se llama el instituto en el que estudian los personajes de 'Élite'?",
+    "respuestas": [
+      "Las Rosas",
+      "Las Encinas",
+      "Los Pinos",
+      "Las Cumbres"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué actor interpretó al detective Rust Cohle en la primera temporada de 'True Detective'?",
+    "respuestas": [
+      "Woody Harrelson",
+      "Matthew McConaughey",
+      "Jake Gyllenhaal",
+      "Bryan Cranston"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué canal emitió originalmente 'Los Soprano'?",
+    "respuestas": [
+      "AMC",
+      "FX",
+      "NBC",
+      "HBO"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Cuál de estas series es una adaptación de un videojuego?",
+    "respuestas": [
+      "Euphoria",
+      "The Witcher",
+      "Succession",
+      "Riverdale"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿En qué serie aparece el personaje BoJack Horseman?",
+    "respuestas": [
+      "F is for Family",
+      "Rick and Morty",
+      "Big Mouth",
+      "BoJack Horseman"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿En qué serie se retrata la vida de la reina Isabel II?",
+    "respuestas": [
+      "The Tudors",
+      "Victoria",
+      "Downton Abbey",
+      "The Crown"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Qué serie creada por los hermanos Duffer mezcla ciencia ficción con nostalgia ochentera?",
+    "respuestas": [
+      "Dark",
+      "Black Mirror",
+      "The OA",
+      "Stranger Things"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Cuál es el nombre del parque de atracciones futurista en 'Westworld'?",
+    "respuestas": [
+      "Dreamland",
+      "Futureland",
+      "TechWorld",
+      "Westworld"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Qué actriz protagoniza la serie 'Fleabag'?",
+    "respuestas": [
+      "Emma Watson",
+      "Phoebe Waller-Bridge",
+      "Claire Foy",
+      "Gillian Anderson"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Cuál es el nombre del café donde se reúnen los protagonistas de 'Friends'?",
+    "respuestas": [
+      "Central Coffee",
+      "Central Park",
+      "Central Perk",
+      "Coffee Corner"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué tipo de criatura es Geralt en 'The Witcher'?",
+    "respuestas": [
+      "Mago",
+      "Humano común",
+      "Hechicero",
+      "Brujo"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Qué dos colores predominan en los trajes de 'La Casa de Papel'?",
+    "respuestas": [
+      "Negro y blanco",
+      "Rojo y negro",
+      "Azul y rojo",
+      "Rojo y dorado"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿En qué ciudad estadounidense vive Dexter Morgan?",
+    "respuestas": [
+      "Chicago",
+      "Nueva York",
+      "Los Ángeles",
+      "Miami"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Cuál es la profesión de Gregory House en la serie 'House'?",
+    "respuestas": [
+      "Cirujano",
+      "Pediatra",
+      "Neurólogo",
+      "Médico diagnostico"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Qué serie animada cuenta las aventuras de un científico loco y su nieto?",
+    "respuestas": [
+      "Final Space",
+      "Solar Opposites",
+      "Futurama",
+      "Rick y Morty"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿En qué serie vemos a un joven que escribe nombres en una libreta para matar?",
+    "respuestas": [
+      "Death Parade",
+      "Naruto",
+      "Attack on Titan",
+      "Death Note"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Qué actor da vida a Sherlock Holmes en la serie de la BBC?",
+    "respuestas": [
+      "Tom Hiddleston",
+      "Martin Freeman",
+      "Cillian Murphy",
+      "Benedict Cumberbatch"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿En qué serie aparece el personaje Tyrion Lannister?",
+    "respuestas": [
+      "Vikings",
+      "The Witcher",
+      "House of the Dragon",
+      "Juego de Tronos"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Qué tipo de establecimiento dirige Gustavo Fring en 'Breaking Bad'?",
+    "respuestas": [
+      "Librería",
+      "Restaurante de pollo",
+      "Tienda de licores",
+      "Gasolinera"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué comedia tiene como personajes principales a Michael Scott, Jim y Dwight?",
+    "respuestas": [
+      "Brooklyn Nine-Nine",
+      "Scrubs",
+      "Parks and Recreation",
+      "The Office"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿En qué serie aparece un grupo llamado 'Los del parque de South Park'?",
+    "respuestas": [
+      "Family Guy",
+      "Bob's Burgers",
+      "Beavis and Butthead",
+      "South Park"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Qué actriz protagoniza la serie 'Killing Eve' como la asesina Villanelle?",
+    "respuestas": [
+      "Sandra Oh",
+      "Phoebe Waller-Bridge",
+      "Jodie Comer",
+      "Gwendoline Christie"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿En qué país se origina la serie 'Dark'?",
+    "respuestas": [
+      "Austria",
+      "Suiza",
+      "Alemania",
+      "Suecia"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué serie cuenta la historia de unos adolescentes en una academia de superhéroes?",
+    "respuestas": [
+      "The Umbrella Academy",
+      "Euphoria",
+      "Misfits",
+      "Smallville"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Cómo se llama el universo cinematográfico que incluye series como 'WandaVision' y 'Loki'?",
+    "respuestas": [
+      "MCU",
+      "DCEU",
+      "Marvel TV",
+      "Avengers Saga"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿En qué serie postapocalíptica los humanos luchan contra caminantes blancos?",
+    "respuestas": [
+      "The Last of Us",
+      "The Walking Dead",
+      "See",
+      "Juego de Tronos"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Qué serie de HBO muestra la vida de adolescentes con problemas de adicción y relaciones tóxicas?",
+    "respuestas": [
+      "Gossip Girl",
+      "13 Reasons Why",
+      "Euphoria",
+      "Skins"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Cuál de estas series está ambientada en una cárcel de mujeres?",
+    "respuestas": [
+      "Oz",
+      "Orange Is the New Black",
+      "Prison Break",
+      "Wentworth"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Quién protagoniza 'The Bear', serie sobre un joven chef en Chicago?",
+    "respuestas": [
+      "Jeremy Allen White",
+      "Rami Malek",
+      "Donald Glover",
+      "Jonathan Bailey"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Cómo se llama el pequeño pueblo donde transcurre 'Stranger Things'?",
+    "respuestas": [
+      "Hawkings",
+      "Riverdale",
+      "Derry",
+      "Springfield"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué instrumento toca Lisa Simpson?",
+    "respuestas": [
+      "Guitarra",
+      "Saxofón",
+      "Violín",
+      "Flauta"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué serie comienza con un avión estrellado en una isla?",
+    "respuestas": [
+      "The 100",
+      "Manifest",
+      "Yellowjackets",
+      "Lost"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Quién interpreta a Eleven en 'Stranger Things'?",
+    "respuestas": [
+      "Sadie Sink",
+      "Millie Bobby Brown",
+      "Natalia Dyer",
+      "Maya Hawke"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué serie de animación para adultos tiene como protagonistas a caballos y gatos antropomorfos?",
+    "respuestas": [
+      "BoJack Horseman",
+      "Big Mouth",
+      "Rick and Morty",
+      "Tuca & Bertie"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿En qué serie los personajes viven en la calle Raglan Road en Manchester?",
+    "respuestas": [
+      "Skins",
+      "Misfits",
+      "Shameless",
+      "The End of the F***ing World"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué serie protagoniza Pedro Pascal junto a Grogu?",
+    "respuestas": [
+      "Andor",
+      "The Mandalorian",
+      "The Book of Boba Fett",
+      "Obi-Wan Kenobi"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿En qué serie vemos el 'juego de calamar'?",
+    "respuestas": [
+      "All of Us Are Dead",
+      "Sweet Home",
+      "Alice in Borderland",
+      "El juego del calamar"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Quién es el protagonista de 'Peaky Blinders'?",
+    "respuestas": [
+      "Arthur Shelby",
+      "John Shelby",
+      "Tommy Shelby",
+      "Michael Gray"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué serie española se centra en los años de la Movida Madrileña?",
+    "respuestas": [
+      "Valeria",
+      "Veneno",
+      "Paquita Salas",
+      "Cuéntame cómo pasó"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Cuál es el apellido del protagonista en 'Better Call Saul'?",
+    "respuestas": [
+      "Goodman",
+      "McGill",
+      "White",
+      "Fring"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué serie se basa en las novelas de George R. R. Martin?",
+    "respuestas": [
+      "The Witcher",
+      "House of the Dragon",
+      "The Rings of Power",
+      "Juego de Tronos"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿En qué serie una científica y su hijo descubren que pueden viajar a través de portales?",
+    "respuestas": [
+      "Solar Opposites",
+      "Rick y Morty",
+      "The OA",
+      "Stranger Things"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué actor protagoniza 'Lupin', la serie francesa de Netflix?",
+    "respuestas": [
+      "Tahar Rahim",
+      "Omar Sy",
+      "Vincent Cassel",
+      "Jean Reno"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué personaje de 'The Office' grita “Noooo, God, please no!” en un famoso meme?",
+    "respuestas": [
+      "Dwight",
+      "Jim",
+      "Michael",
+      "Kevin"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué actriz interpreta a Rue en 'Euphoria'?",
+    "respuestas": [
+      "Sydney Sweeney",
+      "Zendaya",
+      "Hunter Schafer",
+      "Alexa Demie"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué serie cuenta la historia de una partida de ajedrez y una joven prodigio?",
+    "respuestas": [
+      "Queen’s Play",
+      "Gambito Real",
+      "Reina del Ajedrez",
+      "Gambito de dama"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿En qué ciudad se sitúa mayormente 'Sex Education'?",
+    "respuestas": [
+      "Londres",
+      "Manchester",
+      "Mordale",
+      "Brighton"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué serie cuenta con personajes como Lorelai y Rory?",
+    "respuestas": [
+      "This Is Us",
+      "Gilmore Girls",
+      "The Bold Type",
+      "Parenthood"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Quién interpreta a Joel en la adaptación de 'The Last of Us'?",
+    "respuestas": [
+      "Oscar Isaac",
+      "Pedro Pascal",
+      "Diego Luna",
+      "Sebastian Stan"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿En qué serie un grupo de científicos trabaja en Caltech y habla mucho de física cuántica y cómics?",
+    "respuestas": [
+      "Silicon Valley",
+      "The Big Bang Theory",
+      "Community",
+      "Young Sheldon"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Cuál es el nombre del hermano de Walter White en 'Breaking Bad'?",
+    "respuestas": [
+      "Hank",
+      "Saul",
+      "Gus",
+      "Jesse"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué serie protagoniza una joven bruja llamada Sabrina en un tono oscuro y moderno?",
+    "respuestas": [
+      "Legacies",
+      "The Vampire Diaries",
+      "Las escalofriantes aventuras de Sabrina",
+      "The Magicians"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Quién es el narrador en 'Cómo conocí a vuestra madre'?",
+    "respuestas": [
+      "Marshall",
+      "Ted",
+      "Barney",
+      "El futuro Ted"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Qué personaje aparece en todas las temporadas de 'American Horror Story' hasta 2020?",
+    "respuestas": [
+      "Evan Peters",
+      "Sarah Paulson",
+      "Jessica Lange",
+      "Lily Rabe"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué serie empieza con una carta encontrada en una caja de zapatos?",
+    "respuestas": [
+      "13 Reasons Why",
+      "You",
+      "Dark",
+      "Por 13 razones"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Qué famoso cocinero tiene una serie llamada 'Uncharted' en Disney+?",
+    "respuestas": [
+      "Massimo Bottura",
+      "Anthony Bourdain",
+      "Gordon Ramsay",
+      "Jamie Oliver"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué serie gira en torno a una familia rica que lo pierde todo y se muda a un motel?",
+    "respuestas": [
+      "The White Lotus",
+      "Ozark",
+      "Schitt’s Creek",
+      "Grace and Frankie"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué serie sigue la vida de un grupo de mujeres que trabajan en la publicidad en los años 60?",
+    "respuestas": [
+      "The Hour",
+      "Mad Men",
+      "The Newsroom",
+      "Masters of Sex"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿En qué serie se vive un apocalipsis provocado por hongos cordyceps?",
+    "respuestas": [
+      "Black Summer",
+      "The Walking Dead",
+      "The Rain",
+      "The Last of Us"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Qué actor protagonizó la versión británica de 'The Office'?",
+    "respuestas": [
+      "Ricky Gervais",
+      "Stephen Merchant",
+      "Martin Freeman",
+      "Steve Carell"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué serie cuenta la historia de una mujer que muere y va a un lugar que parece el cielo?",
+    "respuestas": [
+      "Russian Doll",
+      "Upload",
+      "The Good Place",
+      "After Life"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué serie muestra una guerra entre humanos y anfitriones robóticos en un parque temático?",
+    "respuestas": [
+      "Altered Carbon",
+      "Westworld",
+      "Foundation",
+      "Battlestar Galactica"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué actriz interpreta a Merlina Addams en la serie 'Wednesday'?",
+    "respuestas": [
+      "Millie Bobby Brown",
+      "Christina Ricci",
+      "Jenna Ortega",
+      "Chloe Grace Moretz"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Cuál es el nombre de la isla ficticia donde ocurre 'Perdidos' (Lost)?",
+    "respuestas": [
+      "Isla Nublar",
+      "Isla de los Muertos",
+      "Isla Dharma",
+      "No tiene nombre concreto"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Qué serie se centra en la vida de un joven médico forense que no puede morir?",
+    "respuestas": [
+      "Forever",
+      "Dr. Death",
+      "House",
+      "The Knick"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué serie italiana sobre la mafia ha sido muy popular en Netflix?",
+    "respuestas": [
+      "ZeroZeroZero",
+      "Romanzo Criminale",
+      "Gomorra",
+      "Suburra"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué personaje de 'Friends' trabaja como chef?",
+    "respuestas": [
+      "Rachel",
+      "Monica",
+      "Phoebe",
+      "Janice"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué personaje de 'Los Soprano' acude a terapia psicológica?",
+    "respuestas": [
+      "Christopher",
+      "Tony",
+      "Paulie",
+      "Silvio"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué serie narra la historia de unos superhéroes corruptos y una organización que intenta detenerlos?",
+    "respuestas": [
+      "The Umbrella Academy",
+      "Invincible",
+      "Titans",
+      "The Boys"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Qué actor interpreta al personaje de Walter White en 'Breaking Bad'?",
+    "respuestas": [
+      "Bryan Cranston",
+      "Aaron Paul",
+      "Giancarlo Esposito",
+      "Bob Odenkirk"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Cómo se llama el hermano de Ross en 'Friends'?",
+    "respuestas": [
+      "Frank",
+      "Ben",
+      "Chandler",
+      "Mike"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué ciudad es el escenario principal de 'The Crown'?",
+    "respuestas": [
+      "Edimburgo",
+      "Londres",
+      "Oxford",
+      "Manchester"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿En qué serie aparece el personaje llamado 'Penny'?",
+    "respuestas": [
+      "How I Met Your Mother",
+      "Big Bang Theory",
+      "Friends",
+      "The Office"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué personaje de 'Game of Thrones' es conocido como 'El Rey de la Noche'?",
+    "respuestas": [
+      "Tyrion Lannister",
+      "Jaime Lannister",
+      "Jon Snow",
+      "El Rey de la Noche"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿En qué serie aparece un parque temático llamado 'Westworld'?",
+    "respuestas": [
+      "The 100",
+      "Westworld",
+      "The Boys",
+      "Altered Carbon"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué personaje de 'Stranger Things' tiene el poder de mover objetos con la mente?",
+    "respuestas": [
+      "Mike",
+      "Lucas",
+      "Will",
+      "Eleven"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Qué personaje en 'The Office' es conocido por su obsesión con los papeles?",
+    "respuestas": [
+      "Jim Halpert",
+      "Pam Beesly",
+      "Dwight Schrute",
+      "Michael Scott"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿En qué serie se encuentra el personaje principal llamado 'Rick Grimes'?",
+    "respuestas": [
+      "The Walking Dead",
+      "Stranger Things",
+      "Lost",
+      "Dark"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué serie narra las aventuras de un hombre que vive bajo tierra y se convierte en héroe de su ciudad?",
+    "respuestas": [
+      "Arrow",
+      "The Flash",
+      "Daredevil",
+      "Luke Cage"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Quién interpretó a Daenerys Targaryen en 'Game of Thrones'?",
+    "respuestas": [
+      "Emilia Clarke",
+      "Natalie Dormer",
+      "Gwendoline Christie",
+      "Lena Headey"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿En qué serie aparece el personaje de Sheldon Cooper?",
+    "respuestas": [
+      "Big Bang Theory",
+      "How I Met Your Mother",
+      "Community",
+      "Two and a Half Men"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué personaje de 'Stranger Things' se convierte en el líder del grupo de amigos?",
+    "respuestas": [
+      "Will",
+      "Mike",
+      "Dustin",
+      "Lucas"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué serie de Netflix está basada en los cómics de Mark Millar y narra la historia de una familia con superpoderes?",
+    "respuestas": [
+      "The Umbrella Academy",
+      "The Boys",
+      "The Flash",
+      "Arrow"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué serie gira en torno a un joven llamado 'Daredevil'?",
+    "respuestas": [
+      "Luke Cage",
+      "Jessica Jones",
+      "Daredevil",
+      "Iron Fist"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué serie tiene lugar en un instituto ficticio llamado 'Riverdale'?",
+    "respuestas": [
+      "Glee",
+      "The O.C.",
+      "Riverdale",
+      "13 Reasons Why"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿En la serie 'Física o Química', qué personaje tiene una estética claramente emo?",
+    "respuestas": [
+      "Paula",
+      "Yoli",
+      "Cova",
+      "Raquel"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Cómo se llama el personaje que interpreta José Luis Gil en 'Aquí no hay quien viva'?",
+    "respuestas": [
+      "Juan Cuesta",
+      "Manolo",
+      "Emilio",
+      "Antonio Recio"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿En qué serie española un grupo de policías busca desmantelar una red de narcotráfico en Madrid?",
+    "respuestas": [
+      "Los hombres de Paco",
+      "La que se avecina",
+      "El ministerio del tiempo",
+      "Vis a vis"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "En la serie 'La Casa de Papel', ¿qué alias usa Sergio Marquina, el líder de la banda?",
+    "respuestas": [
+      "El Profesor",
+      "Berlin",
+      "Rio",
+      "Denver"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué personaje de 'Los hombres de Paco' tiene una relación amorosa con Pepa?",
+    "respuestas": [
+      "Rita",
+      "Aitor",
+      "Paco",
+      "Don Lorenzo"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿En qué serie española se enfrenta un grupo de jóvenes a las dificultades de la vida universitaria?",
+    "respuestas": [
+      "Física o Química",
+      "La que se avecina",
+      "Los Serrano",
+      "Los hombres de Paco"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué personaje de 'Aquí no hay quien viva' se convierte en presidente de la comunidad en un episodio clave?",
+    "respuestas": [
+      "Juan Cuesta",
+      "Emilio",
+      "Mauricio Colmenero",
+      "Desi"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué actriz interpreta a la protagonista femenina, Raquel Murillo, en 'La Casa de Papel'?",
+    "respuestas": [
+      "Úrsula Corberó",
+      "Itziar Ituño",
+      "Alba Flores",
+      "Najwa Nimri"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "En 'La que se avecina', ¿qué personaje está obsesionado con los gatos y su salud?",
+    "respuestas": [
+      "Amador",
+      "Antonio Recio",
+      "Berta",
+      "Nines"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿En la serie 'El Internado', cuál es el principal misterio que rodea el internado de 'Laguna Negra'?",
+    "respuestas": [
+      "El misterio de los niños desaparecidos",
+      "El secreto de los profesores",
+      "La conexión con la historia de los padres de los alumnos",
+      "La conspiración del gobierno"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Quién interpreta a Pablo en 'Los Serrano', el personaje que forma parte de la familia y siempre está metido en líos?",
+    "respuestas": [
+      "Antonio Resines",
+      "Víctor Elías",
+      "Nacho Martín",
+      "Javier Cámara"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "En la serie 'Física o Química', ¿quién es el primer personaje que se enamora de Paula?",
+    "respuestas": [
+      "Yoli",
+      "Gorka",
+      "Cova",
+      "David"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿En qué serie española se recrea la vida de una familia que vive en un barrio residencial de Madrid?",
+    "respuestas": [
+      "La que se avecina",
+      "Los Serrano",
+      "Aquí no hay quien viva",
+      "Los hombres de Paco"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "En la serie 'La Casa de Papel', ¿qué personaje se sacrifica para ayudar al resto de la banda?",
+    "respuestas": [
+      "Berlin",
+      "Tokyo",
+      "Denver",
+      "Mónica Gaztambide"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "En 'Física o Química', ¿qué personaje se ve envuelto en un triángulo amoroso con su profesora y su compañera de instituto?",
+    "respuestas": [
+      "Yoli",
+      "Cova",
+      "Paula",
+      "David"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "En la serie 'Los hombres de Paco', ¿qué agente está enamorado de Pepa, una compañera policía?",
+    "respuestas": [
+      "Aitor",
+      "Paco",
+      "Rita",
+      "Don Lorenzo"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "En 'La que se avecina', ¿quién es el personaje que siempre busca negocios fraudulentos y comete estafas?",
+    "respuestas": [
+      "Antonio Recio",
+      "Amador Rivas",
+      "Teodoro",
+      "Berta"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿En la serie 'Stranger Things', cómo se llama el monstruo que vive en el 'Otro Lado'?",
+    "respuestas": [
+      "Demogorgon",
+      "Vecna",
+      "Mind Flayer",
+      "Mind Bender"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué actriz interpreta a la protagonista en la serie 'The Queen's Gambit'?",
+    "respuestas": [
+      "Anya Taylor-Joy",
+      "Emma Corrin",
+      "Olivia Colman",
+      "Keira Knightley"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "En 'La Casa de Papel', ¿quién es el personaje conocido por su alias 'Berlin'?",
+    "respuestas": [
+      "Sergio Marquina",
+      "Andrés de Fonollosa",
+      "Raquel Murillo",
+      "Arturo Román"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿En qué serie española se sigue la historia de una joven que entra en un internado para descubrir los misterios que lo rodean?",
+    "respuestas": [
+      "El Internado",
+      "Los Serrano",
+      "Los hombres de Paco",
+      "La Casa de Papel"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué personaje de 'Juego de Tronos' es conocido por decir la frase 'Valar Morghulis'?",
+    "respuestas": [
+      "Arya Stark",
+      "Jaqen H'ghar",
+      "Tyrion Lannister",
+      "Daenerys Targaryen"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "En la serie 'Élite', ¿quién es el personaje principal que se ve involucrado en un asesinato?",
+    "respuestas": [
+      "Samuel",
+      "Marina",
+      "Lucrecia",
+      "Ander"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "En la serie 'Narcos', ¿quién fue el principal rival de Pablo Escobar?",
+    "respuestas": [
+      "Felix Gallardo",
+      "El Chapo Guzmán",
+      "Los Rodríguez Orejuela",
+      "Javier Peña"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué serie tiene como trama la lucha por el control del trono de hierro en Westeros?",
+    "respuestas": [
+      "Juego de Tronos",
+      "The Witcher",
+      "Vikings",
+      "Outlander"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué serie española trata sobre una prisión de mujeres y los complejos lazos que se forman entre las internas?",
+    "respuestas": [
+      "Vis a Vis",
+      "La Casa de Papel",
+      "El Príncipe",
+      "Física o Química"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿En qué serie de Netflix se exploran las relaciones amorosas y las tensiones sociales de un grupo de adolescentes en Madrid?",
+    "respuestas": [
+      "Élite",
+      "La Casa de Papel",
+      "Los Serrano",
+      "Los hombres de Paco"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿En la serie 'Breaking Bad', cómo se llama el protagonista que se convierte en fabricante de metanfetamina?",
+    "respuestas": [
+      "Jesse Pinkman",
+      "Saul Goodman",
+      "Walter White",
+      "Hank Schrader"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "En 'Stranger Things', ¿qué habilidad especial tiene Eleven?",
+    "respuestas": [
+      "Telequinesis",
+      "Teleportación",
+      "Visión remota",
+      "Control mental"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Quién interpreta a Rick Grimes en la serie 'The Walking Dead'?",
+    "respuestas": [
+      "Andrew Lincoln",
+      "Norman Reedus",
+      "Steven Yeun",
+      "David Morrissey"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "En 'Peaky Blinders', ¿qué arma es característica de Thomas Shelby?",
+    "respuestas": [
+      "Cuchillo",
+      "Revólver",
+      "Pistola",
+      "Cargadores"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Cuál es la profesión de la protagonista de 'The Crown', interpretada por Claire Foy en sus primeras temporadas?",
+    "respuestas": [
+      "Reina",
+      "Diplomática",
+      "Periodista",
+      "Abogada"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿En qué ciudad se desarrolla la trama de la serie 'Narcos' en sus primeras temporadas?",
+    "respuestas": [
+      "Bogotá",
+      "Medellín",
+      "Lima",
+      "Ciudad de México"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "En 'La Casa de Papel', ¿qué nombre recibe el plan para robar la Real Casa de la Moneda?",
+    "respuestas": [
+      "La Casa de Papel",
+      "El Plan Berlín",
+      "El Plan Tokio",
+      "El Plan Madrid"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿En qué serie española los protagonistas intentan escapar de un secuestro y asesinan a varios de los responsables?",
+    "respuestas": [
+      "La Casa de Papel",
+      "Vis a Vis",
+      "Los hombres de Paco",
+      "Física o Química"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "En 'Fargo', ¿qué es lo que se encuentra dentro del maletero del coche de Jerry Lundegaard?",
+    "respuestas": [
+      "Una suma de dinero",
+      "Un cadáver",
+      "Una arma",
+      "Una bolsa de drogas"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿En la serie 'Friends', qué trabajo tiene Chandler Bing?",
+    "respuestas": [
+      "Analista de estadísticas",
+      "Ejecutivo de marketing",
+      "Guionista",
+      "Jefe de recursos humanos"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿En qué ciudad tiene lugar la serie española 'Los hombres de Paco'?",
+    "respuestas": [
+      "Madrid",
+      "Barcelona",
+      "Sevilla",
+      "Valencia"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿En la serie 'Stranger Things', cuál es el nombre de la criatura que aparece en la temporada 2?",
+    "respuestas": [
+      "Demogorgon",
+      "Mind Flayer",
+      "Vecna",
+      "Demodog"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿En qué ciudad se desarrolla la acción de la serie española 'La Casa de Papel'?",
+    "respuestas": [
+      "Madrid",
+      "Barcelona",
+      "Sevilla",
+      "Bilbao"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué actriz interpreta a la protagonista en 'The Crown' en su primera temporada?",
+    "respuestas": [
+      "Olivia Colman",
+      "Claire Foy",
+      "Emma Corrin",
+      "Helen Mirren"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "En 'Física o Química', ¿quién es el personaje con un estilo claramente emo?",
+    "respuestas": [
+      "Paula",
+      "Fer",
+      "Yoli",
+      "Cova"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Qué serie de Netflix tiene como tema principal una casa de papel que es robada por un grupo de ladrones?",
+    "respuestas": [
+      "La Casa de Papel",
+      "Narcos",
+      "Peaky Blinders",
+      "Money Heist"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Cómo se llama la organización secreta en la serie 'The Umbrella Academy'?",
+    "respuestas": [
+      "The Commission",
+      "The Academy",
+      "The Umbrella Society",
+      "The Umbrella Academy"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿En qué serie española un grupo de reclusas intenta escapar de una prisión de mujeres?",
+    "respuestas": [
+      "Vis a Vis",
+      "Los hombres de Paco",
+      "El Internado",
+      "La Casa de Papel"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿En qué ciudad se desarrolla la trama de 'The Crown', sobre la reina Isabel II?",
+    "respuestas": [
+      "Londres",
+      "Edimburgo",
+      "Cardiff",
+      "Dublín"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Quién fue el creador de la serie 'Breaking Bad'?",
+    "respuestas": [
+      "David Simon",
+      "Vince Gilligan",
+      "Matt Groening",
+      "Aaron Sorkin"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "En 'Game of Thrones', ¿quién se convierte en la madre de dragones?",
+    "respuestas": [
+      "Cersei Lannister",
+      "Daenerys Targaryen",
+      "Sansa Stark",
+      "Arya Stark"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "En 'The Mandalorian', ¿cómo se llama el personaje conocido como 'Baby Yoda'?",
+    "respuestas": [
+      "Grogu",
+      "Yaddle",
+      "Yoda Jr.",
+      "The Child"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿En qué serie de Netflix los personajes viven en una casa encantada?",
+    "respuestas": [
+      "The Haunting of Hill House",
+      "Stranger Things",
+      "La Casa de Papel",
+      "Dark"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Quién es el creador de la serie 'Stranger Things'?",
+    "respuestas": [
+      "Matt Duffer y Ross Duffer",
+      "J.J. Abrams",
+      "Ryan Murphy",
+      "David Fincher"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "En 'The Witcher', ¿cómo se llama el personaje principal?",
+    "respuestas": [
+      "Geralt de Rivia",
+      "Yennefer",
+      "Ciri",
+      "Dandelion"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "En 'Narcos', ¿cómo se llama el famoso traficante de drogas colombiano al que se enfrenta la DEA?",
+    "respuestas": [
+      "El Chapo Guzmán",
+      "Carlos Lehder",
+      "Pablo Escobar",
+      "Javier F. Peña"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Cómo se llama el protagonista de la serie 'The Walking Dead'?",
+    "respuestas": [
+      "Rick Grimes",
+      "Glenn Rhee",
+      "Daryl Dixon",
+      "Negan"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿En qué serie de Netflix el personaje principal, un joven llamado Joe, se convierte en un asesino en serie y acosador?",
+    "respuestas": [
+      "You",
+      "The Haunting of Hill House",
+      "Narcos",
+      "13 Reasons Why"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "En 'The Office', ¿cómo se llama el jefe de la oficina de ventas?",
+    "respuestas": [
+      "Jim Halpert",
+      "Michael Scott",
+      "Dwight Schrute",
+      "Ryan Howard"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿En qué serie se cuenta la historia de una familia rica que oculta secretos oscuros en su mansión?",
+    "respuestas": [
+      "The Crown",
+      "Big Little Lies",
+      "13 Reasons Why",
+      "Dynasty"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿En qué serie se desarrolla la trama de un detective llamado Sherlock Holmes y su compañero Watson?",
+    "respuestas": [
+      "Sherlock",
+      "Luther",
+      "True Detective",
+      "Narcos"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "En 'Friends', ¿qué apodo tiene el personaje de Chandler Bing en el trabajo?",
+    "respuestas": [
+      "The One with the Big Mouth",
+      "The One with the Funny Guy",
+      "The One with the Jokes",
+      "The One with the Funny Job"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿En qué serie de terror un grupo de jóvenes trata de resolver el misterio detrás de unas desapariciones en un pueblo pequeño?",
+    "respuestas": [
+      "Stranger Things",
+      "The X-Files",
+      "Twin Peaks",
+      "Castle Rock"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿En qué serie española un hombre de mediana edad se enfrenta a su pasado y a sus relaciones familiares?",
+    "respuestas": [
+      "La Casa de Papel",
+      "Las chicas del cable",
+      "El Ministerio del Tiempo",
+      "Bajo Sospecha"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿En qué serie un agente del FBI se adentra en la mente de los asesinos para atraparlos?",
+    "respuestas": [
+      "Mindhunter",
+      "True Detective",
+      "The Fall",
+      "Hannibal"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿En qué serie un grupo de personas se enfrenta a los problemas de la vida mientras habitan en una casa de estudiantes?",
+    "respuestas": [
+      "How I Met Your Mother",
+      "New Girl",
+      "Friends",
+      "The Big Bang Theory"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "En 'Breaking Bad', ¿qué producto utiliza Walter White para ganar dinero mientras lucha contra su enfermedad?",
+    "respuestas": [
+      "Cocaína",
+      "Cristales",
+      "Metanfetamina",
+      "Heroína"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "En la serie 'The Mandalorian', ¿cómo se llama el pequeño ser verde que acompaña al Mandaloriano?",
+    "respuestas": [
+      "Yoda",
+      "Grogu",
+      "Boba Fett",
+      "Anakin"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Cómo se llama la principal protagonista femenina de 'The Handmaid's Tale'?",
+    "respuestas": [
+      "Emily",
+      "Serena Joy",
+      "Moira",
+      "June Osborne"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿En qué serie el personaje principal es un policía retirado que intenta rehacer su vida en un pequeño pueblo?",
+    "respuestas": [
+      "The Sinner",
+      "Big Sky",
+      "The Outsider",
+      "The Mentalist"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "En 'Peaky Blinders', ¿qué banda criminal lidera Thomas Shelby?",
+    "respuestas": [
+      "Los Crips",
+      "Los Shelby",
+      "Los Peaky Blinders",
+      "Los Bloods"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿En qué serie los protagonistas luchan contra los horrores de un mundo post-apocalíptico lleno de zombis?",
+    "respuestas": [
+      "The Walking Dead",
+      "Black Summer",
+      "The 100",
+      "Élite"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué actor interpreta a 'Hannibal Lecter' en la serie 'Hannibal'?",
+    "respuestas": [
+      "Mads Mikkelsen",
+      "Anthony Hopkins",
+      "Edward Norton",
+      "Matt Damon"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿En qué serie española un grupo de atracadores intentan llevar a cabo el robo más grande de la historia?",
+    "respuestas": [
+      "Los hombres de Paco",
+      "La Casa de Papel",
+      "Élite",
+      "Fariña"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿En qué ciudad se desarrolla la serie 'Stranger Things'?",
+    "respuestas": [
+      "Chicago",
+      "Los Angeles",
+      "Hawkins",
+      "New York"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Quién es el líder de los 'Hermanos Duffer' en la serie 'Stranger Things'?",
+    "respuestas": [
+      "Millie Bobby Brown",
+      "David Harbour",
+      "Winona Ryder",
+      "Matt Duffer y Ross Duffer"
+    ],
+    "correcta": 3
+  },
+  {
+    "pregunta": "¿Cuál es el nombre del barco en la serie 'Stranger Things'?",
+    "respuestas": [
+      "Hopper",
+      "Nancy",
+      "The Queen",
+      "El Demogorgon"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "En la serie 'Los 100', ¿cómo se llama la estación espacial donde viven los humanos?",
+    "respuestas": [
+      "Colonia 7",
+      "El Arca",
+      "Nueva Tierra",
+      "Titanio"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "En la serie 'Friends', ¿quién se casa con Monica Geller?",
+    "respuestas": [
+      "Joey Tribbiani",
+      "Chandler Bing",
+      "Ross Geller",
+      "Gunther"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿En qué serie estadounidense se basan los cómics de Marvel 'The Punisher'?",
+    "respuestas": [
+      "Daredevil",
+      "Jessica Jones",
+      "Luke Cage",
+      "The Punisher"
+    ],
+    "correcta": 0
+  }
+]
+      
+      ;
 
     let preguntaActual = null;
 
