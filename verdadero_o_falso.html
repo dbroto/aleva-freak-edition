@@ -1,0 +1,1234 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>✅ Verdadero o Falso ❌</title>
+  <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background: #000;
+      color: #ffcc00;
+      font-family: 'VT323', monospace;
+      text-align: center;
+      padding: 2rem;
+    }
+    .card {
+      background-color: #111;
+      border: 4px solid #ffcc00;
+      border-radius: 8px;
+      padding: 2rem;
+      max-width: 800px;
+      margin: 0 auto;
+      box-shadow: 0 0 20px #ffcc00;
+    }
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 2rem;
+    }
+    #afirmacion {
+      font-size: 2rem;
+      color: #00ffcc;
+      margin: 2rem 0;
+    }
+    #explicacion {
+      font-size: 1.3rem;
+      color: #ffffff;
+      margin: 2rem 0;
+    }
+    button {
+      font-family: 'VT323', monospace;
+      font-size: 1.2rem;
+      padding: 1rem 2rem;
+      margin: 1rem;
+      background-color: #000;
+      color: #ffcc00;
+      border: 2px solid #ffcc00;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #222;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>✅ Verdadero o Falso ❌</h1>
+    <div id="afirmacion">Cargando afirmación...</div>
+    <div>
+      <button onclick="responder(true)">✅ Verdadero</button>
+      <button onclick="responder(false)">❌ Falso</button>
+    </div>
+    <div id="explicacion"></div>
+    <button onclick="siguientePregunta()">➡️ Siguiente pregunta</button>
+  </div>
+
+  <script>
+    const preguntas = [
+      {
+        afirmacion: 'El sol es una estrella.',
+        esVerdadero: true,
+        explicacion: 'Correcto. El sol es una estrella de tipo espectral G2 que proporciona luz y energía a la Tierra.'
+      },
+      {
+        afirmacion: 'Darth Vader dice "Luke, yo soy tu padre" exactamente así en la película.',
+        esVerdadero: false,
+        explicacion: 'Falso. La frase real es "No, yo soy tu padre", aunque comúnmente se parafrasea de otra manera.'
+      },
+    {
+  afirmacion: 'Daniel Radcliffe tenía 11 años cuando se estrenó la primera película de Harry Potter.',
+  esVerdadero: true,
+  explicacion: 'Radcliffe tenía 11 años cuando se filmó “La piedra filosofal”, que se estrenó cuando él tenía 12.'
+},
+{
+  afirmacion: 'La autora de Harry Potter es inglesa y se llama J.K. Rowling.',
+  esVerdadero: true,
+  explicacion: 'J.K. Rowling nació en Yate, Inglaterra, en 1965.'
+},
+{
+  afirmacion: 'El primer libro de la saga se llama “Harry Potter y el prisionero de Azkaban”.',
+  esVerdadero: false,
+  explicacion: 'El primer libro se llama “Harry Potter y la piedra filosofal”.'
+},
+{
+  afirmacion: 'Emma Watson audicionó para el papel de Hermione a los 19 años.',
+  esVerdadero: false,
+  explicacion: 'Tenía solo 9 años cuando hizo la audición.'
+},
+{
+  afirmacion: 'El sombrero seleccionador consideró enviar a Harry a Slytherin.',
+  esVerdadero: true,
+  explicacion: 'En el primer libro, el sombrero duda entre Gryffindor y Slytherin.'
+},
+{
+  afirmacion: 'La varita de Voldemort contiene una pluma de fénix.',
+  esVerdadero: true,
+  explicacion: 'Y esa pluma proviene del mismo fénix que el de la varita de Harry.'
+},
+{
+  afirmacion: 'Dobby es un elfo doméstico que trabaja para los Malfoy.',
+  esVerdadero: true,
+  explicacion: 'Aunque más tarde es liberado por Harry con un calcetín.'
+},
+{
+  afirmacion: 'Sirius Black es el padre de Harry Potter.',
+  esVerdadero: false,
+  explicacion: 'Sirius es su padrino y mejor amigo de su padre, James Potter.'
+},
+{
+  afirmacion: 'Albus Dumbledore muere en el sexto libro de la saga.',
+  esVerdadero: true,
+  explicacion: 'Muere en “El misterio del príncipe” a manos de Snape.'
+},
+{
+  afirmacion: 'El actor que interpreta a Snape es Alan Rickman.',
+  esVerdadero: true,
+  explicacion: 'Alan Rickman interpretó al profesor Snape durante toda la saga.'
+},
+{
+  afirmacion: 'La casa de Hufflepuff es conocida por su valentía.',
+  esVerdadero: false,
+  explicacion: 'La casa de la valentía es Gryffindor. Hufflepuff destaca por la lealtad.'
+},
+{
+  afirmacion: 'Hedwig, la lechuza de Harry, muere en la batalla final.',
+  esVerdadero: true,
+  explicacion: 'Hedwig muere durante el traslado de Harry en “Las Reliquias de la Muerte”.'
+},
+{
+  afirmacion: 'La poción multijugos permite cambiar de forma durante una hora.',
+  esVerdadero: true,
+  explicacion: 'Esa es su duración estándar, aunque puede variar según la calidad.'
+},
+{
+  afirmacion: 'La plataforma para tomar el tren a Hogwarts es la 9 ¾.',
+  esVerdadero: true,
+  explicacion: 'Los estudiantes deben cruzar entre los andenes 9 y 10.'
+},
+{
+  afirmacion: 'Hogwarts está situada en Escocia.',
+  esVerdadero: true,
+  explicacion: 'J.K. Rowling ha confirmado que se encuentra en las Highlands escocesas.'
+},
+{
+  afirmacion: 'Ron Weasley tiene una rata llamada Trevor.',
+  esVerdadero: false,
+  explicacion: 'Trevor es el sapo de Neville. La rata de Ron se llama Scabbers.'
+},
+{
+  afirmacion: 'El mapa del merodeador fue creado por los fundadores de Hogwarts.',
+  esVerdadero: false,
+  explicacion: 'Lo crearon Lunático, Colagusano, Canuto y Cornamenta: los merodeadores.'
+},
+{
+  afirmacion: 'El número de jugadores por equipo en el Quidditch es 11.',
+  esVerdadero: false,
+  explicacion: 'Cada equipo tiene 7 jugadores en un partido de Quidditch.'
+},
+{
+  afirmacion: 'Nagini es el nombre de la serpiente de Voldemort.',
+  esVerdadero: true,
+  explicacion: 'Nagini es su fiel compañera y una de sus horrocruxes.'
+},
+{
+  afirmacion: 'La palabra mágica para lanzar un hechizo luminoso es “Nox”.',
+  esVerdadero: false,
+  explicacion: '“Nox” apaga la luz; “Lumos” es la que la enciende.'
+},
+{
+  afirmacion: 'La cicatriz de Harry está en forma de rayo.',
+  esVerdadero: true,
+  explicacion: 'Se la causó la maldición de Voldemort cuando era bebé.'
+},
+{
+  afirmacion: 'Hermione es hija de magos puros.',
+  esVerdadero: false,
+  explicacion: 'Sus padres son muggles, ambos dentistas.'
+},
+{
+  afirmacion: 'La poción Felix Felicis da suerte a quien la bebe.',
+  esVerdadero: true,
+  explicacion: 'También conocida como “suerte líquida”.'
+},
+{
+  afirmacion: 'El basilisco aparece por primera vez en “El cáliz de fuego”.',
+  esVerdadero: false,
+  explicacion: 'Aparece en “La cámara secreta”.'
+},
+{
+  afirmacion: 'Draco Malfoy pertenece a la casa Gryffindor.',
+  esVerdadero: false,
+  explicacion: 'Draco es de Slytherin.'
+},
+{
+  afirmacion: 'Severus Snape fue jefe de Slytherin.',
+  esVerdadero: true,
+  explicacion: 'Durante muchos años hasta convertirse en director de Hogwarts.'
+},
+{
+  afirmacion: 'La maldición Cruciatus provoca un sueño profundo.',
+  esVerdadero: false,
+  explicacion: 'Provoca un dolor insoportable.'
+},
+{
+  afirmacion: 'Neville Longbottom mata a Nagini en la última batalla.',
+  esVerdadero: true,
+  explicacion: 'Con la espada de Godric Gryffindor.'
+},
+{
+  afirmacion: 'Fred y George Weasley fundan Sortilegios Weasley.',
+  esVerdadero: true,
+  explicacion: 'Abren su tienda de bromas en el Callejón Diagon.'
+},
+{
+  afirmacion: 'La piedra filosofal otorga la invisibilidad.',
+  esVerdadero: false,
+  explicacion: 'Prolonga la vida y crea el elixir de la inmortalidad.'
+},
+{
+  afirmacion: 'Harry fue el único niño que sobrevivió a la maldición Avada Kedavra.',
+  esVerdadero: true,
+  explicacion: 'Sobrevivió gracias al sacrificio de su madre.'
+},
+{
+  afirmacion: 'Bellatrix Lestrange fue encarcelada en Azkaban.',
+  esVerdadero: true,
+  explicacion: 'Por torturar a los Longbottom.'
+},
+{
+  afirmacion: 'Cedric Diggory ganó el Torneo de los Tres Magos.',
+  esVerdadero: false,
+  explicacion: 'Fue asesinado por Peter Pettigrew en el cementerio.'
+},
+{
+  afirmacion: 'El giratiempo es utilizado por Harry para viajar al futuro.',
+  esVerdadero: false,
+  explicacion: 'Solo permite viajar al pasado, no al futuro.'
+},
+{
+  afirmacion: 'Rita Skeeter es una reportera animaga no registrada.',
+  esVerdadero: true,
+  explicacion: 'Se convierte en escarabajo para espiar conversaciones.'
+},
+{
+  afirmacion: 'La varita de saúco es uno de los tres objetos de las Reliquias de la Muerte.',
+  esVerdadero: true,
+  explicacion: 'Junto con la capa de invisibilidad y la piedra de la resurrección.'
+},
+{
+  afirmacion: 'Cho Chang es novia de Ron Weasley.',
+  esVerdadero: false,
+  explicacion: 'Es el interés amoroso de Harry en “La Orden del Fénix”.'
+},
+{
+  afirmacion: 'El Patronus de Hermione es una nutria.',
+  esVerdadero: true,
+  explicacion: 'Cada patronus refleja aspectos de la personalidad.'
+},
+{
+  afirmacion: 'Hagrid fue expulsado de Hogwarts en su cuarto año.',
+  esVerdadero: true,
+  explicacion: 'Por ser acusado de abrir la cámara secreta.'
+},
+{
+  afirmacion: 'Los Dursley criaron a Harry con cariño y afecto.',
+  esVerdadero: false,
+  explicacion: 'Lo trataron con desprecio y lo hicieron dormir en un armario.'
+},
+{
+  afirmacion: 'Los dementores se alimentan de los recuerdos felices de las personas.',
+  esVerdadero: true,
+  explicacion: 'Por eso su presencia genera desesperación y tristeza.'
+},
+{
+  afirmacion: 'Luna Lovegood es hija de un muggle y una bruja.',
+  esVerdadero: false,
+  explicacion: 'Ambos padres son magos; su padre dirige “El Quisquilloso”.'
+},
+{
+  afirmacion: 'El Expreso de Hogwarts parte de la estación King’s Cross.',
+  esVerdadero: true,
+  explicacion: 'Concretamente, desde el andén 9 y ¾.'
+},
+{
+  afirmacion: 'Alastor Moody siempre fue él mismo en “El cáliz de fuego”.',
+  esVerdadero: false,
+  explicacion: 'Fue suplantado por Barty Crouch Jr. usando poción multijugos.'
+},
+{
+  afirmacion: 'Harry y Ginny se casan y tienen dos hijos.',
+  esVerdadero: false,
+  explicacion: 'Tienen tres hijos: James Sirius, Albus Severus y Lily Luna.'
+},
+{
+  afirmacion: 'La profesora Trelawney predice la muerte de Harry en clase.',
+  esVerdadero: true,
+  explicacion: 'En “El prisionero de Azkaban”, hace predicciones aterradoras.'
+},
+{
+  afirmacion: 'El espejo de Oesed muestra lo que temes.',
+  esVerdadero: false,
+  explicacion: 'Muestra lo que más deseas, no lo que más temes.'
+},
+{
+  afirmacion: 'Ron destruye un horrocrux usando una espada.',
+  esVerdadero: true,
+  explicacion: 'Destruye el guardapelo de Slytherin con la espada de Gryffindor.'
+},
+{
+  afirmacion: 'Grawp es el hermano gigante de Dumbledore.',
+  esVerdadero: false,
+  explicacion: 'Es el hermanastro gigante de Hagrid.'
+}
+,      {
+        afirmacion: 'La Gran Muralla China se puede ver desde el espacio a simple vista.',
+        esVerdadero: false,
+        explicacion: 'Es un mito. No se puede ver a simple vista desde el espacio sin ayuda visual.'
+      },
+{
+  afirmacion: 'Un pulpo tiene tres corazones.',
+  esVerdadero: true,
+  explicacion: 'Dos bombean sangre a las branquias y uno al resto del cuerpo.'
+},
+{
+  afirmacion: 'La miel nunca caduca.',
+  esVerdadero: true,
+  explicacion: 'Es uno de los pocos alimentos que no se echa a perder gracias a su baja humedad y acidez.'
+},
+{
+  afirmacion: 'En Suiza está prohibido tener solo un cobaya como mascota.',
+  esVerdadero: true,
+  explicacion: 'Porque se considera que sufren si están solos.'
+},
+{
+  afirmacion: 'Los flamencos nacen de color rosa.',
+  esVerdadero: false,
+  explicacion: 'Nacen grises; se vuelven rosas por los carotenoides de su dieta.'
+},
+{
+  afirmacion: 'Los plátanos crecen hacia abajo por el peso de la fruta.',
+  esVerdadero: false,
+  explicacion: 'Crecen hacia arriba en contra de la gravedad.'
+},
+{
+  afirmacion: 'Hay una ciudad en Noruega donde el sol no se pone durante meses.',
+  esVerdadero: true,
+  explicacion: 'Ocurre en verano en lugares por encima del Círculo Polar Ártico, como Tromsø.'
+},
+{
+  afirmacion: 'Napoleón era extremadamente bajo.',
+  esVerdadero: false,
+  explicacion: 'Medía alrededor de 1,69 m, altura media para su época.'
+},
+{
+  afirmacion: 'Los koalas tienen huellas dactilares casi idénticas a las humanas.',
+  esVerdadero: true,
+  explicacion: 'Tan parecidas que podrían confundirse en una escena del crimen.'
+},
+{
+  afirmacion: 'Hay más árboles en la Tierra que estrellas en la Vía Láctea.',
+  esVerdadero: true,
+  explicacion: 'Se estima que hay más de 3 billones de árboles y unas 100.000 millones de estrellas en nuestra galaxia.'
+},
+{
+  afirmacion: 'En España, una vez se eligió como alcalde a una cabra.',
+  esVerdadero: true,
+  explicacion: 'En pequeños pueblos como Jun se ha elegido simbólicamente a animales como alcaldes honoríficos.'
+},
+{
+  afirmacion: 'El agua del váter gira siempre en sentido antihorario.',
+  esVerdadero: false,
+  explicacion: 'El sentido depende del diseño del váter, no del hemisferio.'
+},
+{
+  afirmacion: 'Un caracol puede dormir hasta tres años seguidos.',
+  esVerdadero: true,
+  explicacion: 'Algunas especies entran en hibernación prolongada si las condiciones son malas.'
+},
+{
+  afirmacion: 'El corazón de una ballena azul es tan grande como un coche.',
+  esVerdadero: true,
+  explicacion: 'Y su latido puede escucharse a más de 3 km de distancia.'
+},
+{
+  afirmacion: 'Hay una piedra en Marte con forma de rana gigante.',
+  esVerdadero: true,
+  explicacion: 'Las imágenes de Marte han revelado muchas pareidolias, incluida una roca que parece una rana.'
+},
+{
+  afirmacion: 'La Coca-Cola era originalmente de color verde.',
+  esVerdadero: false,
+  explicacion: 'Siempre ha sido marrón; el mito viene de su envase.'
+},
+{
+  afirmacion: 'Existe una rana que puede congelarse completamente y luego revivir.',
+  esVerdadero: true,
+  explicacion: 'Se trata de la rana de madera del Ártico (Rana sylvatica).'
+},
+{
+  afirmacion: 'Los tiburones pueden vivir más de 400 años.',
+  esVerdadero: true,
+  explicacion: 'El tiburón de Groenlandia puede alcanzar esa edad.'
+},
+{
+  afirmacion: 'En Japón, hay un café donde puedes acariciar erizos.',
+  esVerdadero: true,
+  explicacion: 'Existen cafés temáticos con búhos, gatos, serpientes y sí, ¡erizos!'
+},
+{
+  afirmacion: 'Las vacas tienen mejores amigas y se estresan si las separan.',
+  esVerdadero: true,
+  explicacion: 'Estudios han demostrado comportamientos sociales complejos entre vacas.'
+},
+{
+  afirmacion: 'Un kilo de oro puede aplanarse hasta cubrir una cancha de tenis.',
+  esVerdadero: false,
+  explicacion: 'Puede cubrir varios metros cuadrados, pero no tanto como una cancha entera.'
+},
+{
+  afirmacion: 'Las abejas pueden reconocer rostros humanos.',
+  esVerdadero: true,
+  explicacion: 'Tienen la capacidad de reconocer patrones visuales complejos, incluidos rostros.'
+},
+{
+  afirmacion: 'Los dedos se arrugan en el agua porque la piel absorbe líquido.',
+  esVerdadero: false,
+  explicacion: 'Es una reacción del sistema nervioso para mejorar el agarre en superficies mojadas.'
+},
+{
+  afirmacion: 'Los gatos no pueden saborear lo dulce.',
+  esVerdadero: true,
+  explicacion: 'Carecen del receptor genético para detectar el sabor dulce.'
+},
+{
+  afirmacion: 'Un día en Venus es más corto que su año.',
+  esVerdadero: false,
+  explicacion: 'En realidad, un día en Venus (rotación) dura más que su año (traslación).'
+},
+{
+  afirmacion: 'Hay más flamencos de plástico en el mundo que reales.',
+  esVerdadero: true,
+  explicacion: 'Debido a la producción masiva desde los años 50, los de plástico superan a los vivos.'
+},
+{
+  afirmacion: 'Los camellos almacenan agua en sus jorobas.',
+  esVerdadero: false,
+  explicacion: 'Las jorobas almacenan grasa, no agua. El agua se distribuye por el cuerpo.'
+},
+{
+  afirmacion: 'Los tiburones existían antes que los árboles.',
+  esVerdadero: true,
+  explicacion: 'Aparecieron hace más de 400 millones de años, mientras que los árboles surgieron después.'
+},
+{
+  afirmacion: 'La Torre Eiffel puede crecer más de 15 cm en verano.',
+  esVerdadero: true,
+  explicacion: 'Se expande por el calor del metal.'
+},
+{
+  afirmacion: 'Los pingüinos tienen rodillas.',
+  esVerdadero: true,
+  explicacion: 'Están ocultas bajo las plumas, pero sus patas tienen articulación de rodilla.'
+},
+{
+  afirmacion: 'Los humanos brillamos ligeramente en la oscuridad.',
+  esVerdadero: true,
+  explicacion: 'Emitimos bioluminiscencia muy débil, invisible al ojo humano.'
+},
+{
+  afirmacion: 'La luna tiene un olor similar al queso.',
+  esVerdadero: false,
+  explicacion: 'Los astronautas describieron el polvo lunar como olor a pólvora quemada.'
+},
+{
+  afirmacion: 'Hay un tipo de medusa que puede vivir indefinidamente.',
+  esVerdadero: true,
+  explicacion: 'La Turritopsis dohrnii puede revertir su ciclo vital y potencialmente vivir para siempre.'
+},
+{
+  afirmacion: 'En Escocia hay más ovejas que personas.',
+  esVerdadero: true,
+  explicacion: 'Se estima que hay más de 6 millones de ovejas frente a unos 5 millones de personas.'
+},
+{
+  afirmacion: 'Las zanahorias siempre fueron naranjas.',
+  esVerdadero: false,
+  explicacion: 'Originalmente eran púrpuras; la variedad naranja fue creada en Países Bajos.'
+},
+{
+  afirmacion: 'Los perros sudan por la lengua.',
+  esVerdadero: false,
+  explicacion: 'Sacan la lengua para regular su temperatura, pero sudan por las patas.'
+},
+{
+  afirmacion: 'El chocolate puede ser mortal para los perros.',
+  esVerdadero: true,
+  explicacion: 'Contiene teobromina, que es tóxica para su metabolismo.'
+},
+{
+  afirmacion: 'Los relámpagos pueden calentar el aire más que la superficie del sol.',
+  esVerdadero: true,
+  explicacion: 'Pueden alcanzar hasta 30.000 ºC, cinco veces más caliente que la superficie solar.'
+},
+{
+  afirmacion: 'Un chicle tarda unos 7 años en digerirse.',
+  esVerdadero: false,
+  explicacion: 'El cuerpo no lo digiere, pero lo expulsa igual que otros residuos no absorbibles.'
+},
+{
+  afirmacion: 'Los humanos comparten un 60% de ADN con los plátanos.',
+  esVerdadero: true,
+  explicacion: 'Aunque no son genes iguales, compartimos muchos procesos biológicos básicos.'
+},
+{
+  afirmacion: 'Los cuervos pueden recordar y vengarse de quienes los molestan.',
+  esVerdadero: true,
+  explicacion: 'Tienen gran memoria y transmiten el rencor a otros cuervos.'
+},
+{
+  afirmacion: 'En “Friends”, el sofá del Central Perk siempre estaba libre porque estaba reservado.',
+  esVerdadero: true,
+  explicacion: 'En varios episodios puede verse un cartelito que indica que está reservado.'
+},
+{
+  afirmacion: 'Walter White de “Breaking Bad” es químico en la vida real.',
+  esVerdadero: false,
+  explicacion: 'Bryan Cranston es actor, aunque estudió química para preparar el papel.'
+},
+{
+  afirmacion: 'La serie “Los Simpson” predijo la presidencia de Donald Trump.',
+  esVerdadero: true,
+  explicacion: 'En un episodio del año 2000, Lisa menciona que Trump fue presidente.'
+},
+{
+  afirmacion: 'El trono de hierro de “Juego de Tronos” está hecho de espadas reales.',
+  esVerdadero: false,
+  explicacion: 'Está hecho de plástico y resina, aunque diseñado para parecer real.'
+},
+{
+  afirmacion: 'En “Stranger Things”, los actores que hacen de niños realmente no sabían lo que era un walkman.',
+  esVerdadero: true,
+  explicacion: 'Muchos no habían visto tecnología ochentera antes del rodaje.'
+},
+{
+  afirmacion: '“La Casa de Papel” fue cancelada antes de hacerse mundialmente famosa.',
+  esVerdadero: true,
+  explicacion: 'Antena 3 la canceló; Netflix la rescató y la convirtió en un fenómeno global.'
+},
+{
+  afirmacion: 'Sheldon Cooper es interpretado por un físico real.',
+  esVerdadero: false,
+  explicacion: 'Jim Parsons es actor; aunque consultaron a científicos para el guion.'
+},
+{
+  afirmacion: '“The Office” USA es una copia directa de una serie británica.',
+  esVerdadero: true,
+  explicacion: 'La original fue creada por Ricky Gervais en Reino Unido.'
+},
+{
+  afirmacion: 'Los actores de “Friends” cobraban lo mismo en las últimas temporadas.',
+  esVerdadero: true,
+  explicacion: 'Negociaron juntos para recibir 1 millón de dólares por episodio cada uno.'
+},
+{
+  afirmacion: '“Los Soprano” fue la primera serie en ganar un Emmy.',
+  esVerdadero: false,
+  explicacion: 'El Emmy existe desde 1949, mucho antes del estreno de la serie.'
+},
+{
+  afirmacion: 'El actor que hace de Tyrion Lannister en “Juego de Tronos” ganó cuatro Emmys por su papel.',
+  esVerdadero: true,
+  explicacion: 'Peter Dinklage ganó en 2011, 2015, 2018 y 2019.'
+},
+{
+  afirmacion: 'La intro de “The Big Bang Theory” fue cantada por Queen.',
+  esVerdadero: false,
+  explicacion: 'Fue compuesta e interpretada por Barenaked Ladies.'
+},
+{
+  afirmacion: 'En “Cómo conocí a vuestra madre”, el embarazo de Lily fue real.',
+  esVerdadero: false,
+  explicacion: 'Alyson Hannigan no estaba embarazada, pero se usaron trucos de cámara.'
+},
+{
+  afirmacion: '“Breaking Bad” tenía un final alternativo en el que todo era un sueño.',
+  esVerdadero: true,
+  explicacion: 'Fue grabado como broma: Bryan Cranston se despierta en la cama como Hal (de “Malcolm”).'
+},
+{
+  afirmacion: 'En “The Mandalorian”, usaron bebés Yoda animatrónicos reales en lugar de CGI.',
+  esVerdadero: true,
+  explicacion: 'El adorable Grogu es principalmente un animatrónico con efectos mínimos.'
+},
+{
+  afirmacion: '“El juego del calamar” fue rechazada por varias cadenas antes de Netflix.',
+  esVerdadero: true,
+  explicacion: 'El guion fue rechazado durante más de 10 años antes de su estreno.'
+},
+{
+  afirmacion: 'Todos los actores de “Friends” eran amigos antes de la serie.',
+  esVerdadero: false,
+  explicacion: 'Se conocieron durante el proceso de selección.'
+},
+{
+  afirmacion: '“The Crown” cambió de reparto cada dos temporadas.',
+  esVerdadero: true,
+  explicacion: 'Para representar el paso del tiempo con realismo.'
+},
+{
+  afirmacion: '“Black Mirror” fue inspirada por una novela de George Orwell.',
+  esVerdadero: false,
+  explicacion: 'Aunque hay influencia temática, fue creada como serie original por Charlie Brooker.'
+},
+{
+  afirmacion: 'La intro de “The Office” fue grabada por John Krasinski en un viaje a Scranton.',
+  esVerdadero: true,
+  explicacion: 'El actor filmó parte de las imágenes de la intro mientras preparaba su personaje.'
+},
+{
+  afirmacion: 'En “La Bella y la Bestia”, Gastón nunca parpadea en toda la película.',
+  esVerdadero: true,
+  explicacion: 'Para acentuar su arrogancia y frialdad, los animadores decidieron que no parpadeara.'
+},
+{
+  afirmacion: 'La voz original de Mickey Mouse fue Walt Disney.',
+  esVerdadero: true,
+  explicacion: 'Durante los primeros años, Walt Disney mismo puso la voz al personaje.'
+},
+{
+  afirmacion: 'El castillo de Disneyland Paris está inspirado en un castillo alemán.',
+  esVerdadero: false,
+  explicacion: 'Se diseñó específicamente para Europa, ya que los castillos reales están por todas partes.'
+},
+{
+  afirmacion: 'La película “Frozen” tardó más de 10 años en desarrollarse.',
+  esVerdadero: true,
+  explicacion: 'La idea original data de los años 2000, pero fue replanteada y desarrollada durante una década.'
+},
+{
+  afirmacion: 'El nombre completo de Aladdín es Aladdín Ibn La Ahad.',
+  esVerdadero: false,
+  explicacion: 'Aladdín nunca tiene apellido oficial en las películas.'
+},
+{
+  afirmacion: 'El Rey León fue la primera película animada de Disney basada en una historia original.',
+  esVerdadero: true,
+  explicacion: 'No está basada en un cuento clásico ni historia existente, aunque tiene paralelismos con Hamlet.'
+},
+{
+  afirmacion: 'Los rugidos de Simba fueron grabados de leones reales.',
+  esVerdadero: false,
+  explicacion: 'Fueron hechos con efectos de sonido y rugidos de tigres, no leones.'
+},
+{
+  afirmacion: 'Rapunzel y Flynn aparecen brevemente en la coronación de Elsa en “Frozen”.',
+  esVerdadero: true,
+  explicacion: 'Disney suele incluir cameos secretos entre películas.'
+},
+{
+  afirmacion: 'Ariel y Hércules son primos.',
+  esVerdadero: true,
+  explicacion: 'Ariel es hija de Tritón, hijo de Poseidón, quien es hermano de Zeus, padre de Hércules.'
+},
+{
+  afirmacion: 'El personaje de Úrsula está inspirado en una drag queen.',
+  esVerdadero: true,
+  explicacion: 'Está basada en Divine, una famosa drag queen de los años 70 y 80.'
+},
+{
+  afirmacion: 'El diseño de Bella en “La Bella y la Bestia” se inspiró en Audrey Hepburn.',
+  esVerdadero: true,
+  explicacion: 'Los animadores usaron su estilo como referencia para su elegancia.'
+},
+{
+  afirmacion: 'En “Toy Story”, el número en la matrícula del coche de Andy es el cumpleaños de Steve Jobs.',
+  esVerdadero: false,
+  explicacion: 'En realidad, es el número del aula donde estudiaron varios animadores: A113.'
+},
+{
+  afirmacion: 'Elsa originalmente iba a ser la villana en “Frozen”.',
+  esVerdadero: true,
+  explicacion: 'El guion cambió completamente cuando se escribió “Let it go”.'
+},
+{
+  afirmacion: 'Dumbo es el único personaje principal de Disney que no habla en toda la película.',
+  esVerdadero: true,
+  explicacion: 'Dumbo nunca dice una sola palabra, ni siquiera de adulto.'
+},
+{
+  afirmacion: 'En “Enredados”, el nombre de la taberna es “El Pato Borracho”.',
+  esVerdadero: false,
+  explicacion: 'El nombre correcto es “El Patito Feo”.'
+},
+{
+  afirmacion: 'La película “Bambi” provocó un descenso real en la caza de ciervos en EE. UU.',
+  esVerdadero: true,
+  explicacion: 'Tuvo un gran impacto cultural al mostrar el drama desde la perspectiva del animal.'
+},
+{
+  afirmacion: 'En “Hércules”, Hades es hermano de Zeus y Poseidón.',
+  esVerdadero: true,
+  explicacion: 'Eso es coherente con la mitología griega.'
+},
+{
+  afirmacion: 'En el parque Disneyland original, no hay ninguna tienda de alcohol.',
+  esVerdadero: false,
+  explicacion: 'Durante años fue cierto, pero ahora hay lugares selectos donde se sirve.'
+},
+{
+  afirmacion: 'La primera princesa Disney fue Blancanieves, y tenía solo 14 años.',
+  esVerdadero: true,
+  explicacion: 'Es la princesa más joven en la historia de Disney.'
+},
+{
+  afirmacion: '“Atlantis: El Imperio Perdido” fue un fracaso comercial para Disney.',
+  esVerdadero: true,
+  explicacion: 'A pesar de su culto posterior, no tuvo éxito en taquilla en su momento.'
+}
+,
+{
+  afirmacion: 'El personaje de Tiana fue la primera princesa Disney afroamericana.',
+  esVerdadero: true,
+  explicacion: 'Tiana, de “Tiana y el Sapo” (2009), fue la primera princesa afroamericana de Disney.'
+},
+{
+  afirmacion: '“El jorobado de Notre Dame” fue prohibida en Francia por su contenido religioso.',
+  esVerdadero: false,
+  explicacion: 'Aunque generó polémica, nunca fue prohibida oficialmente en Francia.'
+},
+{
+  afirmacion: 'Todas las princesas Disney tienen animales como compañeros o mascotas.',
+  esVerdadero: false,
+  explicacion: 'Algunas como Mérida o Elsa no tienen un compañero animal claro.'
+},
+{
+  afirmacion: 'La banda sonora de “El Rey León” ganó un Oscar a Mejor Canción Original.',
+  esVerdadero: true,
+  explicacion: 'La canción “Can You Feel the Love Tonight” ganó el Oscar en 1995.'
+},
+{
+  afirmacion: 'En “Zootrópolis”, todos los personajes masculinos tienen narices más grandes que las hembras.',
+  esVerdadero: true,
+  explicacion: 'Los animadores usaron este truco para enfatizar el género de forma visual.'
+},
+{
+  afirmacion: '“Mulán” fue la primera princesa que no era de sangre real ni se casó con un príncipe.',
+  esVerdadero: true,
+  explicacion: 'Mulán ni es noble ni se casa con nadie en la película original.'
+},
+{
+  afirmacion: 'La torre de Rapunzel tiene exactamente 379 ladrillos animados diferentes.',
+  esVerdadero: false,
+  explicacion: 'No existe ese dato oficial; los detalles no están contados individualmente.'
+},
+{
+  afirmacion: 'Hay una secuencia en “Aladdín” donde el tapiz vuela por encima de Disneyland París.',
+  esVerdadero: false,
+  explicacion: 'La escena del vuelo no muestra parques reales; solo ciudades fantásticas.'
+},
+{
+  afirmacion: 'La canción “Un mundo ideal” fue la primera en incluir voces latinas en la versión original.',
+  esVerdadero: false,
+  explicacion: 'La versión original es en inglés, aunque la versión en español fue muy popular.'
+},
+{
+  afirmacion: 'El personaje de Scar en “El Rey León” tiene una cicatriz en el ojo izquierdo.',
+  esVerdadero: true,
+  explicacion: 'La cicatriz está en su ojo izquierdo, y le da nombre.'
+},
+{
+  afirmacion: 'Disney posee los derechos de “Los Simpson”.',
+  esVerdadero: true,
+  explicacion: 'Desde la compra de Fox en 2019, los derechos pasaron a Disney.'
+},
+{
+  afirmacion: 'La película “Encanto” tiene más de 100 mariposas animadas diferentes.',
+  esVerdadero: true,
+  explicacion: 'Las mariposas representan simbolismo en la historia y son muy cuidadas en la animación.'
+},
+{
+  afirmacion: 'En “Up”, la casa flota con exactamente 10.297 globos en pantalla.',
+  esVerdadero: false,
+  explicacion: 'En realidad, se usaron más de 20.000 globos animados individualmente.'
+},
+{
+  afirmacion: 'El personaje de Olaf fue creado como un intento fallido de Elsa de hacer un ejército.',
+  esVerdadero: true,
+  explicacion: 'En la película, Elsa intenta crear soldados de nieve y sin querer crea a Olaf.'
+},
+{
+  afirmacion: '“Raya y el último dragón” fue la primera película de Disney ambientada en un mundo inspirado en el Sudeste Asiático.',
+  esVerdadero: true,
+  explicacion: 'Kumandra se basa en culturas como Tailandia, Vietnam y Laos.'
+},
+{
+  afirmacion: 'La canción “Libre soy” de Frozen fue compuesta en solo una semana.',
+  esVerdadero: false,
+  explicacion: 'Tardaron varios meses en perfeccionarla y fue reescrita varias veces.'
+},
+{
+  afirmacion: 'La princesa Aurora habla solo 18 líneas en “La Bella Durmiente”.',
+  esVerdadero: true,
+  explicacion: 'Es la princesa con menos líneas de diálogo en toda una película.'
+},
+{
+  afirmacion: 'En “Pocahontas”, los colores del viento fueron inspirados en pinturas de Van Gogh.',
+  esVerdadero: false,
+  explicacion: 'Aunque la paleta es artística, no hay relación con Van Gogh.'
+},
+{
+  afirmacion: 'La película “Frozen” fue la primera de Disney en tener una mujer como directora.',
+  esVerdadero: true,
+  explicacion: 'Jennifer Lee fue la primera mujer en codirigir una película de Disney Animation.'
+},
+{
+  afirmacion: 'El dragón de “La Bella Durmiente” fue animado por el mismo equipo que animó a Maléfica.',
+  esVerdadero: false,
+  explicacion: 'Fue un equipo diferente especializado en criaturas y efectos mágicos.'
+}
+,
+{
+  afirmacion: 'Solo usamos el 10% del cerebro.',
+  esVerdadero: false,
+  explicacion: 'Es un mito. Usamos todas las regiones del cerebro, aunque no todas al mismo tiempo.'
+},
+{
+  afirmacion: 'Los camaleones cambian de color para camuflarse.',
+  esVerdadero: false,
+  explicacion: 'Principalmente lo hacen para regular la temperatura o expresar emociones.'
+},
+{
+  afirmacion: 'El Monte Everest es la montaña más alta desde su base hasta la cima.',
+  esVerdadero: false,
+  explicacion: 'Mauna Kea (Hawái) es más alto desde su base bajo el mar, aunque el Everest es más alto sobre el nivel del mar.'
+},
+{
+  afirmacion: 'Los humanos tienen solo cinco sentidos.',
+  esVerdadero: false,
+  explicacion: 'Tenemos más de cinco, como el equilibrio, la temperatura o la propriocepción.'
+},
+{
+  afirmacion: 'El sol es amarillo.',
+  esVerdadero: false,
+  explicacion: 'En realidad, su luz es blanca; lo vemos amarillo por la atmósfera.'
+},
+{
+  afirmacion: 'La Gran Muralla China es visible desde la Luna.',
+  esVerdadero: false,
+  explicacion: 'No es visible desde la Luna a simple vista.'
+},
+{
+  afirmacion: 'Los rayos nunca caen dos veces en el mismo sitio.',
+  esVerdadero: false,
+  explicacion: 'Los rayos pueden caer muchas veces en el mismo sitio, como el Empire State.'
+},
+{
+  afirmacion: 'El azúcar vuelve hiperactivos a los niños.',
+  esVerdadero: false,
+  explicacion: 'No hay evidencia científica sólida que lo respalde; es más un efecto psicológico.'
+},
+{
+  afirmacion: 'Los murciélagos son ciegos.',
+  esVerdadero: false,
+  explicacion: 'Ven perfectamente, y además usan la ecolocalización.'
+},
+{
+  afirmacion: 'Los toros odian el color rojo.',
+  esVerdadero: false,
+  explicacion: 'Son daltónicos; reaccionan al movimiento, no al color.'
+},
+{
+  afirmacion: 'Si coges un objeto esterilizado y se cae, ya no sirve.',
+  esVerdadero: true,
+  explicacion: 'El contacto con el suelo rompe la esterilidad.'
+},
+{
+  afirmacion: 'Los peces tienen memoria de solo 3 segundos.',
+  esVerdadero: false,
+  explicacion: 'Tienen memoria de semanas o meses; algunos aprenden rutinas.'
+},
+{
+  afirmacion: 'El agua conduce la electricidad.',
+  esVerdadero: false,
+  explicacion: 'El agua pura no conduce; lo hacen los minerales disueltos en ella.'
+},
+{
+  afirmacion: 'El pelo y las uñas siguen creciendo después de la muerte.',
+  esVerdadero: false,
+  explicacion: 'No crecen; es un efecto óptico por la deshidratación de la piel.'
+},
+{
+  afirmacion: 'Los vikingos llevaban cascos con cuernos.',
+  esVerdadero: false,
+  explicacion: 'Nunca llevaron cuernos; fue un invento del siglo XIX.'
+},
+{
+  afirmacion: 'El cuerpo humano tiene más bacterias que células.',
+  esVerdadero: true,
+  explicacion: 'Se estima que hay más bacterias que células humanas, especialmente en el intestino.'
+},
+{
+  afirmacion: 'Las zanahorias mejoran la vista en la oscuridad.',
+  esVerdadero: false,
+  explicacion: 'Es un mito propagado por los británicos durante la Segunda Guerra Mundial.'
+},
+{
+  afirmacion: 'La lengua tiene zonas para cada sabor.',
+  esVerdadero: false,
+  explicacion: 'Toda la lengua puede detectar todos los sabores; el mapa es un error.'
+},
+{
+  afirmacion: 'Napoleón Bonaparte medía menos de 1,50 metros.',
+  esVerdadero: false,
+  explicacion: 'Medía aproximadamente 1,69 metros; la confusión viene de diferencias entre pies franceses e ingleses.'
+},
+{
+  afirmacion: 'Los vikingos descubrieron América antes que Cristóbal Colón.',
+  esVerdadero: true,
+  explicacion: 'Leif Erikson llegó a América del Norte alrededor del año 1000, siglos antes que Colón.'
+},
+{
+  afirmacion: 'Cleopatra era egipcia de nacimiento.',
+  esVerdadero: false,
+  explicacion: 'Era de ascendencia griega, de la dinastía Ptolemaica, que gobernó Egipto tras Alejandro Magno.'
+},
+{
+  afirmacion: 'Los cascos con cuernos eran usados por los vikingos.',
+  esVerdadero: false,
+  explicacion: 'No hay evidencia de que los vikingos usaran cascos con cuernos; es un invento artístico del siglo XIX.'
+},
+{
+  afirmacion: 'La peste negra fue propagada principalmente por ratas.',
+  esVerdadero: true,
+  explicacion: 'La bacteria *Yersinia pestis* era transportada por pulgas en ratas negras que viajaban en barcos.'
+},
+{
+  afirmacion: 'La muralla china fue construida de una vez.',
+  esVerdadero: false,
+  explicacion: 'Se construyó durante siglos por varias dinastías, con estilos y materiales diferentes.'
+},
+{
+  afirmacion: 'Los antiguos romanos usaban plomo en sus cañerías.',
+  esVerdadero: true,
+  explicacion: 'La palabra “plumbing” proviene de *plumbum*, plomo en latín, y se usaba en las tuberías.'
+},
+{
+  afirmacion: 'Colón fue el primero en afirmar que la Tierra era redonda.',
+  esVerdadero: false,
+  explicacion: 'Ya era una idea aceptada desde tiempos de los griegos, como con Eratóstenes.'
+},
+{
+  afirmacion: 'María Antonieta dijo “Que coman pasteles”.',
+  esVerdadero: false,
+  explicacion: 'No hay pruebas de que lo dijera; se atribuye por error o como propaganda revolucionaria.'
+},
+{
+  afirmacion: 'Los antiguos griegos practicaban democracia directa.',
+  esVerdadero: true,
+  explicacion: 'En Atenas, los ciudadanos votaban directamente sobre decisiones políticas.'
+},
+{
+  afirmacion: 'Los gladiadores siempre luchaban a muerte en el Coliseo.',
+  esVerdadero: false,
+  explicacion: 'Las peleas mortales eran raras; entrenar un gladiador costaba mucho dinero.'
+},
+{
+  afirmacion: 'Juana de Arco fue quemada en la hoguera por brujería.',
+  esVerdadero: true,
+  explicacion: 'Fue ejecutada por herejía y brujería, aunque luego fue exonerada y canonizada.'
+},
+{
+  afirmacion: 'Los faraones eran momificados para resucitar en el más allá.',
+  esVerdadero: true,
+  explicacion: 'Creían que el cuerpo debía preservarse para que el alma pudiera vivir en el más allá.'
+},
+{
+  afirmacion: 'La Edad Media fue una época de oscuridad y sin avances.',
+  esVerdadero: false,
+  explicacion: 'Se hicieron muchos avances en arquitectura, agricultura y filosofía.'
+},
+{
+  afirmacion: 'Leonardo da Vinci pintó la Capilla Sixtina.',
+  esVerdadero: false,
+  explicacion: 'Fue Miguel Ángel quien la pintó; da Vinci nunca trabajó en esa obra.'
+},
+{
+  afirmacion: 'Los samuráis japoneses seguían un código llamado bushidō.',
+  esVerdadero: true,
+  explicacion: 'El bushidō era un código ético basado en el honor, la lealtad y la disciplina.'
+},
+{
+  afirmacion: 'Galileo fue torturado por afirmar que la Tierra gira alrededor del Sol.',
+  esVerdadero: false,
+  explicacion: 'Fue juzgado y condenado, pero no fue torturado; pasó sus últimos años en arresto domiciliario.'
+},
+{
+  afirmacion: 'La Revolución Francesa comenzó con la toma de la Bastilla.',
+  esVerdadero: true,
+  explicacion: 'El 14 de julio de 1789, la toma de la Bastilla marcó el inicio simbólico de la revolución.'
+},
+{
+  afirmacion: 'Los templarios custodiaban el Santo Grial.',
+  esVerdadero: false,
+  explicacion: 'Es un mito popularizado por la literatura y el cine, sin base histórica comprobada.'
+},
+{
+  afirmacion: 'Los flamencos son rosas por lo que comen.',
+  esVerdadero: true,
+  explicacion: 'Su color se debe a los carotenoides que obtienen de los camarones y algas.'
+},
+{
+  afirmacion: 'Un pulpo tiene tres corazones.',
+  esVerdadero: true,
+  explicacion: 'Dos bombean sangre a las branquias y uno al resto del cuerpo.'
+},
+{
+  afirmacion: 'Los koalas duermen hasta 22 horas al día.',
+  esVerdadero: true,
+  explicacion: 'Tienen una dieta pobre en energía, así que descansan casi todo el día.'
+},
+{
+  afirmacion: 'La letra “J” es la única que no aparece en la tabla periódica.',
+  esVerdadero: true,
+  explicacion: 'Ningún elemento químico tiene la letra “J” en su símbolo.'
+},
+{
+  afirmacion: 'Los gatos odian el agua porque no saben nadar.',
+  esVerdadero: false,
+  explicacion: 'Pueden nadar perfectamente, pero la mayoría odia mojarse.'
+},
+{
+  afirmacion: 'Hay más árboles en la Tierra que estrellas en la galaxia.',
+  esVerdadero: true,
+  explicacion: 'Se estima que hay 3 billones de árboles y solo 100-400 mil millones de estrellas en la Vía Láctea.'
+},
+{
+  afirmacion: 'El corazón humano puede seguir latiendo fuera del cuerpo.',
+  esVerdadero: true,
+  explicacion: 'Mientras tenga oxígeno y nutrientes, puede latir durante un tiempo.'
+},
+{
+  afirmacion: 'Los tiburones pueden oler una gota de sangre a 5 kilómetros.',
+  esVerdadero: false,
+  explicacion: 'Pueden detectar concentraciones muy bajas, pero no a tanta distancia.'
+},
+{
+  afirmacion: 'Los plátanos son bayas.',
+  esVerdadero: true,
+  explicacion: 'Botánicamente, los plátanos se clasifican como bayas.'
+},
+{
+  afirmacion: 'La Torre Eiffel crece en verano.',
+  esVerdadero: true,
+  explicacion: 'Puede expandirse hasta 15 cm por la dilatación del metal con el calor.'
+},
+{
+  afirmacion: 'Las vacas tienen mejores amigas y se estresan si se separan.',
+  esVerdadero: true,
+  explicacion: 'Estudios han mostrado que forman vínculos y tienen menos ansiedad juntas.'
+},
+{
+  afirmacion: 'Los caracoles pueden dormir durante tres años seguidos.',
+  esVerdadero: true,
+  explicacion: 'Algunas especies entran en hibernación prolongada en climas extremos.'
+},
+{
+  afirmacion: 'Las medusas no tienen cerebro, corazón ni huesos.',
+  esVerdadero: true,
+  explicacion: 'Tienen un sistema nervioso muy simple, sin órganos complejos.'
+},
+{
+  afirmacion: 'Las cebras son blancas con rayas negras.',
+  esVerdadero: true,
+  explicacion: 'Su piel es negra, pero el patrón de rayas es blanco.'
+},
+{
+  afirmacion: 'La miel caduca con el tiempo.',
+  esVerdadero: false,
+  explicacion: 'Es uno de los pocos alimentos que puede durar miles de años sin estropearse.'
+},
+{
+  afirmacion: 'Hay más pollos que personas en el mundo.',
+  esVerdadero: true,
+  explicacion: 'Se estima que hay más de 25 mil millones de pollos vivos en el planeta.'
+},
+{
+  afirmacion: 'Los caballitos de mar machos son los que dan a luz.',
+  esVerdadero: true,
+  explicacion: 'Las hembras depositan los huevos en la bolsa del macho, que luego los incuba y los expulsa.'
+},
+{
+  afirmacion: 'En Suiza está prohibido tener un solo conejillo de Indias.',
+  esVerdadero: true,
+  explicacion: 'Son animales sociales y es ilegal tener solo uno por razones de bienestar animal.'
+},
+{
+  afirmacion: 'Los caracoles gritan cuando les echas sal.',
+  esVerdadero: false,
+  explicacion: 'No tienen cuerdas vocales; el sonido es vapor por la deshidratación, pero no es un grito.'
+},
+{
+  afirmacion: 'Hay más posibilidades de morir por una máquina expendedora que por un tiburón.',
+  esVerdadero: true,
+  explicacion: 'Las estadísticas muestran más muertes accidentales relacionadas con máquinas que con tiburones.'
+},
+{
+  afirmacion: 'Las cucarachas pueden vivir varios días sin cabeza.',
+  esVerdadero: true,
+  explicacion: 'Respiran por orificios en el cuerpo y mueren solo por deshidratación o infección.'
+},
+{
+  afirmacion: 'Los burros matan más personas al año que los aviones.',
+  esVerdadero: true,
+  explicacion: 'Aunque parezca extraño, hay más accidentes fatales con burros que por accidentes aéreos.'
+},
+{
+  afirmacion: 'Los pulpos lanzan tinta para camuflarse y huir.',
+  esVerdadero: true,
+  explicacion: 'La tinta confunde a los depredadores y les da tiempo para escapar.'
+},
+{
+  afirmacion: 'Las jirafas emiten sonidos tan agudos que los humanos no pueden oírlos.',
+  esVerdadero: true,
+  explicacion: 'Se comunican con infrasonidos que están fuera del rango auditivo humano.'
+},
+{
+  afirmacion: 'Los humanos comparten el 90% del ADN con los gatos.',
+  esVerdadero: true,
+  explicacion: 'Genéticamente, estamos más cerca de muchos mamíferos de lo que pensamos.'
+},
+{
+  afirmacion: 'Las estrellas de mar pueden regenerar brazos, pero no todo el cuerpo.',
+  esVerdadero: false,
+  explicacion: 'Algunas especies pueden regenerar su cuerpo completo a partir de un solo brazo.'
+},
+{
+  afirmacion: 'Hay una especie de medusa que puede vivir para siempre.',
+  esVerdadero: true,
+  explicacion: 'La *Turritopsis dohrnii* puede revertir su envejecimiento en determinadas condiciones.'
+},
+{
+  afirmacion: 'Las cebras son más rápidas que los caballos.',
+  esVerdadero: false,
+  explicacion: 'Las cebras son ágiles, pero los caballos alcanzan mayores velocidades.'
+},
+{
+  afirmacion: 'Las nutrias marinas se dan la mano mientras duermen.',
+  esVerdadero: true,
+  explicacion: 'Lo hacen para no separarse con las corrientes mientras flotan.'
+},
+{
+  afirmacion: 'El chocolate es tóxico para los perros.',
+  esVerdadero: true,
+  explicacion: 'Contiene teobromina, que los perros no metabolizan bien y puede ser mortal.'
+},
+{
+  afirmacion: 'Las ovejas pueden reconocer caras humanas.',
+  esVerdadero: true,
+  explicacion: 'Tienen muy buena memoria visual y pueden distinguir rostros conocidos.'
+},
+{
+  afirmacion: 'Los gatos siempre caen de pie.',
+  esVerdadero: false,
+  explicacion: 'Tienen reflejo de enderezamiento, pero a cierta altura o mal cálculo pueden lesionarse.'
+},
+{
+  afirmacion: 'Las ardillas plantan accidentalmente miles de árboles al olvidar dónde enterraron nueces.',
+  esVerdadero: true,
+  explicacion: 'Son responsables de la regeneración forestal en muchas zonas.'
+},
+{
+  afirmacion: 'Las vacas tienen acento según su región.',
+  esVerdadero: true,
+  explicacion: 'Se ha observado que los mugidos varían entre grupos, como ocurre con los humanos.'
+},
+{
+  afirmacion: 'Las bananas crecen hacia abajo, por gravedad.',
+  esVerdadero: false,
+  explicacion: 'Crecen hacia arriba, en contra de la gravedad, fenómeno llamado geotropismo negativo.'
+},
+{
+  afirmacion: 'Una cucaracha puede contener la respiración durante más de 30 minutos.',
+  esVerdadero: true,
+  explicacion: 'Regulan su respiración para conservar agua en ambientes secos.'
+},
+{
+  afirmacion: 'Los patos no hacen eco.',
+  esVerdadero: false,
+  explicacion: 'Este es un mito. Su eco existe, solo que es más difícil de percibir.'
+},
+{
+  afirmacion: 'Un día en Venus dura más que su año.',
+  esVerdadero: true,
+  explicacion: 'Venus rota muy lentamente sobre su eje, más despacio de lo que orbita al Sol.'
+},
+{
+  afirmacion: 'Las termitas nunca duermen.',
+  esVerdadero: true,
+  explicacion: 'Tienen actividad constante las 24 horas del día durante toda su vida.'
+},
+{
+  afirmacion: 'Los humanos brillamos en la oscuridad.',
+  esVerdadero: true,
+  explicacion: 'Emitimos una bioluminiscencia muy débil, imperceptible al ojo humano.'
+}
+    ];
+
+    let actual = {};
+
+    function siguientePregunta() {
+      const index = Math.floor(Math.random() * preguntas.length);
+      actual = preguntas[index];
+      document.getElementById('afirmacion').textContent = actual.afirmacion;
+      document.getElementById('explicacion').textContent = '';
+    }
+
+    function responder(respuesta) {
+      const correcta = respuesta === actual.esVerdadero;
+      document.getElementById('explicacion').textContent = (correcta ? '✅ ' : '❌ ') + actual.explicacion;
+    }
+
+    // Inicializar
+    siguientePregunta();
+  </script>
+</body>
+</html>
